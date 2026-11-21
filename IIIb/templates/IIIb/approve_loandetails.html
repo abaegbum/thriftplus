@@ -1,0 +1,103 @@
+
+
+
+
+{% load humanize %}
+
+
+
+
+<form 
+action="/IIIb/threeb/loanspp/decline/yes/"
+method="POST"
+onsubmit="disable(this)">
+{% csrf_token %}
+
+
+<table>
+  
+<div style="font-size:0.6em;text-align: center;"> {{hhh.staff.surname|title}}  {{hhh.staff.firstname|title}}  </div>
+
+
+</table>
+
+ <table style="margin-top:0%;margin-bottom:02%;font-size:0.6em;text-align: left;" width="100%" class="table  table-bordered" id="dataTables-example">
+
+           <tr >
+             
+               <td style='font-weight:bold;text-align:left;'>Request Type</td>
+               <td> {{k.description}} </td>
+            </tr>
+
+           <tr>
+               <td style='font-weight:bold;text-align:left;'>Amount </td>
+               <td> {{company.currency_code}}  {{k.principal|intcomma}} </td>
+            </tr>
+              
+            <tr>
+               <td style='font-weight:bold;text-align:left;'> Monthly Deduction </td>
+               <td> {{company.currency_code}}  {{k.thrift|intcomma}} </td>
+            </tr>
+              
+            <tr>
+               <td style='font-weight:bold;text-align:left;'> Tenure </td>
+                <td> {{k.package.tenure }} months</td>
+            </tr>
+
+            <tr>
+               <td style='font-weight:bold;text-align:left;'> Grace Period </td>
+                <td> {{k.grace_period }} days</td>
+            </tr>
+
+              
+            <tr>
+               <td style='font-weight:bold;text-align:left;'> Repayment </td>
+               <td> {{company.currency_code}} {{k.total_repayment|intcomma }} </td>
+
+              <tr>
+                
+              <tr>
+
+               <td style='font-weight:bold;text-align:left;'>Status</td>
+               <td> {{k.status}}</td>
+          </tr>             
+
+       </table>
+
+
+
+<input type='hidden' name="month123"   value ={{month}}>
+
+<input type='hidden' name="state123"  value ={{state}}>
+         
+     <table style="margin-top:0%;margin-bottom:0%;font-size:0.7em" width="100%" class="table  table-bordered" id="dataTables-example">
+
+      <tr>
+
+          <td >
+            <input  type='button' class="btn btn-lg btn-success btn-block" value="Continue"
+         onclick="closedel();">
+        </td>
+
+      </tr>
+
+    </table>
+    
+</form>
+
+
+<script>
+    function closedel() { 
+        $("#pay").dialog("close");
+    }
+</script>
+
+    <script language="javascript" type="text/javascript">
+        function disable(f)
+        {
+            var button = f.elements['submit'];
+            button.value = 'Processing';
+            button.disabled = 'true';
+            return true;
+        }
+    </script>

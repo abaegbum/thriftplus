@@ -1,0 +1,54 @@
+
+
+
+{% extends 'partner/basepartner.html' %}
+
+{% block content %}
+
+
+{% load humanize %}
+
+
+
+
+<div style="text-align:center">Repair</div>
+   <table style="margin-top:0%;margin-bottom:01%" width="100%" class="table  table-bordered" id="dataTables-example">
+
+    <tr style="text-align:center;">
+        
+        <td  ><a href="/partner/partner/repair/" style="color:red">Wallets </a></td>
+
+        <td style="background:blue;font-size:0.9em"><a href="/partner/partner/thriftcode/" style="color:white;font-size:0.9em">Thrift Code </a></td>
+        
+
+      </tr>
+</table>
+
+
+  <form action="" method="POST"  onsubmit="disable(this)" enctype="multipart/form-data" >
+    {% csrf_token %}
+    <section class="content">
+      <div class="container-fluid">          
+            <div class="card card-primary">
+                <div class="card-body">
+          <table style="margin-top:0%;margin-bottom:04%" width="100%" class="table  table-bordered table-hover" id="dataTables-example">
+           <tr >
+               <td >Thrift Code </td><td> <input type="number" name="Thriftcode" id='id_thriftcode'>   </td>
+            </tr>  
+
+
+       </table>
+          <div class="card-footer">
+            <td >
+              <input class="btn btn-lg btn-success btn-block" name="submit" type= "submit" value="View Details">
+            </td>
+          </div>
+                </div>
+              </div>
+            </div>
+      </section>
+    
+  </form>
+
+
+{% endblock %}

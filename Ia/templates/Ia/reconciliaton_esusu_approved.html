@@ -1,0 +1,306 @@
+
+
+
+
+{% extends 'Ia/reconciliation_base.html' %}
+
+{% block content %}
+
+{% load humanize %}
+
+
+
+<div style="text-align:center">Staff Reconcilation Menu</div>
+  
+   <table style="margin-top:0%;margin-bottom:0%;font-size:0.7em" width="100%" class="table  table-bordered" id="dataTables-example">
+
+    <tr style="text-align:center;">
+        <td  style="background:blue">
+            <a href="/fts/thrift/approvals/" style="color:white">Reconciliation</a>
+        </td>
+        <td>
+            <a href="/fts/thrift/payouts/" style="color:red">Payouts</a>
+        </td>  
+       <td  >
+        <a href="/fts/thrift/approvals/approvereport/" style="color:red">Log</a></td>
+    </tr>
+</table>
+
+
+
+<div style="margin-top:03%;text-align:center;font-size:76%"> Transaction Summary for <span style='color:blue'>Approved</span> cash ({{product}})</div>
+
+ <table style="margin-top:0%;margin-bottom:0%;font-size:0.76em"  width="100%" class="table  table-bordered" id="dataTables-example">
+     
+
+    <tr>
+      <td style="font-weight:bold">Transaction Date </td>
+      <td>{{dow}},  {{dates}}</td>
+  </tr>
+
+  </table>
+
+  <div style="margin-top:2.5%;margin-bottom:0%;font-size:0.8em;text-align:center;color:red">To view sales record, click on a name </div>
+
+<table style="margin-top:0.5%;margin-bottom:0%;font-size:0.8em"  width="100%" class="table  table-bordered" id="dataTables-example">
+        <thead >
+    <tr style="text-align:center;font-weight:bold">
+           <td >S/N</td>
+           <td >Staff</td>
+           <td >Sales ({{company.currency_code}})</td>
+           <td >Status</td>
+      </tr>
+    </thead>                          
+                            
+    {% for student in thriftrec %}
+        <tr style="font-weight:bod;text-align:center">
+          <td >{{ forloop.counter }}.</td>
+          
+          <td > <a href="#" onClick= "details({{ student.id  }})" title="Click to view customers list ">{{ student.merchant.staff.surname }} {{ student.merchant.staff.firstname }}  {{ student.merchant.staff.othername }}</a></td>
+
+          <td >{{ student.sales|intcomma}}   </td>
+
+        <td>Approved</td>
+
+        </tr>
+
+
+    {% endfor %}
+
+</table>
+
+<table style="margin-top:0.1%;margin-bottom:02%;font-size:0.7em"  width="100%" class="table  table-bordered" id="dataTables-example">
+    <tr style="font-weight:bold;text-align:center">
+
+
+      <td > Total Sales</td> 
+
+      <td > {{company.currency_code}} {{total|intcomma}}</td>
+       </tr>
+</table>
+
+   
+  </table> 
+
+
+<!-- 
+ <table  style="margin-top:01%;margin-bottom:02%;font-size:0.7em" width="100%" class="table  table-bordered" id="dataTables-example">
+
+    <td style="font-size:1em" class="btn btn-lg btn-success btn-block">
+        <a href="#" style="color:white" onClick= "apr()" title="Approve all funds">Approve {{company.currency_code}} {{total|intcomma}}</a>
+
+    </td>
+</table> -->
+
+
+<input type="hidden" name="date" id="date" readonly="readonly" value="{{ cdate}}" >
+<input type="hidden" name="merchant" id="merchant"  readonly="readonly" value="{{ merchant.id }}" class ="loginTxtbox">
+
+<input type="hidden" name="dates" id="dates"  readonly="readonly" value="{{ dates }}" >
+
+
+<div id="psy"></div>
+<div id="ind"></div>
+ <div id="delle"></div>
+ 
+<script type="text/javascript" language="javascript">
+    function rreem(vid){
+        
+        var state = vid + ":" + $("#date").val();
+        // alert(state)
+        var url = "/fts/thrift/seedit/";
+        var i = 0;
+        var data='userid='+state;
+        $.ajax({
+            type:"POST",
+            url:url,
+            data:data,
+            success:function(html) {
+                $("#ind").html(html);
+                getdind();
+            }
+        });
+        return false;
+    }
+
+</script>
+
+<script type="text/javascript" language="javascript">
+    function getdind(){
+        var diaOpts = {
+            autoOpen:true,
+            // appendTo:"body1",
+            // modal:true,
+            // position: ["center", "middle"],
+            height:'auto',
+            width:'auto',
+            title:'Touch the box to close' ,
+            closeOnEscape:true,
+            show: true,
+            hide: true,
+            bgiframe: true
+        };
+        $("#ind").dialog(diaOpts);
+    }
+
+</script>
+
+<script type="text/javascript" language="javascript">
+    function apr(vid){
+        var state = vid + ":" +"{{user}}" + ":" + $("#date").val(); 
+        // alert(state);
+        var url = "/fts/thrift/reedit/";
+        var i = 0;
+        var data='userid='+state;
+        $.ajax({
+            type:"POST",
+            url:url,
+            data:data,
+            success:function(html) {
+                $("#psy").html(html);
+                getdial();
+            }
+        });
+        return false;
+    }
+</script>
+<script type="text/javascript" language="javascript">
+    function getdial(){
+        var diaOpts = {
+            autoOpen:true,
+            // appendTo:"body1",
+            // modal:true,
+            // position: ["center", "middle"],
+            height:'auto',
+            width:'auto',
+            title:'Touch the box to close' ,
+            closeOnEscape:true,
+            show: true,
+            hide: true,
+            bgiframe: true
+        };
+        $("#psy").dialog(diaOpts);
+    }
+
+</script>
+
+
+
+<script type="text/javascript" language="javascript">
+    function delle(vid){
+        
+        var state = vid + ":" + $("#date").val();
+        // alert(state)
+        var url = "/fts/thrift/requests/adminpayfund/canceloptions/";
+        var i = 0;
+        var data='userid='+state;
+        $.ajax({
+            type:"POST",
+            url:url,
+            data:data,
+            success:function(html) {
+                $("#delle").html(html);
+                getdel();
+            }
+        });
+        return false;
+    }
+
+</script>
+
+
+<script type="text/javascript" language="javascript">
+    function decs(vid){
+        
+        var state = vid + ":" + $("#date").val();
+        // alert(state)
+        var url = "/fts/thrift/requests/delete/cusomer/";
+        var i = 0;
+        var data='userid='+state;
+        $.ajax({
+            type:"POST",
+            url:url,
+            data:data,
+            success:function(html) {
+                $("#delle").html(html);
+                getdel();
+            }
+        });
+        return false;
+    }
+
+</script>
+
+
+<script type="text/javascript" language="javascript">
+    function recs(vid){
+        
+        var state = vid + ":" + $("#date").val();
+        // alert(state)
+        var url = "/fts/thrift/requests/recline/";
+        var i = 0;
+        var data='userid='+state;
+        $.ajax({
+            type:"POST",
+            url:url,
+            data:data,
+            success:function(html) {
+                $("#delle").html(html);
+                getdel();
+            }
+        });
+        return false;
+    }
+
+</script>
+
+
+<script type="text/javascript" language="javascript">
+    function details(vid){
+        
+        var state = vid + ":" + $("#date").val();
+        // alert(state)
+        var url = "/fts/thrift/requests/sales/approvedbreakdown/";
+        var i = 0;
+        var data='userid='+state;
+        $.ajax({
+            type:"POST",
+            url:url,
+            data:data,
+            success:function(html) {
+                $("#delle").html(html);
+                getdel();
+            }
+        });
+        return false;
+    }
+
+</script>
+
+
+<script type="text/javascript" language="javascript">
+    function getdel(){
+        var diaOpts = {
+            autoOpen:true,
+            // appendTo:"body1",
+            // modal:true,
+            // position: ["center", "middle"],
+            height:'auto',
+            width:'auto',
+            title:'Touch the box to close' ,
+            closeOnEscape:true,
+            show: true,
+            hide: true,
+            bgiframe: true
+        };
+        $("#delle").dialog(diaOpts);
+    }
+
+</script>
+
+
+
+{% endblock %}
+
+
+

@@ -1,0 +1,144 @@
+
+
+
+{% extends 'partner/basepartner.html' %}
+{% block content %}
+
+{% load humanize %}
+
+
+
+
+
+<div style="text-align:center">Back Office Subscription Package</div>
+   <table style="margin-top:0%;margin-bottom:01%" width="100%" class="table  table-bordered" id="dataTables-example">
+
+    <tr style="text-align:center;">
+         <td >
+          <a href="/partner/partner/business/subscription/" style="color:red">Log</a>
+        </td>
+
+         <td style="background:blue">
+          <a href="/partner/partner/business/extension/" style="color:white">Extension</a>
+        </td>
+        
+        <td >
+          <a href="/partner/partner/business/renew/" style="color:red">Subscription</a>
+        </td>
+
+
+    </tr>
+</table>
+
+
+<tr >
+
+       <form action="/partner/partner/business/extension/checkout/" method="POST"  enctype="multipart/form-data" >
+
+         {% csrf_token %}
+    
+    <section class="content">
+      <div class="container-fluid">          
+          <div class="card card-primary">
+
+              <div class="card-body">
+
+                <table style="margin-top:0%;margin-bottom:04%" width="100%" class="table  table-bordered table-hover" id="dataTables-example">
+
+            <div  style="font-weight:bold;text-align:center; font-size:1em">{{fg.branch.company.name}}</div>
+
+
+          <div  style="font-weight:bold;text-align:center">{{fg.branch.Address}}</div>
+              
+<input type="hidden" name="mycode" value="{{fg.receipt}}">
+
+              <tr >
+                <td style=" font-weight:bold">ID</td>
+                <td> {{fg.branch.id}}</td>
+              </tr>
+              <tr >
+                <td style=" font-weight:bold">owner </td>
+                <td>{{owner.staffrec.surname.upper}}   {{owner.staffrec.firstname.upper}}  {{owner.staffrec.othername.upper}}</td>
+              </tr>
+              <tr>
+                <td  style=" font-weight:bold"> Phone </td>
+                <td>0{{owner.staffrec.phone}}</td>
+              </tr>
+              <tr >
+                <td style=" font-weight:bold"> Email </td>
+                <td>{{owner.staffrec.email}}</td>
+                </tr> 
+
+                   </table>
+
+                <table style="margin-top:0%;margin-bottom:04%" width="100%" class="table  table-bordered table-hover" id="dataTables-example">
+
+            <div  style="font-weight:bold; text-align:center; font-size:1em">Package Details</div>
+
+              <tr >
+                <td style=" font-weight:bold">Package </td>
+                <td>{{fg.package.package}}({{fg.package.appendage}}) </td>
+              </tr>
+              <tr >
+                <td style=" font-weight:bold">Code </td>
+                <td>{{fg.receipt}} </td>
+              </tr>
+
+              <tr >
+                <td style=" font-weight:bold">Status </td>
+                <td>{{fg.status}} </td>
+              </tr>
+
+              <tr >
+                <td style=" font-weight:bold">Amount </td>
+                <td>  {{fg.branch.currency_code}}  {{fg.amount|intcomma}}0  </td>
+              </tr>
+
+              <tr >
+                <td style=" font-weight:bold">Duration </td>
+                <td>{{fg.duration}}  Month(s)</td>
+              </tr> 
+          </table>      
+             </div>   
+
+  
+          </div>
+        </div>
+
+
+<tr><div>This subscription is an {{ hj}}</div></tr>
+
+
+     <table style="margin-top:1%;margin-bottom:02%" width="100%" class="table  table-bordered" id="dataTables-example">
+            <td>     
+               <button class="btn btn-lg btn-success btn-block" type ='submit'  >Check Out</button>
+            </td>
+         <td >
+            <a class="btn btn-lg btn-success btn-block" href="/partner/partner/business/extension/"  >Cancel</a>
+        </td>
+     </table>
+
+      </section>
+    
+  </form>
+
+
+
+</tr>
+
+
+<script type="text/javascript" language="javascript">
+
+
+//window.history.pushState(null, "", window.location.href);
+//window.onpopstate = function () {
+//    window.history.pushState(null, "", window.location.href);
+//};
+
+//
+</script>
+
+
+
+
+{% endblock %}

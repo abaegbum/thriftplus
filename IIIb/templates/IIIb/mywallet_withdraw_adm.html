@@ -1,0 +1,181 @@
+<script type="text/javascript" src='/static/mato/JS/jquery-1.5.js'></script>
+
+
+
+{% extends 'IIIb/mywallet_balance_base_a.html' %}
+{% block content %}
+
+{% load humanize %}
+
+<div style="text-align:center">Wallet Balances Menu</div>
+
+
+   <table style="margin-top:0%;margin-bottom:01%;font-size:0.8em" width="100%" class="table  table-bordered" id="dataTables-example">
+
+    <tr style="text-align:center;">
+      <td >
+          <a href="/IIIb/threeb/staff/mywallet/"  style="color:red">Balances</a>
+      </td>
+      <td>
+          <a href="/IIIb/threeb/staff/statement/"  style="color:red">Statement</a>
+      </td>
+      
+      <td  style="background:blue">
+          <a href="/IIIb/threeb/staff/withdraw/"  style="color:white">Withdraw</a>
+      </td>
+
+      <td>
+          <a href="/IIIb/threeb/mywallet/accno/"  style="color:red">Account No.</a>
+      </td>
+
+
+    </tr>
+</table>
+
+
+
+
+ <table style="margin-top:0%;margin-bottom:01%;font-size:0.8em" width="100%" class="table  table-bordered" id="dataTables-example">
+        <tr >
+         <td style="font-weight:bold">Year</td>
+            <td> 
+                      <select name="businessyear" id="id_businessyear" required >
+                          {% for pincode in year %}
+                              <option value="{{pincode.year}}">{{pincode.year}}</option>
+                          {% endfor %}
+                     </select>
+            </td>
+        </tr>
+  <tr> 
+    <td style="font-weight:bold">E-mail</td>
+    <td>{{msg.staff.email}}</td>
+  </tr>
+
+  <tr> 
+    <td style="font-weight:bold">Name</td>
+  <td>{{msg.staff.surname|title}}  {{msg.staff.firstname|title}}   {{msg.staff.othername|title}} </td>
+  </tr>
+
+</table>
+ <table style="margin-top:0%;margin-bottom:02%;font-size:0.8em" width="100%" class="table  table-bordered" id="dataTables-example">
+
+  <tr>
+        <td style="font-weight:bold">Other Balances</td>
+    <td> {{company.currency_code}} {{others|intcomma}}</td>
+  </tr>
+
+
+ </table>
+
+
+ <table style="margin-top:0%;margin-bottom:02%;font-size:0.8em" width="100%" class="table  table-bordered" id="dataTables-example">
+        <tr >
+         <td style="font-weight:bold">Target Account</td>
+            <td> 
+                      <select name="repay" id="id_repay" required >
+                        <option value="-">-----</option> 
+                          {% for pincode in repay %}
+                              <option value="{{pincode.description}}">{{pincode.description}}</option>
+                          {% endfor %}
+                     </select>
+            </td>
+        </tr>
+
+ </table>
+
+ <table width="100%" class="table  table-bordered" id="dataTables-example">
+
+           <tr>
+                <div class="boxapp"></div>
+           </tr>
+</table>
+
+
+
+
+<div id="cancel"></div>
+<div id="pay"></div>
+
+   <script type="text/javascript" >
+        $(document).ready(function() {
+            $("#id_repay").change(function () {
+                autopostL();
+            });
+
+            $("#id_businessyear").change(function () {
+                autopostL();
+            });
+
+            $("#id_repay").focus();
+            autopostL();
+        });
+    </script>
+
+  <script type="text/javascript" language="javascript">
+        function autopostL(){
+            var state = $("#id_businessyear").val()+ ":" + $("#id_repay").val();
+            // alert(state)
+            var url = "/IIIb/threeb/staff/withdrawajax/withdraw/";
+            var i = 0;
+            var data='userid='+state;
+            $.ajax({
+                type:"POST",
+                url:url,
+                data:data,
+                success:function(html) {
+                    $(".boxapp").show();
+                    $(".boxapp").html(html);
+                }
+            });
+            return false;
+        }
+    </script>
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" language="javascript">
+    function withdraw_ajax(){        
+        var state = $("#id_businessyear").val() + ":" + $("#id_repay").val()+ ":" + $("#id_total").val();
+        // alert(state)
+        var url = "/IIIb/threeb/withdraw/ajax/pop/";
+        var i = 0;
+        var data='userid='+state;
+        $.ajax({
+            type:"POST",
+            url:url,
+            data:data,
+            success:function(html) {
+                $("#cancel").html(html);
+                getcancel();
+            }
+        });
+        return false;
+    }
+</script>
+
+<script type="text/javascript" language="javascript">
+    function getcancel(){
+        var diaOpts = {
+            autoOpen:true,
+            height:'auto',
+            width:'auto',
+            title:' Touch this box to close' ,
+            closeOnEscape:true,
+            show: true,
+            hide: true,
+            bgiframe: true
+        };
+        $("#cancel").dialog(diaOpts);
+    }
+
+</script>
+{% endblock %}
+
+
+

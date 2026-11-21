@@ -1,0 +1,28 @@
+
+
+{% extends 'customer/walletbase.html' %}
+{% block content %}
+
+
+
+<div style="text-align:center">Wallets Menu </div>
+
+   <table style="margin-top:0%;margin-bottom:01%" width="100%" class="table  table-bordered" id="dataTables-example">
+
+    <tr style="text-align:center;">
+        <td  style="background:blue;font-size:0.9em"><a href="/customer/customers/createwallet/" style="color:white">Create Wallet</a></td>
+        <td><a href="/customer/customers/editwallet/" style="color:red;font-size:0.9em">Edit Wallet</a></td>
+        <td><a href="/customer/customers/viewwallet/" style="color:red;font-size:0.9em">View Wallet</a></td>
+          <td><a href="/customer/customers/customer_list/" style="color:red;font-size:0.9em">Wallet list</a></td>
+    </tr>
+</table>
+
+<table style="margin-top:0%;margin-bottom:02%" width="100%" class="table  table-bordered" id="dataTables-example">
+<div style='text-align:center'>{{msg}}</div>
+
+</table>
+
+{% endblock %}
+
+
+

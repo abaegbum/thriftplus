@@ -1,0 +1,37 @@
+
+
+{% extends 'Ia/credit_officerIa_base.html' %}
+{% block content %}
+
+
+<div style="text-align:center">Credit Officers' Menu</div>
+
+   <table style="margin-top:0%;margin-bottom:01% ;font-size:0.9em;text-align:center" width="100%" class="table  table-bordered" id="dataTables-example">
+
+    <tr >
+        <td style="background:blue">
+          <a href="/fts/staff/merchant/" style="color:white">Activate C/Os</a>
+        </td>
+        <td>
+          <a href="/fts/staff/merchant/manage/" style="color:red">Manage C/Os</a>
+        </td>
+        <td>
+          <a href="/fts/staff/merchant/mycos/" style="color:red">My C/Os</a>
+        </td>
+    </tr>
+</table>
+
+
+
+<table style="margin-top:0%;margin-bottom:02%" width="100%" class="table  table-bordered" id="dataTables-example">
+<div style='text-align:center'>{{msg}}</div>
+
+</table>
+
+
+
+
+{% endblock %}
+
+
+

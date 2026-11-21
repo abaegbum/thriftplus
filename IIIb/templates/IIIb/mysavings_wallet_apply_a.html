@@ -1,0 +1,125 @@
+
+
+
+{% extends 'IIIb/mysavings_base_a.html' %}
+
+{% block content %}
+
+
+
+
+<div style="text-align:center">Wallet Deposit Form</div>
+   <table style="margin-top:0%;margin-bottom:0%;font-size:0.8em" width="100%" class="table  table-bordered" id="dataTables-example">
+
+
+    <tr style="text-align:center">
+      <td style="background:blue">
+          <a href="/IIIb/threeb/savings/wallet_packages/" style="color:white">Wallet</a>
+      </td>
+      <td >
+          <a href="/IIIb/threeb/savings/save_packages/" style="color:red">Savings Scheme</a>
+      </td>
+      <td ><a href="/IIIb/threeb/savings/deposit/view_transactions/" style="color:red">Savings Log</a></td>
+      <td ><a href="/IIIb/threeb/savings/upload/" style="color:red"> File upload</a></td>
+    </tr>
+</table>
+
+
+
+<form action="" method="POST" onsubmit="disable(this)">
+    {% csrf_token %}
+
+   <table style="margin-top:0.2%;margin-bottom:0%;font-size:0.8em" width="100%" class="table  table-bordered" id="dataTables-example">
+            <tr >
+             <td style="font-weight:bold">Year</td>
+                <td> 
+                          <select name="businessyear" id="id_businessyear" required >
+                              {% for pincode in year %}
+                                  <option value="{{pincode.year}}">{{pincode.year}}</option>
+                              {% endfor %}
+                         </select>
+                </td>
+            </tr>
+
+
+    <tr> 
+      <td style="font-weight:bold">E-mail</td>
+      <td>{{msg.staff.email}}</td>
+    </tr>
+    <tr> 
+      <td style="font-weight:bold">Name</td>
+    <td>{{msg.staff.surname|title}}  {{msg.staff.firstname|title}}   {{msg.staff.othername|title}} </td>
+  </tr>
+
+   </table>
+
+
+
+
+  <table style="margin-top:0.2%;margin-bottom:0.9%;font-size:0.8em" width="100%" class="table  table-bordered" id="dataTables-example">
+            <tr >
+             <td style="font-weight:bold;">Account </td>
+                <td> 
+                          <select name="savepack" id="id_savepack" required autofocus>
+                              {% for pincode in package %}
+                                  <option value="{{pincode.description}}">{{pincode.description}}</option>
+                              {% endfor %}
+                         </select>
+                </td>
+            </tr>
+  </table>
+
+
+ <table width="100%" class="table  table-bordered" id="dataTables-example">
+
+           <tr>
+                <div class="applybox"></div>
+           </tr>
+</table>
+
+</form>
+
+
+    <div id="edit"></div>
+   <script type="text/javascript" >
+        $(document).ready(function() {            
+            $("#id_savepack").change(function () {
+                autopostloan();
+            });
+            $("#id_safepack").focus();
+
+            autopostloan();
+        });
+    </script>
+
+
+
+  <script type="text/javascript" language="javascript">
+        function autopostloan(){
+            var state = "{{user}}"+ ':'+$("#id_savepack").val();
+            // alert(state)
+            var url = "/IIIb/threeb/savings/eligibility/";
+            var i = 0;
+            var data='userid='+state;
+            $.ajax({
+                type:"POST",
+                url:url,
+                data:data,
+                success:function(html) {
+                    $(".applybox").show();
+                    $(".applybox").html(html);
+
+                }
+            });
+            return false;
+        }
+    </script>
+
+
+
+
+
+{% endblock %}
+
+
+

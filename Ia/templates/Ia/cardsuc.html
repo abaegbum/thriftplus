@@ -1,0 +1,94 @@
+
+
+
+
+{% extends 'Ia/customerdashboard.html' %}
+
+{% block content %}
+
+{% load humanize %}
+
+   <div style="font-size:1em;color:blue;text-align:center;">ACTION SUCCESSFUL!!!</div>
+
+   <div >{{currency2}} {{msg|intcomma}}   {{msg3}}</div>
+  
+   <div >{{currency}} {{msg4|intcomma}}  {{msg5}}</div>
+        
+   <div>{{msg2}}</div>
+
+
+<table style="margin-top:0.2%;margin-bottom:0.8%;text-align:center;font-size:1em" width="100%" class="table  table-bordered" id="dataTables-example">
+
+<tr >
+
+  <td >
+    <a href="#" style="color:blue" onClick= "thrift7({{vid}})" title="Click here to enter thrift">Thrifts</a>
+</td>
+
+
+  <td >
+<a href="/fts/mycustomers/dashboard/{{wallet}}/">{{customer.customer.surname}} {{g}} {{customer.customer.firstname}}'s Dashboard</a>
+</td>
+
+
+  <td >
+<a href="/fts/customeria/list/">My Custmers</a>
+</td>
+
+</tr>
+</table>
+
+
+
+
+
+
+<div id="depo"></div>
+
+
+
+<script type="text/javascript" language="javascript">
+    function thrift7(vid){
+
+        var state = "{{wallet}}";
+        // alert(state);
+        var url = "/fts/customer/dialthrift/";
+        var i = 0;
+        var data='userid='+state;
+        $.ajax({
+            type:"POST",
+            url:url,
+            data:data,
+            success:function(html) {
+                $("#depo").html(html);
+                getchan();
+            }
+        });
+        return false;
+    }
+
+</script>
+
+
+
+<script type="text/javascript" language="javascript">
+    function getchan(){
+        var diachange = {
+            autoOpen:true,
+            // appendTo:"body1",
+            // modal:true,
+            // position: ["center", "middle"],
+            height:'auto',
+            width:'auto',
+            title:'Touch this box to close' ,
+            closeOnEscape:true,
+            show: true,
+            // hide: true,
+            bgiframe: true
+        };
+        $("#depo").dialog(diachange);
+    }
+
+</script>
+
+{% endblock %}

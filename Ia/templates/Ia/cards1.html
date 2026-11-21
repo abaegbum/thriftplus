@@ -1,0 +1,50 @@
+
+
+  <form action="/fts/mycustomers/dashboard/{{wallet}}/" method="POST" onsubmit="disable(this)">
+{% csrf_token %}
+<input type="hidden" name="wallet" id="wallet"  readonly="readonly" value="{{ wallet }}" class ="loginTxtbox">
+
+
+  <table style="text-align:center;margin-top:0%;margin-bottom:02%;font-size:0.7em" width="100%" class="table  table-bordered" id="dataTables-example">
+    
+  <tr style="font-weight:bold">
+    <td>S/N</td>
+    <td>Description</td>
+    <td>Status</td>
+  </tr>
+         {% for pincode in card %}
+        
+            <tr >
+              <td> {{ forloop.counter }}</td>
+                <td> {{ pincode.purpose }} </td>
+                {% if  pincode.card_status == 1 %}
+                <td> Active </td>
+                 {% else %}
+                <td> Deactivated </td>
+                {% endif %}
+            </tr>
+        {% endfor %}
+
+</table>
+
+  <table style="margin-top:0%;margin-bottom:02%;font-size:0.7em" width="100%" class="table  table-bordered" id="dataTables-example">
+        <tr>
+           <td >
+            <input class="btn btn-lg btn-success btn-block" name="submit" type= "submit" value="Continue">
+          </td>
+        </tr>
+  </table>
+
+  </form>
+
+<script language="javascript" type="text/javascript">
+        function disable(f)
+        {
+            var button = f.elements['submit'];
+            button.value = 'Processing';
+            button.disabled = 'true';
+            return true;
+        }
+    </script>
+
+

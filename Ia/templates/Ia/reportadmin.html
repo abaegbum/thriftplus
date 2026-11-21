@@ -1,0 +1,117 @@
+
+
+{% extends 'Ia/reportsbase.html' %}
+{% block content %}
+
+{% load humanize %}
+   <table style="margin-top:0%;margin-bottom:0%" width="100%" class="table  table-bordered" id="dataTables-example">
+
+    <tr style="text-align:center;">
+       <td   >
+        <a href="/fts/thrift/reports/sales/cashier/" style="color:red">End Of Day</a></td>
+
+                <td >
+            <a href="/fts/thrift/reports/sales/merchant/" style="color:red">Vault</a>
+        </td>
+
+    <td style="background:blue;font-size:0.9em">
+        <a href="/fts/thrift/reports/sales/admn/" style="color:white">Profit</a></td>
+    
+    </tr>
+</table>
+
+
+
+<form action ="" method = 'POST'>
+    {% csrf_token %}
+
+<table style="font-size:0.7em;margin-top:0%;margin-bottom:0%" width="100%" class="table  table-bordered" id="dataTables-example">
+
+
+            <tr >
+             <td>
+                <label>Business Year</label>
+             </td>
+                <td> 
+                          <select name="myyear" id="id_myyear" required >
+
+                              {% for pincode in year %}
+                                  <option value="{{pincode.year}}">{{pincode.year}}</option>
+                              {% endfor %}
+                         </select>
+                </td>
+            </tr>
+
+            <tr >
+                <td><label for="id_products">Product</label></td>
+                <td> 
+                          <select name="myproducts" id="id_products" required >
+                            <option value="">-----</option>                          
+                              {% for pincode in prod %}
+                                  <option value="{{pincode}}">{{pincode}}</option>
+                              {% endfor %}
+                         </select>
+                </td>
+            </tr>
+
+    <tr>
+
+     <td><label for="id_month">Month</label></td>
+        <td> 
+                  <select name="month" id="id_month" required >
+                    <option value="">-----</option>
+                    <option value="January">January</option>
+                    <option value="February">February</option>
+                    <option value="March">March</option>
+                    <option value="April">April</option>
+                    <option value="May">May</option>
+                    <option value="June">June</option>
+                    <option value="July">July</option>
+                    <option value="August">August</option>
+                    <option value="September">September</option>
+                    <option value="October">October</option>
+                    <option value="November">November</option>
+                    <option value="December">December</option>
+
+                 </select>
+        </td>
+    </tr>
+
+            <tr >
+                <td><label for="id_types">Report Type</label></td>
+                <td> 
+                          <select name="repottype" id="id_types" required >
+                            <option value="">-----</option>
+
+                              {% for rep in rep %}
+                                  <option value="{{rep}}">{{rep}}</option>
+                              {% endfor %}                            
+                         </select>
+                </td>
+            </tr>
+
+</table>
+
+
+<table width="100%" class="table  table-bordered" id="dataTables-example">
+            <td >
+              <input class="btn btn-lg btn-success btn-block" name="submit" type= "submit" value="View Details">
+            </td>
+</table>
+</form>
+
+
+
+{% endblock %}
+
+
+
+    
+
+
+
+
+
+
+
+    

@@ -1,0 +1,243 @@
+
+
+{% extends 'Ia/customerdashboard.html' %}
+
+
+{% block content %} 
+
+{% load humanize %}
+
+
+<div style='text-align:center'> Loan Repayment </div>
+
+
+<form action="/fts/customer/repayloan/repay/admin/" method="POST"  onsubmit="disable(this)">
+
+<table style="margin-top:01%;margin-bottom:0.8%;font-size:0.7em" width="100%" class="table  table-bordered" id="dataTables-example">            
+            <tr >
+             <td> Business Year</td>
+                <td> 
+                          <select name="myyear" id="id_myyear" required >
+
+                              {% for pincode in year %}
+                                  <option value="{{pincode.year}}">{{pincode.year}}</option>
+                              {% endfor %}
+                         </select>
+                </td>
+            </tr>
+
+            <tr >
+              <td >Wallet Address</td>
+                <td> {{ customer.wallet }}</td>
+
+            </tr>
+            <tr >
+              <td >Customer </td>
+                <td> {{ customer.surname }} {{ customer.firstname }} {{ customer.othername }}</td>
+
+            </tr>
+
+            <tr>
+             <td>Card</td>
+                <td> 
+                          <select name="card" id="id_card" required >
+                            <option value="-----">-----</option>
+
+
+                              {% for pincode in card %}
+                                  <option value="{{pincode.purpose}}">{{pincode.purpose}}</option>
+                              {% endfor %}
+
+
+                         </select>
+                </td>
+            </tr>
+
+
+            <tr >
+                <td>Source Account</td>
+                <td> 
+                          <select name="myproducts" id="id_myproducts" required >
+                            <option value="-----">-----</option>                          
+                              {% for pincode in prod %}
+                                  <option value="{{pincode}}">{{pincode}}</option>
+                              {% endfor %}
+                         </select>
+                </td>
+            </tr>
+
+</table>
+
+
+
+
+           <tr >
+                <div class="boxrep"></div>
+           </tr>
+
+ 
+<input type="hidden" name="wallet" id="wallet"  readonly="readonly" value="{{ wallet }}" class ="loginTxtbox">
+
+</form>
+
+
+
+<div id="depo"></div>
+    <script>
+        $(document).ready(function() {
+            var pickerOpts = {
+                //appendText: "mm/dd/yy",
+                //defaultDate: "+5",
+                showOtherMonths: true,
+                changeMonth: true,
+                changeYear: true,
+                dateFormat:"yy-mm-dd"
+            };
+
+            fillmonth();
+        });
+    </script>
+
+  <script type="text/javascript" >
+        $(document).ready(function() {            
+            $("#id_myyear").change(function () {
+                fillcard();
+            });
+
+            $("#id_card").change(function () {
+                fillmonth();
+            });
+
+
+            $("#id_myproducts").change(function () {
+                fillmonth();
+            });
+            
+            $("#id_myloan").change(function () {
+                fillmonth();
+            });
+
+
+                  
+        });
+    </script>
+
+
+  <script type="text/javascript" language="javascript">
+       function fillmonth(){
+            var state = $("#id_myyear").val() +  ":" + $("#id_card").val() + ":" +"{{wallet}}" + ":" + "{{user}}" +  ":" + $("#id_myproducts").val();
+
+            // +  ":" + $("#id_myloan").val();
+
+            // alert(state)
+
+            var url = "/fts/customer/repayloan/pickmonth/";
+            var i = 0;
+            var data='userid='+state;
+            $.ajax({
+                type:"POST",
+                url:url,
+                data:data,
+                success:function(html) {
+                    // $(".boxfund").hide();
+                    $(".boxrep").show();
+                    $(".boxrep").html(html);
+                }
+            });
+            return false;
+        }
+    </script>
+
+
+
+    <script type="text/javascript" language="javascript">
+        function fillcycle(){
+
+            var state = $("#id_myyear").val()  + ":" + $("#id_card").val() + ":" +"{{wallet}}" + ":" + "{{user}}" + ":" + $("#id_month").val();
+
+            // alert(state)
+
+            var url = "/fts/customer/repayloan/loanrepcycle/";
+            var i = 0;
+            var data='userid='+state;
+            $("#id_cycle").val('');
+            $("#id_cycle").html('');
+            if (state != undefined){
+                $.ajax({
+                    type: "POST",
+                    url: url,
+                    data:data,
+                    success: function(data){
+                        var options = '';
+                        for (i=0; i<data.length; i++){
+                            options += '<option value="' + data[i] +'">' + data[i] + '</option>'
+                        }
+                        $("#id_cycle").append(options);
+                        autopostacc123e();
+                    }
+                })
+            }
+        }
+
+    </script>
+
+
+    <script type="text/javascript" language="javascript">
+        function autopostacc123e(){
+
+            var state = $("#id_myyear").val()  + ":" + "{{wallet}}" + ":" + $("#id_month").val()+ ":" + "{{user}}" + ":" + $("#id_card").val()+ ":" + $("#id_cycle").val();
+
+            // alert(state)
+
+            var url = "/fts/customer/repayloan/account_rep/";
+            var i = 0;
+            var data='userid='+state;
+            $.ajax({
+                type:"POST",
+                url:url,
+                data:data,
+                success:function(html) {
+                    $(".boxfund").hide();
+                    $(".boxcashabc").show();
+                    $(".boxcashabc").html(html);
+
+                }
+            });
+            return false;
+        }
+    </script>
+
+
+
+
+    <script type="text/javascript" language="javascript">
+        function loanhist(){
+
+            var state =  $("#id_card").val() + ":" + $("#id_myloan").val() + ":" + $("#id_myproducts").val()  + ":" + "{{user}}"+ ":" + "{{wallet}}";
+
+            // alert(state)
+
+            var url = "/fts/customer/overdraft/running/";
+            var i = 0;
+            var data='userid='+state;
+            $.ajax({
+                type:"POST",
+                url:url,
+                data:data,
+                success:function(html) {
+                    // $(".boxfund").hide();
+                    $(".boxpc").show();
+                    $(".boxpc").html(html);
+
+                }
+            });
+            return false;
+        }
+    </script>
+
+
+
+
+{% endblock %}
+
+

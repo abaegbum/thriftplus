@@ -1,0 +1,35 @@
+
+
+
+
+
+
+
+{% extends 'Ia/customerbaseIa.html' %}
+
+{% block content %}
+
+
+    <div style = "font-size:0.9em">Please read Carefully<hr>
+     If you select yes, this action will lead to irreviesible erasal of all the data and information you inputed over time, which include <hr>
+
+    <div>1. All customer data, including records of cards, thrifts, deposits, withdrawals, rceipts etc </div>
+    <hr>
+
+    <div>2. All staff data, including their logins, records of sales and other actitvites</div>
+    <hr>
+
+    <div>3. Default Passwords, locations and any other data. </div>
+    
+    <hr>
+    <div>However, only your login details will be preserved</div>
+    <hr>
+    <div> Do you want to permanently reset your back office?</div>
+    <hr>
+
+    <div> <a href="/fts/reset/">Yes</a> I want to reset my back office.
+            <a href="/dashboard/">No</a> I dont want to reset my back office</div>
+
+</div>
+{% endblock %}
+

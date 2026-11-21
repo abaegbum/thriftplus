@@ -1,0 +1,63 @@
+
+
+
+{% load humanize %}
+
+
+<div style="text-align:center">List of {{status}} loans </div>
+
+
+{% if myloans %}
+<table style="margin-top:0%;margin-bottom:0%;font-size:0.7em;text-align:center" width="100%" class="table  table-bordered" id="dataTables-example">
+  {% for k in myloans %}
+            <tr style="font-weight:bold">
+              <td>S/N</td>
+              <td>Loan</td>
+              <td>Tenure</td>
+              <td>Repayment</td>
+              <!-- <td>Status</td></tr> -->
+            <tr>
+                <td>{{forloop.counter}}.</td>
+                <td>{{branch.currency_code}} {{k.volume|intcomma}}</td>
+                <td>{{k.start_date}} - {{k.end_date}}</td>
+                
+                <td>{{branch.currency_code}} {{k.thrift}}   {{k.frequency}}</td>
+                <!-- <td>{{k.status}}</td> -->
+
+
+               
+            </tr>
+      {% endfor %}
+
+</table>
+{% else %}
+<div style="color:red">No records found </div>
+{% endif %}
+
+
+<table style="margin-top:0%;margin-bottom:0.1%" width="100%" class="table  table-bordered" id="dataTables-example">
+
+   <table style="margin-top:0%;margin-bottom:0.2%" width="100%" class="table  table-bordered" id="dataTables-example">
+    <tr>
+
+              <td >
+                <a class="btn btn-lg btn-success btn-block"  style="font-size:0.8em" href="/fts/mycustomers/dashboard/{{wallet}}/">Continue</a>
+              </td>
+   </tr>
+</table>
+
+
+  <script type="text/javascript" >
+        $(document).ready(function() {
+            $("#id_type").change(function () {
+                loanpack();
+            });
+
+            $("#id_myloan").change(function () {
+                loanpack();
+            });
+
+            loanpack();
+     
+        });
+    </script>

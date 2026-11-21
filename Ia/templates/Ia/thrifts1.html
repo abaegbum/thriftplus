@@ -1,0 +1,133 @@
+<!-- <table style="margin-top:0.1%;margin-bottom:0%;font-size:0.7em" width="100%" class="table  table-bordered" id="dataTables-example"> -->
+
+<table style="margin-top:01%;margin-bottom:0.2%;font-size:0.7em" width="100%" class="table  table-bordered" id="dataTables-example">
+
+            <tr >
+              <td style='font-weight:bold'>Card </td>
+                <td>
+                          <select name="card" id="id_card" required >
+                              {% for pincode in card %}
+                                  <option value="{{pincode.purpose}}">{{pincode.purpose}}</option>
+                              {% endfor %}
+                         </select>
+                </td>
+            </tr>
+
+
+
+            <tr >
+              <td style='font-weight:bold'>Month </td>
+                <td>
+                          <select name="month" id="id_month" required >
+
+                                  <option value="{{month}}">{{month}}</option>
+
+                         </select>
+                </td>
+            </tr>
+
+
+
+
+
+
+  <tr>
+            <td style='font-weight:bold'>Cycle</td>
+            <td>
+                <select name="cycle" id="id_cycle" required>
+                 <option value="">-----</option>
+                 <option value="cycle 1">Cycle 1</option>
+                 <option value="cycle 2">Cycle 2</option>
+                 <option value="cycle 3">Cycle 3</option>
+                 <option value="cycle 4">Cycle 4</option>
+                 <option value="cycle 5">Cycle 5</option>
+
+
+                 <option value="cycle 6">Cycle 6</option>
+                 <option value="cycle 7">Cycle 7</option>
+                 <option value="cycle 8">Cycle 8</option>
+                 <option value="cycle 9">Cycle 9</option>
+                 <option value="cycle 10">Cycle 10</option>
+
+                 <option value="cycle 11">Cycle 11</option>
+                 <option value="cycle 12">Cycle 12</option>
+
+
+                 <option value="cycle 13">Cycle 13</option>
+
+                 <option value="cycle 14">Cycle 14</option>
+                 <option value="cycle 15">Cycle 15</option>
+
+
+                 <option value="cycle 16">Cycle 16</option>
+                 <option value="cycle 17">Cycle 17</option>
+
+
+                 <option value="cycle 18">Cycle 18</option>
+
+                 <option value="cycle 19">Cycle 19</option>
+                 <option value="cycle 20">Cycle 20</option>
+
+                 </select>
+             </td>
+</tr>
+
+</table>
+
+<table style="margin-top:01%;margin-bottom:0.2%;font-size:0.9em" width="100%" class="table  table-bordered" id="dataTables-example">
+
+           <tr >
+                <div class="boxaccount_type"></div>
+           </tr>
+</table>
+
+<input type="hidden" name="wallet" id="wallet"  readonly="readonly" value="{{ wallet }}" class ="loginTxtbox">
+
+
+
+
+    <script>
+        $(document).ready(function() {
+            $("#id_cycle").focus();
+        });
+    </script>
+
+  <script type="text/javascript" >
+        $(document).ready(function() {
+            $("#id_cycle").change(function () {
+                autopostacc();
+            });
+
+            $("#id_month").change(function () {
+                autopostacc();
+            });
+
+            $("#id_card").change(function () {
+                autopostacc();
+            });
+
+            autopostacc();
+        });
+    </script>
+
+
+    <script type="text/javascript" language="javascript">
+        function autopostacc(){
+            var state = $("#id_cycle").val() + ":" + "{{wallet}}" + ":" + $("#id_month").val()+ ":"+ "{{user}}" + ":" + $("#id_card").val()+ ":" + "{{year}}";
+            // alert(state)
+            var url = "/fts/customer/findthrift/";
+            var i = 0;
+            var data='userid='+state;
+            $.ajax({
+                type:"POST",
+                url:url,
+                data:data,
+                success:function(html) {
+                    $(".boxaccount_type").show();
+                    $(".boxaccount_type").html(html);
+
+                }
+            });
+            return false;
+        }
+    </script>

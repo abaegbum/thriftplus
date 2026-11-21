@@ -1,0 +1,64 @@
+
+
+<table style="font-size:0.7em;margin-top:0%;margin-bottom:0%" width="100%" class="table  table-bordered" id="dataTables-example">
+
+<tr>
+  <td style= 'font-weight: bold '> From </td>
+<td >{{fromm1}}</td>
+  <td style= 'font-weight: bold '> To </td>
+<td >{{tto1}}</td>
+</tr>
+
+
+</table>
+
+
+<table width="100%" class="table  table-bordered" id="dataTables-example">
+                <!-- /.card-body -->
+           <div class="card-footer">
+            <td >
+              <input class="btn btn-lg btn-success btn-block" name="submit" type= "submit" value="View Details">
+            </td>
+          </div>
+</table>
+
+<input type="text" name="rep" readonly="readonly" value="{{ rep }}">
+<input type="text" name="fromm" readonly="readonly" value="{{ fromm }}">
+<input type="text" name="tto" readonly="readonly" value="{{ tto }}">
+
+   
+
+
+
+
+    <script type="text/javascript" language="javascript">
+        $(document).ready(function() {
+            var pickerOpts = {
+                // appendText: "dd/mm/yy",
+                showOtherMonths: true,
+                changeMonth: true,
+                changeYear: true,
+                dateFormat:"yy/mm/dd/"
+            };
+            $("#id_date").datepicker(pickerOpts);
+            $("#id_to_date").datepicker(pickerOpts);
+        });
+    </script>
+
+
+    <script language="javascript" type="text/javascript">
+        function disable(f)
+        {
+            var button = f.elements['submit'];
+            button.value = 'Processing';
+            button.disabled = 'true';
+            return true;
+        }
+    </script>
+
+
+    <script>
+        $(document).ready(function() {
+            $("#ddd1").focus();
+        });
+    </script>

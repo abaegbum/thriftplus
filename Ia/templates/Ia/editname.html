@@ -1,0 +1,65 @@
+
+
+
+
+<div style="text-align:center">Edit Customer Details</div>
+
+
+<form action="/fts/customer/viewwallet/editname/" method="POST" onsubmit="disable(this)">
+{% csrf_token %}
+
+<table style="margin-top:01%;margin-bottom:0.2%;font-size:0.9em" width="100%" class="table  table-bordered" id="dataTables-example">
+  
+            <tr >
+              <td >Wallet Address </td>
+                <td> {{ customer.wallet }}</td>
+
+            </tr>
+            <tr >
+              <td style='font-weight:bold'>Surname </td>
+                <td> <input type='text' name='surname' value='{{ customer.surname }}'></td>
+
+            </tr>
+
+            <tr >
+              <td style='font-weight:bold'>Firstname </td>
+                <td> <input type='text' name='firstname' value='{{ customer.firstname }}'></td>
+
+            </tr>
+            <tr >
+              <td style='font-weight:bold'>Othername </td>
+                <td> <input type='text' name='othername' value='{{ customer.othername }}'></td>
+
+            </tr>
+
+
+</table>
+
+
+ 
+<input type="hidden" name="wallet" id="wallet"  readonly="readonly" value="{{ wallet }}" class ="loginTxtbox">
+
+
+<table style="margin-top:0%;margin-bottom:0%;font-size:0.8em" width="100%" class="table  table-bordered" id="dataTables-example">
+  <tr>
+    <td >
+      <input class="btn btn-lg btn-success btn-block" name="submit" type= "submit" value="Save">
+    </td>
+</tr>
+</table>
+
+</form>
+
+
+
+    <script language="javascript" type="text/javascript">
+        function disable(f)
+        {
+            var button = f.elements['submit'];
+            button.value = 'Processing';
+            button.disabled = 'true';
+            return true;
+        }
+    </script>
+
+

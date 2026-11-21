@@ -1,0 +1,69 @@
+
+
+
+{% extends 'partner/basepartner.html' %}
+
+{% block content %}
+
+
+{% load humanize %}
+
+
+
+ <input name="submitprint" type= "submit" value="Print Receipt" onclick = "openrecprint();">
+
+   <div class="printable">
+
+<div class="card card-primary card-outline">               
+
+            <div class="card-header">
+              <h5 class="m-0" style='text-align:center'>SMS Purchase Successfull!!!</h5>
+            </div>
+
+
+              <div class="printable7989">
+                <div class="card-body">           
+                    <p class="card-text"></p>
+                    <p style='text-align:center'>{{company.company.name}} <br> {{company.Address}}</p>
+                   
+
+                    <div>{{msg}}</div>
+              </div>
+          </div>
+
+
+
+</div>
+
+</div>
+
+<table style="margin-top:0.5%;margin-bottom:0.6%;text-align:center" width="100%" class="table  table-bordered" id="dataTables-example">
+
+<tr >
+<td ><a href="/partner/partners/partner/">Home</a></td>
+<td ><a href="/partner/partner/business/extension/">Extension</a></td>
+</tr>
+</table>
+
+
+<script type="text/javascript" language="javascript">
+
+window.history.pushState(null, "", window.location.href);
+window.onpopstate = function () {
+    window.history.pushState(null, "", window.location.href);
+};
+
+</script>
+
+
+
+    <script language="javascript" type="text/javascript">
+        function openrecprint()
+        {
+            //alert("welcome");
+            $( ".printable" ).print();
+        }
+    </script>
+
+    
+{% endblock %}

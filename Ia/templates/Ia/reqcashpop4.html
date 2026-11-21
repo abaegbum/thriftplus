@@ -1,0 +1,90 @@
+
+{% load humanize %}
+
+              <div style="margin-top:-1%;margin-bottom:0.3%;text-align:center;font-size:0.6em;color:red">{{ year }}  {{ monthname }}  {{ cycle }}</div>
+
+
+  
+
+   <table style="margin-top:-2%;margin-bottom:2%;font-size:0.6em" width="100%" class="table  table-bordered" id="dataTables-example">
+    <thead>
+        <tr style="text-align:center;font-weight:bold">
+           <td >Thrift</td>
+           <td >Count</td>  
+           <td >Withdrawable</td>
+        </tr>
+    </thead>
+    {% for k in thriftrec %}                      
+    <tr style="font-weight:bod;text-align:center">
+           <td >  {{currency}} {{ k.thrift|intcomma }}</td>
+          <td >{{ k.num}}</td>
+          <td >  {{currency}} {{k.amount|intcomma}}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+
+{% if count > 0 %}
+
+
+   <table style="margin-top:0%;margin-bottom:0.2%;font-size:0.4em" width="100%" class="table  table-bordered" id="dataTables-example">
+
+            <div style="margin-top:0.2%;margin-bottom:0%;font-size:0.6em" class="card card-primary">
+
+                <div class="card-body">
+                <div class="form-grup">
+                  <label>Number Of Days</label>
+                  <div class="input-group">
+
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="fas fa-calendar"></i></span>
+                    </div>
+
+                    <input type="number" class="form-control"  name="withdrr" id='id_withhdr' required  placeholder ='Enter No. of days to withdraw'>
+                  </div>
+                </div>
+                </div>
+              </div> 
+    </table> 
+   <table style="margin-top:02%;margin-bottom:0.2%;font-size:0.8em" width="100%" class="table  table-bordered" id="dataTables-example">
+    <tr>
+            <td>
+              <input style="font-size:0.8em"  class="btn btn-lg btn-success btn-block" name="submit" type= "submit" value="Process Withdrawal">
+            </td>
+      </tr>
+
+ </table>
+
+<input type="hidden" name="wallet" readonly="readonly" value="{{ wallet }}">
+<input type="hidden" name="card"  readonly="readonly" value="{{card}}" >
+<input type="hidden" name="code"  readonly="readonly" value="{{code}}" >
+<input type="hidden" name="year"  readonly="readonly" value="{{year}}" >
+
+
+{% else %}
+
+ <table style="margin-top:0%;margin-bottom:0.2%;font-size:0.8em" width="100%" class="table  table-bordered" id="dataTables-example">
+
+<div style="margin-top:0.9%;margin-bottom:0.2%" class="btn btn-lg btn-success btn-block" >
+   <a href="/fts/mycustomers/dashboard/{{wallet}}/" style="color:white">Continue</a>
+</div>
+</table>
+{% endif %}
+
+
+
+    <script>
+        $(document).ready(function() {
+            $("#id_withhdr").focus();
+        });
+    </script>
+
+    <script language="javascript" type="text/javascript">
+        function disable(f)
+        {
+            var button = f.elements['submit'];
+            button.value = 'Processing';
+            button.disabled = 'true';
+            return true;
+        }
+    </script>

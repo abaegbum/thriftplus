@@ -1,0 +1,115 @@
+
+
+
+
+
+
+{% extends 'Ia/howitworks_base.html' %}
+
+{% block content %}
+
+
+{% load humanize %}
+
+
+<div style="text-align:center">General Ledger for {{datee}}</div>
+
+{{details}}
+
+{{cutt}}
+
+{% for b in details %}
+
+<table>
+    <tr>
+      <td>
+       <table style="margin-top:0%;margin-bottom:0.5% ;text-align:center;font-size:0.8em" width="100%" class="table  table-bordered" id="dataTables-example">field table
+
+    <tr style="background-color: blue">
+        <td style="color:white">S/N</td>
+        <td style="color:white">customer</td>
+        <td style="color:white">Amount</td>
+        <td style="color:white">program</td>
+        <!-- <td style="color:white">mer</td>  -->
+    </tr>
+{% for b in b.field %}
+      <tr >
+        <td>{{forloop.counter}} .</td>
+        <td> {{b.customer.customer.surname}} </td>
+        <td> {{b.amount|intcomma}} </td>
+        <td> {{b.programmm}}</td>
+        <!-- <td> {{b.mer}}</td> -->
+
+        <!-- </td> -->
+    </tr>
+{% endfor %}
+   </table>
+
+
+        </td>
+
+
+
+        <td>
+
+
+
+
+   <table style="margin-top:0%;margin-bottom:0.5% ;text-align:center;font-size:0.8em" width="100%" class="table  table-bordered" id="dataTables-example">merchantbank table
+    <tr style="background-color: blue">
+        <td style="color:white">S/N</td>
+        <td style="color:white">Customer</td>
+        <td style="color:white">amount</td>
+<!--         <td style="color:white">sav</td>
+        <td style="color:white">mer</td> -->
+    </tr>
+{% for kz in b.office %}
+      <tr >
+        <td>{{forloop.counter}} .</td>
+        <td> {{kz.customer.customer.surname}}</td>
+        <td> {{kz.amount|intcomma}}</td>
+<!--         <td> {{b.sav}} ({{b.sdd}})</td>
+        <td> {{b.mer}}</td> -->
+
+        <!-- </td> -->
+    </tr>
+{% endfor %}
+   </table>
+        </td>
+
+
+<td>
+
+<table style="margin-top:0%;margin-bottom:0.5% ;text-align:center;font-size:0.8em" width="100%" class="table  table-bordered" id="dataTables-example"> savings table
+    <tr style="background-color: blue">
+        <td style="color:white">S/N</td>
+        <td style="color:white">Customer</td>
+        <td style="color:white">amount</td>
+<!--         <td style="color:white">sav</td>
+        <td style="color:white">mer</td> -->
+    </tr>
+{% for kx in b.customer %}
+
+      <tr >
+        <td>{{forloop.counter}} .</td>
+        <td> {{kx.customer.customer.surname}}</td>
+        <td> {{kx.amount|intcomma}}</td>
+<!--         <td> {{b.sav}} ({{b.sdd}})</td>
+        <td> {{b.mer}}</td> -->
+
+        <!-- </td> -->
+
+
+    </tr>
+{% endfor %}
+</table>
+</td>
+
+    </tr>
+
+
+</table>
+
+{% endfor %}
+
+{% endblock %}

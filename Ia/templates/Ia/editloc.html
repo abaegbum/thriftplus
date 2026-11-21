@@ -1,0 +1,74 @@
+
+
+
+
+<div style="text-align:center">Edit Customer Location</div>
+
+
+<form action="/fts/customer/viewwallet/editlocation/" method="POST" onsubmit="disable(this)">
+  {% csrf_token %}
+
+<table style="margin-top:01%;margin-bottom:0.2%;font-size:0.9em" width="100%" class="table  table-bordered" id="dataTables-example">
+  
+            <tr >
+              <td >Name </td>
+                <td> {{ customer.surname }}  {{ customer.firstname }}   {{ customer.othername }}</td>
+
+            </tr>
+            <tr >
+              <td style='font-weight:bold'>Current Location</td>
+                <td> {{ customer.location }}</td>
+
+            </tr>
+
+            <tr >
+
+
+              <td style='font-weight:bold'>New Location</td>
+
+
+
+                <td>        
+                         <select name="location" id="#id_location" required >
+                            <option value="">-----</option>
+                             {% for pincode in k %}
+                                 <option value="{{pincode.location}}">{{pincode.location}}</option>
+                             {% endfor %}
+                        </select>
+
+                </td>
+
+            </tr>
+
+
+
+</table>
+
+
+ 
+<input type="hidden" name="wallet" id="wallet"  readonly="readonly" value="{{ wallet }}" class ="loginTxtbox">
+
+
+<table style="margin-top:0%;margin-bottom:0%;font-size:0.8em" width="100%" class="table  table-bordered" id="dataTables-example">
+  <tr>
+    <td >
+      <input class="btn btn-lg btn-success btn-block" name="submit" type= "submit" value="Save">
+    </td>
+</tr>
+</table>
+
+</form>
+
+
+
+    <script language="javascript" type="text/javascript">
+        function disable(f)
+        {
+            var button = f.elements['submit'];
+            button.value = 'Processing';
+            button.disabled = 'true';
+            return true;
+        }
+    </script>
+
+

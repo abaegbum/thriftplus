@@ -1,0 +1,115 @@
+
+
+
+{% load humanize %}
+
+
+
+
+  <form action="/sms/customer/savesms/saveoptions/" method="POST" onsubmit="disable(this)">
+    {% csrf_token %}
+<div style="text-align:center">Buy SMS</div>
+
+
+
+
+
+<table style="margin-top:0%;margin-bottom:0.6%;font-size:0.8em;text-align:rigiht" width="100%" class="table  table-bordered" id="dataTables-example">
+  <tr>
+    <td >Total unallocated sms </td>
+    <td>{{company.currency_code}}  {{sms_balance.balance}}</td>
+  </tr>
+
+</table>
+
+<table style="margin-top:00%;margin-bottom:0.2%;font-size:0.7em" width="100%" class="table  table-bordered" id="dataTables-example">
+
+            <tr >
+             <td style='font-weight:bold'>Business Year</td>
+                <td> 
+                          <select name="myyear" id="id_myyear" required >
+
+                              {% for pincode in year %}
+                                  <option value="{{pincode.year}}">{{pincode.year}}</option>
+                              {% endfor %}
+                         </select>
+                </td>
+            </tr>
+
+
+            <tr >
+              <td style='font-weight:bold'>Name </td>
+                <td> {{ customer.surname }} {{ customer.firstname }} {{ customer.othername }}</td>
+
+            </tr>
+
+
+            <tr >
+              <td style='font-weight:bold'>Wallet</td>
+                <td> {{ customer.wallet }}</td>
+
+            </tr>
+
+            <tr >
+              <td style='font-weight:bold'>Phone</td>
+                <td> {{ customer.phone }}</td>
+
+            </tr>
+
+
+            <tr >
+              <td style='font-weight:bold'>SMS Amount</td>
+                <td> <input type="number" id='id_amount' name="amount" required></td>
+
+            </tr>
+</table>
+
+
+     <table style="margin-top:0%;margin-bottom:04%;font-size:0.7em;text-align:center" width="100%" class="table  table-bordered" id="dataTables-example">
+      <tr>
+        <td>SMS Balance</td>
+        <td> {{company.currency_code}}  {{balance|intcomma}}</td>
+      </tr>
+     </table>
+
+
+
+
+        <input type="hidden" name="branch" readonly="readonly" value="{{ customer.branch.id }}">
+
+  <input type="hidden" name="email" value="{{user.email}}" readonly="readonly">
+
+  <input type="hidden" name="wallet"  readonly="readonly" value="{{ customer.wallet }}" class ="loginTxtbox">
+
+
+        <table style="margin-top:0%;margin-bottom:04%" width="100%" class="table  table-bordered table-hover" id="dataTables-example">
+          <td >
+            <input class="btn btn-lg btn-success btn-block" name="submit" type= "submit" value="Continue"></td>
+          
+        </table>
+
+    </table>
+
+
+    </form>
+
+
+
+    <script>
+        $(document).ready(function() {
+            $("#id_amount").focus();
+        });
+    </script>
+
+
+<script language="javascript" type="text/javascript">
+        function disable(f)
+        {
+            var button = f.elements['submit'];
+            button.value = 'Processing';
+            button.disabled = 'true';
+            return true;
+        }
+    </script>
+
+

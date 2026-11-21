@@ -1,0 +1,100 @@
+
+
+
+<form action="/fts/customer/thrift/addthrift/" method="POST" onsubmit="disable(this)">
+    {% csrf_token %}
+
+<table style="margin-top:0.4%;margin-bottom:0%;font-size:0.6em" width="100%" class="table  table-bordered" id="dataTables-example">
+<tr>
+   <td style='font-weight:bold'>Thrift</td>
+   <td> 
+ <input type="number" name="thrift" class="form-control" id="id_thrift" required placeholder="Enter thrift here" >
+ </td>
+</tr>
+</table>
+
+<table style="margin-top:0.4%;margin-bottom:0%;font-size:0.6em" width="100%" class="table  table-bordered" id="dataTables-example">
+<tr>
+   <td style='font-weight:bold'>Service Charge</td>
+   <td> 
+ <input type="number" name="service charge" class="form-control" id="id_service_charge" required placeholder="Enter service charge" >
+ </td>
+</tr>
+
+  </table>
+
+
+<table style="margin-top:0.42%;margin-bottom:0%;font-size:0.6em" width="100%" class="table  table-bordered" id="dataTables-example">
+   <td ><input class="btn btn-lg btn-success btn-block" name="submit" type= "submit" value="Save Thrift"></td>
+</table>
+
+<input type="hidden" name="month" id="month"  readonly="readonly" value="{{ month }}" class ="loginTxtbox">
+    <input type="hidden" name="wallet" id="wallet"  readonly="readonly" value="{{ wallet }}" class ="loginTxtbox">
+      <input type="hidden" name="card" id="card"  readonly="readonly" value="{{ card }}" class ="loginTxtbox">
+      <input type="hidden" name="cycle" id="cycle"  readonly="readonly" value="{{ cycle }}" class ="loginTxtbox">
+
+      <input type="hidden" name="year" id="id_year"  readonly="readonly" value="{{ year }}" class ="loginTxtbox">
+</form>
+
+
+
+
+
+    <script type="text/javascript" language="javascript">
+        function getmonth(){
+            var state = $("#id_wallet").val();
+            // alert(state);
+            var url = "/fts/thrift/addthrift/addajax/";
+            var i = 0;
+            var data='userid='+state;
+            $("#id_month ").val('');
+            $("#id_month").html('');
+            if (state != undefined){
+                $.ajax({
+                    type: "POST",
+                    url: url,
+                    data:data,
+                    success: function(data){
+                        var options = '';
+                        for (i=0; i<data.length; i++){
+                            options += '<option value="' + data[i] +'">' + data[i] + '</option>'
+                        }
+                        $("#id_month").append(options);
+                    }
+                })
+            }
+        }
+
+    </script>
+
+
+
+
+
+        <script>
+        $(document).ready(function() {
+            const textA =document.getElementById('id_thrift');
+            const textB= document.getElementById('id_service_charge');
+
+            textA.addEventListener('input',
+                function()
+                {
+                    textB.value= textA.value;
+                });
+
+            $("#id_thrift").focus();
+            });
+    </script>
+
+
+
+    <script language="javascript" type="text/javascript">
+        function disable(f)
+        {
+            var button = f.elements['submit'];
+            button.value = 'Processing';
+            button.disabled = 'true';
+            return true;
+        }
+    </script>
+

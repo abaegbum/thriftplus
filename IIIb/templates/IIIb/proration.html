@@ -1,0 +1,257 @@
+
+
+{% extends 'IIIb/proration_base.html' %}
+{% block content %}
+
+
+<div style="text-align:center;font-weight:bold"> PRORATION MENU</div>
+
+   <table style="margin-top:0%;margin-bottom:01%;font-size:0.8em" width="100%" class="table  table-bordered" id="dataTables-example">
+<div>{{msg}}</div>
+    <tr style="text-align:center;">
+      <td  style="background:blue">
+          <a href="/IIIb/threeb/proration/"  style="color:white">Proration</a>
+      </td>
+<!--       <td>
+          <a href="/IIIb/threeb/loans/lr/"  style="color:red">Loans</a>
+      </td>
+      <td>
+          <a href="/IIIb/threeb/loans/purchases/"  style="color:red">Commodities</a>
+      </td> -->
+      <td>
+          <a href="/IIIb/threeb/loans/log/"  style="color:red">Proration Log</a>
+      </td>
+    </tr>
+</table>
+
+
+
+<form  action="/IIIb/threeb/proration/" method="POST" >
+{% csrf_token %}
+
+<table style="margin-top:0%;margin-bottom:02%;font-size:0.8em" width="100%" class="table table-bordered" id="dataTables-example">
+
+            <tr >
+             <td style="font-weight:bold">Year</td>
+                <td> 
+                          <select name="businessyear" id="id_businessyear" required >
+                              {% for pincode in year %}
+                                  <option value="{{pincode.year}}">{{pincode.year}}</option>
+                              {% endfor %}
+                         </select>
+                </td>
+            </tr>
+
+
+          <tr>
+                <td style='font-weight:bold'>Month</td>
+                <td>
+                    <select  id="id_month">
+                     <option value="-">-----</option>             
+                     <option value="1">January</option>
+                     <option value="2">February</option>
+
+                     <option value="3">March</option>
+                     <option value="4">April</option>
+
+                     <option value="5">May</option>
+                     <option value="6">June</option>
+                     <option value="7">July</option>
+                     <option value="8">August</option>
+
+                     <option value="9">September</option>
+                     <option value="10">October</option>
+
+                     <option value="11">November</option>
+                     <option value="12">December</option>
+
+
+                     </select>
+                 </td>
+        </tr>
+
+
+          <tr>
+                <td style='font-weight:bold'>Status</td>
+                <td>
+                    <select  id="id_status">
+                     <option value="-">-----</option>             
+                     <option value="Awaiting Execution">Awaiting Proration</option>
+                     <option value="Executed">Prorated</option>
+                     <!-- <option value="Declined">Declined</option> -->
+
+                     </select>
+                 </td>
+        </tr>
+
+
+ 
+</table>
+
+
+
+<table width="100%" class="table  table-bordered" id="dataTables-example">
+
+           <tr>
+                <div class="boxscenaros"></div>
+           </tr>
+</table>
+ 
+
+
+</form>
+
+
+<div id="cancel"></div>
+<div id="pay"></div>
+
+   <script type="text/javascript" >
+        $(document).ready(function() {            
+            $("#id_status").change(function () {
+                autopost20p1();
+            });
+
+            $("#id_month").change(function () {
+                autopost20p1();
+            });
+
+            $("#id_month").focus();
+            autopost20p1();
+        });
+    </script>
+
+
+  <script type="text/javascript" language="javascript">
+        function autopost20p1(){
+            var state = $("#id_businessyear").val() + ":" + $("#id_month").val()+ ":" + $("#id_status").val();
+            // alert(state)
+            var url = "/IIIb/threeb/loans/scenarios/";
+            var i = 0;
+            var data='userid='+state;
+            $.ajax({
+                type:"POST",
+                url:url,
+                data:data,
+                success:function(html) {
+                    $(".boxscenaros").show();
+                    $(".boxscenaros").html(html);
+                }
+            });
+            return false;
+        }
+    </script>
+
+
+
+<script type="text/javascript" language="javascript">
+    function prooneoff(){
+        var state= $("#id_month").val()+ ":" + $("#id_scenarios").val();
+        // alert(state);
+        var url = "/IIIb/threeb/savings/prorate/wallet/";
+        var i = 0;
+        var data='userid='+state;
+        $.ajax({
+            type:"POST",
+            url:url,
+            data:data,
+            success:function(html) {
+                $("#pay").html(html);
+                getdial();
+            }
+        });
+        return false;
+    }
+
+</script>
+
+<script type="text/javascript" language="javascript">
+    function getdial(){
+        var diaOpts = {
+            autoOpen:true,
+            // appendTo:"body1",
+            // modal:true,
+            // position: ["center", "middle"],
+            height:'auto',
+            width:'auto',
+            title:' If no, touch this box to close' ,
+            closeOnEscape:true,
+            show: true,
+            hide: true,
+            bgiframe: true
+        };
+        $("#pay").dialog(diaOpts);
+    }
+
+</script>
+
+
+
+<script type="text/javascript" language="javascript">
+    function prorate(){        
+        var state = $("#id_businessyear").val() +  ":" + $("#id_month").val();
+        // alert(state)
+        var url = "/IIIb/threeb/proration/all/";
+        var i = 0;
+        var data='userid='+state;
+        $.ajax({
+            type:"POST",
+            url:url,
+            data:data,
+            success:function(html) {
+                $("#cancel").html(html);
+                getcancel();
+            }
+        });
+        return false;
+    }
+
+</script>
+
+<script type="text/javascript" language="javascript">
+    function details(vid){        
+        var state = vid + ':'+$("#id_businessyear").val()+ ":" + $("#id_month").val()+ ":" + $("#id_status").val();
+        // alert(state)
+        var url = "/IIIb/threeb/proration/details/";
+        var i = 0;
+        var data='userid='+state;
+        $.ajax({
+            type:"POST",
+            url:url,
+            data:data,
+            success:function(html) {
+                $("#cancel").html(html);
+                getcancel();
+            }
+        });
+        return false;
+    }
+
+</script>
+
+<script type="text/javascript" language="javascript">
+    function getcancel(){
+        var diaOpts = {
+            autoOpen:true,
+            // appendTo:"body1",
+            // modal:true,
+            // position: ["center", "middle"],
+            height:'auto',
+            width:'auto',
+            title:' Touch this box to close' ,
+            closeOnEscape:true,
+            show: true,
+            hide: true,
+            bgiframe: true
+        };
+        $("#cancel").dialog(diaOpts);
+    }
+
+</script>
+
+
+ 
+
+{% endblock %}
+
+
+

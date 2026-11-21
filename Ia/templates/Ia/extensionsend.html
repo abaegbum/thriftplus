@@ -1,0 +1,60 @@
+
+
+
+
+   <table style="margin-top:0%;margin-bottom:01%" width="100%" class="table  table-bordered" id="dataTables-example">
+
+<tr >
+     
+ <input class="btn btn-lg btn-success btn-block" Onclick ="sendsub()" name="submit" type= "submit" value="Check Out">
+   
+       
+
+</tr>
+
+</table>
+
+
+
+
+<div id="send"></div>
+
+<script type="text/javascript" language="javascript">
+    function sendsub(){
+        var state = "{{user}}" + ":" + $("#id_pack").val()+ ":" + $("#id_duration").val();
+        // alert(state);
+        var url = "/sysadmin/sysadmin/sysadmin/sendit/";
+        var i = 0;
+        var data='userid='+state;
+        $.ajax({
+            type:"POST",
+            url:url,
+            data:data,
+            success:function(html) {
+                $("#send").html(html);
+                getdial();
+            }
+        });
+        return false;
+    }
+</script>
+<script type="text/javascript" language="javascript">
+    function getdial(){
+        var diaOpts = {
+            autoOpen:true,
+            // appendTo:"body",
+            // modal:true,
+            // position: ["center", "middle"],
+            height:'auto',
+            width:'auto',
+            title:'Touch the box to close' ,
+            closeOnEscape:true,
+            show: true,
+            hide: true,
+            bgiframe: true
+        };
+        $("#send").dialog(diaOpts);
+    }
+
+</script>
+

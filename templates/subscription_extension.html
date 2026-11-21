@@ -1,0 +1,100 @@
+{% extends 'subscription_base.html' %}
+{% block content %}
+
+
+<div style="text-align:center">Back Office Subscription Extension</div>
+   <table style="margin-top:0%;margin-bottom:01%" width="100%" class="table  table-bordered" id="dataTables-example">
+
+    <tr style="text-align:center;">
+         <td ><a href="/subscription/" style="color:red">Subscription</a></td>
+         <td style="background:blue"><a href="/extension/" style="color:white">Upgrade</a></td>
+
+    </tr>
+</table>
+
+
+<table style="margin-top:01%;margin-bottom:2%;text-align:center;font-size:0.8em" width="100%" class="table  table-bordered" id="dataTables-example">
+
+   <tr>
+     <td style='font-weight:bold'>Category</td>
+     <td>
+        <select name="subtype" id="id_subtype">
+        <option value="-----">-----</option>
+         <option value="standard">Standard</option>
+         <option value="custom">Custom</option>
+       </select>
+     </td>
+   </tr>
+
+
+</table>
+
+
+
+        <tr>
+
+            <td >
+                <div class="box22"></div>
+            </td>
+
+        </tr>
+
+
+
+
+
+    <script>
+        $(document).ready(function() {
+            var pickerOpts = {
+                //appendText: "mm/dd/yy",
+                //defaultDate: "+5",
+                showOtherMonths: true,
+                changeMonth: true,
+                changeYear: true,
+                dateFormat:"yy-mm-dd"
+            };
+
+            autpostlist();
+        });
+    </script>
+
+
+
+   <script type="text/javascript" >
+        $(document).ready(function() {
+
+            $("#id_subtype").change(function () {
+                autpostlist();
+            });
+
+            $("#id_subtype").focus();
+
+        });
+    </script>
+
+
+    <script type="text/javascript" language="javascript">
+        function autpostlist(){
+            var state = $("#id_subtype").val() + ":" + "{{user}}";
+            // alert(state);
+
+            var url = "/subty/";
+            var i = 0;
+            var data='userid='+state;
+            $.ajax({
+                type:"POST",
+                url:url,
+                data:data,
+                success:function(html) {
+                    $(".box22").show();
+                    $(".box22").html(html);
+
+                }
+            });
+            return false;
+        }
+    </script>
+
+
+
+{% endblock %}

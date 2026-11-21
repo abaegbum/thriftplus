@@ -1,0 +1,101 @@
+
+
+
+
+{% load humanize %}
+
+
+
+
+<!-- <div style='font-size: 0.6em'>Proration breakdown for <span style='color:red'> {{month}} {{year}}  </span></div> -->
+
+
+     <table style="margin-top:0%;margin-bottom:0%;font-size: 0.6em" width="100%" class="table  table-bordered" id="dataTables-example">
+
+    <tr>
+        <td style="font-weight:bold;" >Name</td>
+        <td>{{coop.staff.surname|title}} {{coop.staff.firstname|title}} {{coop.staff.othername|title}}</td>
+    </tr>
+
+    <tr>
+        <td style="font-weight:bold;"> Period </td>
+        <td>{{month}} {{ year}}</td>
+    </tr>
+
+     </table>         
+     <table style="margin-top:0%;margin-bottom:0%;font-size: 0.6em;text-align: center;" width="100%" class="table  table-bordered" id="dataTables-example">
+
+        <tr style="font-weight: bold;text-align:left ;">
+            <td>S/N</td>
+            <td>Destination</td>
+            <td>Amount ({{coop.branch.currency_code}})</td>
+        </tr>
+
+        {% for k in prop %}
+        <tr> 
+        <td>{{forloop.counter}} .</td> 
+        <td>{{k.scheme}}</td>
+        <td> {{k.amount|intcomma}}</td>
+        </tr>
+        {% endfor %}
+
+</table>
+
+
+     <table style="margin-top:0%;margin-bottom:0%;font-size: 0.8em" width="100%" class="table  table-bordered" id="dataTables-example">
+        <tr>
+
+         <td >
+          
+         <input  type='button' class="btn btn-lg btn-success btn-block" value="Continue"
+         onclick="closedel();">
+
+
+        </td>
+
+      </tr>
+    </table>
+
+
+
+
+
+
+<script>
+    function closedel() { 
+        $("#cancel").dialog("close");
+    }
+</script>
+
+
+
+
+
+
+   <script language="javascript" type="text/javascript">
+        function disable(f)
+        {
+            var button = f.elements['submit'];
+            button.value = 'Processing';
+            button.disabled = 'true';
+            return true;
+        }
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

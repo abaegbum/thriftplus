@@ -1,0 +1,76 @@
+
+
+
+
+{% load humanize %}
+
+
+
+<table style="margin-top:0.2%;margin-bottom:0%;text-align:center;font-size:0.6em" width="100%" class="table  table-bordered" id="dataTables-example">
+    {% if thriftrec %}
+     <thead >
+        <tr style="font-weight:bold">
+           <td >S/N</td>
+           <td >Date</td>
+           <td >Desc</td>
+           <td >Amt ({{branch.currency_code}})</td>
+           <td >Bal</td>
+           <!-- <td >Status</td> -->
+        </tr>
+    </thead>
+
+            {% for student in thriftrec %}
+
+               {% if student.trans.status == 'CR' %}
+                <tr style="color:green">
+                  <td >{{ forloop.counter }}.</td>
+                  <td >{{ student.trans.recdate }} </td>
+                  <td style="text-align:center">{{ student.trans.description }}</td>
+                  <td >{{ student.trans.amount|intcomma }}</td>
+                  <td >{{ student.bal|intcomma }}</td>
+                  <!-- <td >{{ student.status }}</td> -->
+
+                  </tr>
+
+                {% else %}
+
+                <tr style="color:red">
+
+                  <td >{{ forloop.counter }}.</td>
+                  <td >{{ student.trans.recdate }} </td>
+                  <td style="text-align:center"> {{ student.trans.description }}</td>
+                  <td > - {{ student.trans.amount|intcomma }}</td>
+
+                  <td >{{ student.bal|intcomma }}</td>
+                  <!-- <td >{{ student.status }}</td> -->
+
+                </tr>
+
+                 {% endif %}
+            {% endfor %}
+
+
+{% endif %}
+</table>
+
+
+
+<table style="margin-top:0.2%;margin-bottom:0.6%;text-align:center;font-size:0.6em" width="100%" class="table  table-bordered" id="dataTables-example">
+
+<tr>
+  <td> {{cycle}} Balance</td>
+  <td style="font-weight:bold"> {{branch.currency_code}} {{bal|intcomma}} </td>
+  </tr>
+</table>
+
+
+<table style="margin-top:0.2%;margin-bottom:0.6%;text-align:center;font-size:0.6em" width="100%" class="table  table-bordered" id="dataTables-example">
+
+<tr >
+
+  <td >
+<a href="/fts/mycustomers/dashboard/{{wallet}}/">Continue</a>
+</td>
+</tr>
+</table>
+

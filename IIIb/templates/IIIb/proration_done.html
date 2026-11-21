@@ -1,0 +1,57 @@
+
+
+{% load humanize %}
+
+
+
+
+
+{% if staff_totals %}
+
+
+<div style="text-align:center;font-weight:bold;margin-top:0%;margin-bottom:0%;"> {{status }}  details for {{ month}}  {{ year }}</div>
+
+
+
+   <table style="margin-top:0%;margin-bottom:0%;font-size:0.8em;text-align:center" width="100%" class="table  table-bordered" id="dataTables-example">
+    <tr>
+        <th>S/N</th>
+        <th>Cooperators</th>
+        <th>Total Deduction</th>
+    </tr>
+
+    {% for staff in staff_totals %}
+    <tr>
+        <td >{{forloop.counter}} .</td>
+        <td style="text-align:left"><a href="#" onClick= "details({{staff.staff__id}})"> {{ staff.staff__staff__surname|title }}  {{ staff.staff__staff__firstname|title }} {{ staff.staff__staff__othername|title }}</a> </td>
+        <td> {{company.currency_code}} {{ staff.staff_total|intcomma }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+
+ <table style="margin-top:0%;margin-bottom:0%;font-size:1em" width="100%" class="table  table-bordered">
+
+        <tr style='text-align:center;font-weight:bold'>
+            <td>Total</td>
+            <td>{{company.currency_code}} {{total|intcomma}}</td>
+        </tr>
+
+</table>
+
+
+ <table style="margin-top:0.5%;margin-bottom:0%;font-size:1em" width="100%" class="table  table-bordered"> 
+      <tr>
+
+        <td style="color:blue;text-align:center">
+            <a href="/IIIb/threeb/proration/" >Continue</a>
+        </td>
+</tr>
+
+       </table>
+
+{% else %}
+
+<div style="color:blue;text-align:center">no records found </div>
+
+{% endif %}

@@ -1,0 +1,140 @@
+<script type="text/javascript" src='/static/mato/JS/jquery-1.5.js'></script>
+
+
+
+{% extends 'IIIb/hrbase.html' %}
+{% block content %}
+
+{% load humanize %}
+
+<div style="text-align:center">Cooperative Reports</div>
+
+
+   <table style="margin-top:0%;margin-bottom:01%;font-size:0.8em" width="100%" class="table  table-bordered" id="dataTables-example">
+
+    <tr style="text-align:center;">
+      <td  style="background:blue">
+          <a href="/IIIb/threeb/staff/myh-r/"  style="color:white">Income</a>
+      </td>
+      <td>
+          <a href="/IIIb/threeb/staff/mydeductions/"  style="color:red">Deductions</a>
+      </td>
+      <td>
+          <a href="/IIIb/threeb/staff/myadditions/"  style="color:red">Additions</a>
+      </td>
+      <td>
+          <a href="/IIIb/threeb/staff/mynets/"  style="color:red">Net</a>
+      </td>
+    </tr>
+</table>
+
+
+
+ <table style="margin-top:0%;margin-bottom:0.2%;font-size:0.8em" width="100%" class="table  table-bordered" id="dataTables-example">
+
+            <tr >
+             <td style="font-weight:bold">Year</td>
+                <td> 
+                          <select name="businessyear" id="id_businessyear" required >
+                              {% for pincode in year %}
+                                  <option value="{{pincode.year}}">{{pincode.year}}</option>
+                              {% endfor %}
+                         </select>
+                </td>
+            </tr>
+
+  <tr> 
+    <td style="font-weight:bold">E-mail</td>
+    <td>{{msg.staff.email}}</td>
+  </tr>
+
+  <tr> 
+    <td style="font-weight:bold">Name</td>
+  <td>{{msg.staff.surname|title}} {{msg.staff.firstname|title}}   {{msg.staff.othername|title}} </td>
+  </tr>
+
+ </table>
+
+
+
+ <table style="margin-top:0%;margin-bottom:02%;font-size:0.8em" width="100%" class="table  table-bordered" id="dataTables-example">
+
+           <tr>
+                <td style='font-weight:bold'>Month</td>
+                <td>
+                    <select  id="id_month" >
+                     <option value="-">-----</option>             
+                     <option value="1">January</option>
+                     <option value="2">February</option>
+
+                     <option value="3">March</option>
+                     <option value="4">April</option>
+
+                     <option value="5">May</option>
+                     <option value="6">June</option>
+                     <option value="7">July</option>
+                     <option value="8">August</option>
+
+                     <option value="9">September</option>
+                     <option value="10">October</option>
+
+                     <option value="11">November</option>
+                     <option value="12">December</option>
+
+
+                     </select>
+                 </td>
+        </tr>
+
+ </table>
+
+<table width="100%" class="table  table-bordered" id="dataTables-example">
+
+           <tr>
+                <div class="boxscenaros"></div>
+           </tr>
+</table>
+ 
+
+
+
+
+    <div id="cancel"></div>
+<div id="pay"></div>
+
+   <script type="text/javascript" >
+        $(document).ready(function() {            
+            $("#id_month").change(function () {
+                autopost20p1();
+            });
+
+            $("#id_month").focus();
+            autopost20p1();
+        });
+    </script>
+
+
+  <script type="text/javascript" language="javascript">
+        function autopost20p1(){
+            var state = $("#id_businessyear").val() + ':'+ $("#id_month").val();
+            // alert(state)
+            var url = "/IIIb/threeb/staff/myh-r/ajax/";
+            var i = 0;
+            var data='userid='+state;
+            $.ajax({
+                type:"POST",
+                url:url,
+                data:data,
+                success:function(html) {
+                    $(".boxscenaros").show();
+                    $(".boxscenaros").html(html);
+                }
+            });
+            return false;
+        }
+    </script>
+    
+{% endblock %}
+
+
+

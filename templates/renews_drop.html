@@ -1,0 +1,62 @@
+
+
+
+{% load humanize %}
+
+
+    
+
+
+
+<table style="margin-top:0%;margin-bottom:02%;font-size:0.6em;text-align:left;" width="100%" class="table  table-bordered" id="dataTables-example">
+
+<tr >
+<td>details</td><td>{{pack.customer_count|intcomma}} Customers, {{pack.staff_count|intcomma}} Staff</td>
+</tr>
+<tr>
+<td>Price</td>
+<td>{{currency}} {{unit|intcomma}}</td>
+</tr>
+
+<tr>
+<td>Discount</td>
+<td>{{currency}} {{discount|intcomma}}</td>
+</tr>
+<tr>
+<td>Total</td>
+<td style='font-size: 1.2em; text-decoration:line-through ;'> {{currency}} {{total|intcomma}}  <i class="fa fa-times fa-1x"></i></td>
+</tr>
+
+
+<tr>
+<td>Discounted Price</td>
+<td>{{currency}} {{amount|intcomma}}   <i class="fa fa-check fa-1x"></td>
+</tr>
+</table>
+
+
+
+
+<table style="margin-top:01%;margin-bottom:0.2%;font-size:0.7em" width="100%" class="table  table-bordered" id="dataTables-example">
+
+<tr >
+
+
+ <td>     
+ <button class="btn btn-lg btn-success btn-block" type ='submit' formaction="/subscription/" >
+  {% csrf_token %}
+                <i class="fa fa-times fa-1x"></i></button>
+  </td>
+
+<td>
+  <button class="btn btn-lg btn-success btn-block" type ='submit' >
+ <i class="fa fa-check fa-1x"></i></button>
+</td>
+
+</tr>
+
+</table>
+<input type="hidden" name="package" readonly="readonly" value="{{ pack.id }}" >
+<input type="hidden" name="duration" readonly="readonly" value="{{ duration }}" >
+<input type="hidden" name="amount" readonly="readonly" value="{{ amount }}" >
+<input type="hidden" name="app" readonly="readonly" value="{{ service }}" >

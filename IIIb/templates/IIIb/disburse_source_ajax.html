@@ -1,0 +1,61 @@
+<table style="margin-top:0%;margin-bottom:02%;font-size:0.8em" width="100%" class="table table-bordered" id="dataTables-example">
+
+          <tr>
+                <td style='font-weight:bold'>Application Status</td>
+                <td>
+                    <select  id="id_status">
+                     <option value="-">-----</option>             
+                     <option value="Awaiting Disbursal">Awaiting Disbursal</option>
+                     <option value="Running">Disbursed</option>
+                     <!-- <option value="Approved">Approved</option> -->
+
+
+
+                     </select>
+                 </td>
+        </tr>
+
+</table>
+
+
+
+   <script type="text/javascript" >
+        $(document).ready(function() {
+
+
+            $("#id_source").change(function () {
+                sources();
+            });
+
+            $("#id_status").change(function () {
+                autopostL();
+            }); 
+
+
+            $("#id_status").focus();
+            autopostL();
+        });
+    </script>
+
+
+
+
+      <script type="text/javascript" language="javascript">
+        function autopostL(){
+            var state = $("#id_businessyear").val()+ ":" + $("#id_status").val();
+            // alert(state)
+            var url = "/IIIb/threeb/loans/payout/ajax/";
+            var i = 0;
+            var data='userid='+state;
+            $.ajax({
+                type:"POST",
+                url:url,
+                data:data,
+                success:function(html) {
+                    $(".boxscenaros2").show();
+                    $(".boxscenaros2").html(html);
+                }
+            });
+            return false;
+        }
+    </script>

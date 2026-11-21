@@ -1,0 +1,128 @@
+
+
+{% extends 'Ia/customerdashboard.html' %}
+{% block content %}
+
+
+
+
+{% load humanize %}
+
+
+<div style="margin-top:1%;margin-bottom:0.93%;text-align:center;color:red">Loan Details</div>
+
+
+<form action="/fts/customer/overfdraft/generalsavings/approveloan/" method="POST"  onsubmit="disable(this)">
+
+<table style="margin-top:01%;margin-bottom:0%;font-size:0.7em" width="100%" class="table  table-bordered" id="dataTables-example">
+
+            <tr >
+              <td >Wallet Address</td>
+                <td> {{ customer.customer.wallet }}</td>
+
+            </tr>
+            <tr >
+              <td style='font-weight:bold'>Name </td>
+                <td> {{ customer.customer.surname }} {{ customer.customer.firstname }} {{ customer.customer.othername }}</td>
+            </tr>
+
+            <tr >
+            <tr >
+              <td style='font-weight:bold'>Business Year </td>
+                <td> {{ year }} </td>
+            </tr>
+
+            <tr >
+              <td style='font-weight:bold'>Card </td>
+                <td> {{ card }} </td>
+            </tr>
+          
+                      <tr >
+              <td style='font-weight:bold'>Product </td>
+                <td> Ajo</td>
+            </tr>
+
+            <tr >
+              <td style='font-weight:bold'>Loan Package  </td>
+                <td> {{ package }}</td>
+            </tr>
+
+
+                        <tr >
+              <td style='font-weight:bold'>Loan Amount</td>
+                <td>{{company.currency_code}}  {{ amount|intcomma }}</td>
+            </tr>
+
+
+
+</table>
+
+   <table style="margin-top:01%;margin-bottom:0%;font-size:0.7em" width="100%" class="table  table-bordered" id="dataTables-example">
+    <thead>
+        <tr style="text-align:center;font-weight:bold"> 
+           <td >Duration</td>
+           <td >Frequency </td>
+           <td >Pay back</td>
+        </tr>
+        <tr style="text-align:center"> 
+           <td >   {{ duration}} Weeks</td>
+           <td> {{company.currency_code}} {{repayment|intcomma}} {{freq}} </td>
+           <td >  {{company.currency_code}} {{ due|intcomma}} </td>
+        </tr>
+
+</table>
+
+
+   <table style="margin-top:0%;margin-bottom:0.2%" width="100%" class="table  table-bordered" id="dataTables-example">
+    <tr>
+            <td>
+              <input style="font-size:0.8em"  class="btn btn-lg btn-success btn-block" name="submit" type= "submit" value="Approve">
+            </td>
+
+              <td >
+                <a class="btn btn-lg btn-success btn-block"  style="font-size:0.8em" href="/fts/mycustomers/dashboard/{{wallet}}/">Decline</a>
+              </td>
+   </tr>
+
+ </table>
+
+<input type="hidden" name="wallet" readonly="readonly" value="{{ wallet }}">
+<input type="hidden" name="card"  readonly="readonly" value="{{card}}" >
+<input type="hidden" name="year"  readonly="readonly" value="{{year}}" >
+<input type="hidden" name="package"  readonly="readonly" value="{{package}}" >
+<input type="hidden" name="amount"  readonly="readonly" value="{{amount}}" >
+<input type="hidden" name="repayment"  readonly="readonly" value="{{repayment}}" >
+<input type="hidden" name="due"  readonly="readonly" value="{{due}}" >
+<input type="hidden" name="freq"  readonly="readonly" value="{{freq}}" >
+
+
+
+
+</form>
+
+
+<script language="javascript" type="text/javascript">
+        function disable(f)
+        {
+            var button = f.elements['submit'];
+            button.value = 'Processing';
+            button.disabled = 'true';
+            return true;
+        }
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
+
+
+

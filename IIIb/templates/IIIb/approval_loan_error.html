@@ -1,0 +1,33 @@
+
+
+{% extends 'IIIb/approvalbase.html' %}
+{% block content %}
+
+
+<div style="text-align:center;font-weight:bold">STAFF LOAN APPROVAL </div>
+
+   <table style="margin-top:0%;margin-bottom:01%;font-size:0.8em" width="100%" class="table  table-bordered" id="dataTables-example">
+
+
+
+    <tr style="text-align:center;">
+      <td  style="background:blue">
+          <a href="/IIIb/threeb/approvals/"  style="color:white">Loans</a>
+      </td>
+      <td>
+          <a href="/IIIb/threeb/loans/commodities/"  style="color:red">Commodities</a>
+      </td>
+      <td>
+          <a href="/IIIb/threeb/loans/log/"  style="color:red">Log</a>
+      </td>
+    </tr>
+</table>
+
+
+<div style="text-align:center;font-weight:bold">{{msg}}</div>
+
+
+{% endblock %}
+
+
+

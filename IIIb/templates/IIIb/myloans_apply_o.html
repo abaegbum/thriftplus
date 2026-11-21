@@ -1,0 +1,184 @@
+
+
+
+{% extends 'IIIb/myloans_base_o.html' %}
+
+{% block content %}
+{% load humanize %}
+
+<div style="text-align:center;font-weight:bold">Loan Request Form</div>
+   <table style="margin-top:0%;margin-bottom:0%;font-size:0.8em" width="100%" class="table  table-bordered" id="dataTables-example">
+
+    <tr style="text-align:center;">
+      <td  style="background:blue">
+          <a href="/IIIb/threeb/staff/request_loan/" style="color:white">Apply</a>
+      </td>
+        <td>
+          <a href="/IIIb/threeb/staff/request_loan/performance/" style="color:red">Performance</a>
+      </td>
+
+      <td >
+          <a href="/IIIb/threeb/staff/request_loan/history/" style="color:red">Loan Log</a>
+      </td>
+    </tr>
+</table>
+
+
+
+<!-- <form action="/IIIb/threeb/staff/request_loan/apply/" method='POST'> -->
+
+    <form action="/IIIb/threeb/staff/request_loan/" method='POST' onsubmit="disable(this)">
+        {% csrf_token %}
+
+   <table style="margin-top:0%;margin-bottom:0%;font-size:1em" width="100%" class="table  table-bordered" id="dataTables-example">
+            <tr >
+             <td style="font-weight:bold">Year</td>
+                <td> 
+                          <select name="businessyear" id="id_businessyear" required >
+                              {% for pincode in year %}
+                                  <option value="{{pincode.year}}">{{pincode.year}}</option>
+                              {% endfor %}
+                         </select>
+                </td>
+            </tr>
+     
+          
+           <tr >
+               <td style='font-weight:bold'>E-Mail</td>
+               <td>{{user}}</td>
+             </tr>
+
+          <tr>
+            <td style='font-weight:bold'>Name</td>
+            <td> {{name.surname}} {{name.firstname}}  {{name.othername}}</td>
+          </tr>
+
+
+          <tr >
+              <td style='font-weight:bold'>Eligibility</td>
+              <td> Eligible</td>
+          </tr>
+
+          <tr >
+              <td style='font-weight:bold'>Collateral</td>
+              <td> {{company.currency_code}}  {{  amount|intcomma}}</td>
+          </tr>
+          <tr >
+              <td style='font-weight:bold' >Max. Loan</td>
+              <td> {{company.currency_code}}  {{ max|intcomma }}</td>
+          </tr>
+           <tr >
+              <td style="font-weight:bold" >Amount</td>
+                    <td>
+                    <input type="number" name="amount" id="id_amount" class="form-control"  placeholder="Amount" required>
+                  </td>
+             </tr> 
+    
+            <tr >
+             <td style="font-weight:bold">Loan options</td>
+                <td> 
+                          <select name="loans" id="id_loans" required >
+                              {% for pincode in loan %}
+                                  <option value="{{pincode.description}}">{{pincode.description}}</option>
+                              {% endfor %}
+                         </select>
+                </td>
+            </tr>
+
+
+       </table>
+
+
+ <table width="100%" class="table  table-bordered" id="dataTables-example">
+
+           <tr>
+                <div class="boxloan"></div>
+           </tr>
+</table>
+       </form>
+
+
+
+
+
+<script type="text/javascript">
+    $(document).ready(function() {            
+        $("#id_loans").change(function () {
+            autopostloan();
+        });
+
+        // $("#id_amount").change(function () {
+        //     autopostloan();
+        // });
+
+        // Keyup event for id_amount
+        $("#id_amount").keyup(function () {
+            autopostloan();
+
+        });
+
+        $("#id_amount").focus();
+
+        // autopostloan();
+        loan_packages();
+    });
+</script>
+
+
+
+
+   <script type="text/javascript" language="javascript">
+        function loan_packages(){
+            var state = "{{user}}";
+            // alert(state);
+            var url = "/IIIb/threeb/staff/request_loan/loan_packages/";
+            var i = 0;
+            var data='userid='+state;
+            $("#id_loans").val('');   
+            $("#id_loans").html('');
+            if (state != undefined){
+                $.ajax({
+                    type: "POST",
+                    url: url,
+                    data:data,
+                    success: function(data){
+                        var options = '';
+                        for (i=0; i<data.length; i++){
+                            options += '<option value="' + data[i] +'">' + data[i] + '</option>'
+                        }
+                        $("#id_loans").append(options);
+                        autopostloan();
+
+                    }
+                })
+            }
+        }
+
+    </script>
+
+
+  <script type="text/javascript" language="javascript">
+        function autopostloan(){
+            var state =  "{{max}}" + ':'+  $("#id_loans").val()+ ':'+$("#id_amount").val();
+            // alert(state)
+            var url = "/IIIb/threeb/staff/request_loan/individual/";
+            var i = 0;
+            var data='userid='+state;
+            $.ajax({
+                type:"POST",
+                url:url,
+                data:data,
+                success:function(html) {
+                    $(".boxloan").show();
+                    $(".boxloan").html(html);
+
+                }
+            });
+            return false;
+        }
+    </script>
+
+{% endblock %}
+
+
+

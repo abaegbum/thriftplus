@@ -1,0 +1,69 @@
+
+
+
+
+
+{% extends 'Ia/customerdashboard.html' %}
+{% block content %}
+
+
+{% load humanize %}
+<div style="text-align:center">Deposit Menu</div>
+
+
+<div style='text-align:right'>Current Balance: <span style="color:green">{{company.currency_code}} {{bal|intcomma}}</span></div>
+
+<form action="/fts/gensavings/admin/cashin/" method="POST">
+   {% csrf_token %}
+  
+<table style="margin-top:01%;margin-bottom:0.2%" width="100%" class="table  table-bordered" id="dataTables-example">
+            <tr >
+              <td style='font-weight:bold'>A/C No</td>
+                <td> {{ customer.customer.wallet }}</td>
+
+            </tr>
+            <tr >
+              <td style='font-weight:bold'>Name </td>
+                <td> {{ customer.customer.surname }} {{ customer.customer.firstname }} {{ customer.customer.othername }}</td>
+
+            </tr>
+
+            <tr >
+              <td style='font-weight:bold'>Amount </td>
+                <td> {{ company.currency_code }} {{ amount|intcomma }}</td>
+
+            </tr>
+            <tr >
+              <td style='font-weight:bold'>Amount in words </td>
+                <td> {{ wrd }}  Naira Only</td>
+
+            </tr>
+
+</table>
+
+         <table style="margin-top:0%;margin-bottom:02%;font-size:0.8em" width="100%" class="table  table-bordered" id="dataTables-example">
+          <tr>
+       <td ><input class="btn btn-lg btn-success btn-block" name="submit" type= "submit" value="Deposit Cash"></td>
+
+       <td>       
+           <button formaction="/fts/mycustomers/dashboard/{{wallet}}/" class="btn btn-lg btn-success btn-block" >Cancel </button>
+        </td>
+     </tr>
+   </table>
+
+
+<input type="hidden" name="customer"  readonly="readonly" value="{{ customer.id }}" class ="loginTxtbox">
+
+<input type="hidden" name="wallet" readonly="readonly" value="{{ wallet }}" class ="loginTxtbox">
+
+<input type="hidden" name="amount"  readonly="readonly" value="{{ amount }}" class ="loginTxtbox">
+
+<input type="hidden" name="branch" readonly="readonly" value="{{ branch }}" class ="loginTxtbox">
+</form>
+
+
+
+{% endblock %}
+
+
+

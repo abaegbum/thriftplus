@@ -1,0 +1,52 @@
+
+
+
+{% load humanize %}
+
+
+    
+<table style="margin-top:0%;margin-bottom:0.2%;font-size:0.6em" width="100%" class="table  table-bordered" id="dataTables-example">
+
+            <tr>
+               <td style="font-weight:bold">Thrift</td>
+               <td style='color:grey;'> {{currency}} {{ thrift.thrift|intcomma }} </td>
+            </tr> 
+</table>
+
+
+            
+<table style="margin-top:0%;margin-bottom:02%;font-size:0.6em" width="100%" class="table  table-bordered" id="dataTables-example">
+            <tr>
+                <td style="font-weight:bold">Total Contribution</td>
+               <td style='color:grey;'>{{ add}}</td>
+            </tr> 
+
+</table>
+
+
+<div style="font-size:0.6em;text-align:center;color:red">This cycle is {{status}}</div>
+
+<table style="margin-top:01%;margin-bottom:0.2%;font-size:0.6em" width="100%" class="table  table-bordered" id="dataTables-example">
+<tr>
+    <td style='font-weight:bold'>Change Status</td>
+        <td>
+                <select name="account_type" id="id_account_type" required>
+                 <option value="">-----</option>
+                 <option value="Open">Open</option>
+                 <option value="Closed">Close</option>
+                 </select>
+          </td>
+</tr>
+
+
+</table>
+
+<table style="margin-top:0.2%;margin-bottom:0.6%;text-align:center;font-size:0.8em" width="100%" class="table  table-bordered" id="dataTables-example">
+
+<tr >
+  <td >
+<button formaction ="/fts/thrift/closeaccount/savechange/{{code}}/">Save</button>
+{% csrf_token %}
+</td>
+</tr>
+</table>

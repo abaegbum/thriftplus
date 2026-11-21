@@ -1,0 +1,77 @@
+
+{% load humanize %}
+
+     
+<form action="/fts/thrift/approvals/approvebulk/" method="POST" onsubmit="disable(this)">
+    {% csrf_token %}
+
+
+<div style = 'text-align:center;font-size:0.7em'>
+  {{heading}} ({{product}})</div> 
+<table style="margin-top:0%;margin-bottom:0%;font-size:0.5em"  width="100%" class="table  table-bordered" id="dataTables-example">
+
+    <tr>
+      <td>Transaction Date</td>
+     <td>{{dow}} {{lk}}{{date}}   </td>
+  </tr>
+
+    <tr>
+        <td tyle='font-weight:bold;font-size:0.9em'>Total Sales</td>
+         <td >  {{company.currency_code}} {{ tot|intcomma}} </td>
+    </tr>
+
+  </table>
+
+
+
+
+
+<table style="margin-top:01%;margin-bottom:0%;font-size:0.6em"  width="100%" class="table  table-bordered" id="dataTables-example">                     
+                            
+
+        <tr style="font-weight:bod;text-align:center">
+
+          
+          <td> 
+
+                     <input style="font-size:0.8em" type="text" autofocus required name="cash" class="form-control" id="cash" placeholder="Enter amount here">
+              
+          </td>
+        </tr>
+       
+<input type="hidden" name="amount"  readonly="readonly" value="{{ tot }}" >
+
+<input type="hidden" name="dates"  readonly="readonly" value="{{ dates }}">
+
+<input type="hidden" name="date" readonly="readonly" value="{{ date}}">
+<input type="hidden" name="merchant" readonly="readonly" value="{{ merchant}}">
+
+
+    </table>
+
+ <table width="100%" class="table  table-bordered table-hover" id="dataTables-example">
+  <td >
+    <input style="font-size:0.7em" class="btn btn-lg btn-success btn-block" name="submit" type= "submit"value="Approve">
+
+  </td>    
+</table>
+ </form>
+
+   <script type="text/javascript" >
+        $(document).ready(function() {
+
+            $("#id_amount").focus();
+        });
+    </script>
+
+
+
+    <script language="javascript" type="text/javascript">
+        function disable(f)
+        {
+            var button = f.elements['submit'];
+            button.value = 'Processing';
+            button.disabled = 'true';
+            return true;
+        }
+    </script>

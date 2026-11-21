@@ -1,0 +1,127 @@
+
+
+
+{% extends 'IIIb/mysavings_base_o.html' %}
+
+{% block content %}
+
+{% load humanize %}
+
+
+
+<div style="text-align:center">Savings Scheme Application Form</div>
+   <table style="margin-top:0%;margin-bottom:0%;font-size:0.8em" width="100%" class="table  table-bordered" id="dataTables-example">
+
+
+    <tr style="text-align:center;">
+      <td >
+          <a href="/IIIb/threeb/savings/wallet_packages/" style="color:red">Wallet</a>
+      </td>
+      <td  style="background:blue">
+          <a href="/IIIb/threeb/savings/save_packages/" style="color:white">Savings Scheme</a>
+      </td>
+      <td ><a href="/IIIb/threeb/savings/deposit/view_transactions/" style="color:red">Savings Log</a></td>
+    </tr>
+</table>
+
+
+
+   <table style="margin-top:0%;margin-bottom:0%;font-size:0.8em" width="100%" class="table  table-bordered" id="dataTables-example">
+
+    <tr> 
+      <td style="font-weight:bold">Year</td>
+      <td>{{year}}</td>
+    </tr>
+
+    <tr> 
+      <td style="font-weight:bold">E-mail</td>
+      <td>{{coop.staff.email}}</td>
+    </tr>
+
+    <tr> 
+      <td style="font-weight:bold">Name</td>
+    <td>{{coop.staff.surname|title}}  {{coop.staff.firstname|title}}   {{coop.staff.othername|title}} </td>
+    </tr>
+
+   </table>
+
+
+  <form action="/IIIb/threeb/savings/deposit/packages/" method="POST" onsubmit="disable(this)">
+    {% csrf_token %}
+
+   <table style="margin-top:0.2%;margin-bottom:0%;font-size:0.8em" width="100%" class="table  table-bordered" id="dataTables-example">
+
+     
+
+        <tr> 
+          <td style="font-weight:bold">Account</td>
+          <td>{{package}}</td>
+        </tr>
+
+        <tr> 
+          <td style="font-weight:bold">Monthly deduction</td>
+          <td>{{company.currency_code}} {{amount|intcomma}} </td>
+        </tr>  
+    
+            <tr> 
+          <td style="font-weight:bold">Amount In Words</td>
+          <td> {{ fig}} {{company.currency_description}}</td>
+        </tr>
+
+    </table>
+
+
+
+   <table style="margin-top:0%;margin-bottom:0%;font-size:0.8em" width="100%" class="table  table-bordered" id="dataTables-example">
+          <tr>
+          <td ><input class="btn btn-lg btn-success btn-block" name="submit" type= "submit" value="Authorize">
+            </td >
+            <td ><a class="btn btn-lg btn-success btn-block" href="/IIIb/threeb/savings/save_packages/">Decline</a></td>
+          </tr>
+   </table>
+
+
+<input type="hidden" name="scheme" readonly="readonly" value="{{ package}}" >
+
+<input type="hidden" name="amount" readonly="readonly" value="{{ amount }}">
+
+<input type="hidden" name="year" readonly="readonly" value="{{ year}}" >
+
+<input type="hidden" name="month" readonly="readonly" value="{{ month }}">
+
+<input type="hidden" name="coop" readonly="readonly" value="{{ coop.id}}" >
+
+
+
+  </form>
+
+
+   <script type="text/javascript" >
+        $(document).ready(function() {
+
+            $("#id_email").focus();
+  
+        });
+    </script>
+<script type="text/javascript" language="javascript">
+window.history.pushState(null, "", window.location.href);
+window.onpopstate = function () {
+    window.history.pushState(null, "", window.location.href);
+};
+
+</script>
+
+
+    <script language="javascript" type="text/javascript">
+        function disable(f)
+        {
+            var button = f.elements['submit'];
+            button.value = 'Processing';
+            button.disabled = 'true';
+            return true;
+        }
+    </script>
+{% endblock %}
+
+
+

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html>
+    <body>
+
+
+	<div>Hello {{ surname }},</div>
+
+	<div>{{business}}    is now live on Thriftplus</div>
+	<div>Below is your login details</div>
+  
+
+  	<div> Link:   https://bit.ly/3vLHb9i   </div>
+
+  <div> Email :  {{email}} <br/>
+    Password :  {{password}} <br/>
+  </div>
+
+
+
+<div>Be sure to customize your password after login, using the change password link</div>
+
+<div>Wishing you the best experience.</div>
+
+
+<div>Buchi, A</div>
+
+</body>
+
+
+</html>

@@ -1,0 +1,55 @@
+
+
+
+<table style="margin-top:-1.5%;margin-bottom:0%;font-size:0.7em" width="100%" class="table  table-bordered" id="dataTables-example">
+            <tr >
+                <td>Cash / Asset</td>
+                <td> 
+                          <select name="myloan" id="id_myloan" required >
+                            <option value="">-----</option>                          
+                              {% for  tt in typp %}
+                                  <option value="{{tt}}">{{tt}}</option>
+                              {% endfor %}
+                         </select>
+                </td>
+            </tr>
+
+
+
+    <tr >
+     <td>Standard / Custom</td>
+        <td> 
+                  <select name="type" id="id_type" required >
+                     <option value="">-----</option>
+                     <option value="Standard">Standard</option>
+                     <option value="Custom">Custom</option>                          
+                 </select>
+        </td>
+    </tr>
+
+</table>
+
+
+
+<table style="margin-top:0%;margin-bottom:0.1%" width="100%" class="table  table-bordered" id="dataTables-example">
+
+           <tr >
+                <div class="boxpc"></div>
+           </tr>
+</table>
+
+
+  <script type="text/javascript" >
+        $(document).ready(function() {
+            $("#id_type").change(function () {
+                loanpack();
+            });
+
+            $("#id_myloan").change(function () {
+                loanpack();
+            });
+
+            loanpack();
+     
+        });
+    </script>

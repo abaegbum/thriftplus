@@ -1,0 +1,125 @@
+The cooperator instructs the accountant to
+deduct a fixed amount of money from their salary on a monthly
+basis and hand cash to the manager of the cooperative
+
+
+Standard basic structure of a loan mgt app
+savings_savings_acc				holds all savings and savings scheme monies 	
+
+savings_loan_acc 				
+savings_loan_buffer_account 	
+
+savings_commodity_account
+savings_commodity_buffer_account
+
+
+wallet balance = sum of all 5 accounts!
+
+list of tables
+tb
+
+
+
+
+					My savings
+1. Deposit  ( mandate and excute )
+Overview
+this provides a way to save one-off into your wallet.
+
+list of tables
+A. 		tbliIIIbfieldagent
+B.		tblIIIbbsavingsaccount
+C.		tblIIIbapprovals
+
+I. mandate
+when you issue a mandate to deposit money into your  wallet, it stores directly in the tblIIIbfieldagent table, with a status ='Awaiting Execution' and scheme= "Wallet" [big W] for the month and year
+
+II. execution
+when this mandate is executed (Proration), a duplicate copy of the entry in tblIIIbfieldagent table is saved in the tblIIIbsavingsaccount table such that status ="CR" and account-type="Wallet" [ big W]. The corresponding status in tblIIIbfieldagent changes to 'Executed', while the transaction is recorded in the tblIIIbprorated table such that description = "Wallet" and status ="Executed" for the month and year
+
+III. Notifications
+Email is sent out to the cooperator
+
+IV. Eligibility checks(/IIIb/threeb/savings/wallet/-----def checkdep)
+
+the system checks for eligibility at the point of mandate issue. These tests are necessary to ascertain whether the "amount box" shows up or not :) 
+
+These included;
+
+A. repeat request test: This test fails if its the second time you issuing mandate for the month and year, after a successful previous one,
+
+
+if this passes, 
+
+B. Execution test: This test fails if proration has already been done for the same month and year for which your request is made.
+
+
+V. Error msg
+
+once proration has been done for the month, no new applications arer accepted
+
+
+
+2. saving scheme ( mandate and excute )
+
+Overview
+
+every scheme has its start and end months parameters, howwever,you join a scheme at the month you applied to join and stop when the scheme ends. you arent allowed to exit the scheme before hand. The scheme may include
+
+a. a make shift savings scheme, which can last for a term
+b. compulsory savings scheme for all cooperators, which can last the session
+c. any other temporary/ make shift savings scheme/programs which the organization finds fancy enough and which meets the yearnings of her members 
+
+list of tables
+A. 		tblIIIbstaffsavings_pack
+B.		tblIIIbfieldagent
+C.		tblIIIbsavingsaccount
+D.		tblIIIbapprovals
+
+
+I. Request
+ [lump record] your request to partake a saving scheme is stored in the tblIIIbstaffsavings_pack such that status = "Running" and description = the Package you selected.
+
+ [analysis record] the breakdown of the request is stored in the tblIIIbfieldagent table such that status="Awaiting Execution" and account-type ="package"
+
+
+NB.  the tblIIIbfieldagent table holds entries from multiple sources [registration, wallet, savings scheme, loans, commodities]. To differentiate the entry of one source from another, the account-type field was created. Accepted values for this field include
+
+"Registration"
+"wallet", 
+"package", 
+"loan" and 
+"commodity".
+
+
+furthermore, the scheme field of the tblIIIbfieldagent table is used to specify account_types. values for this field are;
+
+account-type  		   	scheme
+Registration			Registration 
+wallet	 				Wallet, (one off)
+package	 				package name, (saving scheme)
+loan	 				loan name, (loan)
+commodities				commodity name  (commodities)
+
+
+II. Execution (/IIIb/threeb/savings/deposit/packages/ -------def save_pack)
+mandates are executed on a monthly bases. At execution, the entry in tblIIIbfieldagent is copied to the tblIIIbsavingsaccount table such that status = "CR", while the account-type field is filed with the package name. the value of status field changes to 'Executed', and finally, this is executtion is recorded in tblIIIbapprovals table. the entry in the tblIIIbstaffsavings_pack will remain as 'Running' until the last execution is made, which changes its value to "Completed" 
+
+
+III. Notifications
+Email is sent out to the cooperator
+
+IV. Eligibility (/IIIb/threeb/staff/deposit/apply/------------def applydep)
+the system checks for eligibility at the different points. Point A, before you preview appliation and Point B, ar the point of application. Eligibility tests are first carried out to ascertain whether the amount box shows up or not. 
+
+These included;
+
+a number of eligibility tests are executed viz-aviz;
+1. to check if a cooperator can apply to a savings scheme
+
+it checks what month the application was made. if you made the application earlier than the start of the pack, it rejects it. if u come after the end of the pack, it throws u out. if you come during the life time of the pack, it checks if you have the pack running already, if not, it checkes if execution has been made for the last month of the pack. if no, the amount box shows up
+
+2. to know how the duration of their participation.
+it checks if the execution for the last month of the life of the pack has been made.
+
+

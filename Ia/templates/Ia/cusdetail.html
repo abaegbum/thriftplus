@@ -1,0 +1,240 @@
+
+
+{% extends 'Ia/customerdashboard.html' %}
+
+{% block content %}
+
+
+
+<!-- <div style="text-align:center">Customer Manager</div> -->
+<div style="text-align:center;color:red;font-size:0.8em">Click on an item to edit it</div>
+
+   <table style="margin-top:0%;margin-bottom:01%;font-size:0.8em" width="100%" class="table  table-bordered" id="dataTables-example">
+
+           <tr >
+            <td style='font-weight:bold' >Name </td>
+            <td><a href="#" style="color:blue" onClick= "editname({{wallet}})" title="Click here to edit details">{{ details.surname}}  {{ details.firstname}}   {{ details.othername}}</a></td>
+           </tr>
+           <tr >
+            <td style='font-weight:bold' >Customer ID </td><td>{{ details.id}} </td>
+           </tr>
+            <tr>
+              <td style='font-weight:bold'>Phone</td>
+               <td><a href="#" style="color:blue" onClick= "editphone({{wallet}})" title="Click here to edit Email">{{ details.phone }}</a></td>
+            </tr>
+
+            <tr>
+              <td style='font-weight:bold'>Wallet</td> <td>{{ details.wallet }}</td>
+            </tr>
+            {% if details.email == '' %}
+             <tr>
+              <td style='font-weight:bold'>Email</td>
+            <td><a href="#" style="color:blue" onClick= "editemail({{wallet}})" title="Click here to edit Email">Non </a></td>
+            </tr>
+            {% else %}
+             <tr>
+              <td style='font-weight:bold'>Email</td>
+            <td><a href="#" style="color:blue" onClick= "editemail({{wallet}})" title="Click here to edit Email"> {{ details.email}} </a></td>
+
+            </tr>
+            {% endif %}
+             <tr>
+              <td style='font-weight:bold'>Location</td>
+            <td><a href="#" style="color:blue" onClick= "editlocation({{wallet}})" title="Click here to edit Location">{{ details.location}} </a></td>
+
+
+            </tr>
+
+             <tr>
+              <td style='font-weight:bold'>Address</td>
+            <td>
+              <a href="#" style="color:blue" onClick= "editaddr({{wallet}})" title="Click here to edit Address">{{ details.Address}}
+              </a>
+            </td>
+            </tr>
+
+
+            <tr><td style='font-weight:bold'>Active</td>
+
+            <td>
+              <a href="#" style="color:blue" onClick= "editstat({{wallet}})" title="Click here to edit status">{{ details.status}}
+              </a>
+            </td>
+
+
+       </table>
+
+    
+    <td >
+      <a class="btn btn-lg btn-success btn-block" href="/fts/mycustomers/dashboard/{{wallet}}/" style="color:white">
+        Continue</a>
+    </td>
+
+
+       
+</tr>
+
+<div id="depo"></div>
+
+
+
+<script type="text/javascript" language="javascript">
+    function editname(vid){
+        
+        var state = vid + ":" +"{{user}}";
+        // alert(state);
+        var url = "/fts/customer/editname/";
+        var i = 0;
+        var data='userid='+state;
+        $.ajax({
+            type:"POST",
+            url:url,
+            data:data,
+            success:function(html) {
+                $("#depo").html(html);
+                getchan();
+            }
+        });
+        return false;
+    }
+
+</script>
+
+
+<script type="text/javascript" language="javascript">
+    function editemail(vid){
+        
+        var state = vid + ":" +"{{user}}";
+        // alert(state);
+        var url = "/fts/customer/editemail/";
+        var i = 0;
+        var data='userid='+state;
+        $.ajax({
+            type:"POST",
+            url:url,
+            data:data,
+            success:function(html) {
+                $("#depo").html(html);
+                getchan();
+            }
+        });
+        return false;
+    }
+
+</script>
+
+
+<script type="text/javascript" language="javascript">
+    function editphone(vid){
+        
+        var state = vid + ":" +"{{user}}";
+        // alert(state);
+        var url = "/fts/customer/editphone/";
+        var i = 0;
+        var data='userid='+state;
+        $.ajax({
+            type:"POST",
+            url:url,
+            data:data,
+            success:function(html) {
+                $("#depo").html(html);
+                getchan();
+            }
+        });
+        return false;
+    }
+
+</script>
+
+
+<script type="text/javascript" language="javascript">
+    function editlocation(vid){
+        
+        var state = vid + ":" +"{{user}}";
+        // alert(state);
+        var url = "/fts/customer/editlocation/";
+        var i = 0;
+        var data='userid='+state;
+        $.ajax({
+            type:"POST",
+            url:url,
+            data:data,
+            success:function(html) {
+                $("#depo").html(html);
+                getchan();
+            }
+        });
+        return false;
+    }
+
+</script>
+
+
+<script type="text/javascript" language="javascript">
+    function editaddr(vid){
+        
+        var state = vid + ":" +"{{user}}";
+        // alert(state);
+        var url = "/fts/customer/editaddr/";
+        var i = 0;
+        var data='userid='+state;
+        $.ajax({
+            type:"POST",
+            url:url,
+            data:data,
+            success:function(html) {
+                $("#depo").html(html);
+                getchan();
+            }
+        });
+        return false;
+    }
+
+</script>
+
+
+<script type="text/javascript" language="javascript">
+    function editstat(vid){
+        
+        var state = vid + ":" +"{{user}}";
+        // alert(state);
+        var url = "/fts/customer/editstatus/";
+        var i = 0;
+        var data='userid='+state;
+        $.ajax({
+            type:"POST",
+            url:url,
+            data:data,
+            success:function(html) {
+                $("#depo").html(html);
+                getchan();
+            }
+        });
+        return false;
+    }
+
+</script>
+
+<script type="text/javascript" language="javascript">
+    function getchan(){
+        var diachange = {
+            autoOpen:true,
+            // appendTo:"body1",
+            // modal:true,
+            // position: ["center", "middle"],
+            height:'auto',
+            width:'auto',
+            closeOnEscape:true,
+            show: true,
+            // hide: true,
+            bgiframe: true
+        };
+        $("#depo").dialog(diachange);
+    }
+
+</script>
+
+
+
+
+  {% endblock %}

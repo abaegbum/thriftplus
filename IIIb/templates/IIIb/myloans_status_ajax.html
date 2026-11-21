@@ -1,0 +1,24 @@
+
+
+
+
+{% load humanize %}
+
+ <table style="margin-top:0%;margin-bottom:0%;font-size:0.8em;text-align: center;" width="100%" class="table  table-bordered" id="dataTables-example">
+
+           <tr style='font-weight:bold'>
+               <td >S/N</td>
+               <td>Monthly Deduction </td>
+               <td>Status</td>
+          </tr>             
+
+{% for k in msg %}
+          <tr>
+            <td>{{forloop.counter}} .</td>
+            <td> {{company.currency_code}}  {{k.amount|intcomma}} </td>
+            <td> {{k.status}}</td>
+          </tr>
+  {% endfor %}
+       </table>
+
+<div>Click amount to change</div>

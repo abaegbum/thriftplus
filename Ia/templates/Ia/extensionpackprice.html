@@ -1,0 +1,80 @@
+
+
+
+
+
+
+
+
+{% load humanize %}
+
+
+<form action="/sysadmin/sysadmin/sysadmin/addextension/" method="post" enctype="multipart/form-data" role="form">
+
+<table style="margin-top:01%;margin-bottom:2% ;font-size:0.7em" width="100%" class="table  table-bordered" id="dataTables-example">
+
+
+   <tr>
+     <td style='font-weight:bold'>Service</td>
+     <td>
+        <select>
+        <option value="">Daily Contributions App  </option>
+       </select>
+     </td>
+   </tr>
+
+
+   <tr>
+     <td style='font-weight:bold'>Package</td>
+     <td> {{pack}} Pack</td>
+   </tr>
+<tr>
+  <td style='font-weight:bold'>Unit Price</td>
+<td>  {{currency}}  {{price|intcomma }} Monthly </td>
+</tr>
+
+   <tr>
+     <td style='font-weight:bold'>Duration</td>
+     {% if duration = '1' %}
+     <td> {{duration}}  Month</td>
+     {% else %}
+     <td> {{duration}}  Months</td>
+     {% endif %}
+   </tr>
+<tr>
+<tr>
+<td style='font-weight:bold'>Amount Due</td>
+<td>  {{currency}}  {{amount|intcomma}}</td></tr>
+
+
+
+</table>
+
+<input type="hidden" name="package" readonly="readonly" value="{{ pack }}" >
+<input type="hidden" name="duration" readonly="readonly" value="{{ duration }}" >
+<input type="hidden" name="amount" readonly="readonly" value="{{ amount }}" >
+
+
+<table style="margin-top:01%;margin-bottom:0.2%;font-size:0.7em" width="100%" class="table  table-bordered" id="dataTables-example">
+
+<tr >
+
+
+ <td>     
+ <button class="btn btn-lg btn-success btn-block" type ='submit' formaction="/sysadmin/sysadmin/sysadmin/extend/" >
+                <i class="fa fa-times fa-1x"></i></button>
+  </td>
+
+<td>
+  <button class="btn btn-lg btn-success btn-block" type ='submit' >
+ <i class="fa fa-check fa-1x"></i></button>
+</td>
+
+</tr>
+
+</table>
+
+
+</form>
+
+

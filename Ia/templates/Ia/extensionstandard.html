@@ -1,0 +1,110 @@
+
+
+
+
+
+
+
+
+
+<table style="margin-top:01%;margin-bottom:2%;text-align:center;font-size:0.8em" width="100%" class="table  table-bordered" id="dataTables-example">
+
+
+   <tr>
+     <td style='font-weight:bold'>Service</td>
+     <td>
+        <select  required>
+        <option value="">Daily Contributions App  </option>
+       </select>
+     </td>
+   </tr>
+
+
+   <tr>
+     <td style='font-weight:bold'>Package</td>
+     <td>
+        <select name="package" id="id_pack" required>
+        <option value="--">-----</option>
+         <option value="Green">Starter/Green</option>
+         <option value="Peach">Starter/Peach</option>
+         <option value="Bronze">Welcome/Bronze</option>
+         <option value="Silver">Welcome/Silver</option>
+         <option value="Gold">Jumbo Pack</option>
+       </select>
+     </td>
+   </tr>
+
+
+   <tr>
+     <td style='font-weight:bold'>Duration</td>
+     <td>
+        <select name="duration" id="id_duration" required>
+        <option value="--">-----</option>
+         <option value="1">1 Month</option>
+          <option value="2">2 Months</option>
+          <option value="3">3 Months</option>
+          <option value="4">4 Months</option>
+          <option value="5">5 Months</option>
+          <option value="6">6 Months</option>
+          <option value="7">7 Months</option>
+          <option value="8">8 Months</option>
+          <option value="9">9 Months</option>
+          <option value="10">10 Months</option>
+          <option value="11">11 Months</option>
+          <option value="12">12 Months</option>
+
+       </select>
+     </td>
+   </tr>
+
+
+</table>
+
+
+<table style="margin-top:01%;margin-bottom:0.2%;font-size:0.9em" width="100%" class="table  table-bordered" id="dataTables-example">
+
+           <tr >
+                <div class="boxsend"></div>
+           </tr>
+</table>
+
+
+
+
+  <script type="text/javascript" >
+        $(document).ready(function() {            
+            $("#id_duration").change(function () {
+                autopostacc();
+            });
+
+            $("#id_pack").change(function () {
+                autopostacc();
+            });                         
+            autopostacc();
+        });
+    </script>
+
+
+    <script type="text/javascript" language="javascript">
+        function autopostacc(){
+            var state = $("#id_pack").val()  + ":" + $("#id_duration").val()+ ":" + "{{user}}";
+            // alert(state)
+            var url = "/sysadmin/sysadmin/sysadmin/send/";
+            var i = 0;
+            var data='userid='+state;
+            $.ajax({
+                type:"POST",
+                url:url,
+                data:data,
+                success:function(html) {
+                    $(".boxsend").show();
+                    $(".boxsend").html(html);
+
+                }
+            });
+            return false;
+        }
+    </script>
+
+
+

@@ -1,0 +1,61 @@
+
+
+
+       <form action="/fts/customer/repayloan/repay/admin/" method="POST"  onsubmit="disable(this)">
+
+
+
+
+           <input type="hidden" name="wallet" id="wallet"  readonly="readonly" value="{{ wallet }}" class ="loginTxtbox">
+         
+ <input type="hidden" name="code" id="code"  readonly="readonly" value="{{ code }}">
+
+   <table style="margin-top:-1.7%;margin-bottom:01%;font-size:0.6em" width="100%" class="table  table-bordered" id="dataTables-example">
+          <tr> 
+
+        <td >{{ form.amount.label_tag}}:   </td>
+
+
+    <td> 
+
+        <div class="form-group">
+                 <input type="number" name="amount" class="form-control" id="amount" required placeholder="Enter amount here" autofocus>
+            </div>
+      </td>
+  </tr>
+</table>
+
+<table style="margin-top:02%;margin-bottom:01%" width="100%" class="table  table-bordered" id="dataTables-example">
+
+       <input style="font-size:0.6em" class="btn btn-lg btn-success btn-block" name="submit" type= "submit" value="Repay Loan">
+
+</table>
+
+</form>
+
+        <script>
+        $(document).ready(function() {
+            var pickerOpts = {
+                //appendText: "mm/dd/yy",
+                //defaultDate: "+5",
+                showOtherMonths: true,
+                changeMonth: true,
+                changeYear: true,
+                dateFormat:"yy-mm-dd"
+                //showButtonPanel: true
+                // showOn: "button"
+            };
+
+            $( "#amount" ).focus();
+        });
+    </script>
+
+    <script language="javascript" type="text/javascript">
+        function disable(f)
+        {
+            var button = f.elements['submit'];
+            // button.value = 'Processing';
+            // button.disabled = 'true';
+            return true;
+        }
+    </script>

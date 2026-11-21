@@ -1,0 +1,52 @@
+
+
+
+<table style="margin-top:0.1%;margin-bottom:0%;font-size:0.7em" width="100%" class="table  table-bordered" id="dataTables-example">
+
+            <tr >
+             <td><label for="id_month">Month</label></td>
+                <td> 
+                          <select name="month" id="id_month">
+                              {% for pincode in data %}
+                                  <option value="{{pincode}}">{{pincode}}</option>
+                              {% endfor %}
+                         </select>
+                </td>
+            </tr>
+
+    <tr >
+     <td><label for="id_cycle">Cycle</label></td>
+        <td> 
+                  <select name="cycle" id="id_cycle" required >
+                     <option value="">-----</option>                              
+                 </select>
+        </td>
+    </tr>
+
+</table>
+
+
+<table style="margin-top:0%;margin-bottom:0.1%" width="100%" class="table  table-bordered" id="dataTables-example">
+
+           <tr >
+                <div class="boxvv"></div>
+           </tr>
+</table>
+
+
+
+
+
+  <script type="text/javascript" >
+        $(document).ready(function() {
+            $("#id_month").change(function () {
+                fillcycle();
+            });
+            $("#id_cycle").change(function () {
+                autopostacc123e();
+            });
+
+            fillcycle()
+     
+        });
+    </script>

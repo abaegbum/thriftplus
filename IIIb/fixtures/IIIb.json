@@ -1,0 +1,5781 @@
+[
+{
+    "model": "IIIb.tbliiibcoop",
+    "pk": 1,
+    "fields": {
+        "branch": 2,
+        "staff": 2,
+        "thrift3b": true,
+        "can_get_loan": false,
+        "can_buy_commodity": false,
+        "status": true,
+        "cooperators_code": "835259087429819"
+    }
+},
+{
+    "model": "IIIb.tbliiibcoop",
+    "pk": 2,
+    "fields": {
+        "branch": 2,
+        "staff": 24,
+        "thrift3b": true,
+        "can_get_loan": false,
+        "can_buy_commodity": false,
+        "status": true,
+        "cooperators_code": "4410469272"
+    }
+},
+{
+    "model": "IIIb.tbliiibcoop",
+    "pk": 3,
+    "fields": {
+        "branch": 2,
+        "staff": 3,
+        "thrift3b": true,
+        "can_get_loan": false,
+        "can_buy_commodity": false,
+        "status": true,
+        "cooperators_code": "2139106954"
+    }
+},
+{
+    "model": "IIIb.tbliiibcoop",
+    "pk": 4,
+    "fields": {
+        "branch": 2,
+        "staff": 4,
+        "thrift3b": true,
+        "can_get_loan": false,
+        "can_buy_commodity": false,
+        "status": true,
+        "cooperators_code": "6156907785"
+    }
+},
+{
+    "model": "IIIb.tbliiibcoop",
+    "pk": 5,
+    "fields": {
+        "branch": 2,
+        "staff": 5,
+        "thrift3b": true,
+        "can_get_loan": false,
+        "can_buy_commodity": false,
+        "status": true,
+        "cooperators_code": "6027528059"
+    }
+},
+{
+    "model": "IIIb.tbliiibcoop",
+    "pk": 6,
+    "fields": {
+        "branch": 2,
+        "staff": 6,
+        "thrift3b": true,
+        "can_get_loan": false,
+        "can_buy_commodity": false,
+        "status": true,
+        "cooperators_code": "6860485778"
+    }
+},
+{
+    "model": "IIIb.tbliiibcoop",
+    "pk": 7,
+    "fields": {
+        "branch": 2,
+        "staff": 7,
+        "thrift3b": true,
+        "can_get_loan": false,
+        "can_buy_commodity": false,
+        "status": true,
+        "cooperators_code": "6715699009"
+    }
+},
+{
+    "model": "IIIb.tbliiibcoop",
+    "pk": 8,
+    "fields": {
+        "branch": 2,
+        "staff": 8,
+        "thrift3b": true,
+        "can_get_loan": false,
+        "can_buy_commodity": false,
+        "status": true,
+        "cooperators_code": "7055465798"
+    }
+},
+{
+    "model": "IIIb.tbliiibcoop",
+    "pk": 9,
+    "fields": {
+        "branch": 2,
+        "staff": 9,
+        "thrift3b": true,
+        "can_get_loan": false,
+        "can_buy_commodity": false,
+        "status": true,
+        "cooperators_code": "5021246595"
+    }
+},
+{
+    "model": "IIIb.tbliiibcoop",
+    "pk": 10,
+    "fields": {
+        "branch": 2,
+        "staff": 10,
+        "thrift3b": true,
+        "can_get_loan": false,
+        "can_buy_commodity": false,
+        "status": true,
+        "cooperators_code": "9104484759"
+    }
+},
+{
+    "model": "IIIb.tbliiibcoop",
+    "pk": 11,
+    "fields": {
+        "branch": 2,
+        "staff": 11,
+        "thrift3b": true,
+        "can_get_loan": false,
+        "can_buy_commodity": false,
+        "status": true,
+        "cooperators_code": "1446930478"
+    }
+},
+{
+    "model": "IIIb.tbliiibcoop",
+    "pk": 12,
+    "fields": {
+        "branch": 2,
+        "staff": 12,
+        "thrift3b": true,
+        "can_get_loan": false,
+        "can_buy_commodity": false,
+        "status": true,
+        "cooperators_code": "4125966766"
+    }
+},
+{
+    "model": "IIIb.tbliiibcoop",
+    "pk": 13,
+    "fields": {
+        "branch": 2,
+        "staff": 13,
+        "thrift3b": true,
+        "can_get_loan": false,
+        "can_buy_commodity": false,
+        "status": true,
+        "cooperators_code": "7843861170"
+    }
+},
+{
+    "model": "IIIb.tbliiibcoop",
+    "pk": 14,
+    "fields": {
+        "branch": 2,
+        "staff": 14,
+        "thrift3b": true,
+        "can_get_loan": false,
+        "can_buy_commodity": false,
+        "status": true,
+        "cooperators_code": "4116191857"
+    }
+},
+{
+    "model": "IIIb.tbliiibcoop",
+    "pk": 15,
+    "fields": {
+        "branch": 2,
+        "staff": 15,
+        "thrift3b": true,
+        "can_get_loan": false,
+        "can_buy_commodity": false,
+        "status": true,
+        "cooperators_code": "2205221583"
+    }
+},
+{
+    "model": "IIIb.tbliiibcoop",
+    "pk": 16,
+    "fields": {
+        "branch": 2,
+        "staff": 16,
+        "thrift3b": true,
+        "can_get_loan": false,
+        "can_buy_commodity": false,
+        "status": true,
+        "cooperators_code": "1751069655"
+    }
+},
+{
+    "model": "IIIb.tbliiibcoop",
+    "pk": 17,
+    "fields": {
+        "branch": 2,
+        "staff": 17,
+        "thrift3b": true,
+        "can_get_loan": false,
+        "can_buy_commodity": false,
+        "status": true,
+        "cooperators_code": "5860419100"
+    }
+},
+{
+    "model": "IIIb.tbliiibcoop",
+    "pk": 18,
+    "fields": {
+        "branch": 2,
+        "staff": 18,
+        "thrift3b": true,
+        "can_get_loan": false,
+        "can_buy_commodity": false,
+        "status": true,
+        "cooperators_code": "2779953134"
+    }
+},
+{
+    "model": "IIIb.tbliiibcoop",
+    "pk": 19,
+    "fields": {
+        "branch": 2,
+        "staff": 19,
+        "thrift3b": true,
+        "can_get_loan": false,
+        "can_buy_commodity": false,
+        "status": true,
+        "cooperators_code": "2985575833"
+    }
+},
+{
+    "model": "IIIb.tbliiibcoop",
+    "pk": 20,
+    "fields": {
+        "branch": 2,
+        "staff": 20,
+        "thrift3b": true,
+        "can_get_loan": false,
+        "can_buy_commodity": false,
+        "status": true,
+        "cooperators_code": "8564686435"
+    }
+},
+{
+    "model": "IIIb.tbliiibcoop",
+    "pk": 21,
+    "fields": {
+        "branch": 2,
+        "staff": 21,
+        "thrift3b": true,
+        "can_get_loan": false,
+        "can_buy_commodity": false,
+        "status": true,
+        "cooperators_code": "8430424639"
+    }
+},
+{
+    "model": "IIIb.tbliiibcoop",
+    "pk": 22,
+    "fields": {
+        "branch": 2,
+        "staff": 22,
+        "thrift3b": true,
+        "can_get_loan": false,
+        "can_buy_commodity": false,
+        "status": true,
+        "cooperators_code": "8445492916"
+    }
+},
+{
+    "model": "IIIb.tbliiibcoop",
+    "pk": 23,
+    "fields": {
+        "branch": 2,
+        "staff": 23,
+        "thrift3b": true,
+        "can_get_loan": false,
+        "can_buy_commodity": false,
+        "status": true,
+        "cooperators_code": "8385500064"
+    }
+},
+{
+    "model": "IIIb.tbliiibthrift",
+    "pk": 1,
+    "fields": {
+        "branch": 2,
+        "staff": 1,
+        "can_get_loan": true,
+        "can_buy_commodity": true
+    }
+},
+{
+    "model": "IIIb.tbliiibthrift",
+    "pk": 2,
+    "fields": {
+        "branch": 2,
+        "staff": 2,
+        "can_get_loan": false,
+        "can_buy_commodity": false
+    }
+},
+{
+    "model": "IIIb.tbliiibthrift",
+    "pk": 3,
+    "fields": {
+        "branch": 2,
+        "staff": 3,
+        "can_get_loan": false,
+        "can_buy_commodity": false
+    }
+},
+{
+    "model": "IIIb.tbliiibthrift",
+    "pk": 4,
+    "fields": {
+        "branch": 2,
+        "staff": 4,
+        "can_get_loan": false,
+        "can_buy_commodity": false
+    }
+},
+{
+    "model": "IIIb.tbliiibthrift",
+    "pk": 5,
+    "fields": {
+        "branch": 2,
+        "staff": 5,
+        "can_get_loan": false,
+        "can_buy_commodity": false
+    }
+},
+{
+    "model": "IIIb.tbliiibthrift",
+    "pk": 6,
+    "fields": {
+        "branch": 2,
+        "staff": 6,
+        "can_get_loan": false,
+        "can_buy_commodity": false
+    }
+},
+{
+    "model": "IIIb.tbliiibthrift",
+    "pk": 7,
+    "fields": {
+        "branch": 2,
+        "staff": 7,
+        "can_get_loan": false,
+        "can_buy_commodity": false
+    }
+},
+{
+    "model": "IIIb.tbliiibthrift",
+    "pk": 8,
+    "fields": {
+        "branch": 2,
+        "staff": 8,
+        "can_get_loan": false,
+        "can_buy_commodity": false
+    }
+},
+{
+    "model": "IIIb.tbliiibthrift",
+    "pk": 9,
+    "fields": {
+        "branch": 2,
+        "staff": 9,
+        "can_get_loan": false,
+        "can_buy_commodity": false
+    }
+},
+{
+    "model": "IIIb.tbliiibthrift",
+    "pk": 10,
+    "fields": {
+        "branch": 2,
+        "staff": 10,
+        "can_get_loan": false,
+        "can_buy_commodity": false
+    }
+},
+{
+    "model": "IIIb.tbliiibthrift",
+    "pk": 11,
+    "fields": {
+        "branch": 2,
+        "staff": 11,
+        "can_get_loan": false,
+        "can_buy_commodity": false
+    }
+},
+{
+    "model": "IIIb.tbliiibthrift",
+    "pk": 12,
+    "fields": {
+        "branch": 2,
+        "staff": 12,
+        "can_get_loan": false,
+        "can_buy_commodity": false
+    }
+},
+{
+    "model": "IIIb.tbliiibthrift",
+    "pk": 13,
+    "fields": {
+        "branch": 2,
+        "staff": 13,
+        "can_get_loan": false,
+        "can_buy_commodity": false
+    }
+},
+{
+    "model": "IIIb.tbliiibthrift",
+    "pk": 14,
+    "fields": {
+        "branch": 2,
+        "staff": 14,
+        "can_get_loan": false,
+        "can_buy_commodity": false
+    }
+},
+{
+    "model": "IIIb.tbliiibthrift",
+    "pk": 15,
+    "fields": {
+        "branch": 2,
+        "staff": 15,
+        "can_get_loan": false,
+        "can_buy_commodity": false
+    }
+},
+{
+    "model": "IIIb.tbliiibthrift",
+    "pk": 16,
+    "fields": {
+        "branch": 2,
+        "staff": 16,
+        "can_get_loan": false,
+        "can_buy_commodity": false
+    }
+},
+{
+    "model": "IIIb.tbliiibthrift",
+    "pk": 17,
+    "fields": {
+        "branch": 2,
+        "staff": 17,
+        "can_get_loan": false,
+        "can_buy_commodity": false
+    }
+},
+{
+    "model": "IIIb.tbliiibthrift",
+    "pk": 18,
+    "fields": {
+        "branch": 2,
+        "staff": 18,
+        "can_get_loan": false,
+        "can_buy_commodity": false
+    }
+},
+{
+    "model": "IIIb.tbliiibthrift",
+    "pk": 19,
+    "fields": {
+        "branch": 2,
+        "staff": 19,
+        "can_get_loan": false,
+        "can_buy_commodity": false
+    }
+},
+{
+    "model": "IIIb.tbliiibthrift",
+    "pk": 20,
+    "fields": {
+        "branch": 2,
+        "staff": 20,
+        "can_get_loan": false,
+        "can_buy_commodity": false
+    }
+},
+{
+    "model": "IIIb.tbliiibthrift",
+    "pk": 21,
+    "fields": {
+        "branch": 2,
+        "staff": 21,
+        "can_get_loan": false,
+        "can_buy_commodity": false
+    }
+},
+{
+    "model": "IIIb.tbliiibthrift",
+    "pk": 22,
+    "fields": {
+        "branch": 2,
+        "staff": 22,
+        "can_get_loan": false,
+        "can_buy_commodity": false
+    }
+},
+{
+    "model": "IIIb.tbliiibthrift",
+    "pk": 23,
+    "fields": {
+        "branch": 2,
+        "staff": 23,
+        "can_get_loan": false,
+        "can_buy_commodity": false
+    }
+},
+{
+    "model": "IIIb.tbliiibsavingsaccount",
+    "pk": 1,
+    "fields": {
+        "branch": 2,
+        "staff": 1,
+        "month": "September",
+        "year": "2026",
+        "status": "CR",
+        "amount": 10000,
+        "transdate": "2020-02-04",
+        "account_type": "Wallet",
+        "account_code": "325823722261159",
+        "transID": "172423410866752"
+    }
+},
+{
+    "model": "IIIb.tbliiibsavingsaccount",
+    "pk": 2,
+    "fields": {
+        "branch": 2,
+        "staff": 1,
+        "month": "September",
+        "year": "2026",
+        "status": "CR",
+        "amount": 5000,
+        "transdate": "2020-02-04",
+        "account_type": "Christmas savings",
+        "account_code": "306204899048259",
+        "transID": "464218022418572"
+    }
+},
+{
+    "model": "IIIb.tbliiibsavingsaccount",
+    "pk": 3,
+    "fields": {
+        "branch": 2,
+        "staff": 3,
+        "month": "September",
+        "year": "2026",
+        "status": "CR",
+        "amount": 4500,
+        "transdate": "2020-02-04",
+        "account_type": "Wallet",
+        "account_code": "868634971901308",
+        "transID": "915337865250378"
+    }
+},
+{
+    "model": "IIIb.tbliiibsavingsaccount",
+    "pk": 4,
+    "fields": {
+        "branch": 2,
+        "staff": 3,
+        "month": "September",
+        "year": "2026",
+        "status": "CR",
+        "amount": 7000,
+        "transdate": "2020-02-04",
+        "account_type": "Christmas savings",
+        "account_code": "256228810926224",
+        "transID": "635427801242978"
+    }
+},
+{
+    "model": "IIIb.tbliiibsavingsaccount",
+    "pk": 5,
+    "fields": {
+        "branch": 2,
+        "staff": 4,
+        "month": "September",
+        "year": "2026",
+        "status": "CR",
+        "amount": 6000,
+        "transdate": "2020-02-04",
+        "account_type": "Wallet",
+        "account_code": "958712206565691",
+        "transID": "293223372342005"
+    }
+},
+{
+    "model": "IIIb.tbliiibsavingsaccount",
+    "pk": 6,
+    "fields": {
+        "branch": 2,
+        "staff": 4,
+        "month": "September",
+        "year": "2026",
+        "status": "CR",
+        "amount": 7500,
+        "transdate": "2020-02-04",
+        "account_type": "Christmas savings",
+        "account_code": "431103376186246",
+        "transID": "568709628729175"
+    }
+},
+{
+    "model": "IIIb.tbliiibsavingsaccount",
+    "pk": 7,
+    "fields": {
+        "branch": 2,
+        "staff": 6,
+        "month": "September",
+        "year": "2026",
+        "status": "CR",
+        "amount": 7800,
+        "transdate": "2020-02-04",
+        "account_type": "Wallet",
+        "account_code": "598092192404542",
+        "transID": "174022357488852"
+    }
+},
+{
+    "model": "IIIb.tbliiibsavingsaccount",
+    "pk": 8,
+    "fields": {
+        "branch": 2,
+        "staff": 6,
+        "month": "September",
+        "year": "2026",
+        "status": "CR",
+        "amount": 5000,
+        "transdate": "2020-02-04",
+        "account_type": "Christmas savings",
+        "account_code": "820597292769263",
+        "transID": "186231101292856"
+    }
+},
+{
+    "model": "IIIb.tbliiibsavingsaccount",
+    "pk": 9,
+    "fields": {
+        "branch": 2,
+        "staff": 5,
+        "month": "September",
+        "year": "2026",
+        "status": "CR",
+        "amount": 12000,
+        "transdate": "2020-02-04",
+        "account_type": "Wallet",
+        "account_code": "853541184750114",
+        "transID": "337482909951745"
+    }
+},
+{
+    "model": "IIIb.tbliiibsavingsaccount",
+    "pk": 10,
+    "fields": {
+        "branch": 2,
+        "staff": 5,
+        "month": "September",
+        "year": "2026",
+        "status": "CR",
+        "amount": 10000,
+        "transdate": "2020-02-04",
+        "account_type": "Christmas savings",
+        "account_code": "547842446594275",
+        "transID": "360222400310002"
+    }
+},
+{
+    "model": "IIIb.tbliiibsavingsaccount",
+    "pk": 11,
+    "fields": {
+        "branch": 2,
+        "staff": 8,
+        "month": "September",
+        "year": "2026",
+        "status": "CR",
+        "amount": 5000,
+        "transdate": "2020-02-04",
+        "account_type": "Wallet",
+        "account_code": "207356673638167",
+        "transID": "871783390526618"
+    }
+},
+{
+    "model": "IIIb.tbliiibsavingsaccount",
+    "pk": 12,
+    "fields": {
+        "branch": 2,
+        "staff": 8,
+        "month": "September",
+        "year": "2026",
+        "status": "CR",
+        "amount": 8000,
+        "transdate": "2020-02-04",
+        "account_type": "Christmas savings",
+        "account_code": "304530657745435",
+        "transID": "324967010116930"
+    }
+},
+{
+    "model": "IIIb.tbliiibsavingsaccount",
+    "pk": 13,
+    "fields": {
+        "branch": 2,
+        "staff": 7,
+        "month": "September",
+        "year": "2026",
+        "status": "CR",
+        "amount": 6500,
+        "transdate": "2020-02-04",
+        "account_type": "Wallet",
+        "account_code": "967355835865380",
+        "transID": "627151015509407"
+    }
+},
+{
+    "model": "IIIb.tbliiibsavingsaccount",
+    "pk": 14,
+    "fields": {
+        "branch": 2,
+        "staff": 7,
+        "month": "September",
+        "year": "2026",
+        "status": "CR",
+        "amount": 15000,
+        "transdate": "2020-02-04",
+        "account_type": "Christmas savings",
+        "account_code": "516180229693386",
+        "transID": "537955728656354"
+    }
+},
+{
+    "model": "IIIb.tbliiibsavingsaccount",
+    "pk": 15,
+    "fields": {
+        "branch": 2,
+        "staff": 9,
+        "month": "September",
+        "year": "2026",
+        "status": "CR",
+        "amount": 6500,
+        "transdate": "2020-02-04",
+        "account_type": "Wallet",
+        "account_code": "658495429252260",
+        "transID": "524716706043012"
+    }
+},
+{
+    "model": "IIIb.tbliiibsavingsaccount",
+    "pk": 16,
+    "fields": {
+        "branch": 2,
+        "staff": 9,
+        "month": "September",
+        "year": "2026",
+        "status": "CR",
+        "amount": 7000,
+        "transdate": "2020-02-04",
+        "account_type": "Christmas savings",
+        "account_code": "170408725923707",
+        "transID": "426132370423510"
+    }
+},
+{
+    "model": "IIIb.tbliiibsavingsaccount",
+    "pk": 17,
+    "fields": {
+        "branch": 2,
+        "staff": 10,
+        "month": "September",
+        "year": "2026",
+        "status": "CR",
+        "amount": 6500,
+        "transdate": "2020-02-04",
+        "account_type": "Wallet",
+        "account_code": "886861197714938",
+        "transID": "269369973784324"
+    }
+},
+{
+    "model": "IIIb.tbliiibsavingsaccount",
+    "pk": 18,
+    "fields": {
+        "branch": 2,
+        "staff": 10,
+        "month": "September",
+        "year": "2026",
+        "status": "CR",
+        "amount": 10000,
+        "transdate": "2020-02-04",
+        "account_type": "Christmas savings",
+        "account_code": "313349370272983",
+        "transID": "614520706395523"
+    }
+},
+{
+    "model": "IIIb.tbliiibsavingsaccount",
+    "pk": 19,
+    "fields": {
+        "branch": 2,
+        "staff": 11,
+        "month": "September",
+        "year": "2026",
+        "status": "CR",
+        "amount": 7000,
+        "transdate": "2020-02-04",
+        "account_type": "Wallet",
+        "account_code": "862990168258297",
+        "transID": "633558782562813"
+    }
+},
+{
+    "model": "IIIb.tbliiibsavingsaccount",
+    "pk": 20,
+    "fields": {
+        "branch": 2,
+        "staff": 11,
+        "month": "September",
+        "year": "2026",
+        "status": "CR",
+        "amount": 8000,
+        "transdate": "2020-02-04",
+        "account_type": "Christmas savings",
+        "account_code": "600690878256396",
+        "transID": "608998662890169"
+    }
+},
+{
+    "model": "IIIb.tbliiibsavingsaccount",
+    "pk": 21,
+    "fields": {
+        "branch": 2,
+        "staff": 12,
+        "month": "September",
+        "year": "2026",
+        "status": "CR",
+        "amount": 4500,
+        "transdate": "2020-02-04",
+        "account_type": "Wallet",
+        "account_code": "986638465716894",
+        "transID": "976428647317628"
+    }
+},
+{
+    "model": "IIIb.tbliiibsavingsaccount",
+    "pk": 22,
+    "fields": {
+        "branch": 2,
+        "staff": 12,
+        "month": "September",
+        "year": "2026",
+        "status": "CR",
+        "amount": 5000,
+        "transdate": "2020-02-04",
+        "account_type": "Christmas savings",
+        "account_code": "239024962146296",
+        "transID": "744857905986037"
+    }
+},
+{
+    "model": "IIIb.tbliiibsavingsaccount",
+    "pk": 23,
+    "fields": {
+        "branch": 2,
+        "staff": 13,
+        "month": "September",
+        "year": "2026",
+        "status": "CR",
+        "amount": 15000,
+        "transdate": "2020-02-04",
+        "account_type": "Wallet",
+        "account_code": "981214948139240",
+        "transID": "657389405539893"
+    }
+},
+{
+    "model": "IIIb.tbliiibsavingsaccount",
+    "pk": 24,
+    "fields": {
+        "branch": 2,
+        "staff": 13,
+        "month": "September",
+        "year": "2026",
+        "status": "CR",
+        "amount": 12500,
+        "transdate": "2020-02-04",
+        "account_type": "Christmas savings",
+        "account_code": "977652598908439",
+        "transID": "411490870491427"
+    }
+},
+{
+    "model": "IIIb.tbliiibsavingsaccount",
+    "pk": 25,
+    "fields": {
+        "branch": 2,
+        "staff": 14,
+        "month": "September",
+        "year": "2026",
+        "status": "CR",
+        "amount": 10000,
+        "transdate": "2020-02-04",
+        "account_type": "Wallet",
+        "account_code": "282668427081975",
+        "transID": "409264725013196"
+    }
+},
+{
+    "model": "IIIb.tbliiibsavingsaccount",
+    "pk": 26,
+    "fields": {
+        "branch": 2,
+        "staff": 14,
+        "month": "September",
+        "year": "2026",
+        "status": "CR",
+        "amount": 3500,
+        "transdate": "2020-02-04",
+        "account_type": "Christmas savings",
+        "account_code": "260036980171132",
+        "transID": "484720038959394"
+    }
+},
+{
+    "model": "IIIb.tbliiibsavingsaccount",
+    "pk": 27,
+    "fields": {
+        "branch": 2,
+        "staff": 15,
+        "month": "September",
+        "year": "2026",
+        "status": "CR",
+        "amount": 10000,
+        "transdate": "2020-02-04",
+        "account_type": "Wallet",
+        "account_code": "821030751726578",
+        "transID": "849839931961339"
+    }
+},
+{
+    "model": "IIIb.tbliiibsavingsaccount",
+    "pk": 28,
+    "fields": {
+        "branch": 2,
+        "staff": 15,
+        "month": "September",
+        "year": "2026",
+        "status": "CR",
+        "amount": 5000,
+        "transdate": "2020-02-04",
+        "account_type": "Christmas savings",
+        "account_code": "195612624904713",
+        "transID": "988757594395089"
+    }
+},
+{
+    "model": "IIIb.tbliiibsavingsaccount",
+    "pk": 29,
+    "fields": {
+        "branch": 2,
+        "staff": 16,
+        "month": "September",
+        "year": "2026",
+        "status": "CR",
+        "amount": 6000,
+        "transdate": "2020-02-04",
+        "account_type": "Wallet",
+        "account_code": "603409581046317",
+        "transID": "880570424179426"
+    }
+},
+{
+    "model": "IIIb.tbliiibsavingsaccount",
+    "pk": 30,
+    "fields": {
+        "branch": 2,
+        "staff": 16,
+        "month": "September",
+        "year": "2026",
+        "status": "CR",
+        "amount": 15000,
+        "transdate": "2020-02-04",
+        "account_type": "Christmas savings",
+        "account_code": "122991837474921",
+        "transID": "398519019617122"
+    }
+},
+{
+    "model": "IIIb.tbliiibsavingsaccount",
+    "pk": 31,
+    "fields": {
+        "branch": 2,
+        "staff": 17,
+        "month": "September",
+        "year": "2026",
+        "status": "CR",
+        "amount": 6000,
+        "transdate": "2020-02-04",
+        "account_type": "Wallet",
+        "account_code": "190111522320989",
+        "transID": "701862085277517"
+    }
+},
+{
+    "model": "IIIb.tbliiibsavingsaccount",
+    "pk": 32,
+    "fields": {
+        "branch": 2,
+        "staff": 17,
+        "month": "September",
+        "year": "2026",
+        "status": "CR",
+        "amount": 7500,
+        "transdate": "2020-02-04",
+        "account_type": "Christmas savings",
+        "account_code": "465971197882006",
+        "transID": "658252764543873"
+    }
+},
+{
+    "model": "IIIb.tbliiibsavingsaccount",
+    "pk": 33,
+    "fields": {
+        "branch": 2,
+        "staff": 18,
+        "month": "September",
+        "year": "2026",
+        "status": "CR",
+        "amount": 6000,
+        "transdate": "2020-02-04",
+        "account_type": "Wallet",
+        "account_code": "403019763332434",
+        "transID": "961795146428612"
+    }
+},
+{
+    "model": "IIIb.tbliiibsavingsaccount",
+    "pk": 34,
+    "fields": {
+        "branch": 2,
+        "staff": 18,
+        "month": "September",
+        "year": "2026",
+        "status": "CR",
+        "amount": 10000,
+        "transdate": "2020-02-04",
+        "account_type": "Christmas savings",
+        "account_code": "728776766276934",
+        "transID": "771369552863484"
+    }
+},
+{
+    "model": "IIIb.tbliiibsavingsaccount",
+    "pk": 35,
+    "fields": {
+        "branch": 2,
+        "staff": 19,
+        "month": "September",
+        "year": "2026",
+        "status": "CR",
+        "amount": 6000,
+        "transdate": "2020-02-04",
+        "account_type": "Wallet",
+        "account_code": "869968473970639",
+        "transID": "126021535895782"
+    }
+},
+{
+    "model": "IIIb.tbliiibsavingsaccount",
+    "pk": 36,
+    "fields": {
+        "branch": 2,
+        "staff": 20,
+        "month": "September",
+        "year": "2026",
+        "status": "CR",
+        "amount": 12000,
+        "transdate": "2020-02-04",
+        "account_type": "Wallet",
+        "account_code": "466369331464270",
+        "transID": "317964414602014"
+    }
+},
+{
+    "model": "IIIb.tbliiibsavingsaccount",
+    "pk": 37,
+    "fields": {
+        "branch": 2,
+        "staff": 20,
+        "month": "September",
+        "year": "2026",
+        "status": "CR",
+        "amount": 10000,
+        "transdate": "2020-02-04",
+        "account_type": "Christmas savings",
+        "account_code": "969200426865485",
+        "transID": "586044138403707"
+    }
+},
+{
+    "model": "IIIb.tbliiibsavingsaccount",
+    "pk": 38,
+    "fields": {
+        "branch": 2,
+        "staff": 19,
+        "month": "September",
+        "year": "2026",
+        "status": "CR",
+        "amount": 10000,
+        "transdate": "2020-02-04",
+        "account_type": "Christmas savings",
+        "account_code": "257309883865407",
+        "transID": "515393841891239"
+    }
+},
+{
+    "model": "IIIb.tbliiibsavingsaccount",
+    "pk": 39,
+    "fields": {
+        "branch": 2,
+        "staff": 21,
+        "month": "September",
+        "year": "2026",
+        "status": "CR",
+        "amount": 10000,
+        "transdate": "2020-02-04",
+        "account_type": "Wallet",
+        "account_code": "875232839060498",
+        "transID": "968206238417411"
+    }
+},
+{
+    "model": "IIIb.tbliiibsavingsaccount",
+    "pk": 40,
+    "fields": {
+        "branch": 2,
+        "staff": 21,
+        "month": "September",
+        "year": "2026",
+        "status": "CR",
+        "amount": 5000,
+        "transdate": "2020-02-04",
+        "account_type": "Christmas savings",
+        "account_code": "537245639556011",
+        "transID": "689801096195382"
+    }
+},
+{
+    "model": "IIIb.tbliiibsavingsaccount",
+    "pk": 41,
+    "fields": {
+        "branch": 2,
+        "staff": 22,
+        "month": "September",
+        "year": "2026",
+        "status": "CR",
+        "amount": 14000,
+        "transdate": "2020-02-04",
+        "account_type": "Wallet",
+        "account_code": "700396933076808",
+        "transID": "220466437343890"
+    }
+},
+{
+    "model": "IIIb.tbliiibsavingsaccount",
+    "pk": 42,
+    "fields": {
+        "branch": 2,
+        "staff": 22,
+        "month": "September",
+        "year": "2026",
+        "status": "CR",
+        "amount": 12000,
+        "transdate": "2020-02-04",
+        "account_type": "Christmas savings",
+        "account_code": "418913525081718",
+        "transID": "694786573083975"
+    }
+},
+{
+    "model": "IIIb.tbliiibsavingsaccount",
+    "pk": 43,
+    "fields": {
+        "branch": 2,
+        "staff": 23,
+        "month": "September",
+        "year": "2026",
+        "status": "CR",
+        "amount": 10000,
+        "transdate": "2020-02-04",
+        "account_type": "Wallet",
+        "account_code": "587776701056795",
+        "transID": "151504432013590"
+    }
+},
+{
+    "model": "IIIb.tbliiibsavingsaccount",
+    "pk": 44,
+    "fields": {
+        "branch": 2,
+        "staff": 23,
+        "month": "September",
+        "year": "2026",
+        "status": "CR",
+        "amount": 5000,
+        "transdate": "2020-02-04",
+        "account_type": "Christmas savings",
+        "account_code": "114048656982901",
+        "transID": "106061057731435"
+    }
+},
+{
+    "model": "IIIb.tbliiibsavingsaccount",
+    "pk": 45,
+    "fields": {
+        "branch": 2,
+        "staff": 2,
+        "month": "September",
+        "year": "2026",
+        "status": "CR",
+        "amount": 3000,
+        "transdate": "2020-02-04",
+        "account_type": "Wallet",
+        "account_code": "691203163709547",
+        "transID": "504675151781943"
+    }
+},
+{
+    "model": "IIIb.tbliiibsavingsaccount",
+    "pk": 46,
+    "fields": {
+        "branch": 2,
+        "staff": 2,
+        "month": "September",
+        "year": "2026",
+        "status": "CR",
+        "amount": 5000,
+        "transdate": "2020-02-04",
+        "account_type": "Christmas savings",
+        "account_code": "875184535164102",
+        "transID": "914048180401635"
+    }
+},
+{
+    "model": "IIIb.tbliiibsavingsaccount",
+    "pk": 47,
+    "fields": {
+        "branch": 2,
+        "staff": 1,
+        "month": "October",
+        "year": "2026",
+        "status": "CR",
+        "amount": 10000,
+        "transdate": "2020-02-04",
+        "account_type": "Wallet",
+        "account_code": "325823722261159",
+        "transID": "904743823152725"
+    }
+},
+{
+    "model": "IIIb.tbliiibsavingsaccount",
+    "pk": 48,
+    "fields": {
+        "branch": 2,
+        "staff": 1,
+        "month": "October",
+        "year": "2026",
+        "status": "CR",
+        "amount": 5000,
+        "transdate": "2020-02-04",
+        "account_type": "Christmas savings",
+        "account_code": "306204899048259",
+        "transID": "309206499692606"
+    }
+},
+{
+    "model": "IIIb.tbliiibsavingsaccount",
+    "pk": 49,
+    "fields": {
+        "branch": 2,
+        "staff": 3,
+        "month": "October",
+        "year": "2026",
+        "status": "CR",
+        "amount": 4500,
+        "transdate": "2020-02-04",
+        "account_type": "Wallet",
+        "account_code": "868634971901308",
+        "transID": "435578155218445"
+    }
+},
+{
+    "model": "IIIb.tbliiibsavingsaccount",
+    "pk": 50,
+    "fields": {
+        "branch": 2,
+        "staff": 3,
+        "month": "October",
+        "year": "2026",
+        "status": "CR",
+        "amount": 7000,
+        "transdate": "2020-02-04",
+        "account_type": "Christmas savings",
+        "account_code": "256228810926224",
+        "transID": "336572508452364"
+    }
+},
+{
+    "model": "IIIb.tbliiibsavingsaccount",
+    "pk": 51,
+    "fields": {
+        "branch": 2,
+        "staff": 4,
+        "month": "October",
+        "year": "2026",
+        "status": "CR",
+        "amount": 6000,
+        "transdate": "2020-02-04",
+        "account_type": "Wallet",
+        "account_code": "958712206565691",
+        "transID": "789303779979557"
+    }
+},
+{
+    "model": "IIIb.tbliiibsavingsaccount",
+    "pk": 52,
+    "fields": {
+        "branch": 2,
+        "staff": 4,
+        "month": "October",
+        "year": "2026",
+        "status": "CR",
+        "amount": 7500,
+        "transdate": "2020-02-04",
+        "account_type": "Christmas savings",
+        "account_code": "431103376186246",
+        "transID": "346436823439957"
+    }
+},
+{
+    "model": "IIIb.tbliiibsavingsaccount",
+    "pk": 53,
+    "fields": {
+        "branch": 2,
+        "staff": 6,
+        "month": "October",
+        "year": "2026",
+        "status": "CR",
+        "amount": 7800,
+        "transdate": "2020-02-04",
+        "account_type": "Wallet",
+        "account_code": "598092192404542",
+        "transID": "218883173896111"
+    }
+},
+{
+    "model": "IIIb.tbliiibsavingsaccount",
+    "pk": 54,
+    "fields": {
+        "branch": 2,
+        "staff": 6,
+        "month": "October",
+        "year": "2026",
+        "status": "CR",
+        "amount": 5000,
+        "transdate": "2020-02-04",
+        "account_type": "Christmas savings",
+        "account_code": "820597292769263",
+        "transID": "166647625186225"
+    }
+},
+{
+    "model": "IIIb.tbliiibsavingsaccount",
+    "pk": 55,
+    "fields": {
+        "branch": 2,
+        "staff": 5,
+        "month": "October",
+        "year": "2026",
+        "status": "CR",
+        "amount": 12000,
+        "transdate": "2020-02-04",
+        "account_type": "Wallet",
+        "account_code": "853541184750114",
+        "transID": "987700593406490"
+    }
+},
+{
+    "model": "IIIb.tbliiibsavingsaccount",
+    "pk": 56,
+    "fields": {
+        "branch": 2,
+        "staff": 5,
+        "month": "October",
+        "year": "2026",
+        "status": "CR",
+        "amount": 10000,
+        "transdate": "2020-02-04",
+        "account_type": "Christmas savings",
+        "account_code": "547842446594275",
+        "transID": "648544417742607"
+    }
+},
+{
+    "model": "IIIb.tbliiibsavingsaccount",
+    "pk": 57,
+    "fields": {
+        "branch": 2,
+        "staff": 8,
+        "month": "October",
+        "year": "2026",
+        "status": "CR",
+        "amount": 5000,
+        "transdate": "2020-02-04",
+        "account_type": "Wallet",
+        "account_code": "207356673638167",
+        "transID": "178641612113512"
+    }
+},
+{
+    "model": "IIIb.tbliiibsavingsaccount",
+    "pk": 58,
+    "fields": {
+        "branch": 2,
+        "staff": 8,
+        "month": "October",
+        "year": "2026",
+        "status": "CR",
+        "amount": 8000,
+        "transdate": "2020-02-04",
+        "account_type": "Christmas savings",
+        "account_code": "304530657745435",
+        "transID": "900851819771826"
+    }
+},
+{
+    "model": "IIIb.tbliiibsavingsaccount",
+    "pk": 59,
+    "fields": {
+        "branch": 2,
+        "staff": 7,
+        "month": "October",
+        "year": "2026",
+        "status": "CR",
+        "amount": 6500,
+        "transdate": "2020-02-04",
+        "account_type": "Wallet",
+        "account_code": "967355835865380",
+        "transID": "334495201486038"
+    }
+},
+{
+    "model": "IIIb.tbliiibsavingsaccount",
+    "pk": 60,
+    "fields": {
+        "branch": 2,
+        "staff": 7,
+        "month": "October",
+        "year": "2026",
+        "status": "CR",
+        "amount": 15000,
+        "transdate": "2020-02-04",
+        "account_type": "Christmas savings",
+        "account_code": "516180229693386",
+        "transID": "143576779573257"
+    }
+},
+{
+    "model": "IIIb.tbliiibsavingsaccount",
+    "pk": 61,
+    "fields": {
+        "branch": 2,
+        "staff": 9,
+        "month": "October",
+        "year": "2026",
+        "status": "CR",
+        "amount": 6500,
+        "transdate": "2020-02-04",
+        "account_type": "Wallet",
+        "account_code": "658495429252260",
+        "transID": "445770962086640"
+    }
+},
+{
+    "model": "IIIb.tbliiibsavingsaccount",
+    "pk": 62,
+    "fields": {
+        "branch": 2,
+        "staff": 9,
+        "month": "October",
+        "year": "2026",
+        "status": "CR",
+        "amount": 7000,
+        "transdate": "2020-02-04",
+        "account_type": "Christmas savings",
+        "account_code": "170408725923707",
+        "transID": "711899809428856"
+    }
+},
+{
+    "model": "IIIb.tbliiibsavingsaccount",
+    "pk": 63,
+    "fields": {
+        "branch": 2,
+        "staff": 10,
+        "month": "October",
+        "year": "2026",
+        "status": "CR",
+        "amount": 6500,
+        "transdate": "2020-02-04",
+        "account_type": "Wallet",
+        "account_code": "886861197714938",
+        "transID": "263606146319373"
+    }
+},
+{
+    "model": "IIIb.tbliiibsavingsaccount",
+    "pk": 64,
+    "fields": {
+        "branch": 2,
+        "staff": 10,
+        "month": "October",
+        "year": "2026",
+        "status": "CR",
+        "amount": 10000,
+        "transdate": "2020-02-04",
+        "account_type": "Christmas savings",
+        "account_code": "313349370272983",
+        "transID": "600066829272488"
+    }
+},
+{
+    "model": "IIIb.tbliiibsavingsaccount",
+    "pk": 65,
+    "fields": {
+        "branch": 2,
+        "staff": 11,
+        "month": "October",
+        "year": "2026",
+        "status": "CR",
+        "amount": 7000,
+        "transdate": "2020-02-04",
+        "account_type": "Wallet",
+        "account_code": "862990168258297",
+        "transID": "608483379003869"
+    }
+},
+{
+    "model": "IIIb.tbliiibsavingsaccount",
+    "pk": 66,
+    "fields": {
+        "branch": 2,
+        "staff": 11,
+        "month": "October",
+        "year": "2026",
+        "status": "CR",
+        "amount": 8000,
+        "transdate": "2020-02-04",
+        "account_type": "Christmas savings",
+        "account_code": "600690878256396",
+        "transID": "728252128733341"
+    }
+},
+{
+    "model": "IIIb.tbliiibsavingsaccount",
+    "pk": 67,
+    "fields": {
+        "branch": 2,
+        "staff": 12,
+        "month": "October",
+        "year": "2026",
+        "status": "CR",
+        "amount": 4500,
+        "transdate": "2020-02-04",
+        "account_type": "Wallet",
+        "account_code": "986638465716894",
+        "transID": "773224298208833"
+    }
+},
+{
+    "model": "IIIb.tbliiibsavingsaccount",
+    "pk": 68,
+    "fields": {
+        "branch": 2,
+        "staff": 12,
+        "month": "October",
+        "year": "2026",
+        "status": "CR",
+        "amount": 5000,
+        "transdate": "2020-02-04",
+        "account_type": "Christmas savings",
+        "account_code": "239024962146296",
+        "transID": "744299613327023"
+    }
+},
+{
+    "model": "IIIb.tbliiibsavingsaccount",
+    "pk": 69,
+    "fields": {
+        "branch": 2,
+        "staff": 13,
+        "month": "October",
+        "year": "2026",
+        "status": "CR",
+        "amount": 15000,
+        "transdate": "2020-02-04",
+        "account_type": "Wallet",
+        "account_code": "981214948139240",
+        "transID": "453112572352982"
+    }
+},
+{
+    "model": "IIIb.tbliiibsavingsaccount",
+    "pk": 70,
+    "fields": {
+        "branch": 2,
+        "staff": 13,
+        "month": "October",
+        "year": "2026",
+        "status": "CR",
+        "amount": 12500,
+        "transdate": "2020-02-04",
+        "account_type": "Christmas savings",
+        "account_code": "977652598908439",
+        "transID": "190967652206373"
+    }
+},
+{
+    "model": "IIIb.tbliiibsavingsaccount",
+    "pk": 71,
+    "fields": {
+        "branch": 2,
+        "staff": 14,
+        "month": "October",
+        "year": "2026",
+        "status": "CR",
+        "amount": 10000,
+        "transdate": "2020-02-04",
+        "account_type": "Wallet",
+        "account_code": "282668427081975",
+        "transID": "988860054834858"
+    }
+},
+{
+    "model": "IIIb.tbliiibsavingsaccount",
+    "pk": 72,
+    "fields": {
+        "branch": 2,
+        "staff": 14,
+        "month": "October",
+        "year": "2026",
+        "status": "CR",
+        "amount": 3500,
+        "transdate": "2020-02-04",
+        "account_type": "Christmas savings",
+        "account_code": "260036980171132",
+        "transID": "538800974001294"
+    }
+},
+{
+    "model": "IIIb.tbliiibsavingsaccount",
+    "pk": 73,
+    "fields": {
+        "branch": 2,
+        "staff": 15,
+        "month": "October",
+        "year": "2026",
+        "status": "CR",
+        "amount": 10000,
+        "transdate": "2020-02-04",
+        "account_type": "Wallet",
+        "account_code": "821030751726578",
+        "transID": "864127243280258"
+    }
+},
+{
+    "model": "IIIb.tbliiibsavingsaccount",
+    "pk": 74,
+    "fields": {
+        "branch": 2,
+        "staff": 15,
+        "month": "October",
+        "year": "2026",
+        "status": "CR",
+        "amount": 5000,
+        "transdate": "2020-02-04",
+        "account_type": "Christmas savings",
+        "account_code": "195612624904713",
+        "transID": "724729561554494"
+    }
+},
+{
+    "model": "IIIb.tbliiibsavingsaccount",
+    "pk": 75,
+    "fields": {
+        "branch": 2,
+        "staff": 16,
+        "month": "October",
+        "year": "2026",
+        "status": "CR",
+        "amount": 6000,
+        "transdate": "2020-02-04",
+        "account_type": "Wallet",
+        "account_code": "603409581046317",
+        "transID": "945024958681576"
+    }
+},
+{
+    "model": "IIIb.tbliiibsavingsaccount",
+    "pk": 76,
+    "fields": {
+        "branch": 2,
+        "staff": 16,
+        "month": "October",
+        "year": "2026",
+        "status": "CR",
+        "amount": 15000,
+        "transdate": "2020-02-04",
+        "account_type": "Christmas savings",
+        "account_code": "122991837474921",
+        "transID": "194779305609924"
+    }
+},
+{
+    "model": "IIIb.tbliiibsavingsaccount",
+    "pk": 77,
+    "fields": {
+        "branch": 2,
+        "staff": 17,
+        "month": "October",
+        "year": "2026",
+        "status": "CR",
+        "amount": 6000,
+        "transdate": "2020-02-04",
+        "account_type": "Wallet",
+        "account_code": "190111522320989",
+        "transID": "162824059723981"
+    }
+},
+{
+    "model": "IIIb.tbliiibsavingsaccount",
+    "pk": 78,
+    "fields": {
+        "branch": 2,
+        "staff": 17,
+        "month": "October",
+        "year": "2026",
+        "status": "CR",
+        "amount": 7500,
+        "transdate": "2020-02-04",
+        "account_type": "Christmas savings",
+        "account_code": "465971197882006",
+        "transID": "919625199390291"
+    }
+},
+{
+    "model": "IIIb.tbliiibsavingsaccount",
+    "pk": 79,
+    "fields": {
+        "branch": 2,
+        "staff": 18,
+        "month": "October",
+        "year": "2026",
+        "status": "CR",
+        "amount": 6000,
+        "transdate": "2020-02-04",
+        "account_type": "Wallet",
+        "account_code": "403019763332434",
+        "transID": "857080275394314"
+    }
+},
+{
+    "model": "IIIb.tbliiibsavingsaccount",
+    "pk": 80,
+    "fields": {
+        "branch": 2,
+        "staff": 18,
+        "month": "October",
+        "year": "2026",
+        "status": "CR",
+        "amount": 10000,
+        "transdate": "2020-02-04",
+        "account_type": "Christmas savings",
+        "account_code": "728776766276934",
+        "transID": "440325195529305"
+    }
+},
+{
+    "model": "IIIb.tbliiibsavingsaccount",
+    "pk": 81,
+    "fields": {
+        "branch": 2,
+        "staff": 19,
+        "month": "October",
+        "year": "2026",
+        "status": "CR",
+        "amount": 6000,
+        "transdate": "2020-02-04",
+        "account_type": "Wallet",
+        "account_code": "869968473970639",
+        "transID": "855522149193219"
+    }
+},
+{
+    "model": "IIIb.tbliiibsavingsaccount",
+    "pk": 82,
+    "fields": {
+        "branch": 2,
+        "staff": 20,
+        "month": "October",
+        "year": "2026",
+        "status": "CR",
+        "amount": 12000,
+        "transdate": "2020-02-04",
+        "account_type": "Wallet",
+        "account_code": "466369331464270",
+        "transID": "298032773550197"
+    }
+},
+{
+    "model": "IIIb.tbliiibsavingsaccount",
+    "pk": 83,
+    "fields": {
+        "branch": 2,
+        "staff": 20,
+        "month": "October",
+        "year": "2026",
+        "status": "CR",
+        "amount": 10000,
+        "transdate": "2020-02-04",
+        "account_type": "Christmas savings",
+        "account_code": "969200426865485",
+        "transID": "513445619172391"
+    }
+},
+{
+    "model": "IIIb.tbliiibsavingsaccount",
+    "pk": 84,
+    "fields": {
+        "branch": 2,
+        "staff": 19,
+        "month": "October",
+        "year": "2026",
+        "status": "CR",
+        "amount": 10000,
+        "transdate": "2020-02-04",
+        "account_type": "Christmas savings",
+        "account_code": "257309883865407",
+        "transID": "826654053306803"
+    }
+},
+{
+    "model": "IIIb.tbliiibsavingsaccount",
+    "pk": 85,
+    "fields": {
+        "branch": 2,
+        "staff": 21,
+        "month": "October",
+        "year": "2026",
+        "status": "CR",
+        "amount": 10000,
+        "transdate": "2020-02-04",
+        "account_type": "Wallet",
+        "account_code": "875232839060498",
+        "transID": "363280506027688"
+    }
+},
+{
+    "model": "IIIb.tbliiibsavingsaccount",
+    "pk": 86,
+    "fields": {
+        "branch": 2,
+        "staff": 21,
+        "month": "October",
+        "year": "2026",
+        "status": "CR",
+        "amount": 5000,
+        "transdate": "2020-02-04",
+        "account_type": "Christmas savings",
+        "account_code": "537245639556011",
+        "transID": "318288644993428"
+    }
+},
+{
+    "model": "IIIb.tbliiibsavingsaccount",
+    "pk": 87,
+    "fields": {
+        "branch": 2,
+        "staff": 22,
+        "month": "October",
+        "year": "2026",
+        "status": "CR",
+        "amount": 14000,
+        "transdate": "2020-02-04",
+        "account_type": "Wallet",
+        "account_code": "700396933076808",
+        "transID": "662020187027279"
+    }
+},
+{
+    "model": "IIIb.tbliiibsavingsaccount",
+    "pk": 88,
+    "fields": {
+        "branch": 2,
+        "staff": 22,
+        "month": "October",
+        "year": "2026",
+        "status": "CR",
+        "amount": 12000,
+        "transdate": "2020-02-04",
+        "account_type": "Christmas savings",
+        "account_code": "418913525081718",
+        "transID": "512058997853081"
+    }
+},
+{
+    "model": "IIIb.tbliiibsavingsaccount",
+    "pk": 89,
+    "fields": {
+        "branch": 2,
+        "staff": 23,
+        "month": "October",
+        "year": "2026",
+        "status": "CR",
+        "amount": 10000,
+        "transdate": "2020-02-04",
+        "account_type": "Wallet",
+        "account_code": "587776701056795",
+        "transID": "161348640351362"
+    }
+},
+{
+    "model": "IIIb.tbliiibsavingsaccount",
+    "pk": 90,
+    "fields": {
+        "branch": 2,
+        "staff": 23,
+        "month": "October",
+        "year": "2026",
+        "status": "CR",
+        "amount": 5000,
+        "transdate": "2020-02-04",
+        "account_type": "Christmas savings",
+        "account_code": "114048656982901",
+        "transID": "207435078107317"
+    }
+},
+{
+    "model": "IIIb.tbliiibsavingsaccount",
+    "pk": 91,
+    "fields": {
+        "branch": 2,
+        "staff": 2,
+        "month": "October",
+        "year": "2026",
+        "status": "CR",
+        "amount": 3000,
+        "transdate": "2020-02-04",
+        "account_type": "Wallet",
+        "account_code": "691203163709547",
+        "transID": "590546246562712"
+    }
+},
+{
+    "model": "IIIb.tbliiibsavingsaccount",
+    "pk": 92,
+    "fields": {
+        "branch": 2,
+        "staff": 2,
+        "month": "October",
+        "year": "2026",
+        "status": "CR",
+        "amount": 5000,
+        "transdate": "2020-02-04",
+        "account_type": "Christmas savings",
+        "account_code": "875184535164102",
+        "transID": "800349655879438"
+    }
+},
+{
+    "model": "IIIb.tbliiibsavingsaccount",
+    "pk": 96,
+    "fields": {
+        "branch": 2,
+        "staff": 1,
+        "month": "September",
+        "year": "2026",
+        "status": "DR",
+        "amount": 10000,
+        "transdate": "2026-09-06",
+        "account_type": "Christmas savings",
+        "account_code": "306204899048259",
+        "transID": "579165907216938"
+    }
+},
+{
+    "model": "IIIb.tbliiibsavingsaccount",
+    "pk": 97,
+    "fields": {
+        "branch": 2,
+        "staff": 2,
+        "month": "September",
+        "year": "2026",
+        "status": "DR",
+        "amount": 10000,
+        "transdate": "2026-09-06",
+        "account_type": "Christmas savings",
+        "account_code": "875184535164102",
+        "transID": "283836779997598"
+    }
+},
+{
+    "model": "IIIb.tbliiibsavingsaccount",
+    "pk": 98,
+    "fields": {
+        "branch": 2,
+        "staff": 1,
+        "month": "September",
+        "year": "2026",
+        "status": "DR",
+        "amount": 16500,
+        "transdate": "2026-09-06",
+        "account_type": "Commodities",
+        "account_code": "809606086773990",
+        "transID": "943083156533093"
+    }
+},
+{
+    "model": "IIIb.tbliiiibassets_authorization",
+    "pk": 1,
+    "fields": {
+        "branch": 2,
+        "staff": 1,
+        "month": "September",
+        "year": "2026",
+        "asset_authorization_code": "325823722261159",
+        "transdate": "2026-09-02",
+        "amount": "10000",
+        "description": "Wallet",
+        "status": "Running"
+    }
+},
+{
+    "model": "IIIb.tbliiiibassets_authorization",
+    "pk": 2,
+    "fields": {
+        "branch": 2,
+        "staff": 1,
+        "month": "September",
+        "year": "2026",
+        "asset_authorization_code": "306204899048259",
+        "transdate": "2026-09-02",
+        "amount": "5000",
+        "description": "Christmas savings",
+        "status": "Running"
+    }
+},
+{
+    "model": "IIIb.tbliiiibassets_authorization",
+    "pk": 3,
+    "fields": {
+        "branch": 2,
+        "staff": 3,
+        "month": "September",
+        "year": "2026",
+        "asset_authorization_code": "868634971901308",
+        "transdate": "2026-09-02",
+        "amount": "4500",
+        "description": "Wallet",
+        "status": "Running"
+    }
+},
+{
+    "model": "IIIb.tbliiiibassets_authorization",
+    "pk": 4,
+    "fields": {
+        "branch": 2,
+        "staff": 3,
+        "month": "September",
+        "year": "2026",
+        "asset_authorization_code": "256228810926224",
+        "transdate": "2026-09-02",
+        "amount": "7000",
+        "description": "Christmas savings",
+        "status": "Running"
+    }
+},
+{
+    "model": "IIIb.tbliiiibassets_authorization",
+    "pk": 5,
+    "fields": {
+        "branch": 2,
+        "staff": 4,
+        "month": "September",
+        "year": "2026",
+        "asset_authorization_code": "958712206565691",
+        "transdate": "2026-09-02",
+        "amount": "6000",
+        "description": "Wallet",
+        "status": "Running"
+    }
+},
+{
+    "model": "IIIb.tbliiiibassets_authorization",
+    "pk": 6,
+    "fields": {
+        "branch": 2,
+        "staff": 4,
+        "month": "September",
+        "year": "2026",
+        "asset_authorization_code": "431103376186246",
+        "transdate": "2026-09-02",
+        "amount": "7500",
+        "description": "Christmas savings",
+        "status": "Running"
+    }
+},
+{
+    "model": "IIIb.tbliiiibassets_authorization",
+    "pk": 7,
+    "fields": {
+        "branch": 2,
+        "staff": 6,
+        "month": "September",
+        "year": "2026",
+        "asset_authorization_code": "598092192404542",
+        "transdate": "2026-09-02",
+        "amount": "7800",
+        "description": "Wallet",
+        "status": "Running"
+    }
+},
+{
+    "model": "IIIb.tbliiiibassets_authorization",
+    "pk": 8,
+    "fields": {
+        "branch": 2,
+        "staff": 6,
+        "month": "September",
+        "year": "2026",
+        "asset_authorization_code": "820597292769263",
+        "transdate": "2026-09-02",
+        "amount": "5000",
+        "description": "Christmas savings",
+        "status": "Running"
+    }
+},
+{
+    "model": "IIIb.tbliiiibassets_authorization",
+    "pk": 9,
+    "fields": {
+        "branch": 2,
+        "staff": 5,
+        "month": "September",
+        "year": "2026",
+        "asset_authorization_code": "853541184750114",
+        "transdate": "2026-09-02",
+        "amount": "12000",
+        "description": "Wallet",
+        "status": "Running"
+    }
+},
+{
+    "model": "IIIb.tbliiiibassets_authorization",
+    "pk": 10,
+    "fields": {
+        "branch": 2,
+        "staff": 5,
+        "month": "September",
+        "year": "2026",
+        "asset_authorization_code": "547842446594275",
+        "transdate": "2026-09-02",
+        "amount": "10000",
+        "description": "Christmas savings",
+        "status": "Running"
+    }
+},
+{
+    "model": "IIIb.tbliiiibassets_authorization",
+    "pk": 11,
+    "fields": {
+        "branch": 2,
+        "staff": 8,
+        "month": "September",
+        "year": "2026",
+        "asset_authorization_code": "207356673638167",
+        "transdate": "2026-09-02",
+        "amount": "5000",
+        "description": "Wallet",
+        "status": "Running"
+    }
+},
+{
+    "model": "IIIb.tbliiiibassets_authorization",
+    "pk": 12,
+    "fields": {
+        "branch": 2,
+        "staff": 8,
+        "month": "September",
+        "year": "2026",
+        "asset_authorization_code": "304530657745435",
+        "transdate": "2026-09-02",
+        "amount": "8000",
+        "description": "Christmas savings",
+        "status": "Running"
+    }
+},
+{
+    "model": "IIIb.tbliiiibassets_authorization",
+    "pk": 13,
+    "fields": {
+        "branch": 2,
+        "staff": 7,
+        "month": "September",
+        "year": "2026",
+        "asset_authorization_code": "967355835865380",
+        "transdate": "2026-09-02",
+        "amount": "6500",
+        "description": "Wallet",
+        "status": "Running"
+    }
+},
+{
+    "model": "IIIb.tbliiiibassets_authorization",
+    "pk": 14,
+    "fields": {
+        "branch": 2,
+        "staff": 7,
+        "month": "September",
+        "year": "2026",
+        "asset_authorization_code": "516180229693386",
+        "transdate": "2026-09-02",
+        "amount": "15000",
+        "description": "Christmas savings",
+        "status": "Running"
+    }
+},
+{
+    "model": "IIIb.tbliiiibassets_authorization",
+    "pk": 15,
+    "fields": {
+        "branch": 2,
+        "staff": 9,
+        "month": "September",
+        "year": "2026",
+        "asset_authorization_code": "658495429252260",
+        "transdate": "2026-09-02",
+        "amount": "6500",
+        "description": "Wallet",
+        "status": "Running"
+    }
+},
+{
+    "model": "IIIb.tbliiiibassets_authorization",
+    "pk": 16,
+    "fields": {
+        "branch": 2,
+        "staff": 9,
+        "month": "September",
+        "year": "2026",
+        "asset_authorization_code": "170408725923707",
+        "transdate": "2026-09-02",
+        "amount": "7000",
+        "description": "Christmas savings",
+        "status": "Running"
+    }
+},
+{
+    "model": "IIIb.tbliiiibassets_authorization",
+    "pk": 17,
+    "fields": {
+        "branch": 2,
+        "staff": 10,
+        "month": "September",
+        "year": "2026",
+        "asset_authorization_code": "886861197714938",
+        "transdate": "2026-09-02",
+        "amount": "6500",
+        "description": "Wallet",
+        "status": "Running"
+    }
+},
+{
+    "model": "IIIb.tbliiiibassets_authorization",
+    "pk": 18,
+    "fields": {
+        "branch": 2,
+        "staff": 10,
+        "month": "September",
+        "year": "2026",
+        "asset_authorization_code": "313349370272983",
+        "transdate": "2026-09-02",
+        "amount": "10000",
+        "description": "Christmas savings",
+        "status": "Running"
+    }
+},
+{
+    "model": "IIIb.tbliiiibassets_authorization",
+    "pk": 19,
+    "fields": {
+        "branch": 2,
+        "staff": 11,
+        "month": "September",
+        "year": "2026",
+        "asset_authorization_code": "862990168258297",
+        "transdate": "2026-09-02",
+        "amount": "7000",
+        "description": "Wallet",
+        "status": "Running"
+    }
+},
+{
+    "model": "IIIb.tbliiiibassets_authorization",
+    "pk": 20,
+    "fields": {
+        "branch": 2,
+        "staff": 11,
+        "month": "September",
+        "year": "2026",
+        "asset_authorization_code": "600690878256396",
+        "transdate": "2026-09-02",
+        "amount": "8000",
+        "description": "Christmas savings",
+        "status": "Running"
+    }
+},
+{
+    "model": "IIIb.tbliiiibassets_authorization",
+    "pk": 21,
+    "fields": {
+        "branch": 2,
+        "staff": 12,
+        "month": "September",
+        "year": "2026",
+        "asset_authorization_code": "986638465716894",
+        "transdate": "2026-09-02",
+        "amount": "4500",
+        "description": "Wallet",
+        "status": "Running"
+    }
+},
+{
+    "model": "IIIb.tbliiiibassets_authorization",
+    "pk": 22,
+    "fields": {
+        "branch": 2,
+        "staff": 12,
+        "month": "September",
+        "year": "2026",
+        "asset_authorization_code": "239024962146296",
+        "transdate": "2026-09-02",
+        "amount": "5000",
+        "description": "Christmas savings",
+        "status": "Running"
+    }
+},
+{
+    "model": "IIIb.tbliiiibassets_authorization",
+    "pk": 23,
+    "fields": {
+        "branch": 2,
+        "staff": 13,
+        "month": "September",
+        "year": "2026",
+        "asset_authorization_code": "981214948139240",
+        "transdate": "2026-09-02",
+        "amount": "15000",
+        "description": "Wallet",
+        "status": "Running"
+    }
+},
+{
+    "model": "IIIb.tbliiiibassets_authorization",
+    "pk": 24,
+    "fields": {
+        "branch": 2,
+        "staff": 13,
+        "month": "September",
+        "year": "2026",
+        "asset_authorization_code": "977652598908439",
+        "transdate": "2026-09-02",
+        "amount": "12500",
+        "description": "Christmas savings",
+        "status": "Running"
+    }
+},
+{
+    "model": "IIIb.tbliiiibassets_authorization",
+    "pk": 25,
+    "fields": {
+        "branch": 2,
+        "staff": 14,
+        "month": "September",
+        "year": "2026",
+        "asset_authorization_code": "282668427081975",
+        "transdate": "2026-09-02",
+        "amount": "10000",
+        "description": "Wallet",
+        "status": "Running"
+    }
+},
+{
+    "model": "IIIb.tbliiiibassets_authorization",
+    "pk": 26,
+    "fields": {
+        "branch": 2,
+        "staff": 14,
+        "month": "September",
+        "year": "2026",
+        "asset_authorization_code": "260036980171132",
+        "transdate": "2026-09-02",
+        "amount": "3500",
+        "description": "Christmas savings",
+        "status": "Running"
+    }
+},
+{
+    "model": "IIIb.tbliiiibassets_authorization",
+    "pk": 27,
+    "fields": {
+        "branch": 2,
+        "staff": 15,
+        "month": "September",
+        "year": "2026",
+        "asset_authorization_code": "821030751726578",
+        "transdate": "2026-09-02",
+        "amount": "10000",
+        "description": "Wallet",
+        "status": "Running"
+    }
+},
+{
+    "model": "IIIb.tbliiiibassets_authorization",
+    "pk": 28,
+    "fields": {
+        "branch": 2,
+        "staff": 15,
+        "month": "September",
+        "year": "2026",
+        "asset_authorization_code": "195612624904713",
+        "transdate": "2026-09-02",
+        "amount": "5000",
+        "description": "Christmas savings",
+        "status": "Running"
+    }
+},
+{
+    "model": "IIIb.tbliiiibassets_authorization",
+    "pk": 29,
+    "fields": {
+        "branch": 2,
+        "staff": 16,
+        "month": "September",
+        "year": "2026",
+        "asset_authorization_code": "603409581046317",
+        "transdate": "2026-09-02",
+        "amount": "6000",
+        "description": "Wallet",
+        "status": "Running"
+    }
+},
+{
+    "model": "IIIb.tbliiiibassets_authorization",
+    "pk": 30,
+    "fields": {
+        "branch": 2,
+        "staff": 16,
+        "month": "September",
+        "year": "2026",
+        "asset_authorization_code": "122991837474921",
+        "transdate": "2026-09-02",
+        "amount": "15000",
+        "description": "Christmas savings",
+        "status": "Running"
+    }
+},
+{
+    "model": "IIIb.tbliiiibassets_authorization",
+    "pk": 31,
+    "fields": {
+        "branch": 2,
+        "staff": 17,
+        "month": "September",
+        "year": "2026",
+        "asset_authorization_code": "190111522320989",
+        "transdate": "2026-09-02",
+        "amount": "6000",
+        "description": "Wallet",
+        "status": "Running"
+    }
+},
+{
+    "model": "IIIb.tbliiiibassets_authorization",
+    "pk": 32,
+    "fields": {
+        "branch": 2,
+        "staff": 17,
+        "month": "September",
+        "year": "2026",
+        "asset_authorization_code": "465971197882006",
+        "transdate": "2026-09-02",
+        "amount": "7500",
+        "description": "Christmas savings",
+        "status": "Running"
+    }
+},
+{
+    "model": "IIIb.tbliiiibassets_authorization",
+    "pk": 33,
+    "fields": {
+        "branch": 2,
+        "staff": 18,
+        "month": "September",
+        "year": "2026",
+        "asset_authorization_code": "403019763332434",
+        "transdate": "2026-09-02",
+        "amount": "6000",
+        "description": "Wallet",
+        "status": "Running"
+    }
+},
+{
+    "model": "IIIb.tbliiiibassets_authorization",
+    "pk": 34,
+    "fields": {
+        "branch": 2,
+        "staff": 18,
+        "month": "September",
+        "year": "2026",
+        "asset_authorization_code": "728776766276934",
+        "transdate": "2026-09-02",
+        "amount": "10000",
+        "description": "Christmas savings",
+        "status": "Running"
+    }
+},
+{
+    "model": "IIIb.tbliiiibassets_authorization",
+    "pk": 35,
+    "fields": {
+        "branch": 2,
+        "staff": 19,
+        "month": "September",
+        "year": "2026",
+        "asset_authorization_code": "869968473970639",
+        "transdate": "2026-09-02",
+        "amount": "6000",
+        "description": "Wallet",
+        "status": "Running"
+    }
+},
+{
+    "model": "IIIb.tbliiiibassets_authorization",
+    "pk": 36,
+    "fields": {
+        "branch": 2,
+        "staff": 20,
+        "month": "September",
+        "year": "2026",
+        "asset_authorization_code": "466369331464270",
+        "transdate": "2026-09-02",
+        "amount": "12000",
+        "description": "Wallet",
+        "status": "Running"
+    }
+},
+{
+    "model": "IIIb.tbliiiibassets_authorization",
+    "pk": 37,
+    "fields": {
+        "branch": 2,
+        "staff": 20,
+        "month": "September",
+        "year": "2026",
+        "asset_authorization_code": "969200426865485",
+        "transdate": "2026-09-02",
+        "amount": "10000",
+        "description": "Christmas savings",
+        "status": "Running"
+    }
+},
+{
+    "model": "IIIb.tbliiiibassets_authorization",
+    "pk": 38,
+    "fields": {
+        "branch": 2,
+        "staff": 19,
+        "month": "September",
+        "year": "2026",
+        "asset_authorization_code": "257309883865407",
+        "transdate": "2026-09-02",
+        "amount": "10000",
+        "description": "Christmas savings",
+        "status": "Running"
+    }
+},
+{
+    "model": "IIIb.tbliiiibassets_authorization",
+    "pk": 39,
+    "fields": {
+        "branch": 2,
+        "staff": 21,
+        "month": "September",
+        "year": "2026",
+        "asset_authorization_code": "875232839060498",
+        "transdate": "2026-09-02",
+        "amount": "10000",
+        "description": "Wallet",
+        "status": "Running"
+    }
+},
+{
+    "model": "IIIb.tbliiiibassets_authorization",
+    "pk": 40,
+    "fields": {
+        "branch": 2,
+        "staff": 21,
+        "month": "September",
+        "year": "2026",
+        "asset_authorization_code": "537245639556011",
+        "transdate": "2026-09-02",
+        "amount": "5000",
+        "description": "Christmas savings",
+        "status": "Running"
+    }
+},
+{
+    "model": "IIIb.tbliiiibassets_authorization",
+    "pk": 41,
+    "fields": {
+        "branch": 2,
+        "staff": 22,
+        "month": "September",
+        "year": "2026",
+        "asset_authorization_code": "700396933076808",
+        "transdate": "2026-09-02",
+        "amount": "14000",
+        "description": "Wallet",
+        "status": "Running"
+    }
+},
+{
+    "model": "IIIb.tbliiiibassets_authorization",
+    "pk": 42,
+    "fields": {
+        "branch": 2,
+        "staff": 22,
+        "month": "September",
+        "year": "2026",
+        "asset_authorization_code": "418913525081718",
+        "transdate": "2026-09-02",
+        "amount": "12000",
+        "description": "Christmas savings",
+        "status": "Running"
+    }
+},
+{
+    "model": "IIIb.tbliiiibassets_authorization",
+    "pk": 43,
+    "fields": {
+        "branch": 2,
+        "staff": 23,
+        "month": "September",
+        "year": "2026",
+        "asset_authorization_code": "587776701056795",
+        "transdate": "2026-09-02",
+        "amount": "10000",
+        "description": "Wallet",
+        "status": "Running"
+    }
+},
+{
+    "model": "IIIb.tbliiiibassets_authorization",
+    "pk": 44,
+    "fields": {
+        "branch": 2,
+        "staff": 23,
+        "month": "September",
+        "year": "2026",
+        "asset_authorization_code": "114048656982901",
+        "transdate": "2026-09-02",
+        "amount": "5000",
+        "description": "Christmas savings",
+        "status": "Running"
+    }
+},
+{
+    "model": "IIIb.tbliiiibassets_authorization",
+    "pk": 45,
+    "fields": {
+        "branch": 2,
+        "staff": 2,
+        "month": "September",
+        "year": "2026",
+        "asset_authorization_code": "691203163709547",
+        "transdate": "2026-09-02",
+        "amount": "3000",
+        "description": "Wallet",
+        "status": "Running"
+    }
+},
+{
+    "model": "IIIb.tbliiiibassets_authorization",
+    "pk": 46,
+    "fields": {
+        "branch": 2,
+        "staff": 2,
+        "month": "September",
+        "year": "2026",
+        "asset_authorization_code": "875184535164102",
+        "transdate": "2026-09-02",
+        "amount": "5000",
+        "description": "Christmas savings",
+        "status": "Running"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 1,
+    "fields": {
+        "status": "Executed",
+        "branch": 2,
+        "staff": 1,
+        "month": "September",
+        "year": "2026",
+        "amount": 10000,
+        "transdate": "2026-09-02",
+        "transID": "172423410866752",
+        "authorization_code": "325823722261159",
+        "account_type": "Assets",
+        "scheme": "Wallet"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 2,
+    "fields": {
+        "status": "Executed",
+        "branch": 2,
+        "staff": 1,
+        "month": "October",
+        "year": "2026",
+        "amount": 10000,
+        "transdate": "2026-09-02",
+        "transID": "904743823152725",
+        "authorization_code": "325823722261159",
+        "account_type": "Assets",
+        "scheme": "Wallet"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 3,
+    "fields": {
+        "status": "Awaiting Execution",
+        "branch": 2,
+        "staff": 1,
+        "month": "November",
+        "year": "2026",
+        "amount": 10000,
+        "transdate": "2026-09-02",
+        "transID": "297317970064513",
+        "authorization_code": "325823722261159",
+        "account_type": "Assets",
+        "scheme": "Wallet"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 4,
+    "fields": {
+        "status": "Awaiting Execution",
+        "branch": 2,
+        "staff": 1,
+        "month": "December",
+        "year": "2026",
+        "amount": 10000,
+        "transdate": "2026-09-02",
+        "transID": "965425105987344",
+        "authorization_code": "325823722261159",
+        "account_type": "Assets",
+        "scheme": "Wallet"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 5,
+    "fields": {
+        "status": "Executed",
+        "branch": 2,
+        "staff": 1,
+        "month": "September",
+        "year": "2026",
+        "amount": 5000,
+        "transdate": "2026-09-02",
+        "transID": "464218022418572",
+        "authorization_code": "306204899048259",
+        "account_type": "Assets",
+        "scheme": "Christmas savings"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 6,
+    "fields": {
+        "status": "Executed",
+        "branch": 2,
+        "staff": 1,
+        "month": "October",
+        "year": "2026",
+        "amount": 5000,
+        "transdate": "2026-09-02",
+        "transID": "309206499692606",
+        "authorization_code": "306204899048259",
+        "account_type": "Assets",
+        "scheme": "Christmas savings"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 7,
+    "fields": {
+        "status": "Awaiting Execution",
+        "branch": 2,
+        "staff": 1,
+        "month": "November",
+        "year": "2026",
+        "amount": 5000,
+        "transdate": "2026-09-02",
+        "transID": "412419337494004",
+        "authorization_code": "306204899048259",
+        "account_type": "Assets",
+        "scheme": "Christmas savings"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 8,
+    "fields": {
+        "status": "Executed",
+        "branch": 2,
+        "staff": 3,
+        "month": "September",
+        "year": "2026",
+        "amount": 4500,
+        "transdate": "2026-09-02",
+        "transID": "915337865250378",
+        "authorization_code": "868634971901308",
+        "account_type": "Assets",
+        "scheme": "Wallet"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 9,
+    "fields": {
+        "status": "Executed",
+        "branch": 2,
+        "staff": 3,
+        "month": "October",
+        "year": "2026",
+        "amount": 4500,
+        "transdate": "2026-09-02",
+        "transID": "435578155218445",
+        "authorization_code": "868634971901308",
+        "account_type": "Assets",
+        "scheme": "Wallet"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 10,
+    "fields": {
+        "status": "Awaiting Execution",
+        "branch": 2,
+        "staff": 3,
+        "month": "November",
+        "year": "2026",
+        "amount": 4500,
+        "transdate": "2026-09-02",
+        "transID": "600883087691125",
+        "authorization_code": "868634971901308",
+        "account_type": "Assets",
+        "scheme": "Wallet"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 11,
+    "fields": {
+        "status": "Awaiting Execution",
+        "branch": 2,
+        "staff": 3,
+        "month": "December",
+        "year": "2026",
+        "amount": 4500,
+        "transdate": "2026-09-02",
+        "transID": "953091148218249",
+        "authorization_code": "868634971901308",
+        "account_type": "Assets",
+        "scheme": "Wallet"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 12,
+    "fields": {
+        "status": "Executed",
+        "branch": 2,
+        "staff": 3,
+        "month": "September",
+        "year": "2026",
+        "amount": 7000,
+        "transdate": "2026-09-02",
+        "transID": "635427801242978",
+        "authorization_code": "256228810926224",
+        "account_type": "Assets",
+        "scheme": "Christmas savings"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 13,
+    "fields": {
+        "status": "Executed",
+        "branch": 2,
+        "staff": 3,
+        "month": "October",
+        "year": "2026",
+        "amount": 7000,
+        "transdate": "2026-09-02",
+        "transID": "336572508452364",
+        "authorization_code": "256228810926224",
+        "account_type": "Assets",
+        "scheme": "Christmas savings"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 14,
+    "fields": {
+        "status": "Awaiting Execution",
+        "branch": 2,
+        "staff": 3,
+        "month": "November",
+        "year": "2026",
+        "amount": 7000,
+        "transdate": "2026-09-02",
+        "transID": "352899134763705",
+        "authorization_code": "256228810926224",
+        "account_type": "Assets",
+        "scheme": "Christmas savings"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 15,
+    "fields": {
+        "status": "Executed",
+        "branch": 2,
+        "staff": 4,
+        "month": "September",
+        "year": "2026",
+        "amount": 6000,
+        "transdate": "2026-09-02",
+        "transID": "293223372342005",
+        "authorization_code": "958712206565691",
+        "account_type": "Assets",
+        "scheme": "Wallet"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 16,
+    "fields": {
+        "status": "Executed",
+        "branch": 2,
+        "staff": 4,
+        "month": "October",
+        "year": "2026",
+        "amount": 6000,
+        "transdate": "2026-09-02",
+        "transID": "789303779979557",
+        "authorization_code": "958712206565691",
+        "account_type": "Assets",
+        "scheme": "Wallet"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 17,
+    "fields": {
+        "status": "Awaiting Execution",
+        "branch": 2,
+        "staff": 4,
+        "month": "November",
+        "year": "2026",
+        "amount": 6000,
+        "transdate": "2026-09-02",
+        "transID": "877722021181852",
+        "authorization_code": "958712206565691",
+        "account_type": "Assets",
+        "scheme": "Wallet"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 18,
+    "fields": {
+        "status": "Awaiting Execution",
+        "branch": 2,
+        "staff": 4,
+        "month": "December",
+        "year": "2026",
+        "amount": 6000,
+        "transdate": "2026-09-02",
+        "transID": "462336053267578",
+        "authorization_code": "958712206565691",
+        "account_type": "Assets",
+        "scheme": "Wallet"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 19,
+    "fields": {
+        "status": "Executed",
+        "branch": 2,
+        "staff": 4,
+        "month": "September",
+        "year": "2026",
+        "amount": 7500,
+        "transdate": "2026-09-02",
+        "transID": "568709628729175",
+        "authorization_code": "431103376186246",
+        "account_type": "Assets",
+        "scheme": "Christmas savings"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 20,
+    "fields": {
+        "status": "Executed",
+        "branch": 2,
+        "staff": 4,
+        "month": "October",
+        "year": "2026",
+        "amount": 7500,
+        "transdate": "2026-09-02",
+        "transID": "346436823439957",
+        "authorization_code": "431103376186246",
+        "account_type": "Assets",
+        "scheme": "Christmas savings"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 21,
+    "fields": {
+        "status": "Awaiting Execution",
+        "branch": 2,
+        "staff": 4,
+        "month": "November",
+        "year": "2026",
+        "amount": 7500,
+        "transdate": "2026-09-02",
+        "transID": "526240052051206",
+        "authorization_code": "431103376186246",
+        "account_type": "Assets",
+        "scheme": "Christmas savings"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 22,
+    "fields": {
+        "status": "Executed",
+        "branch": 2,
+        "staff": 6,
+        "month": "September",
+        "year": "2026",
+        "amount": 7800,
+        "transdate": "2026-09-02",
+        "transID": "174022357488852",
+        "authorization_code": "598092192404542",
+        "account_type": "Assets",
+        "scheme": "Wallet"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 23,
+    "fields": {
+        "status": "Executed",
+        "branch": 2,
+        "staff": 6,
+        "month": "October",
+        "year": "2026",
+        "amount": 7800,
+        "transdate": "2026-09-02",
+        "transID": "218883173896111",
+        "authorization_code": "598092192404542",
+        "account_type": "Assets",
+        "scheme": "Wallet"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 24,
+    "fields": {
+        "status": "Awaiting Execution",
+        "branch": 2,
+        "staff": 6,
+        "month": "November",
+        "year": "2026",
+        "amount": 7800,
+        "transdate": "2026-09-02",
+        "transID": "614544748330413",
+        "authorization_code": "598092192404542",
+        "account_type": "Assets",
+        "scheme": "Wallet"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 25,
+    "fields": {
+        "status": "Awaiting Execution",
+        "branch": 2,
+        "staff": 6,
+        "month": "December",
+        "year": "2026",
+        "amount": 7800,
+        "transdate": "2026-09-02",
+        "transID": "909254285270110",
+        "authorization_code": "598092192404542",
+        "account_type": "Assets",
+        "scheme": "Wallet"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 26,
+    "fields": {
+        "status": "Executed",
+        "branch": 2,
+        "staff": 6,
+        "month": "September",
+        "year": "2026",
+        "amount": 5000,
+        "transdate": "2026-09-02",
+        "transID": "186231101292856",
+        "authorization_code": "820597292769263",
+        "account_type": "Assets",
+        "scheme": "Christmas savings"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 27,
+    "fields": {
+        "status": "Executed",
+        "branch": 2,
+        "staff": 6,
+        "month": "October",
+        "year": "2026",
+        "amount": 5000,
+        "transdate": "2026-09-02",
+        "transID": "166647625186225",
+        "authorization_code": "820597292769263",
+        "account_type": "Assets",
+        "scheme": "Christmas savings"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 28,
+    "fields": {
+        "status": "Awaiting Execution",
+        "branch": 2,
+        "staff": 6,
+        "month": "November",
+        "year": "2026",
+        "amount": 5000,
+        "transdate": "2026-09-02",
+        "transID": "926339645811227",
+        "authorization_code": "820597292769263",
+        "account_type": "Assets",
+        "scheme": "Christmas savings"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 29,
+    "fields": {
+        "status": "Executed",
+        "branch": 2,
+        "staff": 5,
+        "month": "September",
+        "year": "2026",
+        "amount": 12000,
+        "transdate": "2026-09-02",
+        "transID": "337482909951745",
+        "authorization_code": "853541184750114",
+        "account_type": "Assets",
+        "scheme": "Wallet"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 30,
+    "fields": {
+        "status": "Executed",
+        "branch": 2,
+        "staff": 5,
+        "month": "October",
+        "year": "2026",
+        "amount": 12000,
+        "transdate": "2026-09-02",
+        "transID": "987700593406490",
+        "authorization_code": "853541184750114",
+        "account_type": "Assets",
+        "scheme": "Wallet"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 31,
+    "fields": {
+        "status": "Awaiting Execution",
+        "branch": 2,
+        "staff": 5,
+        "month": "November",
+        "year": "2026",
+        "amount": 12000,
+        "transdate": "2026-09-02",
+        "transID": "523561049481705",
+        "authorization_code": "853541184750114",
+        "account_type": "Assets",
+        "scheme": "Wallet"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 32,
+    "fields": {
+        "status": "Awaiting Execution",
+        "branch": 2,
+        "staff": 5,
+        "month": "December",
+        "year": "2026",
+        "amount": 12000,
+        "transdate": "2026-09-02",
+        "transID": "154874578797022",
+        "authorization_code": "853541184750114",
+        "account_type": "Assets",
+        "scheme": "Wallet"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 33,
+    "fields": {
+        "status": "Executed",
+        "branch": 2,
+        "staff": 5,
+        "month": "September",
+        "year": "2026",
+        "amount": 10000,
+        "transdate": "2026-09-02",
+        "transID": "360222400310002",
+        "authorization_code": "547842446594275",
+        "account_type": "Assets",
+        "scheme": "Christmas savings"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 34,
+    "fields": {
+        "status": "Executed",
+        "branch": 2,
+        "staff": 5,
+        "month": "October",
+        "year": "2026",
+        "amount": 10000,
+        "transdate": "2026-09-02",
+        "transID": "648544417742607",
+        "authorization_code": "547842446594275",
+        "account_type": "Assets",
+        "scheme": "Christmas savings"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 35,
+    "fields": {
+        "status": "Awaiting Execution",
+        "branch": 2,
+        "staff": 5,
+        "month": "November",
+        "year": "2026",
+        "amount": 10000,
+        "transdate": "2026-09-02",
+        "transID": "524221642272268",
+        "authorization_code": "547842446594275",
+        "account_type": "Assets",
+        "scheme": "Christmas savings"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 36,
+    "fields": {
+        "status": "Executed",
+        "branch": 2,
+        "staff": 8,
+        "month": "September",
+        "year": "2026",
+        "amount": 5000,
+        "transdate": "2026-09-02",
+        "transID": "871783390526618",
+        "authorization_code": "207356673638167",
+        "account_type": "Assets",
+        "scheme": "Wallet"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 37,
+    "fields": {
+        "status": "Executed",
+        "branch": 2,
+        "staff": 8,
+        "month": "October",
+        "year": "2026",
+        "amount": 5000,
+        "transdate": "2026-09-02",
+        "transID": "178641612113512",
+        "authorization_code": "207356673638167",
+        "account_type": "Assets",
+        "scheme": "Wallet"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 38,
+    "fields": {
+        "status": "Awaiting Execution",
+        "branch": 2,
+        "staff": 8,
+        "month": "November",
+        "year": "2026",
+        "amount": 5000,
+        "transdate": "2026-09-02",
+        "transID": "401948537287466",
+        "authorization_code": "207356673638167",
+        "account_type": "Assets",
+        "scheme": "Wallet"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 39,
+    "fields": {
+        "status": "Awaiting Execution",
+        "branch": 2,
+        "staff": 8,
+        "month": "December",
+        "year": "2026",
+        "amount": 5000,
+        "transdate": "2026-09-02",
+        "transID": "885810522304842",
+        "authorization_code": "207356673638167",
+        "account_type": "Assets",
+        "scheme": "Wallet"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 40,
+    "fields": {
+        "status": "Executed",
+        "branch": 2,
+        "staff": 8,
+        "month": "September",
+        "year": "2026",
+        "amount": 8000,
+        "transdate": "2026-09-02",
+        "transID": "324967010116930",
+        "authorization_code": "304530657745435",
+        "account_type": "Assets",
+        "scheme": "Christmas savings"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 41,
+    "fields": {
+        "status": "Executed",
+        "branch": 2,
+        "staff": 8,
+        "month": "October",
+        "year": "2026",
+        "amount": 8000,
+        "transdate": "2026-09-02",
+        "transID": "900851819771826",
+        "authorization_code": "304530657745435",
+        "account_type": "Assets",
+        "scheme": "Christmas savings"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 42,
+    "fields": {
+        "status": "Awaiting Execution",
+        "branch": 2,
+        "staff": 8,
+        "month": "November",
+        "year": "2026",
+        "amount": 8000,
+        "transdate": "2026-09-02",
+        "transID": "671086406244535",
+        "authorization_code": "304530657745435",
+        "account_type": "Assets",
+        "scheme": "Christmas savings"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 43,
+    "fields": {
+        "status": "Executed",
+        "branch": 2,
+        "staff": 7,
+        "month": "September",
+        "year": "2026",
+        "amount": 6500,
+        "transdate": "2026-09-02",
+        "transID": "627151015509407",
+        "authorization_code": "967355835865380",
+        "account_type": "Assets",
+        "scheme": "Wallet"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 44,
+    "fields": {
+        "status": "Executed",
+        "branch": 2,
+        "staff": 7,
+        "month": "October",
+        "year": "2026",
+        "amount": 6500,
+        "transdate": "2026-09-02",
+        "transID": "334495201486038",
+        "authorization_code": "967355835865380",
+        "account_type": "Assets",
+        "scheme": "Wallet"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 45,
+    "fields": {
+        "status": "Awaiting Execution",
+        "branch": 2,
+        "staff": 7,
+        "month": "November",
+        "year": "2026",
+        "amount": 6500,
+        "transdate": "2026-09-02",
+        "transID": "776360829437396",
+        "authorization_code": "967355835865380",
+        "account_type": "Assets",
+        "scheme": "Wallet"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 46,
+    "fields": {
+        "status": "Awaiting Execution",
+        "branch": 2,
+        "staff": 7,
+        "month": "December",
+        "year": "2026",
+        "amount": 6500,
+        "transdate": "2026-09-02",
+        "transID": "374555492405699",
+        "authorization_code": "967355835865380",
+        "account_type": "Assets",
+        "scheme": "Wallet"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 47,
+    "fields": {
+        "status": "Executed",
+        "branch": 2,
+        "staff": 7,
+        "month": "September",
+        "year": "2026",
+        "amount": 15000,
+        "transdate": "2026-09-02",
+        "transID": "537955728656354",
+        "authorization_code": "516180229693386",
+        "account_type": "Assets",
+        "scheme": "Christmas savings"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 48,
+    "fields": {
+        "status": "Executed",
+        "branch": 2,
+        "staff": 7,
+        "month": "October",
+        "year": "2026",
+        "amount": 15000,
+        "transdate": "2026-09-02",
+        "transID": "143576779573257",
+        "authorization_code": "516180229693386",
+        "account_type": "Assets",
+        "scheme": "Christmas savings"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 49,
+    "fields": {
+        "status": "Awaiting Execution",
+        "branch": 2,
+        "staff": 7,
+        "month": "November",
+        "year": "2026",
+        "amount": 15000,
+        "transdate": "2026-09-02",
+        "transID": "745817263147993",
+        "authorization_code": "516180229693386",
+        "account_type": "Assets",
+        "scheme": "Christmas savings"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 50,
+    "fields": {
+        "status": "Executed",
+        "branch": 2,
+        "staff": 9,
+        "month": "September",
+        "year": "2026",
+        "amount": 6500,
+        "transdate": "2026-09-02",
+        "transID": "524716706043012",
+        "authorization_code": "658495429252260",
+        "account_type": "Assets",
+        "scheme": "Wallet"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 51,
+    "fields": {
+        "status": "Executed",
+        "branch": 2,
+        "staff": 9,
+        "month": "October",
+        "year": "2026",
+        "amount": 6500,
+        "transdate": "2026-09-02",
+        "transID": "445770962086640",
+        "authorization_code": "658495429252260",
+        "account_type": "Assets",
+        "scheme": "Wallet"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 52,
+    "fields": {
+        "status": "Awaiting Execution",
+        "branch": 2,
+        "staff": 9,
+        "month": "November",
+        "year": "2026",
+        "amount": 6500,
+        "transdate": "2026-09-02",
+        "transID": "826857935403596",
+        "authorization_code": "658495429252260",
+        "account_type": "Assets",
+        "scheme": "Wallet"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 53,
+    "fields": {
+        "status": "Awaiting Execution",
+        "branch": 2,
+        "staff": 9,
+        "month": "December",
+        "year": "2026",
+        "amount": 6500,
+        "transdate": "2026-09-02",
+        "transID": "972139339440191",
+        "authorization_code": "658495429252260",
+        "account_type": "Assets",
+        "scheme": "Wallet"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 54,
+    "fields": {
+        "status": "Executed",
+        "branch": 2,
+        "staff": 9,
+        "month": "September",
+        "year": "2026",
+        "amount": 7000,
+        "transdate": "2026-09-02",
+        "transID": "426132370423510",
+        "authorization_code": "170408725923707",
+        "account_type": "Assets",
+        "scheme": "Christmas savings"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 55,
+    "fields": {
+        "status": "Executed",
+        "branch": 2,
+        "staff": 9,
+        "month": "October",
+        "year": "2026",
+        "amount": 7000,
+        "transdate": "2026-09-02",
+        "transID": "711899809428856",
+        "authorization_code": "170408725923707",
+        "account_type": "Assets",
+        "scheme": "Christmas savings"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 56,
+    "fields": {
+        "status": "Awaiting Execution",
+        "branch": 2,
+        "staff": 9,
+        "month": "November",
+        "year": "2026",
+        "amount": 7000,
+        "transdate": "2026-09-02",
+        "transID": "786055755877568",
+        "authorization_code": "170408725923707",
+        "account_type": "Assets",
+        "scheme": "Christmas savings"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 57,
+    "fields": {
+        "status": "Executed",
+        "branch": 2,
+        "staff": 10,
+        "month": "September",
+        "year": "2026",
+        "amount": 6500,
+        "transdate": "2026-09-02",
+        "transID": "269369973784324",
+        "authorization_code": "886861197714938",
+        "account_type": "Assets",
+        "scheme": "Wallet"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 58,
+    "fields": {
+        "status": "Executed",
+        "branch": 2,
+        "staff": 10,
+        "month": "October",
+        "year": "2026",
+        "amount": 6500,
+        "transdate": "2026-09-02",
+        "transID": "263606146319373",
+        "authorization_code": "886861197714938",
+        "account_type": "Assets",
+        "scheme": "Wallet"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 59,
+    "fields": {
+        "status": "Awaiting Execution",
+        "branch": 2,
+        "staff": 10,
+        "month": "November",
+        "year": "2026",
+        "amount": 6500,
+        "transdate": "2026-09-02",
+        "transID": "393827672906824",
+        "authorization_code": "886861197714938",
+        "account_type": "Assets",
+        "scheme": "Wallet"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 60,
+    "fields": {
+        "status": "Awaiting Execution",
+        "branch": 2,
+        "staff": 10,
+        "month": "December",
+        "year": "2026",
+        "amount": 6500,
+        "transdate": "2026-09-02",
+        "transID": "276527121448478",
+        "authorization_code": "886861197714938",
+        "account_type": "Assets",
+        "scheme": "Wallet"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 61,
+    "fields": {
+        "status": "Executed",
+        "branch": 2,
+        "staff": 10,
+        "month": "September",
+        "year": "2026",
+        "amount": 10000,
+        "transdate": "2026-09-02",
+        "transID": "614520706395523",
+        "authorization_code": "313349370272983",
+        "account_type": "Assets",
+        "scheme": "Christmas savings"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 62,
+    "fields": {
+        "status": "Executed",
+        "branch": 2,
+        "staff": 10,
+        "month": "October",
+        "year": "2026",
+        "amount": 10000,
+        "transdate": "2026-09-02",
+        "transID": "600066829272488",
+        "authorization_code": "313349370272983",
+        "account_type": "Assets",
+        "scheme": "Christmas savings"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 63,
+    "fields": {
+        "status": "Awaiting Execution",
+        "branch": 2,
+        "staff": 10,
+        "month": "November",
+        "year": "2026",
+        "amount": 10000,
+        "transdate": "2026-09-02",
+        "transID": "767122272362824",
+        "authorization_code": "313349370272983",
+        "account_type": "Assets",
+        "scheme": "Christmas savings"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 64,
+    "fields": {
+        "status": "Executed",
+        "branch": 2,
+        "staff": 11,
+        "month": "September",
+        "year": "2026",
+        "amount": 7000,
+        "transdate": "2026-09-02",
+        "transID": "633558782562813",
+        "authorization_code": "862990168258297",
+        "account_type": "Assets",
+        "scheme": "Wallet"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 65,
+    "fields": {
+        "status": "Executed",
+        "branch": 2,
+        "staff": 11,
+        "month": "October",
+        "year": "2026",
+        "amount": 7000,
+        "transdate": "2026-09-02",
+        "transID": "608483379003869",
+        "authorization_code": "862990168258297",
+        "account_type": "Assets",
+        "scheme": "Wallet"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 66,
+    "fields": {
+        "status": "Awaiting Execution",
+        "branch": 2,
+        "staff": 11,
+        "month": "November",
+        "year": "2026",
+        "amount": 7000,
+        "transdate": "2026-09-02",
+        "transID": "476150909250214",
+        "authorization_code": "862990168258297",
+        "account_type": "Assets",
+        "scheme": "Wallet"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 67,
+    "fields": {
+        "status": "Awaiting Execution",
+        "branch": 2,
+        "staff": 11,
+        "month": "December",
+        "year": "2026",
+        "amount": 7000,
+        "transdate": "2026-09-02",
+        "transID": "478919547312248",
+        "authorization_code": "862990168258297",
+        "account_type": "Assets",
+        "scheme": "Wallet"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 68,
+    "fields": {
+        "status": "Executed",
+        "branch": 2,
+        "staff": 11,
+        "month": "September",
+        "year": "2026",
+        "amount": 8000,
+        "transdate": "2026-09-02",
+        "transID": "608998662890169",
+        "authorization_code": "600690878256396",
+        "account_type": "Assets",
+        "scheme": "Christmas savings"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 69,
+    "fields": {
+        "status": "Executed",
+        "branch": 2,
+        "staff": 11,
+        "month": "October",
+        "year": "2026",
+        "amount": 8000,
+        "transdate": "2026-09-02",
+        "transID": "728252128733341",
+        "authorization_code": "600690878256396",
+        "account_type": "Assets",
+        "scheme": "Christmas savings"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 70,
+    "fields": {
+        "status": "Awaiting Execution",
+        "branch": 2,
+        "staff": 11,
+        "month": "November",
+        "year": "2026",
+        "amount": 8000,
+        "transdate": "2026-09-02",
+        "transID": "366409426551255",
+        "authorization_code": "600690878256396",
+        "account_type": "Assets",
+        "scheme": "Christmas savings"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 71,
+    "fields": {
+        "status": "Executed",
+        "branch": 2,
+        "staff": 12,
+        "month": "September",
+        "year": "2026",
+        "amount": 4500,
+        "transdate": "2026-09-02",
+        "transID": "976428647317628",
+        "authorization_code": "986638465716894",
+        "account_type": "Assets",
+        "scheme": "Wallet"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 72,
+    "fields": {
+        "status": "Executed",
+        "branch": 2,
+        "staff": 12,
+        "month": "October",
+        "year": "2026",
+        "amount": 4500,
+        "transdate": "2026-09-02",
+        "transID": "773224298208833",
+        "authorization_code": "986638465716894",
+        "account_type": "Assets",
+        "scheme": "Wallet"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 73,
+    "fields": {
+        "status": "Awaiting Execution",
+        "branch": 2,
+        "staff": 12,
+        "month": "November",
+        "year": "2026",
+        "amount": 4500,
+        "transdate": "2026-09-02",
+        "transID": "651049529401178",
+        "authorization_code": "986638465716894",
+        "account_type": "Assets",
+        "scheme": "Wallet"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 74,
+    "fields": {
+        "status": "Awaiting Execution",
+        "branch": 2,
+        "staff": 12,
+        "month": "December",
+        "year": "2026",
+        "amount": 4500,
+        "transdate": "2026-09-02",
+        "transID": "871298502495141",
+        "authorization_code": "986638465716894",
+        "account_type": "Assets",
+        "scheme": "Wallet"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 75,
+    "fields": {
+        "status": "Executed",
+        "branch": 2,
+        "staff": 12,
+        "month": "September",
+        "year": "2026",
+        "amount": 5000,
+        "transdate": "2026-09-02",
+        "transID": "744857905986037",
+        "authorization_code": "239024962146296",
+        "account_type": "Assets",
+        "scheme": "Christmas savings"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 76,
+    "fields": {
+        "status": "Executed",
+        "branch": 2,
+        "staff": 12,
+        "month": "October",
+        "year": "2026",
+        "amount": 5000,
+        "transdate": "2026-09-02",
+        "transID": "744299613327023",
+        "authorization_code": "239024962146296",
+        "account_type": "Assets",
+        "scheme": "Christmas savings"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 77,
+    "fields": {
+        "status": "Awaiting Execution",
+        "branch": 2,
+        "staff": 12,
+        "month": "November",
+        "year": "2026",
+        "amount": 5000,
+        "transdate": "2026-09-02",
+        "transID": "473434877279997",
+        "authorization_code": "239024962146296",
+        "account_type": "Assets",
+        "scheme": "Christmas savings"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 78,
+    "fields": {
+        "status": "Executed",
+        "branch": 2,
+        "staff": 13,
+        "month": "September",
+        "year": "2026",
+        "amount": 15000,
+        "transdate": "2026-09-02",
+        "transID": "657389405539893",
+        "authorization_code": "981214948139240",
+        "account_type": "Assets",
+        "scheme": "Wallet"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 79,
+    "fields": {
+        "status": "Executed",
+        "branch": 2,
+        "staff": 13,
+        "month": "October",
+        "year": "2026",
+        "amount": 15000,
+        "transdate": "2026-09-02",
+        "transID": "453112572352982",
+        "authorization_code": "981214948139240",
+        "account_type": "Assets",
+        "scheme": "Wallet"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 80,
+    "fields": {
+        "status": "Awaiting Execution",
+        "branch": 2,
+        "staff": 13,
+        "month": "November",
+        "year": "2026",
+        "amount": 15000,
+        "transdate": "2026-09-02",
+        "transID": "896682006705375",
+        "authorization_code": "981214948139240",
+        "account_type": "Assets",
+        "scheme": "Wallet"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 81,
+    "fields": {
+        "status": "Awaiting Execution",
+        "branch": 2,
+        "staff": 13,
+        "month": "December",
+        "year": "2026",
+        "amount": 15000,
+        "transdate": "2026-09-02",
+        "transID": "954626317795497",
+        "authorization_code": "981214948139240",
+        "account_type": "Assets",
+        "scheme": "Wallet"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 82,
+    "fields": {
+        "status": "Executed",
+        "branch": 2,
+        "staff": 13,
+        "month": "September",
+        "year": "2026",
+        "amount": 12500,
+        "transdate": "2026-09-02",
+        "transID": "411490870491427",
+        "authorization_code": "977652598908439",
+        "account_type": "Assets",
+        "scheme": "Christmas savings"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 83,
+    "fields": {
+        "status": "Executed",
+        "branch": 2,
+        "staff": 13,
+        "month": "October",
+        "year": "2026",
+        "amount": 12500,
+        "transdate": "2026-09-02",
+        "transID": "190967652206373",
+        "authorization_code": "977652598908439",
+        "account_type": "Assets",
+        "scheme": "Christmas savings"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 84,
+    "fields": {
+        "status": "Awaiting Execution",
+        "branch": 2,
+        "staff": 13,
+        "month": "November",
+        "year": "2026",
+        "amount": 12500,
+        "transdate": "2026-09-02",
+        "transID": "853025789773876",
+        "authorization_code": "977652598908439",
+        "account_type": "Assets",
+        "scheme": "Christmas savings"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 85,
+    "fields": {
+        "status": "Executed",
+        "branch": 2,
+        "staff": 14,
+        "month": "September",
+        "year": "2026",
+        "amount": 10000,
+        "transdate": "2026-09-02",
+        "transID": "409264725013196",
+        "authorization_code": "282668427081975",
+        "account_type": "Assets",
+        "scheme": "Wallet"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 86,
+    "fields": {
+        "status": "Executed",
+        "branch": 2,
+        "staff": 14,
+        "month": "October",
+        "year": "2026",
+        "amount": 10000,
+        "transdate": "2026-09-02",
+        "transID": "988860054834858",
+        "authorization_code": "282668427081975",
+        "account_type": "Assets",
+        "scheme": "Wallet"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 87,
+    "fields": {
+        "status": "Awaiting Execution",
+        "branch": 2,
+        "staff": 14,
+        "month": "November",
+        "year": "2026",
+        "amount": 10000,
+        "transdate": "2026-09-02",
+        "transID": "806932032252674",
+        "authorization_code": "282668427081975",
+        "account_type": "Assets",
+        "scheme": "Wallet"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 88,
+    "fields": {
+        "status": "Awaiting Execution",
+        "branch": 2,
+        "staff": 14,
+        "month": "December",
+        "year": "2026",
+        "amount": 10000,
+        "transdate": "2026-09-02",
+        "transID": "962675309568330",
+        "authorization_code": "282668427081975",
+        "account_type": "Assets",
+        "scheme": "Wallet"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 89,
+    "fields": {
+        "status": "Executed",
+        "branch": 2,
+        "staff": 14,
+        "month": "September",
+        "year": "2026",
+        "amount": 3500,
+        "transdate": "2026-09-02",
+        "transID": "484720038959394",
+        "authorization_code": "260036980171132",
+        "account_type": "Assets",
+        "scheme": "Christmas savings"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 90,
+    "fields": {
+        "status": "Executed",
+        "branch": 2,
+        "staff": 14,
+        "month": "October",
+        "year": "2026",
+        "amount": 3500,
+        "transdate": "2026-09-02",
+        "transID": "538800974001294",
+        "authorization_code": "260036980171132",
+        "account_type": "Assets",
+        "scheme": "Christmas savings"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 91,
+    "fields": {
+        "status": "Awaiting Execution",
+        "branch": 2,
+        "staff": 14,
+        "month": "November",
+        "year": "2026",
+        "amount": 3500,
+        "transdate": "2026-09-02",
+        "transID": "832714344097938",
+        "authorization_code": "260036980171132",
+        "account_type": "Assets",
+        "scheme": "Christmas savings"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 92,
+    "fields": {
+        "status": "Executed",
+        "branch": 2,
+        "staff": 15,
+        "month": "September",
+        "year": "2026",
+        "amount": 10000,
+        "transdate": "2026-09-02",
+        "transID": "849839931961339",
+        "authorization_code": "821030751726578",
+        "account_type": "Assets",
+        "scheme": "Wallet"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 93,
+    "fields": {
+        "status": "Executed",
+        "branch": 2,
+        "staff": 15,
+        "month": "October",
+        "year": "2026",
+        "amount": 10000,
+        "transdate": "2026-09-02",
+        "transID": "864127243280258",
+        "authorization_code": "821030751726578",
+        "account_type": "Assets",
+        "scheme": "Wallet"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 94,
+    "fields": {
+        "status": "Awaiting Execution",
+        "branch": 2,
+        "staff": 15,
+        "month": "November",
+        "year": "2026",
+        "amount": 10000,
+        "transdate": "2026-09-02",
+        "transID": "685797580015449",
+        "authorization_code": "821030751726578",
+        "account_type": "Assets",
+        "scheme": "Wallet"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 95,
+    "fields": {
+        "status": "Awaiting Execution",
+        "branch": 2,
+        "staff": 15,
+        "month": "December",
+        "year": "2026",
+        "amount": 10000,
+        "transdate": "2026-09-02",
+        "transID": "961492282265390",
+        "authorization_code": "821030751726578",
+        "account_type": "Assets",
+        "scheme": "Wallet"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 96,
+    "fields": {
+        "status": "Executed",
+        "branch": 2,
+        "staff": 15,
+        "month": "September",
+        "year": "2026",
+        "amount": 5000,
+        "transdate": "2026-09-02",
+        "transID": "988757594395089",
+        "authorization_code": "195612624904713",
+        "account_type": "Assets",
+        "scheme": "Christmas savings"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 97,
+    "fields": {
+        "status": "Executed",
+        "branch": 2,
+        "staff": 15,
+        "month": "October",
+        "year": "2026",
+        "amount": 5000,
+        "transdate": "2026-09-02",
+        "transID": "724729561554494",
+        "authorization_code": "195612624904713",
+        "account_type": "Assets",
+        "scheme": "Christmas savings"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 98,
+    "fields": {
+        "status": "Awaiting Execution",
+        "branch": 2,
+        "staff": 15,
+        "month": "November",
+        "year": "2026",
+        "amount": 5000,
+        "transdate": "2026-09-02",
+        "transID": "524130315085951",
+        "authorization_code": "195612624904713",
+        "account_type": "Assets",
+        "scheme": "Christmas savings"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 99,
+    "fields": {
+        "status": "Executed",
+        "branch": 2,
+        "staff": 16,
+        "month": "September",
+        "year": "2026",
+        "amount": 6000,
+        "transdate": "2026-09-02",
+        "transID": "880570424179426",
+        "authorization_code": "603409581046317",
+        "account_type": "Assets",
+        "scheme": "Wallet"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 100,
+    "fields": {
+        "status": "Executed",
+        "branch": 2,
+        "staff": 16,
+        "month": "October",
+        "year": "2026",
+        "amount": 6000,
+        "transdate": "2026-09-02",
+        "transID": "945024958681576",
+        "authorization_code": "603409581046317",
+        "account_type": "Assets",
+        "scheme": "Wallet"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 101,
+    "fields": {
+        "status": "Awaiting Execution",
+        "branch": 2,
+        "staff": 16,
+        "month": "November",
+        "year": "2026",
+        "amount": 6000,
+        "transdate": "2026-09-02",
+        "transID": "462169562925523",
+        "authorization_code": "603409581046317",
+        "account_type": "Assets",
+        "scheme": "Wallet"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 102,
+    "fields": {
+        "status": "Awaiting Execution",
+        "branch": 2,
+        "staff": 16,
+        "month": "December",
+        "year": "2026",
+        "amount": 6000,
+        "transdate": "2026-09-02",
+        "transID": "570362213754526",
+        "authorization_code": "603409581046317",
+        "account_type": "Assets",
+        "scheme": "Wallet"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 103,
+    "fields": {
+        "status": "Executed",
+        "branch": 2,
+        "staff": 16,
+        "month": "September",
+        "year": "2026",
+        "amount": 15000,
+        "transdate": "2026-09-02",
+        "transID": "398519019617122",
+        "authorization_code": "122991837474921",
+        "account_type": "Assets",
+        "scheme": "Christmas savings"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 104,
+    "fields": {
+        "status": "Executed",
+        "branch": 2,
+        "staff": 16,
+        "month": "October",
+        "year": "2026",
+        "amount": 15000,
+        "transdate": "2026-09-02",
+        "transID": "194779305609924",
+        "authorization_code": "122991837474921",
+        "account_type": "Assets",
+        "scheme": "Christmas savings"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 105,
+    "fields": {
+        "status": "Awaiting Execution",
+        "branch": 2,
+        "staff": 16,
+        "month": "November",
+        "year": "2026",
+        "amount": 15000,
+        "transdate": "2026-09-02",
+        "transID": "210450922515000",
+        "authorization_code": "122991837474921",
+        "account_type": "Assets",
+        "scheme": "Christmas savings"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 106,
+    "fields": {
+        "status": "Executed",
+        "branch": 2,
+        "staff": 17,
+        "month": "September",
+        "year": "2026",
+        "amount": 6000,
+        "transdate": "2026-09-02",
+        "transID": "701862085277517",
+        "authorization_code": "190111522320989",
+        "account_type": "Assets",
+        "scheme": "Wallet"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 107,
+    "fields": {
+        "status": "Executed",
+        "branch": 2,
+        "staff": 17,
+        "month": "October",
+        "year": "2026",
+        "amount": 6000,
+        "transdate": "2026-09-02",
+        "transID": "162824059723981",
+        "authorization_code": "190111522320989",
+        "account_type": "Assets",
+        "scheme": "Wallet"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 108,
+    "fields": {
+        "status": "Awaiting Execution",
+        "branch": 2,
+        "staff": 17,
+        "month": "November",
+        "year": "2026",
+        "amount": 6000,
+        "transdate": "2026-09-02",
+        "transID": "492577900609967",
+        "authorization_code": "190111522320989",
+        "account_type": "Assets",
+        "scheme": "Wallet"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 109,
+    "fields": {
+        "status": "Awaiting Execution",
+        "branch": 2,
+        "staff": 17,
+        "month": "December",
+        "year": "2026",
+        "amount": 6000,
+        "transdate": "2026-09-02",
+        "transID": "422530013005484",
+        "authorization_code": "190111522320989",
+        "account_type": "Assets",
+        "scheme": "Wallet"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 110,
+    "fields": {
+        "status": "Executed",
+        "branch": 2,
+        "staff": 17,
+        "month": "September",
+        "year": "2026",
+        "amount": 7500,
+        "transdate": "2026-09-02",
+        "transID": "658252764543873",
+        "authorization_code": "465971197882006",
+        "account_type": "Assets",
+        "scheme": "Christmas savings"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 111,
+    "fields": {
+        "status": "Executed",
+        "branch": 2,
+        "staff": 17,
+        "month": "October",
+        "year": "2026",
+        "amount": 7500,
+        "transdate": "2026-09-02",
+        "transID": "919625199390291",
+        "authorization_code": "465971197882006",
+        "account_type": "Assets",
+        "scheme": "Christmas savings"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 112,
+    "fields": {
+        "status": "Awaiting Execution",
+        "branch": 2,
+        "staff": 17,
+        "month": "November",
+        "year": "2026",
+        "amount": 7500,
+        "transdate": "2026-09-02",
+        "transID": "554796409109484",
+        "authorization_code": "465971197882006",
+        "account_type": "Assets",
+        "scheme": "Christmas savings"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 113,
+    "fields": {
+        "status": "Executed",
+        "branch": 2,
+        "staff": 18,
+        "month": "September",
+        "year": "2026",
+        "amount": 6000,
+        "transdate": "2026-09-02",
+        "transID": "961795146428612",
+        "authorization_code": "403019763332434",
+        "account_type": "Assets",
+        "scheme": "Wallet"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 114,
+    "fields": {
+        "status": "Executed",
+        "branch": 2,
+        "staff": 18,
+        "month": "October",
+        "year": "2026",
+        "amount": 6000,
+        "transdate": "2026-09-02",
+        "transID": "857080275394314",
+        "authorization_code": "403019763332434",
+        "account_type": "Assets",
+        "scheme": "Wallet"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 115,
+    "fields": {
+        "status": "Awaiting Execution",
+        "branch": 2,
+        "staff": 18,
+        "month": "November",
+        "year": "2026",
+        "amount": 6000,
+        "transdate": "2026-09-02",
+        "transID": "713602102060362",
+        "authorization_code": "403019763332434",
+        "account_type": "Assets",
+        "scheme": "Wallet"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 116,
+    "fields": {
+        "status": "Awaiting Execution",
+        "branch": 2,
+        "staff": 18,
+        "month": "December",
+        "year": "2026",
+        "amount": 6000,
+        "transdate": "2026-09-02",
+        "transID": "708563594406834",
+        "authorization_code": "403019763332434",
+        "account_type": "Assets",
+        "scheme": "Wallet"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 117,
+    "fields": {
+        "status": "Executed",
+        "branch": 2,
+        "staff": 18,
+        "month": "September",
+        "year": "2026",
+        "amount": 10000,
+        "transdate": "2026-09-02",
+        "transID": "771369552863484",
+        "authorization_code": "728776766276934",
+        "account_type": "Assets",
+        "scheme": "Christmas savings"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 118,
+    "fields": {
+        "status": "Executed",
+        "branch": 2,
+        "staff": 18,
+        "month": "October",
+        "year": "2026",
+        "amount": 10000,
+        "transdate": "2026-09-02",
+        "transID": "440325195529305",
+        "authorization_code": "728776766276934",
+        "account_type": "Assets",
+        "scheme": "Christmas savings"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 119,
+    "fields": {
+        "status": "Awaiting Execution",
+        "branch": 2,
+        "staff": 18,
+        "month": "November",
+        "year": "2026",
+        "amount": 10000,
+        "transdate": "2026-09-02",
+        "transID": "878630695376709",
+        "authorization_code": "728776766276934",
+        "account_type": "Assets",
+        "scheme": "Christmas savings"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 120,
+    "fields": {
+        "status": "Executed",
+        "branch": 2,
+        "staff": 19,
+        "month": "September",
+        "year": "2026",
+        "amount": 6000,
+        "transdate": "2026-09-02",
+        "transID": "126021535895782",
+        "authorization_code": "869968473970639",
+        "account_type": "Assets",
+        "scheme": "Wallet"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 121,
+    "fields": {
+        "status": "Executed",
+        "branch": 2,
+        "staff": 19,
+        "month": "October",
+        "year": "2026",
+        "amount": 6000,
+        "transdate": "2026-09-02",
+        "transID": "855522149193219",
+        "authorization_code": "869968473970639",
+        "account_type": "Assets",
+        "scheme": "Wallet"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 122,
+    "fields": {
+        "status": "Awaiting Execution",
+        "branch": 2,
+        "staff": 19,
+        "month": "November",
+        "year": "2026",
+        "amount": 6000,
+        "transdate": "2026-09-02",
+        "transID": "546120385143920",
+        "authorization_code": "869968473970639",
+        "account_type": "Assets",
+        "scheme": "Wallet"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 123,
+    "fields": {
+        "status": "Awaiting Execution",
+        "branch": 2,
+        "staff": 19,
+        "month": "December",
+        "year": "2026",
+        "amount": 6000,
+        "transdate": "2026-09-02",
+        "transID": "674752062874206",
+        "authorization_code": "869968473970639",
+        "account_type": "Assets",
+        "scheme": "Wallet"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 124,
+    "fields": {
+        "status": "Executed",
+        "branch": 2,
+        "staff": 20,
+        "month": "September",
+        "year": "2026",
+        "amount": 12000,
+        "transdate": "2026-09-02",
+        "transID": "317964414602014",
+        "authorization_code": "466369331464270",
+        "account_type": "Assets",
+        "scheme": "Wallet"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 125,
+    "fields": {
+        "status": "Executed",
+        "branch": 2,
+        "staff": 20,
+        "month": "October",
+        "year": "2026",
+        "amount": 12000,
+        "transdate": "2026-09-02",
+        "transID": "298032773550197",
+        "authorization_code": "466369331464270",
+        "account_type": "Assets",
+        "scheme": "Wallet"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 126,
+    "fields": {
+        "status": "Awaiting Execution",
+        "branch": 2,
+        "staff": 20,
+        "month": "November",
+        "year": "2026",
+        "amount": 12000,
+        "transdate": "2026-09-02",
+        "transID": "514692973492987",
+        "authorization_code": "466369331464270",
+        "account_type": "Assets",
+        "scheme": "Wallet"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 127,
+    "fields": {
+        "status": "Awaiting Execution",
+        "branch": 2,
+        "staff": 20,
+        "month": "December",
+        "year": "2026",
+        "amount": 12000,
+        "transdate": "2026-09-02",
+        "transID": "525986593735726",
+        "authorization_code": "466369331464270",
+        "account_type": "Assets",
+        "scheme": "Wallet"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 128,
+    "fields": {
+        "status": "Executed",
+        "branch": 2,
+        "staff": 20,
+        "month": "September",
+        "year": "2026",
+        "amount": 10000,
+        "transdate": "2026-09-02",
+        "transID": "586044138403707",
+        "authorization_code": "969200426865485",
+        "account_type": "Assets",
+        "scheme": "Christmas savings"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 129,
+    "fields": {
+        "status": "Executed",
+        "branch": 2,
+        "staff": 20,
+        "month": "October",
+        "year": "2026",
+        "amount": 10000,
+        "transdate": "2026-09-02",
+        "transID": "513445619172391",
+        "authorization_code": "969200426865485",
+        "account_type": "Assets",
+        "scheme": "Christmas savings"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 130,
+    "fields": {
+        "status": "Awaiting Execution",
+        "branch": 2,
+        "staff": 20,
+        "month": "November",
+        "year": "2026",
+        "amount": 10000,
+        "transdate": "2026-09-02",
+        "transID": "959475579940458",
+        "authorization_code": "969200426865485",
+        "account_type": "Assets",
+        "scheme": "Christmas savings"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 131,
+    "fields": {
+        "status": "Executed",
+        "branch": 2,
+        "staff": 19,
+        "month": "September",
+        "year": "2026",
+        "amount": 10000,
+        "transdate": "2026-09-02",
+        "transID": "515393841891239",
+        "authorization_code": "257309883865407",
+        "account_type": "Assets",
+        "scheme": "Christmas savings"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 132,
+    "fields": {
+        "status": "Executed",
+        "branch": 2,
+        "staff": 19,
+        "month": "October",
+        "year": "2026",
+        "amount": 10000,
+        "transdate": "2026-09-02",
+        "transID": "826654053306803",
+        "authorization_code": "257309883865407",
+        "account_type": "Assets",
+        "scheme": "Christmas savings"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 133,
+    "fields": {
+        "status": "Awaiting Execution",
+        "branch": 2,
+        "staff": 19,
+        "month": "November",
+        "year": "2026",
+        "amount": 10000,
+        "transdate": "2026-09-02",
+        "transID": "458502968740123",
+        "authorization_code": "257309883865407",
+        "account_type": "Assets",
+        "scheme": "Christmas savings"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 134,
+    "fields": {
+        "status": "Executed",
+        "branch": 2,
+        "staff": 21,
+        "month": "September",
+        "year": "2026",
+        "amount": 10000,
+        "transdate": "2026-09-02",
+        "transID": "968206238417411",
+        "authorization_code": "875232839060498",
+        "account_type": "Assets",
+        "scheme": "Wallet"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 135,
+    "fields": {
+        "status": "Executed",
+        "branch": 2,
+        "staff": 21,
+        "month": "October",
+        "year": "2026",
+        "amount": 10000,
+        "transdate": "2026-09-02",
+        "transID": "363280506027688",
+        "authorization_code": "875232839060498",
+        "account_type": "Assets",
+        "scheme": "Wallet"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 136,
+    "fields": {
+        "status": "Awaiting Execution",
+        "branch": 2,
+        "staff": 21,
+        "month": "November",
+        "year": "2026",
+        "amount": 10000,
+        "transdate": "2026-09-02",
+        "transID": "459451871132119",
+        "authorization_code": "875232839060498",
+        "account_type": "Assets",
+        "scheme": "Wallet"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 137,
+    "fields": {
+        "status": "Awaiting Execution",
+        "branch": 2,
+        "staff": 21,
+        "month": "December",
+        "year": "2026",
+        "amount": 10000,
+        "transdate": "2026-09-02",
+        "transID": "260185163194263",
+        "authorization_code": "875232839060498",
+        "account_type": "Assets",
+        "scheme": "Wallet"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 138,
+    "fields": {
+        "status": "Executed",
+        "branch": 2,
+        "staff": 21,
+        "month": "September",
+        "year": "2026",
+        "amount": 5000,
+        "transdate": "2026-09-02",
+        "transID": "689801096195382",
+        "authorization_code": "537245639556011",
+        "account_type": "Assets",
+        "scheme": "Christmas savings"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 139,
+    "fields": {
+        "status": "Executed",
+        "branch": 2,
+        "staff": 21,
+        "month": "October",
+        "year": "2026",
+        "amount": 5000,
+        "transdate": "2026-09-02",
+        "transID": "318288644993428",
+        "authorization_code": "537245639556011",
+        "account_type": "Assets",
+        "scheme": "Christmas savings"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 140,
+    "fields": {
+        "status": "Awaiting Execution",
+        "branch": 2,
+        "staff": 21,
+        "month": "November",
+        "year": "2026",
+        "amount": 5000,
+        "transdate": "2026-09-02",
+        "transID": "431993062936536",
+        "authorization_code": "537245639556011",
+        "account_type": "Assets",
+        "scheme": "Christmas savings"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 141,
+    "fields": {
+        "status": "Executed",
+        "branch": 2,
+        "staff": 22,
+        "month": "September",
+        "year": "2026",
+        "amount": 14000,
+        "transdate": "2026-09-02",
+        "transID": "220466437343890",
+        "authorization_code": "700396933076808",
+        "account_type": "Assets",
+        "scheme": "Wallet"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 142,
+    "fields": {
+        "status": "Executed",
+        "branch": 2,
+        "staff": 22,
+        "month": "October",
+        "year": "2026",
+        "amount": 14000,
+        "transdate": "2026-09-02",
+        "transID": "662020187027279",
+        "authorization_code": "700396933076808",
+        "account_type": "Assets",
+        "scheme": "Wallet"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 143,
+    "fields": {
+        "status": "Awaiting Execution",
+        "branch": 2,
+        "staff": 22,
+        "month": "November",
+        "year": "2026",
+        "amount": 14000,
+        "transdate": "2026-09-02",
+        "transID": "878338165437810",
+        "authorization_code": "700396933076808",
+        "account_type": "Assets",
+        "scheme": "Wallet"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 144,
+    "fields": {
+        "status": "Awaiting Execution",
+        "branch": 2,
+        "staff": 22,
+        "month": "December",
+        "year": "2026",
+        "amount": 14000,
+        "transdate": "2026-09-02",
+        "transID": "351638817224990",
+        "authorization_code": "700396933076808",
+        "account_type": "Assets",
+        "scheme": "Wallet"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 145,
+    "fields": {
+        "status": "Executed",
+        "branch": 2,
+        "staff": 22,
+        "month": "September",
+        "year": "2026",
+        "amount": 12000,
+        "transdate": "2026-09-02",
+        "transID": "694786573083975",
+        "authorization_code": "418913525081718",
+        "account_type": "Assets",
+        "scheme": "Christmas savings"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 146,
+    "fields": {
+        "status": "Executed",
+        "branch": 2,
+        "staff": 22,
+        "month": "October",
+        "year": "2026",
+        "amount": 12000,
+        "transdate": "2026-09-02",
+        "transID": "512058997853081",
+        "authorization_code": "418913525081718",
+        "account_type": "Assets",
+        "scheme": "Christmas savings"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 147,
+    "fields": {
+        "status": "Awaiting Execution",
+        "branch": 2,
+        "staff": 22,
+        "month": "November",
+        "year": "2026",
+        "amount": 12000,
+        "transdate": "2026-09-02",
+        "transID": "139280494573073",
+        "authorization_code": "418913525081718",
+        "account_type": "Assets",
+        "scheme": "Christmas savings"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 148,
+    "fields": {
+        "status": "Executed",
+        "branch": 2,
+        "staff": 23,
+        "month": "September",
+        "year": "2026",
+        "amount": 10000,
+        "transdate": "2026-09-02",
+        "transID": "151504432013590",
+        "authorization_code": "587776701056795",
+        "account_type": "Assets",
+        "scheme": "Wallet"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 149,
+    "fields": {
+        "status": "Executed",
+        "branch": 2,
+        "staff": 23,
+        "month": "October",
+        "year": "2026",
+        "amount": 10000,
+        "transdate": "2026-09-02",
+        "transID": "161348640351362",
+        "authorization_code": "587776701056795",
+        "account_type": "Assets",
+        "scheme": "Wallet"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 150,
+    "fields": {
+        "status": "Awaiting Execution",
+        "branch": 2,
+        "staff": 23,
+        "month": "November",
+        "year": "2026",
+        "amount": 10000,
+        "transdate": "2026-09-02",
+        "transID": "642951181351380",
+        "authorization_code": "587776701056795",
+        "account_type": "Assets",
+        "scheme": "Wallet"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 151,
+    "fields": {
+        "status": "Awaiting Execution",
+        "branch": 2,
+        "staff": 23,
+        "month": "December",
+        "year": "2026",
+        "amount": 10000,
+        "transdate": "2026-09-02",
+        "transID": "351300677402369",
+        "authorization_code": "587776701056795",
+        "account_type": "Assets",
+        "scheme": "Wallet"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 152,
+    "fields": {
+        "status": "Executed",
+        "branch": 2,
+        "staff": 23,
+        "month": "September",
+        "year": "2026",
+        "amount": 5000,
+        "transdate": "2026-09-02",
+        "transID": "106061057731435",
+        "authorization_code": "114048656982901",
+        "account_type": "Assets",
+        "scheme": "Christmas savings"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 153,
+    "fields": {
+        "status": "Executed",
+        "branch": 2,
+        "staff": 23,
+        "month": "October",
+        "year": "2026",
+        "amount": 5000,
+        "transdate": "2026-09-02",
+        "transID": "207435078107317",
+        "authorization_code": "114048656982901",
+        "account_type": "Assets",
+        "scheme": "Christmas savings"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 154,
+    "fields": {
+        "status": "Awaiting Execution",
+        "branch": 2,
+        "staff": 23,
+        "month": "November",
+        "year": "2026",
+        "amount": 5000,
+        "transdate": "2026-09-02",
+        "transID": "305741545212503",
+        "authorization_code": "114048656982901",
+        "account_type": "Assets",
+        "scheme": "Christmas savings"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 155,
+    "fields": {
+        "status": "Executed",
+        "branch": 2,
+        "staff": 2,
+        "month": "September",
+        "year": "2026",
+        "amount": 3000,
+        "transdate": "2026-09-02",
+        "transID": "504675151781943",
+        "authorization_code": "691203163709547",
+        "account_type": "Assets",
+        "scheme": "Wallet"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 156,
+    "fields": {
+        "status": "Executed",
+        "branch": 2,
+        "staff": 2,
+        "month": "October",
+        "year": "2026",
+        "amount": 3000,
+        "transdate": "2026-09-02",
+        "transID": "590546246562712",
+        "authorization_code": "691203163709547",
+        "account_type": "Assets",
+        "scheme": "Wallet"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 157,
+    "fields": {
+        "status": "Awaiting Execution",
+        "branch": 2,
+        "staff": 2,
+        "month": "November",
+        "year": "2026",
+        "amount": 3000,
+        "transdate": "2026-09-02",
+        "transID": "873759294341808",
+        "authorization_code": "691203163709547",
+        "account_type": "Assets",
+        "scheme": "Wallet"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 158,
+    "fields": {
+        "status": "Awaiting Execution",
+        "branch": 2,
+        "staff": 2,
+        "month": "December",
+        "year": "2026",
+        "amount": 3000,
+        "transdate": "2026-09-02",
+        "transID": "979507888992746",
+        "authorization_code": "691203163709547",
+        "account_type": "Assets",
+        "scheme": "Wallet"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 159,
+    "fields": {
+        "status": "Executed",
+        "branch": 2,
+        "staff": 2,
+        "month": "September",
+        "year": "2026",
+        "amount": 5000,
+        "transdate": "2026-09-02",
+        "transID": "914048180401635",
+        "authorization_code": "875184535164102",
+        "account_type": "Assets",
+        "scheme": "Christmas savings"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 160,
+    "fields": {
+        "status": "Executed",
+        "branch": 2,
+        "staff": 2,
+        "month": "October",
+        "year": "2026",
+        "amount": 5000,
+        "transdate": "2026-09-02",
+        "transID": "800349655879438",
+        "authorization_code": "875184535164102",
+        "account_type": "Assets",
+        "scheme": "Christmas savings"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 161,
+    "fields": {
+        "status": "Awaiting Execution",
+        "branch": 2,
+        "staff": 2,
+        "month": "November",
+        "year": "2026",
+        "amount": 5000,
+        "transdate": "2026-09-02",
+        "transID": "785982777946923",
+        "authorization_code": "875184535164102",
+        "account_type": "Assets",
+        "scheme": "Christmas savings"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 175,
+    "fields": {
+        "status": "Awaiting Execution",
+        "branch": 2,
+        "staff": 1,
+        "month": "November",
+        "year": "2026",
+        "amount": 2750,
+        "transdate": "2026-09-06",
+        "transID": "665976611919659",
+        "authorization_code": "809606086773990",
+        "account_type": "Liabilities",
+        "scheme": "Commodities repayment"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 176,
+    "fields": {
+        "status": "Awaiting Execution",
+        "branch": 2,
+        "staff": 1,
+        "month": "December",
+        "year": "2026",
+        "amount": 2750,
+        "transdate": "2026-09-06",
+        "transID": "633467238841198",
+        "authorization_code": "809606086773990",
+        "account_type": "Liabilities",
+        "scheme": "Commodities repayment"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 177,
+    "fields": {
+        "status": "Awaiting Execution",
+        "branch": 2,
+        "staff": 1,
+        "month": "January",
+        "year": "2027",
+        "amount": 2750,
+        "transdate": "2026-09-06",
+        "transID": "211686361711900",
+        "authorization_code": "809606086773990",
+        "account_type": "Liabilities",
+        "scheme": "Commodities repayment"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 178,
+    "fields": {
+        "status": "Awaiting Execution",
+        "branch": 2,
+        "staff": 1,
+        "month": "February",
+        "year": "2027",
+        "amount": 2750,
+        "transdate": "2026-09-06",
+        "transID": "601043845492688",
+        "authorization_code": "809606086773990",
+        "account_type": "Liabilities",
+        "scheme": "Commodities repayment"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 179,
+    "fields": {
+        "status": "Awaiting Execution",
+        "branch": 2,
+        "staff": 1,
+        "month": "March",
+        "year": "2027",
+        "amount": 2750,
+        "transdate": "2026-09-06",
+        "transID": "186898592159188",
+        "authorization_code": "809606086773990",
+        "account_type": "Liabilities",
+        "scheme": "Commodities repayment"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations_schedule",
+    "pk": 180,
+    "fields": {
+        "status": "Awaiting Execution",
+        "branch": 2,
+        "staff": 1,
+        "month": "April",
+        "year": "2027",
+        "amount": 2750,
+        "transdate": "2026-09-06",
+        "transID": "367379365180427",
+        "authorization_code": "809606086773990",
+        "account_type": "Liabilities",
+        "scheme": "Commodities repayment"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations",
+    "pk": 1,
+    "fields": {
+        "branch": 2,
+        "staff": 1,
+        "month": "September",
+        "year": "2026",
+        "amount": 372300,
+        "transdate": "2026-09-02",
+        "status": "Executed"
+    }
+},
+{
+    "model": "IIIb.tbliiibprorations",
+    "pk": 2,
+    "fields": {
+        "branch": 2,
+        "staff": 1,
+        "month": "October",
+        "year": "2026",
+        "amount": 372300,
+        "transdate": "2026-09-03",
+        "status": "Executed"
+    }
+},
+{
+    "model": "IIIb.tblstandardloaniiib",
+    "pk": 1,
+    "fields": {
+        "staffrec": 1,
+        "branch": 2,
+        "tenure": 0,
+        "rate": "0.00",
+        "description": "-----",
+        "status": "True"
+    }
+},
+{
+    "model": "IIIb.tblstandardloaniiib",
+    "pk": 2,
+    "fields": {
+        "staffrec": 1,
+        "branch": 2,
+        "tenure": 6,
+        "rate": "10.00",
+        "description": "peach",
+        "status": "True"
+    }
+},
+{
+    "model": "IIIb.tbliiiibliabilities_authorization",
+    "pk": 1,
+    "fields": {
+        "branch": 2,
+        "staff": 1,
+        "package": 2,
+        "application_date": "2026-09-03",
+        "approval_date": "2026-09-03",
+        "disbursal_date": "2026-09-06",
+        "status": "Running",
+        "year": "2026",
+        "principal": 15000,
+        "thrift": "2750.00",
+        "interest": "1500.00",
+        "total_repayment": "16500.00",
+        "grace_period": 30,
+        "application_code": "809606086773990",
+        "description": "Commodities"
+    }
+},
+{
+    "model": "IIIb.tbliiiibliabilities_authorization",
+    "pk": 2,
+    "fields": {
+        "branch": 2,
+        "staff": 23,
+        "package": 2,
+        "application_date": "2026-09-05",
+        "approval_date": "2026-09-06",
+        "disbursal_date": "2026-09-05",
+        "status": "Awaiting Disbursal",
+        "year": "2026",
+        "principal": 30000,
+        "thrift": "5500.00",
+        "interest": "3000.00",
+        "total_repayment": "33000.00",
+        "grace_period": 30,
+        "application_code": "351087223347482",
+        "description": "Loan"
+    }
+},
+{
+    "model": "IIIb.tbliiiibliabilities_authorization",
+    "pk": 3,
+    "fields": {
+        "branch": 2,
+        "staff": 2,
+        "package": 2,
+        "application_date": "2026-09-05",
+        "approval_date": "2026-09-06",
+        "disbursal_date": "2026-09-05",
+        "status": "Awaiting Disbursal",
+        "year": "2026",
+        "principal": 9000,
+        "thrift": "1650.00",
+        "interest": "900.00",
+        "total_repayment": "9900.00",
+        "grace_period": 30,
+        "application_code": "904665424519290",
+        "description": "Loan"
+    }
+},
+{
+    "model": "IIIb.tbliiib_bankdetail",
+    "pk": 1,
+    "fields": {
+        "staff": 1,
+        "branch": 2,
+        "bank_name": "GT BANK",
+        "account_number": "0999384701"
+    }
+},
+{
+    "model": "IIIb.tbliiib_bankdetail",
+    "pk": 2,
+    "fields": {
+        "staff": 2,
+        "branch": 1,
+        "bank_name": "OPay",
+        "account_number": "7030214558"
+    }
+},
+{
+    "model": "IIIb.tbliiiibscheme_withdrawal",
+    "pk": 1,
+    "fields": {
+        "branch": 2,
+        "staff": 1,
+        "year": "2026",
+        "scheme_authorization_code": "306204899048259",
+        "transdate": "2026-09-03",
+        "amount": 10000,
+        "description": "Christmas savings",
+        "status": "Disbursed"
+    }
+},
+{
+    "model": "IIIb.tbliiiibscheme_withdrawal",
+    "pk": 2,
+    "fields": {
+        "branch": 2,
+        "staff": 2,
+        "year": "2026",
+        "scheme_authorization_code": "875184535164102",
+        "transdate": "2026-09-03",
+        "amount": 10000,
+        "description": "Christmas savings",
+        "status": "Disbursed"
+    }
+},
+{
+    "model": "IIIb.tblstandardsavingiiib",
+    "pk": 1,
+    "fields": {
+        "staffrec": 1,
+        "branch": 2,
+        "from_month": "January",
+        "to_month": "December",
+        "description": "Wallet",
+        "active": true
+    }
+},
+{
+    "model": "IIIb.tblstandardsavingiiib",
+    "pk": 2,
+    "fields": {
+        "staffrec": 1,
+        "branch": 2,
+        "from_month": "January",
+        "to_month": "November",
+        "description": "Christmas savings",
+        "active": true
+    }
+},
+{
+    "model": "IIIb.tbliiiisubscriptionfee",
+    "pk": 1,
+    "fields": {
+        "branch": 2,
+        "amount": "1500.00"
+    }
+},
+{
+    "model": "IIIb.tblmaxloaniiib",
+    "pk": 1,
+    "fields": {
+        "branch": 2,
+        "value": "150.00"
+    }
+}
+]

@@ -1,0 +1,68 @@
+
+
+
+
+{% load humanize %}
+
+ <table style="margin-top:0%;margin-bottom:0%;font-size:0.8em;text-align: center;" width="100%" class="table  table-bordered" id="dataTables-example">
+
+           <tr style='font-weight:bold'>
+               <td >S/N</td>
+               <td>Monthly Deduction </td>
+               <td>Status</td>
+          </tr>             
+
+{% for k in msg %}
+          <tr>
+            <td>{{forloop.counter}} .</td>
+            <td> {{company.currency_code}}  {{k.amount|intcomma}} </td>
+            <td> {{k.status}}</td>
+          </tr>
+  {% endfor %}
+       </table>
+
+<div>Click <a href="#" onclick="edit()">here</a>  to edit the monthly dedcuction into your {{package}} account </div>
+
+
+  <script type="text/javascript" language="javascript">
+        function edit(){
+            var state = $("#id_savepack").val();
+            // alert(state)
+            var url = "/IIIb/threeb/savescheme/edit/pop/";
+            var i = 0;
+            var data='userid='+state;
+            $.ajax({
+                type:"POST",
+                url:url,
+                data:data,
+                success:function(html) {
+                    $("#edit").html(html);
+                    getcancel();
+                }
+            });
+            return false;
+        }
+
+    </script>
+
+
+
+<script type="text/javascript" language="javascript">
+    function getcancel(){
+        var diaOpts = {
+            autoOpen:true,
+            // appendTo:"body1",
+            // modal:true,
+            // position: ["center", "middle"],
+            height:'auto',
+            width:'auto',
+            title:' Touch this box to close' ,
+            closeOnEscape:true,
+            show: true,
+            hide: true,
+            bgiframe: true
+        };
+        $("#edit").dialog(diaOpts);
+    }
+
+</script>

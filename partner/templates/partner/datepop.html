@@ -1,0 +1,65 @@
+
+
+<div style="text-align:center;font-size:0.8em">Back Office Extention </div>
+
+
+
+<form action="" method="POST"  enctype="multipart/form-data" >
+{% csrf_token %}
+<table style="margin-top:0.8%;margin-bottom:0%;font-size:0.8em" class="table  table-bordered" id="dataTables-example">
+
+    <tr >
+      <td>{{branch.branch.company.name}}</td></tr>
+    <tr ><td>{{branch.branch.Address}}</td></tr>
+    <tr><td>Expired : {{branch.end}}</td></tr>
+
+</table>
+
+
+<table style="margin-top:0.0%;margin-bottom:0%;font-size:0.8em" class="table  table-bordered" id="dataTables-example">
+
+ <tr>
+             <td style='font-weight:bold'>Extension</td>
+             <td>
+                 <!-- <select name="extend" required> -->
+                  <select name="extend" id="id_extend" required>
+
+                  <option value="-----">-----</option>
+                  <option value="1"> 1 day</option>
+                  <option value="2"> 2 days</option>
+
+                  <option value="-1"> -1 day</option>
+                  <option value="-2"> -2 days</option>
+
+                  </select>
+              </td>
+</tr>
+
+</table>
+
+
+  <table style="margin-top:0%;margin-bottom:0%;font-size:0.8em" class="table  table-bordered" id="dataTables-example">  
+    
+
+           <tr>
+            <td >
+              <input class="btn btn-lg btn-success btn-block" name="submit" type= "submit" value="Extend">
+            </td>
+          </tr>
+     
+  </table>
+
+  <input type='hidden' name='receipt' value='{{receipt}}'>
+
+</form>
+
+
+    <script language="javascript" type="text/javascript">
+        function disable(f)
+        {
+            var button = f.elements['submit'];
+            button.value = 'Processing';
+            button.disabled = 'true';
+            return true;
+        }
+    </script>

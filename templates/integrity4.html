@@ -1,0 +1,88 @@
+
+
+
+{% extends 'Ia/howitworks_base.html' %}
+{% block content %}
+
+
+{% load humanize %}
+
+
+<div style ="display:fdlex;text-align:center">
+<div style="display:inline-block; ">General Ledger for {{datee}}</div>
+
+<div style="display:inline-block; "> Click on a name to see details </div>
+</div>
+
+
+   <table style="margin-top:0%;margin-bottom:0.5% ;text-align:center;font-size:0.8em" width="100%" class="table  table-bordered" id="dataTables-example">
+
+    <tr style="font-weight:bold">
+        <td >S/N</td>
+        <td >Name</td>
+        <td >Staff Record</td>
+        <td >Busines Record</td>
+        <td >Customer Record</td>
+        <td >Difference</td>
+        <td >Action</td>
+    </tr>
+
+
+{% for g in cutt %}
+{% for b in g.dy %}
+
+<form id='myform' action='/fts/thrift/admin/ledgerdetails/' method="POST">
+    {% csrf_token %}
+      <tr >
+        <td>{{forloop.counter}}.</td>
+        <td style="text-align:left"> <a style='color:green'href="#" onclick='pita({{b.worker.code}});return false;'>{{b.worker.staff.surname}}   {{b.worker.staff.firstname}}  {{b.worker.staff.othername}} </a></td>
+        <td> {{b.sss|intcomma}} </td>
+        <td> {{b.bbbb|intcomma}} </td>
+        <td> {{b.cus|intcomma}}</td>
+        <td> {{b.dif|intcomma}}</td>
+        <td>
+        <input type='checkbox' value='{{b.worker.code}}' name='selected_items'{{b.switch}} {{b.disabled}}></td>
+        
+
+          
+    </tr>
+
+{% endfor %}
+
+</table>
+
+{% if g.drt > 0 %}
+
+
+
+<input class="btn btn-lg btn-success btn-block" name="submit" type= "submit"value="Repost">
+
+
+{% endif %}
+
+{% if g.drt == 0 %}
+
+<div style='text-align:right'> Click <a style='color:red' href="/fts/thrift/admin/integrity/" onClick= "product()" >here</a> to continue</div>
+{% endif %}
+
+{% endfor %}
+
+
+<input type="hidden" name="datee" id="id_datee" readonly="readonly" value="{{ datee }}">
+
+<input type="hidden" name="datee2" id="id_datee2" readonly="readonly" value="{{ datee2 }}">
+
+</form>
+
+    <script language="javascript" type="text/javascript">
+        function disable(f)
+        {
+            var button = f.elements['submit'];
+            button.value = 'Processing';
+            button.disabled = 'true';
+            return true;
+        }
+    </script>
+
+
+{% endblock %}

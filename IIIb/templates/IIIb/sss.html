@@ -1,0 +1,33 @@
+
+
+
+   <table style="margin-top:0.2%;margin-bottom:0%;font-size:0.8em" width="100%" class="table  table-bordered" id="dataTables-example">
+
+        <div style="text-align:center;color:red ">{{msg}}</div>
+
+           <tr >
+              
+                    <td for="surname">Amount</td>
+                    <td>
+                    <input type="number" name="amount" id="id_amount" class="form-control" id="amount" placeholder="Amount" required>
+                  </td>
+             </tr>   
+       </table>
+
+         <table style="margin-top:0.2%;margin-bottom:0.9%;font-size:0.8em" width="100%" class="table  table-bordered" id="dataTables-example">
+          <tr>
+       <td ><input class="btn btn-lg btn-success btn-block" name="submit" type= "submit" value="Process"></td>
+     </tr>
+   </table>
+
+
+
+
+
+   <script type="text/javascript" >
+        $(document).ready(function() {
+
+            $("#id_amount").focus();
+  
+        });
+    </script>

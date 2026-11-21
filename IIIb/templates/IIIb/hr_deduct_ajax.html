@@ -1,0 +1,50 @@
+
+
+{% load humanize %}
+
+
+
+{% if deductions %}
+
+<div style="text-align:center;font-weight:bold;margin-top:0%;margin-bottom:0%;">Deduction Report for {{ month}}  {{year}}</div>
+   <table style="margin-top:0%;margin-bottom:0%;font-size:1em;text-align:center" width="100%" class="table  table-bordered" id="dataTables-example">   	
+          
+           <tr style='font-weight:bold'>
+               <td >S/N</td>               
+               <td >Cooperators</td>
+               <td>Total Deduction</td>
+            </tr>
+             {% for k in deductions %}
+
+          <tr >
+            <td >{{forloop.counter}} .</td>
+            <td style='text-align:left'> {{k.staff__staff__surname|title}}   {{k.staff__staff__firstname|title}}   {{k.staff__staff__othername|title}}</td>
+
+            <td style="color:blue;text-align:center">
+            <a href="#" style="color:blue;text-align:center" onClick= "chktr({{k.staff__id }})" title="Trail N {{k.staff_total|intcomma}}{{k.id}}">{{k.staff_total|intcomma}}</a>
+        </td>
+          </tr>
+
+          {% endfor %}
+
+         <tr style='text-align:center;font-weight:bold'>
+            <td style="border:0px solid black"></td>
+           <td>Total</td> 
+           <td>{{ccu}}{{pack|intcomma}}</td> 
+           <!-- <td></td> -->
+         </tr>
+
+</table>
+
+
+     
+
+{% else %}
+
+<div style="color:blue;text-align:center">no records found </div>
+
+
+
+
+
+{% endif %}

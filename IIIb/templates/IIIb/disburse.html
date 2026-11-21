@@ -1,0 +1,242 @@
+
+
+{% extends 'IIIb/payoutbase.html' %}
+{% block content %}
+
+
+<div style="text-align:center;font-weight:bold">DISBURSAL MENU</div>
+
+   <table style="margin-top:0%;margin-bottom:01%;font-size:1em" width="100%" class="table  table-bordered" id="dataTables-example">
+
+
+    <tr style="text-align:center;">
+      <td  style="background:blue">
+          <a href="/IIIb/threeb/requests/disburse/"  style="color:white">Disbursal</a>
+      </td>
+<!--       <td>
+          <a href="/IIIb/threeb/loans/commodities/"  style="color:red">Commodities</a>
+      </td> -->
+      <td>
+          <a href="/IIIb/threeb/loans/log/"  style="color:red">Disbursal Log</a>
+      </td>
+    </tr>
+</table>
+
+<form action="" method="POST">
+{% csrf_token %}
+
+<table style="margin-top:0%;margin-bottom:0.2%;font-size:0.8em" width="100%" class="table table-bordered" id="dataTables-example">
+            <tr >
+             <td style="font-weight:bold">Year</td>
+                <td> 
+                          <select name="businessyear" id="id_businessyear" required >
+                              {% for pincode in year %}
+                                  <option value="{{pincode.year}}">{{pincode.year}}</option>
+                              {% endfor %}
+                         </select>
+                </td>
+            </tr>
+
+
+          <tr>
+                <td style='font-weight:bold'>Source</td>
+                <td>
+                    <select  id="id_source">
+                     <option value="-">-----</option>             
+                     <option value="Loans and Commodities">Loans and Commodities</option>
+                     <option value="Other Savings">Other Savings</option>
+                     <!-- <option value="Approved">Approved</option> -->
+
+
+
+                     </select>
+                 </td>
+        </tr>
+
+</table>
+
+
+
+
+
+<table width="100%" class="table  table-bordered" id="dataTables-example">
+
+           <tr>
+                <div class="boxscenaros"></div>
+           </tr>
+</table>
+ 
+
+ <table width="100%" class="table  table-bordered" id="dataTables-example">
+
+           <tr>
+                <div class="boxscenaros2"></div>
+           </tr>
+</table>
+
+
+
+</form>
+
+    <div id="cancel"></div>
+<div id="pay"></div>
+
+   <script type="text/javascript" >
+        $(document).ready(function() {
+            $("#id_source").change(function () {
+                sources();
+            });
+
+            $("#id_businessyear").change(function () {
+                sources();
+            }); 
+
+
+            $("#id_source").focus();
+            sources();
+        });
+    </script>
+
+
+
+  <script type="text/javascript" language="javascript">
+        function sources(){
+            var state = $("#id_businessyear").val()+ ":" + $("#id_source").val();
+            // alert(state)
+            var url = "/IIIb/threeb/setsource/ajax/";
+            var i = 0;
+            var data='userid='+state;
+            $.ajax({
+                type:"POST",
+                url:url,
+                data:data,
+                success:function(html) {
+                    $(".boxscenaros2").hide();
+                    $(".boxscenaros").show();
+                    $(".boxscenaros").html(html);
+                }
+            });
+            return false;
+        }
+    </script>
+
+
+
+  <script type="text/javascript" language="javascript">
+        function autopostL(){
+            var state = $("#id_businessyear").val()+ ":" + $("#id_month").val()+ ":" + $("#id_status").val();
+            // alert(state)
+            var url = "/IIIb/threeb/loans/payout/ajax/";
+            var i = 0;
+            var data='userid='+state;
+            $.ajax({
+                type:"POST",
+                url:url,
+                data:data,
+                success:function(html) {
+                    $(".boxscenaros2").show();
+                    $(".boxscenaros2").html(html);
+                }
+            });
+            return false;
+        }
+    </script>
+
+
+
+
+<script type="text/javascript">
+function payoutloans(){        
+    // Collect checked items
+    var selected = [];
+    $("input[name='selected_items']:checked").each(function(){
+        selected.push($(this).val());
+    });
+
+    // Build state info
+    var state = $("#id_businessyear").val()+ ":" +$("#id_status").val()+ ":" + $("#id_source").val();
+    // alert(state)
+    
+    // Prepare data
+    var data = {
+        userid: state,
+        items: selected.join(",")   // send as comma-separated string
+    };
+
+    // Ajax call
+    $.ajax({
+        type: "POST",
+        url : "/IIIb/threeb/requests/disburse/pop/",
+        data: data,
+        success: function(html) {
+            $("#cancel").html(html);
+            getcancel();
+        }
+    });
+    return false;
+}
+</script>
+
+
+<script type="text/javascript">
+function payoutsavings(){        
+    // Collect checked items
+    var selected = [];
+    $("input[name='selected_items']:checked").each(function(){
+        selected.push($(this).val());
+    });
+
+    // Build state info
+    var state = $("#id_businessyear").val() + ":" + $("#id_status").val() + ":" + $("#id_source").val()+ ":" + $("#id_savings").val();
+    // alert(state)
+
+    // Prepare data
+    var data = {
+        userid: state,
+        items: selected.join(",")   // send as comma-separated string
+    };
+
+    // Ajax call
+    $.ajax({
+        type: "POST",
+        url: "/IIIb/threeb/savescheme/pop/",
+        data: data,
+        success: function(html) {
+            $("#cancel").html(html);
+            getcancel();
+        }
+    });
+    return false;
+}
+</script>
+
+
+
+
+
+<script type="text/javascript" language="javascript">
+    function getcancel(){
+        var diaOpts = {
+            autoOpen:true,
+            // appendTo:"body1",
+            // modal:true,
+            // position: ["center", "middle"],
+            height:'auto',
+            width:'auto',
+            title:'Touch this box to close' ,
+            closeOnEscape:true,
+            show: true,
+            hide: true,
+            bgiframe: true
+        };
+        $("#cancel").dialog(diaOpts);
+    }
+
+</script>
+
+
+
+{% endblock %}
+
+
+

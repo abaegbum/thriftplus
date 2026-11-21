@@ -1,0 +1,63 @@
+
+
+
+{% extends 'sms/base.html' %}
+{% block content %}
+
+
+<div style="text-align:center">SMS Menu</div>
+   <table style="margin-top:0%;margin-bottom:0%" width="100%" class="table  table-bordered" id="dataTables-example">
+<div>{{msg}}</div>
+    <tr style="text-align:center;">
+      <td  >
+          <a href="/sms/daily_contribution/sms/"  style="color:red"> Schedule SMS</a>
+      </td>
+<!--         <td style="background:blue">
+          <a href="/sms/daily_contribution/balance/"  style="color:white">Purchase SMS</a>
+      </td> -->
+
+        <td style="background:blue">
+          <a href="/sms/daily_contribution/sms/well/"  style="color:white">Purchase SMS</a>
+      </td>
+
+              <td >
+          <a href="/sms/daily_contribution/history/"  style="color:red">SMS History</a>
+      </td>
+    </tr>
+</table>
+
+
+<form action="/sms/daily_contribution/sms/funding_details/" method="POST">
+    {% csrf_token %}
+
+   <table style="margin-top:0%;margin-bottom:0%;font-size:0.8em" width="100%" class="table  table-bordered" id="dataTables-example">
+
+           <tr >
+               <td >Current Unit</td><td> 4,000</td>
+           </tr>
+
+           <tr >
+               <td >Amount</td><td> {{amount}}   </td>
+           </tr>
+
+
+   </table>
+
+<input type="hidden" name="amount" value="{{amount}}">
+
+<table style="margin-top:0%;margin-bottom:0%;font-size:0.8em" width="100%" class="table  table-bordered" id="dataTables-example">
+  <tr>
+       <td >
+        <input class="btn btn-lg btn-success btn-block" name="submit" type= "submit" value="Payment details">
+      </td>
+  </tr>
+   </table>
+       </form>
+
+
+
+
+{% endblock %}
+
+
+

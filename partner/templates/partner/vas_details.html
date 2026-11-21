@@ -1,0 +1,125 @@
+
+
+
+{% extends 'partner/basepartner.html' %}
+{% block content %}
+
+{% load humanize %}
+
+
+
+
+
+<div style="text-align:center">Back Office VAS</div>
+
+
+
+<tr >
+
+       <form action="/partner/partner/vas/process/" method="POST"  enctype="multipart/form-data" >
+
+         {% csrf_token %}
+    
+    <section class="content">
+      <div class="container-fluid">          
+          <div class="card card-primary">
+
+              <div class="card-body">
+
+<table style="margin-top:0%;margin-bottom:04%" width="100%" class="table  table-bordered table-hover" id="dataTables-example">
+
+  <div  style="font-weight:bold;text-align:center; font-size:1em">{{fg.branch.company.name}}</div>
+  <div  style="font-weight:bold;text-align:center">{{fg.branch.Address}}</div>
+  <input type="hidden" name="email" value="{{owner.staffrec.email}}">
+  <input type="hidden" name="amount" value="{{amount}}">
+
+<tr >
+  <td style=" font-weight:bold">ID</td>
+  <td> {{fg.branch.id}}</td>
+</tr>
+
+
+<tr >
+  <td style=" font-weight:bold">owner </td>
+  <td>{{owner.staffrec.surname.upper}}   {{owner.staffrec.firstname.upper}}  {{owner.staffrec.othername.upper}}</td>
+</tr>
+
+<tr>
+  <td  style=" font-weight:bold"> Phone </td>
+  <td>0{{owner.staffrec.phone}}</td>
+</tr>
+
+<tr >
+  <td style=" font-weight:bold"> Email </td>
+  <td>{{owner.staffrec.email}}</td>
+</tr> 
+
+</table>
+
+
+
+<table style="margin-top:0%;margin-bottom:04%" width="100%" class="table  table-bordered table-hover" id="dataTables-example">
+
+  <div  style="font-weight:bold; text-align:center; font-size:1em">SMS Purchase Details</div>
+
+
+<tr >
+<td style=" font-weight:bold">Amount </td>
+<td>  {{amount}} </td> 
+<!-- </td><td>  <input type="text" id="id_amount" name="amount" >  </td> -->
+
+</tr>
+</table>      
+
+
+
+</div>
+</div>
+</div>
+
+
+
+     <table style="margin-top:1%;margin-bottom:02%" width="100%" class="table  table-bordered" id="dataTables-example">
+            <td>     
+               <button class="btn btn-lg btn-success btn-block" type ='submit'  >Process</button>
+            </td>
+
+                     <td >
+            <a class="btn btn-lg btn-success btn-block" href="/partner/partner/vas/"  >Cancel</a>
+        </td>
+
+
+ <!--            <td>     
+               <button class="btn btn-lg btn-success btn-block" type ='submit'  >Cancel</button>
+            </td> -->
+     </table>
+
+      </section>
+    
+  </form>
+
+
+
+</tr>
+
+
+<script type="text/javascript" language="javascript">
+
+
+// window.history.pushState(null, "", window.location.href);
+// window.onpopstate = function () {
+//    window.history.pushState(null, "", window.location.href);
+// };
+
+
+</script>
+
+
+    <script>
+        $(document).ready(function() {
+            $("#id_amount").focus();
+        });
+    </script>
+
+
+{% endblock %}

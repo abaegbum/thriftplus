@@ -1,0 +1,176 @@
+
+
+
+{% extends 'howitworks_base.html' %}
+
+{% block content %}
+
+
+{% load humanize %}
+
+
+
+
+{{d}}
+
+<!--'code','customer__customer__wallet','cycle','customer'-->
+   <table style="margin-top:0%;margin-bottom:0%;font-size:1em" width="100%" class="table  table-bordered table-hover" id="dataTables-example">
+
+    <h1>Duplicate Thrifts</h1>
+        <thead>
+            <tr>
+                <!--<th>S/N</th>-->
+                <th>Customer</th>
+                <th>wallet</th>
+                <th>Thrift</th>
+                <th>Code</th>
+                <th>Is_contributed</th>
+                <th>Is_empty</th>
+                <th>withdraw status</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr>
+
+                <td>{{ dup.customer.customer.surname }}  {{ dup.customer.customer.firstname }}  {{ dup.customer.customer.othername }}</td>
+                <td>{{ dup.customer.customer.wallet }}</td>
+                <td>{{ dup.month }}, {{ dup.cycle }}</td>
+
+                <td>{{ dup.code }}</td>
+                <td>{{ dup.is_contributed }}</td>
+                <td>{{ dup.is_empty }}</td>
+                <td>{{dup.withdraw_status}}</td>
+            </tr>
+
+            <tr>
+                <td colspan="10">No duplicates found.</td>
+            </tr>
+
+        </tbody>
+    </table>
+
+
+   <table style="margin-top:0%;margin-bottom:0%;font-size:1em" width="100%" class="table  table-bordered table-hover" id="dataTables-example">
+
+    <h1>Duplicate Thrifts</h1>
+        <thead>
+            <tr>
+                <th>S/N</th>
+                <th>Customer</th>
+                <th>wallet</th>
+                <th>code</th>
+                <th>Month</th>
+                <!--<th>Thrift</th>-->
+                <!--<th>Service Charge</th>-->
+                <!--<th>Code</th>-->
+                <th>Cycle</th>
+                <!--<th>Purpose</th>-->
+                <th>Count</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for dup in msg %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ dup.customer__customer__surname }}  {{ dup.customer__customer__firstname }} {{ dup.customer__customer__othername }}</td>
+                <td>{{ dup.customer__customer__wallet }}</td>
+                <td>{{ dup.code }}</td>
+                <!--<td>{{ dup.year }}</td>-->
+                <!--<td>{{ dup.thrift }}</td>-->
+                <!--<td>{{ dup.service_charge }}</td>-->
+                <td>{{ dup.recdate__month }}</td>
+                <td>{{ dup.cycle }}</td>
+                <!--<td>{{ dup.purpose }}</td>-->
+                <td>{{ dup.number_count }}</td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="10">No duplicates found.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <div style = "font-size:0.9em">Please read Carefully<hr>
+     These are the major steps you should follow, if you want to use this app effectively as an Admin<hr>
+
+{% if staff.ceo %}
+    <div>*** Use the Subscription menu to  <a href="/subscription/">view  </a> your subscription status. You can equally use it to <a href="/extension/">Upgrade </a> your package on our platform</div>
+    <hr>
+ {% endif %}
+
+
+ {% if staff.ceo %}
+
+  {% if app.esusu1a or app.savings1a %}
+    <div>*** It is required that you perform basic set up for your back office. Use the <a href="/sysadmin/sysadmin/setup/password/">Savings Setting  </a>for this funcion </div>
+    <hr>
+ {% endif %}
+ {% endif %}
+
+
+
+    <div>*** To create account for each customer, Use the <a href="/customer/customers/createwallet/">Wallet  </a>for this funcion </div>
+    <hr>
+
+
+
+
+{% if staff.ceo %}
+{% if history.staff_count > '1' %}
+    <div>*** The staff menu allows you to <a href="/staff/staff/home/">onboard </a>a staff for thrift collection
+    <hr>
+
+ {% endif %}
+ {% endif %}
+
+
+
+
+{% if staff.ceo %}
+
+    <div>*** The Field Officers menu allows you to <a href="/fts/staff/merchant/">Activate </a>a staff for thrift collection  ,  <a href="/fts/staff/merchant/manage/">Manage  </a> your Field Officers and <a href="/fts/staff/merchant/mycos/">View </a> the list of all your Field workers for your back office</div>
+    <hr>
+
+ {% endif %}
+
+
+
+
+    <div>*** If you want to reduce  transaction time to the minimum, the  <a href="/fts/customeria/list/">My Customer  </a> Icon is there to help. It helps you sort customers according to location preferences before performing deposits, withdrawals etc</div>
+    <hr>
+
+{% if staff.ceo %}
+    <div>*** Its important to  approve all the transactions by a field officer  before the close of work for the day.  The <a href="/fts/thrift/approvals/">Reconciliation  </a> menu is there to help you </div>
+    <hr>
+ {% endif %}
+
+{% if staff.ceo %}
+    <div>*** To view your entries at the end of the day, use the <a href="/fts/thrift/unremmitted/">Sales book </a> Menu </div>
+    <hr>
+    {% else %}
+<div>*** To view your entries at the end of the day, use the <a href="/fts/thrift/unremmitted/fa/">Sales book </a> Menu </div>
+<hr>
+   {% endif %}
+
+
+    <div>*** To have overview of all thrifts , Use the <a href="/fts/thrift/thriftreport/">Thrifts  </a>for this funcion </div>
+    <hr>
+
+
+    <div>*** To see detail records of youy day to day, Use the <a href="/integrity/">Ledger  </a>for this funcion </div>
+    <hr>
+
+
+
+
+{% if staff.ceo %}
+    <div>*** The Reports menu provides you with an overview of the financial position of your business. With it, you can view <a href="/fts/thrift/reports/sales/cashier/">End Of Day </a> activities, calculate <a href="/fts/thrift/reports/sales/merchant/">Vault</a> at any instance and see your <a href="/fts/thrift/reports/sales/admn/">Profits</a> for any month</div>
+    <hr>
+
+</div>
+{% endif %}
+
+
+{% endblock %}

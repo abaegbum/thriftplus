@@ -1,0 +1,103 @@
+
+
+
+
+ <form action="/addcoopextension/" method="POST">
+    {% csrf_token %}
+
+
+
+<table style="margin-top:01%;margin-bottom:2%;text-align:center;font-size:0.8em;text-align: left;" width="100%" class="table  table-bordered" id="dataTables-example">
+
+
+   <tr>
+     <td style='font-weight:bold'>Service</td>
+     <td>
+        <select  name = 'service' id = 'id_service' required>
+        <option value="{{g.app}}">{{g.app}}  </option>
+       </select>
+     </td>
+   </tr>
+
+
+   <tr>
+     <td style='font-weight:bold'>Duration</td>
+     <td>
+        <select name="duration" id="id_duration" required>
+        <option value="">-----</option>
+         <option value="1">1 Month</option>
+          <option value="2">2 Months</option>
+          <option value="3">3 Months</option>
+          <option value="4">4 Months</option>
+          <option value="5">5 Months</option>
+          <option value="6">6 Months</option>
+          <option value="7">7 Months</option>
+          <option value="8">8 Months</option>
+          <option value="9">9 Months</option>
+          <option value="10">10 Months</option>
+          <option value="11">11 Months</option>
+
+       </select>
+     </td>
+   </tr>
+
+
+</table>
+
+
+<table>
+
+           <tr >
+                <div class="boxmnt"></div>
+           </tr>
+
+<input type="hidden" name="'branch" id="wallet"  readonly="readonly" value="{{branch }}" class ="loginTxtbox">
+
+</table>
+</form>
+
+
+    <script>
+        $(document).ready(function() {
+            $("#id_duration").focus();
+        });
+    </script>
+
+  <script type="text/javascript" >
+        $(document).ready(function() {            
+            $("#id_duration").change(function () {
+                pricing();
+            });
+
+
+            $("#id_package").change(function () {
+                pricing();
+            });
+            pricing()      
+        });
+    </script>
+
+
+  <script type="text/javascript" language="javascript">
+       function pricing(){
+            var state = $("#id_service").val() +  ":" + $("#id_duration").val();
+
+            // alert(state)
+
+            var url = "/renews/coop/";
+            var i = 0;
+            var data='userid='+state;
+            $.ajax({
+                type:"POST",
+                url:url,
+                data:data,
+                success:function(html) {
+                    // $(".boxfund").hide();
+                    $(".boxmnt").show();
+                    $(".boxmnt").html(html);
+
+                }
+            });
+            return false;
+        }
+    </script>

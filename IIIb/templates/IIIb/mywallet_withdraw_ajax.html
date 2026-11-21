@@ -1,0 +1,85 @@
+
+
+{% load humanize %}
+
+
+
+
+{% if msg %}
+<div style="margin-top:0%;margin-bottom:0%;font-size:0.8em;text-align:center;font-weight:bold">{{status}}  for  {{year}}</div>
+
+
+<table style="margin-top:0%;margin-bottom:0%;font-size:0.8em;text-align:center" width="100%" class="table  table-bordered" id="dataTables-example">   	
+          
+           <tr style='font-weight:bold'>
+               <td >S/N</td>               
+               <td >Month</td>
+               <td >Description</td>
+               <td>Amount ({{company.currency_code}})</td>
+            </tr>
+             {% for k in msg %}
+
+          <tr >
+            <td >{{forloop.counter}}.</td>
+            <td > {{k.month}}</td>
+            <td >{{k.status}}</td>            
+            <td >{{k.amount|intcomma}}</td>
+          </tr>
+
+          {% endfor %}
+
+</table>
+
+<table style="margin-top:0%;margin-bottom:0%;font-size:0.8em;text-align:center" width="100%" class="table  table-bordered" id="dataTables-example">   
+         <tr style='text-align:center;font-weight:bold;'>
+            
+           <td>Total {{status}} </td> 
+           <td>{{company.currency_code}} {{total_cr|intcomma}}</td> 
+        
+            
+           <td>Total Withdrawal </td> 
+           <td>{{company.currency_code}} {{total_dr|intcomma}}</td> 
+
+
+            
+           <td>Balances  </td> 
+           <td>{{company.currency_code}} {{total|intcomma}}</td> 
+           
+         </tr>
+
+</table>
+
+
+{% if p == "Withdrawable" %}
+ <table style="margin-top:0.5%;margin-bottom:0%;font-size:1em" width="100%" class="table  table-bordered"> 
+      <tr>
+
+        <td style="color:blue;text-align:center">
+            <a href="#" style="color:blue;text-align:center" onClick= "withdraw_ajax()" title="withdraw N {{ total|intcomma}} mandates">Withdraw Funds</a>
+        </td>
+
+        <input type='hidden' name="total" id ="id_total"   value ="{{total}}">
+    </tr>
+
+</table>
+{% else %}
+
+
+<div style="text-align:center;font-size: 0.8em">{{p}}</div>
+ <table style="margin-top:0.5%;margin-bottom:0%;font-size:1em" width="100%" class="table  table-bordered"> 
+      <tr>
+
+        <td style="color:blue;text-align:center">
+            <a href="/IIIb/threeb/staff/withdraw/" style="color:blue;text-align:center">continue</a>
+        </td>
+
+        <input type='hidden' name="total" id ="id_total"   value ="{{total}}">
+    </tr>
+
+</table>
+{% endif %}
+
+
+{% else %}
+<div style="text-align:center;color: red">No Funds in your {{status}}</div>
+{% endif %}

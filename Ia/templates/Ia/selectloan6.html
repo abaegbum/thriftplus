@@ -1,0 +1,33 @@
+
+
+
+{% extends 'Ia/contributionIabase.html' %}
+{% block content %}
+
+
+
+<div style="text-align:center">Payments Menu</div>
+
+   <table style="margin-top:0%;margin-bottom:0%;font-size:0.8em" width="100%" class="table  table-bordered" id="dataTables-example">
+
+    <tr style="text-align:center;">
+      <td  style="background:blue">
+          <a href="/fts/thrift/payrequest/" style="color:white">Deposit</a>
+      </td>
+      <td ><a href="/fts/thrift/cashout/" style="color:red">Withdrawal</a></td>
+      <td>
+        <a href="/fts/thrift/unremmitted/" style="color:red">Transactions</a>
+      </td>
+    </tr>
+</table>
+
+
+<table style="margin-top:0%;margin-bottom:02%" width="100%" class="table  table-bordered" id="dataTables-example">
+<div style='text-align:center'>{{msg}}</div>
+
+</table>
+
+{% endblock %}
+
+
+

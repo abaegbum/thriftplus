@@ -1,0 +1,96 @@
+
+
+{% load humanize %}
+
+{% if msg %}
+
+
+
+
+
+
+<div style="text-align:center;font-weight:bold;margin-top:0%;margin-bottom:0%;font-size:0.8em"> {{status}}  Requests</div>
+   <table style="margin-top:0%;margin-bottom:0%;font-size:0.8em;text-align:center" width="100%" class="table  table-bordered" id="dataTables-example">   	
+          
+           <tr style='font-weight:bold'>
+               <td >S/N</td>               
+               <td >Cooperators</td>
+               <td>Requst type</td>
+               <td>Amount ({{company.currency_code}})</td>
+               <td>Date</td>
+               <td>Tenure</td>
+               <td>Grace Period</td>
+               <td>Action</td>
+            </tr>
+             {% for k in msg %}
+
+          <tr >
+            <td >{{forloop.counter}}.</td>
+            <td style='text-align:left'> {{k.staff.staff.surname|title}}   {{k.staff.staff.firstname|title}} </td>
+            
+            <td ><a href="#" style="color:red" onClick= "details({{ k.application_code  }})" title="View Details">{{k.description}}</a></td>
+            <td >{{k.principal|intcomma}}</td>
+            <td >{{k.application_date}}</td>
+            <td>{{k.package.tenure}} Months</td>
+            <td>{{k.grace_period}} Days</td>
+
+
+            {% if status == 'Declined' %}
+            <td style="color:blue"> Declined </td>
+            
+            {% elif status == 'Awaiting Approval' %}
+            
+            <td >
+              <a href="#" style="color:red" onClick= "decline({{ k.application_code  }})" title="Decline  N{{ k.volume|intcomma}} loan request">Decline</a>
+            </td>
+
+
+            <td>
+                <input name = "selected_items" type='checkbox' value = "{{k.application_code}}"  checked >
+            </td>
+
+
+            {% else %}
+            
+            <td ><a href="#" style="color:green" >Approved</a> </td>
+
+            {% endif %}
+
+          </tr>
+
+          {% endfor %}
+
+         <tr style='text-align:center;font-weight:bold'>
+            <td style="border:0px solid black"></td>
+            <td></td>
+           <td>Total Requests</td> 
+           <td>{{company.currency_code}} {{total|intcomma}}</td> 
+           <td></td>
+           <td></td>
+           
+         </tr>
+
+</table>
+
+{% if status == 'Awaiting Approval' %}
+ <table style="margin-top:0.5%;margin-bottom:0%;font-size:1em" width="100%" class="table  table-bordered"> 
+      <tr>
+
+        <td style="color:blue;text-align:center">
+            <a href="#" style="color:blue;text-align:center" onClick= "approve()" title="EApprovve N {{ total|intcomma}} mandates">Approve Selected Items</a>
+        </td>
+
+    </tr>
+
+       </table>
+     {% endif %}
+
+{% else %}
+
+<div style="color:blue;text-align:center">no records found </div>
+
+
+
+
+
+{% endif %}

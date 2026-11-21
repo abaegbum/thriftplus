@@ -1,0 +1,46 @@
+
+
+
+{% load humanize %}
+
+
+    
+<table style="margin-top:0%;margin-bottom:0.2%;font-size:0.6em" width="100%" class="table  table-bordered" id="dataTables-example">
+
+            <tr>
+               <td style="font-weight:bold">Thrift</td>
+               <td style='color:grey;'> {{currency}} {{ thrift.thrift|intcomma }} </td>
+               <td style="font-weight:bold">Service Charge</td>
+               <td style='color:grey;'> {{currency}} {{ thrift.service_charge|intcomma }} </td>
+
+</tr><tr>
+               <td style="font-weight:bold">Loan Fee</td>
+               <td style='color:grey;'> {{currency}} {{ thrift.interest_on_loan|intcomma }} </td>
+
+                            <td style="font-weight:bold">Loan</td>
+               <td style='color:grey;'>{{currency}}  {{ add|intcomma}}</td>
+             
+            </tr> 
+</table>
+
+
+            
+<table style="margin-top:0%;margin-bottom:02%;font-size:0.6em" width="100%" class="table  table-bordered" id="dataTables-example">
+            <tr>
+                <td style="font-weight:bold;text-align:center">You have completely repaid your loan  </td>
+               <!-- <td style='color:grey;'> {{currency}} {{ add|intcomma}}</td> -->
+            </tr>
+</table>
+
+
+
+
+<table style="margin-top:0.2%;margin-bottom:0.6%;text-align:center;font-size:0.8em" width="100%" class="table  table-bordered" id="dataTables-example">
+
+<tr >
+
+  <td >
+<a href="/fts/mycustomers/dashboard/{{wallet}}/">Continue</a>
+</td>
+</tr>
+</table>

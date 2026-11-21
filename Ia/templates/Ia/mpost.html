@@ -1,0 +1,73 @@
+
+
+
+{% load humanize %}
+
+
+    
+<table style="margin-top:0%;margin-bottom:0.2%" width="100%" class="table  table-bordered" id="dataTables-example">
+
+            <tr>
+               <td style="font-weight:bold">Thrift</td>
+               <td style='color:grey;'> {{currency}} {{ thrift.thrift|intcomma }} </td>
+
+              <td style="font-weight:bold">Service Charge </td>
+               <td style='color:grey;'> {{currency}} {{ thrift.service_charge|intcomma}}</td>
+
+              <td style="font-weight:bold">Total Contribution</td>
+               <td style='color:grey;'>{{ add}}</td>
+            </tr> 
+</table>
+
+
+
+{% if add >= 1 %}
+
+<table style="margin-top:0.2%;margin-bottom:0.6%;text-align:center;font-size:0.7em" width="100%" class="table  table-bordered" id="dataTables-example">
+
+<tr style="font-weight:bold">
+
+
+  <td >S/N</td>
+  <td >Date</td>
+  <td >Desc</td>
+  <td >Amount </td>
+  <td >Count </td>
+  <td >Refresh</td>
+  <!-- <td >Delete</td> -->
+</tr>
+
+{% for h in history %}
+    <tr>
+    <td>{{forloop.counter}}</td>
+    <td>{{h.recdate}}</td>
+    <td>{{h.description}}</td>
+    <td>{{currency}} {{h.amount|intcomma}}</td>
+    <td> {{h.number}}</td>
+    <td> 
+      <a href="#" style="color:blue" onClick= "refresh({{  h.transac_id  }})" title="Click here to delete this entry">Refresh</a></td>
+    
+    <!-- <td> <a href="#" style="color:blue" onClick= "mopost({{  h.transac_id  }})" title="Click here to delete this entry">Delete</a></td> -->
+
+    </tr>
+{% endfor %}
+</table>
+
+
+{% else %}
+
+<div style="font-size:0.6em;text-align:center;color:red">No Records Found</div>
+
+{% endif %}
+
+
+
+<table style="margin-top:0.2%;margin-bottom:0.6%;text-align:center;font-size:0.8em" width="100%" class="table  table-bordered" id="dataTables-example">
+
+<tr >
+
+  <td >
+<a href="/fts/mycustomers/dashboard/{{wallet}}/">Continue</a>
+</td>
+</tr>
+</table>

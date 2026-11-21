@@ -1,0 +1,88 @@
+
+
+
+
+{% load humanize %}
+
+
+<div style='text-align:center'>Deposit Menu</div>
+
+
+
+
+
+<form action="/fts/cashin/admin/display/" method="POST"  onsubmit="disable(this)"> 
+  {% csrf_token %}
+
+
+<table style="margin-top:01%;margin-bottom:0.8%;font-size:0.7em" width="100%" class="table  table-bordered" id="dataTables-example">            
+            <tr >
+             <td>Business Year</td>
+                <td> 
+                          <select name="myyear" id="id_myyear" required >
+                              {% for pincode in year %}
+                                  <option value="{{pincode.year}}">{{pincode.year}}</option>
+                              {% endfor %}
+                         </select>
+                </td>
+            </tr>
+
+            <tr >
+              <td >Customer </td>
+                <td> {{ customer.surname }} {{ customer.firstname }} {{ customer.othername }}</td>
+
+            </tr>
+
+
+            <tr >
+              <td >Wallet Address</td>
+                <td> {{ customer.wallet }}</td>
+
+            </tr>
+
+</table>
+
+
+
+
+           <tr >
+                <div class="boxcard"></div>
+           </tr>
+
+
+
+
+ 
+<input type="hidden" name="wallet" id="wallet"  readonly="readonly" value="{{ wallet }}" class ="loginTxtbox">
+
+
+
+
+  <script type="text/javascript" >
+        $(document).ready(function() {
+            autocard();
+        });
+    </script>
+
+
+    <script type="text/javascript" language="javascript">
+        function autocard(){
+            var state = $("#id_myyear").val()+ ":" + "{{wallet}}";
+            // alert(state)
+            var url = "/fts/customer/findcard/deposit/";
+            var i = 0;
+            var data='userid='+state;
+            $.ajax({
+                type:"POST",
+                url:url,
+                data:data,
+                success:function(html) {
+                    $(".boxcard").show();
+                    $(".boxcard").html(html);
+
+                }
+            });
+            return false;
+        }
+    </script>
+

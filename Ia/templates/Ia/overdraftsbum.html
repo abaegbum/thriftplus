@@ -1,0 +1,82 @@
+
+{% load humanize %}
+
+   
+
+<div style="margin-top:1%;margin-bottom:0.93%;text-align:center;font-size:0.6em;color:red">Pay Advance for   {{ cycle }},  {{ monthname }}  {{ year }}</div>
+
+
+   <table style="margin-top:-1%;margin-bottom:2%;font-size:0.6em" width="100%" class="table  table-bordered" id="dataTables-example">
+    <thead>
+        <tr style="text-align:center;font-weight:bold"> 
+           <td > AC / Bal</td>
+           <td > Overdraft</td>
+           <td >Loan</td>
+        </tr>
+        <tr style="text-align:center"> 
+           <td >  {{currency}} {{ contribution|intcomma}}</td>
+           <td >  {{currency}} {{ overdraft|intcomma}}</td>
+           <td >  {{currency}} {{ withdrawable|intcomma}}</td>
+        </tr>
+</table>
+
+   <table style="margin-top:-1%;margin-bottom:2%;font-size:0.6em" width="100%" class="table  table-bordered" id="dataTables-example">
+
+        <tr style="text-align:center"> 
+           <td style="font-weight:bold">Thrift</td> 
+           <td >  {{currency}} {{ thrift|intcomma}}</td>
+
+        </tr>
+    </thead>
+
+</table>
+
+
+   <table style="margin-top:-1.7%;margin-bottom:01%;font-size:0.6em" width="100%" class="table  table-bordered" id="dataTables-example">
+          <tr> 
+
+        <td >Interest on Overdraft</td>
+
+
+    <td> 
+
+        <div class="form-group">
+                 <input type="number" name="servicecharge" class="form-control" id="servicecharge" required placeholder="Enter service charge" autofocus>
+            </div>
+      </td>
+  </tr>
+</table>
+
+
+
+   <table style="margin-top:02%;margin-bottom:0.2%;font-size:0.8em" width="100%" class="table  table-bordered" id="dataTables-example">
+    <tr>
+            <td>
+              <input style="font-size:0.8em"  class="btn btn-lg btn-success btn-block" name="submit" type= "submit" value="Process Loan">
+            </td>
+      </tr>
+
+ </table>
+
+
+<input type="hidden" name="wallet" readonly="readonly" value="{{ wallet }}">
+<input type="hidden" name="deposited"  readonly="readonly" value="{{contribution}}" >
+<input type="hidden" name="code"  readonly="readonly" value="{{code}}" >
+<input type="hidden" name="withdrawable"  readonly="readonly" value="{{withdrawable}}">
+<input type="hidden" name="overdraft"  readonly="readonly" value="{{overdraft}}">
+
+
+
+
+
+
+<script language="javascript" type="text/javascript">
+        function disable(f)
+        {
+            var button = f.elements['submit'];
+            button.value = 'Processing';
+            button.disabled = 'true';
+            return true;
+        }
+    </script>
+

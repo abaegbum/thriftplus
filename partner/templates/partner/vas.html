@@ -1,0 +1,99 @@
+
+
+{% extends 'partner/basepartner.html' %}
+{% block content %}
+
+
+
+
+<div style="text-align:center">Back Office VAS</div>
+
+<!-- 
+   <table style="margin-top:0%;margin-bottom:01%" width="100%" class="table  table-bordered" id="dataTables-example">
+
+    <tr style="text-align:center;">
+         <td >
+          <a href="/partner/partner/business/subscription/" style="color:red">Log</a>
+        </td>
+
+         <td style="background:blue">
+          <a href="/partner/partner/business/extension/" style="color:white">Extension</a>
+        </td>
+        
+        <td >
+          <a href="/partner/partner/business/renew/" style="color:red">Subscription</a>
+        </td>
+
+
+    </tr>
+</table>
+ -->
+
+
+
+
+<tr >
+
+       <form action="" method="POST"  enctype="multipart/form-data" >
+
+         {% csrf_token %}
+    
+    <section class="content">
+      <div class="container-fluid">
+            
+            <!-- general form elements -->
+            <div class="card card-primary">
+
+                <div class="card-body">
+                  <div class="form-group">
+                    <label for="Business Name">E-Mail</label>
+                    <input type="email" autofocus name="email" class="form-control" id="Id_email" placeholder="E-mail" required>
+                  </div>
+
+                </div>
+
+
+
+                <div class="card-body">
+                  <div class="form-group">
+                    <label for="Business Name">Amount</label>
+                    <input type="number" name="amount" class="form-control" id="Id_amount" placeholder="SMS Amount" required>
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+                <!-- /.card-body -->
+           <div class="card-footer">
+            <td >
+              <input class="btn btn-lg btn-success btn-block" name="submit" type= "submit" value="Details">
+            </td>
+          </div>
+      </section>
+      </form>
+
+
+</tr>
+
+
+    <script>
+        $(document).ready(function() {
+            $("#Id_email").focus();
+        });
+    </script>
+
+    <script language="javascript" type="text/javascript">
+        function disable(f)
+        {
+            var button = f.elements['submit'];
+            button.value = 'Processing';
+            button.disabled = 'true';
+            return true;
+        }
+    </script>
+
+{% endblock %}
+
+
+

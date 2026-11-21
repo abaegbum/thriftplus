@@ -1,0 +1,77 @@
+
+
+
+
+<div style="text-align:center">Accounts Balances Menu</div>
+
+
+<table style="margin-top:01%;margin-bottom:0.1%;font-size:0.7em" width="100%" class="table  table-bordered" id="dataTables-example">
+
+            <tr >
+              <td style='font-weight:bokld'>Business Year </td>
+                <td> 
+                          <select name="business_year" id="id_business_year" required >
+                              {% for pincode in year %}
+                                  <option value="{{pincode.year}}">{{pincode.year}}</option>
+                              {% endfor %}
+
+                         </select>
+                </td>
+            </tr>
+
+            <tr >
+              <td style='font-weight:bokld'>Customer </td>
+                <td> {{ customer.surname }} {{ customer.firstname }} {{ customer.othername }}</td>
+
+            </tr >
+
+
+            <tr >
+              <td >Wallet Address</td>
+                <td> {{ customer.wallet }}</td>
+
+            </tr>
+</table>
+
+
+           <tr >
+                <div class="boxbalance"></div>
+           </tr>
+
+ 
+<input type="hidden" name="wallet" id="wallet"  readonly="readonly" value="{{ wallet }}" class ="loginTxtbox">
+
+</form>
+
+  <script type="text/javascript" >
+        $(document).ready(function() {            
+            $("#id_business_year").change(function () {
+                balancecard();
+            });
+
+            balancecard();
+        });
+    </script>
+
+
+    <script type="text/javascript" language="javascript">
+        function balancecard(){
+            var state = $("#id_business_year").val()+ ":" + "{{wallet}}";
+            // alert(state)
+            var url = "/fts/customer/findcard/balance/";
+            var i = 0;
+            var data='userid='+state;
+            $.ajax({
+                type:"POST",
+                url:url,
+                data:data,
+                success:function(html) {
+                    $(".boxbalance").show();
+                    $(".boxbalance").html(html);
+
+                }
+            });
+            return false;
+        }
+    </script>
+

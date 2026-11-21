@@ -1,0 +1,128 @@
+
+
+{% extends 'Ia/customerdashboard.html' %}
+{% block content %}
+
+
+
+
+{% load humanize %}
+
+
+<div style="margin-top:1%;margin-bottom:0.93%;text-align:center;color:red">Deposit summary {{ thrift.cycle }},  {{ thrift.month }}  {{ thrift.year }}</div>
+
+
+
+<form action="/fts/thrift/requests/cashin/admin/" method="POST"  onsubmit="disable(this)">
+  {% csrf_token %}
+
+
+
+<table style="margin-top:01%;margin-bottom:0%;font-size:0.7em" width="100%" class="table  table-bordered" id="dataTables-example">
+            <tr >
+              <td style='font-weight:bold'>Year </td>
+                <td> {{ thrift.year }} </td>
+            </tr>
+
+            <tr >
+              <td style='font-weight:bold'>Name </td>
+                <td> {{ customer.customer.surname }} {{ customer.customer.firstname }} {{ customer.customer.othername }}</td>
+            </tr>
+
+            <tr >
+              <td style='font-weight:bold'>Wallet Address</td>
+                <td> {{ customer.customer.wallet }}</td>
+
+            </tr>
+            <tr >
+
+
+              <tr >
+              <td style='font-weight:bold'>Product </td>
+                <td> Esusu</td>
+            </tr>
+
+
+            <tr >
+              <td style='font-weight:bold'>Card </td>
+                <td> {{ thrift.purpose }} </td>
+            </tr>
+
+
+
+            <tr >
+              <td style='font-weight:bold'>Month  </td>
+                <td> {{ thrift.month }}</td>
+            </tr>
+
+
+                        <tr >
+              <td style='font-weight:bold'>Cycle </td>
+                <td> {{ thrift.cycle }}</td>
+            </tr>
+
+
+
+</table>
+
+        <tr style="text-align:center;font-weight:bold">
+           <div >You are about to Pay in <span style="color:blue">{{words}} Naira </span> <span style="color:purple">({{company.currency_code}} {{ amount|intcomma}})</span> into this account </div>
+        </tr>
+
+
+
+   <table style="margin-top:0%;margin-bottom:1%" width="100%" class="table  table-bordered" id="dataTables-example">
+    <tr>
+            <td>
+              <input style="font-size:0.8em"  class="btn btn-lg btn-success btn-block" name="submit" type= "submit" value="Deposit">
+            </td>
+
+              <td >
+                <a class="btn btn-lg btn-success btn-block"  style="font-size:0.8em" href="/fts/mycustomers/dashboard/{{wallet}}/">Decline</a>
+              </td>
+   </tr>
+
+ </table>
+
+
+
+<input type="hidden" name="wallet" readonly="readonly" value="{{ wallet }}">
+
+<input type="hidden" name="code"  readonly="readonly" value="{{code}}" >
+
+<input type="hidden" name="amount"  readonly="readonly" value="{{amount}}" >
+
+
+<input type="hidden" name="month"  readonly="readonly" value="{{thrift.month}}" >
+
+<input type="hidden" name="cycle"  readonly="readonly" value="{{thrift.cycle}}" >
+
+
+</form>
+
+
+<script language="javascript" type="text/javascript">
+        function disable(f)
+        {
+            var button = f.elements['submit'];
+            button.value = 'Processing';
+            button.disabled = 'true';
+            return true;
+        }
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
+
+
+

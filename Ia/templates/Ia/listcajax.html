@@ -1,0 +1,39 @@
+
+
+
+
+
+{% if dat %}
+
+<div style='text-align:center'>List of {{location }} customers </div>
+
+   <table style="font-size:0.9em" width="100%" class="table  table-bordered" id="dataTables-example">
+    <thead>
+
+        <tr style="text-align:center;font-weight:bold">
+           <td >S/N</td>
+            <td >Name</td>
+
+
+
+        </tr>
+    </thead>
+    
+    {% for kp in dat %}
+
+    <tr style="text-align:center">
+          <td >{{ forloop.counter }}.</td>
+          <td style="text-align:leftg"> <a href="/fts/mycustomers/dashboard/{{kp.customer.wallet}}/">{{ kp.customer.surname }}    {{ kp.customer.firstname }}   {{ kp.customer.othername }} </a></td>
+
+    </tr>
+   
+    {% endfor %}
+
+
+</tr>
+{% else %}
+<div>No customers found in this location </div>
+
+{% endif %}
+
+

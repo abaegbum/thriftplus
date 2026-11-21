@@ -1,0 +1,61 @@
+<script type="text/javascript" src='/static/mato/JS/jquery-1.5.js'></script>
+
+
+
+{% extends 'IIIb/mywallet_balance_base_a.html' %}
+{% block content %}
+
+{% load humanize %}
+
+<div style="text-align:center">Wallet Balances Menu</div>
+
+
+   <table style="margin-top:0%;margin-bottom:01%;font-size:0.8em" width="100%" class="table  table-bordered" id="dataTables-example">
+
+    <tr style="text-align:center;">
+      <td  >
+          <a href="/IIIb/threeb/staff/mywallet/"  style="color:red">Balances</a>
+      </td>
+      <td>
+          <a href="/IIIb/threeb/staff/statement/"  style="color:red">Statement</a>
+      </td>
+      <td>
+          <a href="/IIIb/threeb/staff/withdraw/"  style="color:red">Withdraw</a>
+      </td>
+      <td style="background:blue">
+          <a href="/IIIb/threeb/mywallet/accno/"  style="color:white">Account No.</a>
+      </td>
+    </tr>
+</table>
+
+
+
+
+ <table style="margin-top:0%;margin-bottom:02%;font-size:0.8em" width="100%" class="table  table-bordered" id="dataTables-example">
+
+  <tr> 
+    <td style="font-weight:bold">E-mail</td>
+    <td>{{msg.staff.email}}</td>
+  </tr>
+
+  <tr> 
+    <td style="font-weight:bold">Name</td>
+  <td>{{msg.staff.surname|title}}  {{msg.staff.firstname|title}}   {{msg.staff.othername|title}} </td>
+  </tr>
+
+
+  <tr> 
+    <td style="font-weight:bold">Bank</td>
+    <td>{{amount.bank_name}}</td>
+  </tr>
+  <tr> 
+    <td style="font-weight:bold">Account No</td>
+    <td>{{amount.account_number}}</td>
+  </tr>
+
+ </table>
+
+{% endblock %}
+
+
+

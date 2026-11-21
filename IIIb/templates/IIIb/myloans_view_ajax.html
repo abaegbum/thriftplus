@@ -1,0 +1,73 @@
+
+
+{% load humanize %}
+
+
+
+   <table style="margin-top:0.2%;margin-bottom:0%;font-size:0.9em" width="100%" class="table  table-bordered" id="dataTables-example">
+
+           <tr >
+               <td style='font-weight:bold'>Lending Rate</td>
+               <td> {{lending_rate}} %</td>
+             </tr>
+
+
+          <tr>
+            <td style='font-weight:bold'>Amortization</td>
+            <td> {{duration}}  Months</td>
+          </tr>
+          
+           <tr >
+               <td style='font-weight:bold'>Interest on Loan</td>
+               <td>{{company.currency_code}} {{interest|intcomma}}  ({{interest_words}} {{company.currency_description}})</td>
+             </tr>
+
+
+           <tr >
+               <td style='font-weight:bold'>Monthly Deduction</td>
+               <td>{{company.currency_code}} {{monthly_deduction|intcomma}}  ({{monthly_deduction_word}}  {{company.currency_description}})</td>
+             </tr>
+
+
+           <tr >
+               <td style='font-weight:bold'>Repayment Sum</td>
+               <td>{{company.currency_code}} {{repayment|intcomma}}  ({{repayment_words}} {{company.currency_description}})</td>
+             </tr>
+
+
+
+       <tr>
+         <td style='font-weight:bold;color:teatl'>Grace Period</td>
+         <td>
+             <select name="grace_period" id="id_grace_period" required>
+             <option value="">-----</option>
+              <option value="30">30 Days</option>
+              <option value="60">60 Days</option>
+             </select>
+         </td>
+       </tr>
+
+       </table>
+  
+
+
+   <table style="margin-top:0.2%;margin-bottom:0%;font-size:0.8em" width="100%" class="table  table-bordered" id="dataTables-example">
+          <tr>
+       		<td >
+            <input class="btn btn-lg btn-success btn-block" name="submit" type= "submit" value="Apply">
+       	    </td >
+
+            <td >
+              <a href="/IIIb/threeb/staff/request_loan/" class="btn btn-lg btn-success btn-block">Cancel</a>
+            </td>
+          </tr>
+   </table>
+
+
+<input type='hidden' name="principal"  value ={{principal}}>
+<input type='hidden' name="repayment" value ={{repayment}}>
+<input type='hidden' name="interest"  value ={{interest}}>
+<input type='hidden' name="monthly_deduction" value ={{monthly_deduction}}>
+<input type='hidden'  name="package" value ="{{loan}}">
+
+

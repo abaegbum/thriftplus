@@ -1,0 +1,275 @@
+
+
+{% extends 'partner/basepartner.html' %}
+{% block content %}
+
+{% load humanize %}
+
+<div style="text-align:center">Repair</div>
+   <table style="margin-top:0%;margin-bottom:01%" width="100%" class="table  table-bordered" id="dataTables-example">
+
+    <tr style="text-align:center;">
+
+        <td style="background:blue;font-size:0.9em"><a href="/partner/partner/repair/" style="color:white;font-size:0.9em">Wallets </a></td>
+
+
+      </tr>
+</table>
+
+{{S}}
+
+
+
+  <form action="" method="POST"  onsubmit="disable(this)" enctype="multipart/form-data" >
+    {% csrf_token %}
+    <section class="content">
+      <div class="container-fluid">
+            <div class="card card-primary">
+                <div class="card-body">
+          <table style="margin-top:0%;margin-bottom:04%" width="100%" class="table  table-bordered table-hover" id="dataTables-example">
+           <tr >
+               <td >Wallet</td><td> <input type="number" name="wallet" id='id_wallet' required>   </td>
+            </tr>
+
+
+          <tr>
+                <td style='font-weight:bold'>Month</td>
+                <td>
+                    <select  id="id_month" name="month"required >
+                     <option value="-">-----</option>
+                     <option value="1">January</option>
+                     <option value="2">February</option>
+
+                     <option value="3">March</option>
+                     <option value="4">April</option>
+
+                     <option value="5">May</option>
+                     <option value="6">June</option>
+                     <option value="7">July</option>
+                     <option value="8">August</option>
+
+                     <option value="9">September</option>
+                     <option value="10">October</option>
+
+                     <option value="11">November</option>
+                     <option value="12">December</option>
+
+
+                     </select>
+                 </td>
+        </tr>
+
+
+  <tr>
+            <td style='font-weight:bold'>Cycle</td>
+            <td>
+                <select name="cycle" id="id_cycle" required>
+                 <option value="">-----</option>
+                 <option value="cycle 1">Cycle 1</option>
+                 <option value="cycle 2">Cycle 2</option>
+                 <option value="cycle 3">Cycle 3</option>
+                 <option value="cycle 4">Cycle 4</option>
+                 <option value="cycle 5">Cycle 5</option>
+
+                 <option value="cycle 6">Cycle 6</option>
+                 <option value="cycle 7">Cycle 7</option>
+                 <option value="cycle 8">Cycle 8</option>
+                 <option value="cycle 9">Cycle 9</option>
+                 <option value="cycle 10">Cycle 10</option>
+
+                 </select>
+             </td>
+</tr>
+
+           <tr >
+               <td >Thrift Code</td><td> <input type="number" name="thriftcode" id='id_thriftcode'>   </td>
+            </tr>
+
+
+       </table>
+          <div class="card-footer">
+            <td >
+              <input class="btn btn-lg btn-success btn-block" name="submit" type= "submit" value="View Details">
+            </td>
+          </div>
+                </div>
+              </div>
+            </div>
+      </section>
+
+  </form>
+
+
+
+
+<div> wallet {{wallet}}
+month {{month}}
+{{cycle}}
+</div>
+
+{% for msg in msg %}
+   <table style="margin-top:0%;margin-bottom:0%;font-size:0.9em;text-align:center" width="100%" class="table  table-bordered table-hover" id="dataTables-example">
+
+
+<tr>
+
+    <td colspan="5">Thrift
+        {% if msg.thrift %}
+           <tr style='font-weight:bold'>
+                <th>S/N </th>
+                <th>Thrift</th>
+                <th>Code</th>
+
+                <th>cycle</th>
+                <th>Thrift</th>
+            </tr>
+
+            {% for row in msg.thrift %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ row.thrift|intcomma }}</td>
+                <td>{{ row.code }}</td>
+
+                <td>{{ row.cycle }}</td>
+                <td>{{ row.thrift|intcomma }}</td>
+            </tr>
+            {% endfor %}
+
+
+    {% else %}
+        <p>No duplicates found 🎉</p>
+    {% endif %}
+
+
+    </td>
+
+
+    <td colspan="5">staff
+        {% if msg.staff %}
+           <tr style='font-weight:bold'>
+                <th>S/N </th>
+                <th>Code</th>
+                <th>Cycle</th>
+                <th>amount</th>
+                <th>Description</th>
+                <th>Status</th>
+            </tr>
+
+            {% for row in msg.staff %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ row.code }}</td>
+                <td>{{ row.cycle }}</td>
+                <td>{{ row.amount|intcomma }}</td>
+                <td>{{ row.programmm }}</td>
+                <td>{{ row.status }}</td>
+            </tr>
+            <!--<tr><td>total </td><td>{{row.staff_total}}</td></tr>-->
+            {% endfor %}
+
+
+    {% else %}
+        <p>No duplicates found 🎉</p>
+    {% endif %}
+
+
+    </td>
+
+<td colspan="5">customer
+                {% if msg.customer %}
+               <tr style='font-weight:bold'>
+                <th>S/N </th>
+                <th>Code</th>
+                <th>Cycle</th>
+                <th>amount</th>
+                <th>Description</th>
+            </tr>
+
+            {% for row in msg.customer %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ row.code }}</td>
+                <td>{{ row.cycle }}</td>
+                <td>{{ row.amount|intcomma }}</td>
+                <td>{{ row.description }}</td>
+            </tr>
+            {% endfor %}
+
+
+    {% else %}
+        <p>No duplicates found 🎉</p>
+    {% endif %}
+
+
+</td>
+
+
+
+
+<td colspan="5">office
+
+    {% if msg.office %}
+               <tr style='font-weight:bold'>
+                <th>S/N </th>
+                <th>Code</th>
+                <th>Cycle</th>
+                <th>amount</th>
+                <th>Description</th>
+            </tr>
+
+            {% for row in msg.office %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ row.code }}</td>
+                <td>{{ row.cycle }}</td>
+                <td>{{ row.amount|intcomma }}</td>
+                <td>{{ row.description }}</td>
+            </tr>
+            {% endfor %}
+
+
+    {% else %}
+        <p>No duplicates found 🎉</p>
+    {% endif %}
+
+</td>
+
+
+</tr>
+
+    </table>
+{% endfor %}
+
+
+
+
+
+
+
+
+
+
+   <script type="text/javascript" >
+        $(document).ready(function() {
+
+            $("#id_wallet").focus();
+
+        });
+    </script>
+
+
+    <script language="javascript" type="text/javascript">
+        function disable(f)
+        {
+            var button = f.elements['submit'];
+            button.value = 'Processing';
+            button.disabled = 'true';
+            return true;
+        }
+    </script>
+
+
+{% endblock %}
+
+
+

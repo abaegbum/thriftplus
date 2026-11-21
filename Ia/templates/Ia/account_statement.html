@@ -1,0 +1,50 @@
+
+
+
+{% load humanize %}
+ <table style="margin-top:0%;margin-bottom:0%;font-size:0.6em;text-align:center" width="100%" class="table  table-bordered" id="dataTables-example">
+
+<tr style="font-weight:bold">
+<td>S/N</td>
+<td>Date</td>
+<td>DESC</td>
+<TD>AMOUNT ({{company.currency_code}})</TD></tr>
+
+{% for k in msg %}
+<tr>
+<td>{{forloop.counter}}</td>
+
+<td>{{k.recdate}}</td>
+{% if k.description == 'Credit' %}
+<td style="color: green;text-align: left;">  {{k.description}}</td>
+
+
+{% elif k.description == 'Debit' %}
+<td style="color: red;text-align: left">  {{k.description}}</td>
+
+
+{% else %}
+<td style="color: blue;text-align: left">  {{k.description}}</td>
+{% endif %}
+
+<td style="text-align: left">  {{k.amount| intcomma}}</td>
+
+</tr>
+{% endfor %}
+</table>
+
+ <table style="margin-top:0.9%;margin-bottom:0%;font-size:0.6em" width="100%" class="table  table-bordered" id="dataTables-example">
+<tr>
+<td>Balance</td>
+<td>{{company.currency_code}} {{bal|intcomma}}</td></tr>
+
+
+</table>
+
+<table style="margin-top:0.5%;margin-bottom:0.6%;text-align:center;font-size:0.6em" width="100%" class="table  table-bordered" id="dataTables-example">
+
+<tr >
+<td ><a href="/fts/customeria/list/{{location_code}}/">My Customers</a></td>
+<td ><a href="/fts/mycustomers/dashboard/{{customer.customer.wallet}}/">My Dashboard</a></td>
+</tr>
+</table>

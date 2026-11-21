@@ -1,0 +1,51 @@
+
+
+
+<div style="font-size: 0.6em;text-align: center;"> Do you want to <br> disburse selected  funds for {{savings}}? </div>
+
+
+<form action="" method="POST" onsubmit="disable(this)">
+    {% csrf_token %}
+
+<input type='hidden' name="year"   value ={{year}}>
+
+<input type='hidden' name="status"   value ="{{status}}">
+<input type='hidden' name="source"   value ="{{source}}">
+<input type='hidden' name="savings"   value ="{{savings}}">
+<input type="hidden" name="selected_items" value="{{ selected_items|join:',' }}">
+
+         
+     <table style="margin-top:0%;margin-bottom:0%;font-size: 0.6em" width="100%" class="table  table-bordered" id="dataTables-example">
+
+        <tr>
+          <td >
+          <input class="btn btn-lg btn-success btn-block" name="submit" type= "submit"value="yes">
+        </td>
+
+          <td >
+            <input  type='button' class="btn btn-lg btn-success btn-block" value="No"
+         onclick="closedel();">
+        </td>
+
+      </tr>
+    </table>
+</form>
+
+
+
+
+<script>
+    function closedel() { 
+        $("#cancel").dialog("close");
+    }
+</script>
+
+    <script language="javascript" type="text/javascript">
+        function disable(f)
+        {
+            var button = f.elements['submit'];
+            button.value = 'Processing';
+            button.disabled = 'true';
+            return true;
+        }
+    </script>

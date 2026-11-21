@@ -1,0 +1,53 @@
+
+
+
+{% load humanize %}
+
+
+    
+<table style="margin-top:0%;margin-bottom:0.2%;font-size:0.6em" width="100%" class="table  table-bordered" id="dataTables-example">
+
+            <tr>
+               <td style="font-weight:bold">Thrift</td>
+               <td style='color:grey;'> {{currency}} {{ thrift.thrift|intcomma }} </td>
+            </tr> 
+</table>
+
+
+            
+<table style="margin-top:0%;margin-bottom:02%;font-size:0.6em" width="100%" class="table  table-bordered" id="dataTables-example">
+            <tr>
+                <td style="font-weight:bold">Total Contribution</td>
+               <td style='color:grey;'>{{ add}}</td>
+            </tr> 
+
+</table>
+{% if add <= 3 %}
+
+<table style="margin-top:0.2%;margin-bottom:0.6%;text-align:center;font-size:0.8em" width="100%" class="table  table-bordered" id="dataTables-example">
+
+<tr >
+
+  <td >
+<button formaction ="/fts/mycustomers/delete/allrecycles/{{code}}/">Delete All Entries</button>
+</td>
+</tr>
+</table>
+
+{% else %}
+
+<div style="font-size:0.6em;text-align:center;color:red">Recycle Not Possible</div>
+<table style="margin-top:0.2%;margin-bottom:0.6%;text-align:center;font-size:0.8em" width="100%" class="table  table-bordered" id="dataTables-example">
+
+<tr >
+
+  <td >
+<a href="/fts/mycustomers/dashboard/{{wallet}}/">Continue</a>
+</td>
+</tr>
+</table>
+ 
+
+{% endif %}
+
+

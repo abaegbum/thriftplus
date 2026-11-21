@@ -1,0 +1,89 @@
+
+
+
+
+{% load humanize %}
+
+
+
+<form action="/fts/customer/overdraft/repayloan/" method="POST"  onsubmit="disable(this)">
+
+
+<table style="margin-top:01%;margin-bottom:02%;font-size:0.7em" width="100%" class="table  table-bordered" id="dataTables-example">
+
+            <tr >
+              <td style="font-weight:bold">Principal </td>
+                <td> {{branch.currency_code}} {{ loan.volume|intcomma }}</td>
+            </tr><tr>
+              <td style="font-weight:bold">Repayment </td>
+                <td> {{branch.currency_code}} {{ loan.repayment|intcomma }}</td>
+                <tr><td style="font-weight:bold">Tenure</td>
+                    <td>{{loan.package.duration}}  Weeks</td></tr>
+            </tr>
+</table>
+
+
+
+
+{% if rec %}
+<div style="text-align:center;font-size:0.7em">Loan Repayment history</div>
+<table style="margin-top:01%;margin-bottom:02%;font-size:0.7em;text-align:center" width="100%" class="table  table-bordered" id="dataTables-example">
+<tr style="text-align:center;font-weight:bold">
+    <td>S/N</td>
+    <td>Amount</td>
+    <td>Date</td>
+
+</tr>
+
+    {% for h in rec %}
+    <tr>
+    <td>{{forloop.counter}}.</td>
+    <td>{{h.repaid|intcomma}}</td>
+    <td>{{h.pd_date}}</td>
+    </tr>
+    {% endfor %}
+    
+</table>
+<table style="margin-top:01%;margin-bottom:02%;font-size:0.7em" width="100%" class="table  table-bordered" id="dataTables-example">
+    <tr>
+        <td>Total amount Repaid</td>
+        <td>{{branch.currency_code}}  {{repaid|intcomma}}</td>
+
+    </tr>
+
+    <tr><td>Loan Bal</td>
+      <td> {{branch.currency_code}}  <span style="color:blue">{{bal|intcomma}}</span></td></tr>
+
+</table>
+
+{% else%}
+<tr style="font-size:0.7em">
+<td >you are yet to pay part of your loan</td>
+</tr>
+
+
+{% endif %}
+
+
+ 
+<input type="hidden" name="wallet" readonly="readonly" value="{{ wallet }}">
+<input type="hidden" name="code" readonly="readonly" value="{{ code }}">
+
+   <table style="margin-top:0%;margin-bottom:0.2%;font-size:0.7em" width="100%" class="table  table-bordered" id="dataTables-example">
+    <tr>
+        <td style="font-weight:bold">Amount</td>
+        <td><input type='number' name='amount' required></td>
+    </tr>
+
+</table>
+
+
+  <table style="margin-top:0%;margin-bottom:02%;font-size:0.6em" width="100%" class="table  table-bordered" id="dataTables-example">
+    <tr>
+      <td >
+        <input class="btn btn-lg btn-success btn-block" name="submit" type= "submit" value="Save">
+      </td>
+  </tr>
+  </table>
+
+</form>

@@ -1,0 +1,69 @@
+
+
+
+
+{% load humanize %}
+
+
+
+
+<div style='font-size: 0.8em'> Do you want to Prorate <br>  <span style='color:red'> {{month}} {{year}}  </span> salaries ?</div>
+
+<!-- action="/IIIb/threeb/staff/savings/prorate/yes/" -->
+
+<form  action=" " method="POST" onsubmit="disable(this)">
+{% csrf_token %}
+
+<input type='hidden' name="month_index"   value ={{month_index}}>
+<input type='hidden' name="year"  value ={{year}}>
+         
+     <table style="margin-top:0%;margin-bottom:0%;font-size: 0.8em" width="100%" class="table  table-bordered" id="dataTables-example">
+
+        <tr>
+          <td >
+          <input class="btn btn-lg btn-success btn-block" name="submit" type= "submit"value="yes">
+        </td>
+
+         <td >
+          
+         <input  type='button' class="btn btn-lg btn-success btn-block" value="No"
+         onclick="closedel();">
+
+
+        </td>
+
+      </tr>
+    </table>
+</form>
+
+
+<script>
+    function closedel() { 
+        $("#cancel").dialog("close");
+    }
+</script>
+
+
+
+
+
+
+   <script language="javascript" type="text/javascript">
+        function disable(f)
+        {
+            var button = f.elements['submit'];
+            button.value = 'Processing';
+            button.disabled = 'true';
+            return true;
+        }
+    </script>
+
+
+
+
+
+
+
+
+
+

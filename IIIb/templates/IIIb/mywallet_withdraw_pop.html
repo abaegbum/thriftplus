@@ -1,0 +1,38 @@
+
+
+
+<div style="font-size: 0.8em"> Do you really want to Withdraw your<br> <span style='color:red'> 
+{{ status }}</span> for  {{year}}?</div>
+
+
+<form action="" method="POST">
+    {% csrf_token %}
+
+<input type='hidden' name="year"   value ={{year}}>
+<input type='hidden' name="source"   value ="{{status}}">
+<input type='hidden' name="amount"   value ="{{amount}}">
+         
+     <table style="margin-top:0%;margin-bottom:0%" width="100%" class="table  table-bordered" id="dataTables-example">
+
+        <tr>
+          <td >
+          <input class="btn btn-lg btn-success btn-block" name="submit" type= "submit"value="yes">
+        </td>
+
+          <td >
+            <input  type='button' class="btn btn-lg btn-success btn-block" value="No"
+         onclick="closedel();">
+        </td>
+
+      </tr>
+    </table>
+</form>
+
+
+
+
+<script>
+    function closedel() { 
+        $("#cancel").dialog("close");
+    }
+</script>

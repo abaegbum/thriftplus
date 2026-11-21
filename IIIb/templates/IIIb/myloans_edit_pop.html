@@ -1,0 +1,128 @@
+
+
+
+
+{% load humanize %}
+
+
+
+<form  action=" /IIIb/threeb/staff/loan/edit/del/" method="POST" onsubmit="disable(this)">
+{% csrf_token %}
+
+<input type="hidden" name="application_code" value='{{application_code}}'>
+
+
+
+     <table style="margin-top:0%;margin-bottom:0%;font-size: 0.8em" width="100%" class="table  table-bordered" id="dataTables-example">
+
+        <tr>
+          <td style="font-weight: bold;"> Name</td>
+
+         <td >{{sd.staff.staff.surname|title}}  {{sd.staff.staff.firstname|title}} </td>
+
+      </tr>
+
+        <tr>
+          <td style="font-weight: bold;"> Email</td>
+
+         <td >{{email}} </td>
+
+      </tr>
+
+        <tr>
+          <td style="font-weight: bold;"> Request</td>
+
+         <td >{{sd.description}} </td>
+
+      </tr>
+
+        <tr>
+          <td style="font-weight: bold;"> Amount</td>
+          <td> {{sd.branch.currency_code}} {{sd.principal|intcomma}}</td>
+      </tr>
+
+
+        <tr>
+          <td style="font-weight: bold;"> Application Date</td>
+          <td> {{sd.application_date}}</td>
+      </tr>
+
+<!-- 
+              <tr>
+          <td style="font-weight: bold;"> Amount</td>
+          <td> {{sd.branch.currency_code}} {{sd.principal|intcomma}}</td>
+      </tr> -->
+    </table>
+
+
+
+
+
+
+
+
+
+{% if sd.status == 'Running' or sd.status == 'Awaiting Disbursal' %}
+
+
+
+     <table style="margin-top:0%;margin-bottom:0%;font-size: 0.8em" width="100%" class="table  table-bordered" id="dataTables-example">
+
+        <tr>
+         <td >
+          <input  type='button' class="btn btn-lg btn-success btn-block" value="Continue" onclick="closedit();">
+        </td>
+
+      </tr>
+    </table>
+
+{% else %}
+
+     <table style="margin-top:0%;margin-bottom:0%;font-size: 0.8em" width="100%" class="table  table-bordered" id="dataTables-example">
+
+        <tr>
+          <td >
+          <input class="btn btn-lg btn-success btn-block" name="submit" type= "submit"value="Delete">
+        </td>
+
+         <td >
+          <input  type='button' class="btn btn-lg btn-success btn-block" value="Continue" onclick="closedit();">
+        </td>
+
+      </tr>
+    </table>
+
+    {% endif %}
+</form>
+
+
+<script>
+    function closedit() { 
+        $("#edit").dialog("close");
+    }
+</script>
+
+
+
+
+
+
+   <script language="javascript" type="text/javascript">
+        function disable(f)
+        {
+            var button = f.elements['submit'];
+            button.value = 'Processing';
+            button.disabled = 'true';
+            return true;
+        }
+    </script>
+
+
+
+
+
+
+
+
+
+

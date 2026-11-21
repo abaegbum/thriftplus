@@ -1,0 +1,149 @@
+
+
+
+
+
+<table style="margin-top:0%;margin-bottom:0%;font-size:0.7em" width="100%" class="table  table-bordered" id="dataTables-example">
+           
+
+             <td>Card</td>
+                <td> 
+                          <select name="card" id="id_card" required >
+
+                              {% for pincode in card %}
+                                  <option value="{{pincode.purpose}}">{{pincode.purpose}}</option>
+                              {% endfor %}
+
+
+                         </select>
+                </td>
+            </tr>
+
+
+            <tr >
+                <td>Product</td>
+                <td> 
+                          <select name="myproducts" id="id_myproducts" required >
+                                <option value="-----">Select One</option>                       
+                              {% for pincode in prod %}
+                                  <option value="{{pincode}}">{{pincode}}</option>
+                              {% endfor %}
+                         </select>
+                </td>
+            </tr>
+
+
+</table>
+
+
+           <tr >
+                <div class="boxcashabc"></div>
+           </tr>
+
+<input type="hidden" name="wallet" readonly="readonly" value="{{ wallet }}" >
+
+</form>
+
+
+  <script type="text/javascript" >
+        $(document).ready(function() {
+            $("#id_card").change(function () {
+                fillmonth();
+            });
+
+            $("#id_myproducts").change(function () {
+                fillmonth();
+            });
+
+            fillmonth()
+        });
+    </script>
+
+
+  <script type="text/javascript" language="javascript">
+       function fillmonth(){
+            var state = $("#id_business_year").val()  + ":" + $("#id_card").val() + ":" +"{{wallet}}" +  ":" + $("#id_myproducts").val();
+
+            // alert(state)
+
+            var url = "/fts/customer/withdraw/allmonth/";
+            
+            var i = 0;
+            var data='userid='+state;
+            $.ajax({
+                type:"POST",
+                url:url,
+                data:data,
+                success:function(html) {
+                    // $(".boxfund").hide();
+                    $(".boxcashabc").show();
+                    $(".boxcashabc").html(html);
+                }
+            });
+            return false;
+        }
+    </script>
+
+
+
+    <script type="text/javascript" language="javascript">
+        function fillcycle(){
+
+            var state = $("#id_business_year").val()  + ":" + $("#id_card").val() + ":" +"{{wallet}}" + ":" + $("#id_month").val();
+
+            // alert(state)
+
+            var url = "/fts/customer/withdraw/withcycle/";         
+            
+            var i = 0;
+            var data='userid='+state;
+            $("#id_cycle").val('');
+            $("#id_cycle").html('');
+            if (state != undefined){
+                $.ajax({
+                    type: "POST",
+                    url: url,
+                    data:data,
+                    success: function(data){
+                        var options = '';
+                        for (i=0; i<data.length; i++){
+                            options += '<option value="' + data[i] +'">' + data[i] + '</option>'
+                        }
+                        $("#id_cycle").append(options);
+                        autopostacc123e();
+                    }
+                })
+            }
+        }
+
+    </script>
+
+
+    <script type="text/javascript" language="javascript">
+        function autopostacc123e(){
+            var state = $("#id_business_year").val() + ":" + "{{wallet}}" + ":" + $("#id_month").val() + ":" + $("#id_card").val()+ ":" + $("#id_cycle").val();
+            // alert(state)
+            var url = "/fts/customer/withdraw/account_withdrawpop/";
+            var i = 0;
+            var data='userid='+state;
+            $.ajax({
+                type:"POST",
+                url:url,
+                data:data,
+                success:function(html) {
+                    $(".boxdddd").show();
+                    $(".boxdddd").html(html);
+
+                }
+            });
+            return false;
+        }
+    </script>
+
+
+
+
+
+
+
+

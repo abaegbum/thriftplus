@@ -1,0 +1,53 @@
+
+
+
+
+{% load humanize %}
+
+
+<table style="margin-top:0.5%;margin-bottom:0%;font-size:0.6em"  width="100%" class="table  table-bordered" id="dataTables-example">
+        <thead >
+    <tr style="text-align:center;font-weight:bold">
+           <td >S/N</td>
+            <td >Customer</td>
+           <td >Amount ({{company.currency_code}})</td>
+           <td >Action</td>
+
+      </tr>
+    </thead>                          
+           
+                            
+    {% for student in customer %}
+        <tr style="font-weight:bod;text-align:center">
+          <td >{{ forloop.counter }}.</td>
+          <td > {{ student.customer.customer.surname }} {{ student.customer.customer.firstname }}  {{ student.customer.customer.othername }}  </td>
+          <td >{{ student.amount|intcomma}}</td>
+
+          {% if student.is_declined == 1 %}
+            <td  > <a href="#" style="color:red" onClick= "recs({{ student.id  }})" title="recline {{ student.amount|intcomma}} " >Recline </a></td>
+          {% else %}
+          <td  >
+            <a href="#" style="color:red" onClick= "decs({{ student.transac_id  }})" title="decline {{ student.amount|intcomma}} ">Decline
+            </a>
+          </td>
+          {% endif %}
+        </tr>
+    {% endfor %}
+<table>
+
+<table style="margin-top:0.5%;margin-bottom:0%;font-size:0.6em"  width="100%" class="table  table-bordered" id="dataTables-example">
+
+
+  <tr style="text-align:center;font-weight:bold">
+
+    <td>Total Sales</td>
+  	<td> {{company.currency_code}} {{sales|intcomma}}</td></tr>
+
+</table>
+
+
+</form>
+
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+
+{% load humanize %}
+
+
+
+<form action ='/sysadmin/sysadmin/delete/location/{{income.code}}/' method = 'POST'  onsubmit="disable(this)">
+
+    {% csrf_token %}
+      
+        <div tyle='font-weight:bold;'>Do you want to delete {{ income.location }}</div>
+
+         
+     <table style="margin-top:0%;margin-bottom:0%" width="100%" class="table  table-bordered" id="dataTables-example">
+
+   <tr>
+      <td >
+      <input style="font-size:0.7em" class="btn btn-lg btn-success btn-block" name="submit" type= "submit"value="Yes">
+    </td>
+    <td >
+                <a class="btn btn-lg btn-success btn-block"  style="font-size:0.8em" href="/sysadmin/sysadmin/setup/locations/">No</a>
+    </td>
+  </tr>   
+</table>
+
+</form>
+
+    <script language="javascript" type="text/javascript">
+        function disable(f)
+        {
+            var button = f.elements['submit'];
+            button.value = 'Processing';
+            button.disabled = 'true';
+            return true;
+        }
+    </script>

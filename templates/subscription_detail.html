@@ -1,0 +1,105 @@
+
+
+
+{% extends 'subscription_base.html' %}
+{% block content %}
+
+
+<div style="text-align:center">Back Office Subscription history</div>
+   <table style="margin-top:0%;margin-bottom:01%" width="100%" class="table  table-bordered" id="dataTables-example">
+
+    <tr style="text-align:center;">
+         <td style="background:blue"><a href="/subscription/" style="color:white">Subscription</a></td>
+         <td ><a href="/extension/" style="color:red">Upgrade</a></td>
+
+    </tr>
+</table>
+
+
+
+{% if history %}
+
+<table style="margin-top:01%;margin-bottom:2%;text-align:center;font-size:0.8em" width="100%" class="table  table-bordered" id="dataTables-example">
+    <tr style="font-weight:bold">
+      <td >S/N</td>
+        <td> Service</td>
+        <td> Package</td>
+        <td> Validity</td>
+        <td> Status</td>
+        <td> Action</td>
+    </tr>
+
+{% for h in history %}
+
+    <tr >
+      <td >{{forloop.counter}}.</td>
+      <td> {{h.service}}</td>
+        <td> {{h.package}}</td>
+        <td> {{h.stop}}</td>
+
+
+        <td> {{h.status}}</td>
+            {% if h.status == 'Running' %}
+        <td>
+          <a href="#" style="color:blue" onClick= "renew7({{h.subscription_receipt}})"> Extend </a>
+        </td>
+            {% else %}
+            <td>
+          <a href="#" style="color:blue" onClick= "renew7({{h.subscription_receipt}})"> Renew </a>
+        </td>
+        {% endif %}
+    </tr>
+{% endfor %}
+
+</table>
+{% endif %}
+<div style='text-align: right;'> <a href=""> Renew All</a></div>
+
+
+
+
+<div id="depo"></div>
+
+<script type="text/javascript" language="javascript">
+    function renew7(vid){
+
+        var state = vid ;
+        // alert(state);
+        var url = "/renews/";
+        var i = 0;
+        var data='userid='+state;
+        $.ajax({
+            type:"POST",
+            url:url,
+            data:data,
+            success:function(html) {
+                $("#depo").html(html);
+                getchan();
+            }
+        });
+        return false;
+    }
+
+</script>
+
+
+<script type="text/javascript" language="javascript">
+    function getchan(){
+        var diachange = {
+            autoOpen:true,
+            // appendTo:"body1",
+            // modal:true,
+            // position: ["center", "middle"],
+            height:'auto',
+            width:'auto',
+            title:'Touch this box to close' ,
+            closeOnEscape:true,
+            show: true,
+            // hide: true,
+            bgiframe: true
+        };
+        $("#depo").dialog(diachange);
+    }
+
+</script>
+{% endblock %}

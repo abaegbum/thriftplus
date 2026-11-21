@@ -1,0 +1,101 @@
+<script type="text/javascript" src='/static/mato/JS/jquery-1.5.js'></script>
+
+
+
+{% extends 'IIIb/mywallet_balance_base_c.html' %}
+{% block content %}
+
+{% load humanize %}
+
+<div style="text-align:center">Wallet Balances Menu</div>
+
+
+   <table style="margin-top:0%;margin-bottom:01%;font-size:0.8em" width="100%" class="table  table-bordered" id="dataTables-example">
+
+    <tr style="text-align:center;">
+      <td  >
+          <a href="/IIIb/threeb/staff/mywallet/"  style="color:red">Balances</a>
+      </td>
+      <td style="background:blue">
+          <a href="/IIIb/threeb/staff/statement/"  style="color:white">Statement</a>
+      </td>
+      <td>
+          <a href="/IIIb/threeb/staff/withdraw/"  style="color:red">Withdraw</a>
+      </td>
+      <td>
+          <a href="/IIIb/threeb/mywallet/accno/"  style="color:red">Account No.</a>
+      </td>
+    </tr>
+</table>
+
+
+
+ <table style="margin-top:0%;margin-bottom:0%;font-size:0.8em" width="100%" class="table  table-bordered" id="dataTables-example">
+
+        <tr >
+         <td style="font-weight:bold">Year</td>
+            <td> 
+                      <select name="businessyear" id="id_businessyear" required >
+                          {% for pincode in year %}
+                              <option value="{{pincode.year}}">{{pincode.year}}</option>
+                          {% endfor %}
+                     </select>
+            </td>
+        </tr>
+
+        
+  <tr> 
+    <td style="font-weight:bold">E-mail</td>
+    <td>{{msg.staff.email}}</td>
+  </tr>
+
+  <tr> 
+    <td style="font-weight:bold">Name</td>
+  <td>{{msg.staff.surname|title}}  {{msg.staff.firstname|title}}   {{msg.staff.othername|title}} </td>
+  </tr>
+
+
+ </table>
+
+
+
+ {% if statement %}
+  <table style="margin-top:0.2%;margin-bottom:02%;font-size:0.8em;text-align:center;" width="100%" class="table  table-bordered" id="dataTables-example">
+    
+    <tr style="font-weight:bold">
+      <td>S/N</td>
+      <td>Month</td>
+      <td>Description</td> 
+      <td>Status</td> 
+      <td>Amount  ({{company.currency_code}})</td> 
+      </tr>
+
+{% for s in statement %}
+    <tr>  
+
+      <td>{{forloop.counter}} .</td>
+      <td style="text-align: left">{{s.month}}</td>
+      <td style="text-align: left">{{s.account_type}}</td>
+      <td style="text-align: left">{{s.status}}</td>
+      <td>{{s.amount|intcomma}}</td> 
+      </tr>
+{% endfor %}
+
+
+  <tr style="font-weight:bold"> 
+    <td ></td>
+    <td></td>
+    <td>Net Assets</td>
+    
+    <td>{{company.currency_code}} {{amount|intcomma}}</td>
+  </tr>
+
+ </table>
+
+ {% else %}
+ <div style="text-align:center;"> No records found </div>
+ {% endif %}
+{% endblock %}
+
+
+

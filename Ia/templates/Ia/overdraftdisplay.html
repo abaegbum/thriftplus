@@ -1,0 +1,135 @@
+
+
+{% extends 'Ia/customerdashboard.html' %}
+{% block content %}
+
+
+
+
+{% load humanize %}
+
+
+<div style="margin-top:1%;margin-bottom:0.93%;text-align:center;color:red">Pay Advance for   {{ thrift.cycle }},  {{ thrift.month }}  {{ thrift.year }}</div>
+
+
+<form action="/fts/thrift/overdrafts/admin/" method="POST"  onsubmit="disable(this)">
+
+<table style="margin-top:01%;margin-bottom:0%;font-size:0.7em" width="100%" class="table  table-bordered" id="dataTables-example">
+
+            <tr >
+              <td >Wallet Address</td>
+                <td> {{ customer.customer.wallet }}</td>
+
+            </tr>
+            <tr >
+              <td style='font-weight:bold'>Name </td>
+                <td> {{ customer.customer.surname }} {{ customer.customer.firstname }} {{ customer.customer.othername }}</td>
+            </tr>
+
+            <tr >
+            <tr >
+              <td style='font-weight:bold'>Business Year </td>
+                <td> {{ thrift.year }} </td>
+            </tr>
+
+            <tr >
+              <td style='font-weight:bold'>Card (Purpose) </td>
+                <td> {{ thrift.purpose }} </td>
+            </tr>
+          
+                      <tr >
+              <td style='font-weight:bold'>Product </td>
+                <td> Esusu</td>
+            </tr>
+
+            <tr >
+              <td style='font-weight:bold'>Month  </td>
+                <td> {{ thrift.month }}</td>
+            </tr>
+
+
+                        <tr >
+              <td style='font-weight:bold'>Cycle </td>
+                <td> {{ thrift.cycle }}</td>
+            </tr>
+
+
+
+</table>
+
+   <table style="margin-top:01%;margin-bottom:0%;font-size:0.7em" width="100%" class="table  table-bordered" id="dataTables-example">
+    <thead>
+        <tr style="text-align:center;font-weight:bold"> 
+           <td >AC / Bal</td>
+           <td >Charges</td>
+           <td >Loan</td>
+        </tr>
+        <tr style="text-align:center"> 
+           <td >  {{company.currency_code}} {{ charges|intcomma}}</td>
+           <td> {{company.currency_code}} {{ charge |intcomma}}</td>
+           <td >  {{company.currency_code}} {{ withdrawable|intcomma}} </td>
+        </tr>
+
+</table>
+   <table style="margin-top:01%;margin-bottom:1%" width="100%" class="table  table-bordered" id="dataTables-example">
+        <tr style="text-align:center;color:red">
+             <td style='font-weight:bold'>Final Payout  </td>
+                <td>{{company.currency_code}}  {{ payout|intcomma }}</td>
+            </tr>
+
+    </thead>
+
+</table>
+
+<!-- <div>overdraft : {{company.currency_code}}  {{overdraft|intcomma}}</div> -->
+
+   <table style="margin-top:0%;margin-bottom:0.2%" width="100%" class="table  table-bordered" id="dataTables-example">
+    <tr>
+            <td>
+              <input style="font-size:0.8em"  class="btn btn-lg btn-success btn-block" name="submit" type= "submit" value="Approve">
+            </td>
+
+              <td >
+                <a class="btn btn-lg btn-success btn-block"  style="font-size:0.8em" href="/fts/mycustomers/dashboard/{{wallet}}/">Decline</a>
+              </td>
+   </tr>
+
+ </table>
+
+<input type="hidden" name="wallet" readonly="readonly" value="{{ wallet }}">
+<input type="hidden" name="payout"  readonly="readonly" value="{{payout}}" >
+<input type="hidden" name="code"  readonly="readonly" value="{{code}}" >
+<input type="hidden" name="withdrawable"  readonly="readonly" value="{{withdrawable}}" >
+<input type="hidden" name="service_charge"  readonly="readonly" value="{{charge}}" >
+<input type="hidden" name="overdraft"  readonly="readonly" value="{{overdraft}}" >
+
+
+
+</form>
+
+
+<script language="javascript" type="text/javascript">
+        function disable(f)
+        {
+            var button = f.elements['submit'];
+            button.value = 'Processing';
+            button.disabled = 'true';
+            return true;
+        }
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
+
+
+

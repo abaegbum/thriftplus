@@ -1,0 +1,84 @@
+
+
+{% extends 'Ia/customerdashboard.html' %}
+{% block content %}
+
+
+{% load humanize %}
+
+
+ <input name="submitprint" type= "submit" value="Print Receipt" onclick = "openrecprint();">
+
+   <div class="printable">
+
+<div class="card card-primary card-outline">               
+
+            <div class="card-header">
+              <h5 class="m-0" style='text-align:center'>Transaction Successfull!!!</h5>
+            </div>
+
+
+
+              <div class="printable7989">
+                <div class="card-body">           
+                    <p class="card-text"></p>
+                    <p style='text-align:center'>{{amount.company.company.name}} <br> {{amount.company.Address}}</p>
+                    <div style='text-align:center'>Loan Repayment Receipt</div>
+
+                    <div>Agent: {{amount.agent.surname}}  {{amount.agent.firstname}}  {{amount.agent.othername}} </div>
+
+                    <div>Customer:  {{amount.customer.customer.surname}} {{amount.customer.customer.firstname}} {{amount.customer.customer.othername}} ({{amount.customer.customer.wallet}})</div>
+                    <div>Location: {{customer.customer.location}}</div>
+
+                    <div>Card Variant: {{amount.card_type}}</div>
+                    <div>Thrift:   {{amount.company.currency_code}}  {{amount.thrift|intcomma}} [{{amount.month.cycle}} {{amount.month.month}}, {{amount.month.year}}]</div>
+
+
+                    <div>Loan Repayment: {{amount.company.currency_code}}  {{amount.amount|intcomma}} ({{amount.count}})</div>
+
+                    <div>Loan Balance:  {{amount.company.currency_code}} {{amount.total|intcomma}}</div>
+
+                    <div>Date : {{amount.date}}</div><div>Time : {{amount.time}}</div>
+
+                    
+              </div>
+          </div>
+
+
+
+</div>
+
+</div>
+
+
+<table style="margin-top:0.5%;margin-bottom:0.6%;text-align:center" width="100%" class="table  table-bordered" id="dataTables-example">
+
+<tr >
+<td ><a href="/fts/customeria/list/{{location_code}}/">My Customers</a></td>
+<td ><a href="/fts/mycustomers/dashboard/{{customer.customer.wallet}}/">{{customer.customer.surname}} {{customer.customer.firstname}}'s Dashboard</a></td>
+
+</tr>
+</table>
+
+
+<script type="text/javascript" language="javascript">
+
+window.history.pushState(null, "", window.location.href);
+window.onpopstate = function () {
+    window.history.pushState(null, "", window.location.href);
+};
+
+</script>
+
+
+
+    <script language="javascript" type="text/javascript">
+        function openrecprint()
+        {
+            //alert("welcome");
+            $( ".printable" ).print();
+        }
+    </script>
+
+    
+{% endblock %}

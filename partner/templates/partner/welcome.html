@@ -1,0 +1,42 @@
+
+{% extends 'partner/basepartner.html' %}
+
+{% block content %}
+
+
+
+<form action ='/fts/thrift/mycustomer/' method="POST">
+
+<table style="margin-top:01%;margin-bottom:2%;text-align:center;font-size:0.7em" width="100%" class="table  table-bordered" id="dataTables-example">
+<div style= 'text-align:right'>
+  <td>Account No.</td>
+  <td><input type = "number" name='wallet' placeholder ='Enter Account No.' required> </td>
+  <td><button>Search</button></td>
+</div>
+</table>
+</form>
+
+
+
+    <div style = "font-size:0.9em">Dear ThriftPlus Partner,
+     <hr>
+
+     <div>Pls note, if you need to retrieve quick details about a particular business you registered, the search bar is there to help</div>
+     <hr>
+     These are the general roles you can play as a partner, with this module.<hr>
+
+    <div>1. The "Businesses" Menu provides you with the tools you need to <a href="/partner/partner/business/reg/">Register </a> a businesss and effectively <a href="/partner/partner/business/manageall/">Manage </a> all others</div>
+    <hr>
+    <div>2. Use the <a href="/partner/partner/business/app/">Services </a> menu to activate/deactivat services</div>
+        <hr>
+    <div>4. The <a href="/partner/partner/business/extension/">extension </a> menu, helps you handle services renewal</div>
+        <hr>
+    <div>3. With the <a href="/partner/partner/business/renew/">Subscription </a> menu, you can manage back office acceses</div>
+    
+        <hr>
+
+    <div>5. Occasionally, customers may request some value added services, the<a href="/partner/partner/vas/">VAS</a> menu gives you the tool to use to accomplish this</div>
+    <hr>
+
+</div>
+{% endblock %}

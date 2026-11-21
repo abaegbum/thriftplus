@@ -1,0 +1,94 @@
+
+
+
+
+{% extends 'staff/membership_base.html' %}
+{% block content %}
+
+
+
+
+
+ <table width="100%" class="table  table-bordered table-hover" id="dataTables-example">
+  
+
+
+
+<div> Staff List</div>
+
+
+<form action="/thrift/thrift/approvalsmenu/approvefund/" method="POST">
+
+
+{% if list %}    
+   <table width="100%" class="table  table-bordered" id="dataTables-example">
+    <thead>
+
+        <tr style="text-align:center;font-weight:bold">
+           <td >S/N</td>
+           <td >Name </td>
+           <td >Privileges</td>
+        </tr>
+    </thead>
+    {% for k in list %}                      
+    <tr style="font-weight:bod;text-align:center">
+          <td >{{ forloop.counter }}.</td>
+          <td > {{ k.staffrec.surname|title }}  {{ k.staffrec.firstname|title }}</td>
+          <td> <a href="#" onClick= "roles({{  k.id  }})"> View </a></td>
+
+    </tr>
+    {% endfor %}
+  </table>
+</form>
+    
+    {% endif %}
+
+
+</table>
+
+
+    
+    <div id="psychomotor" >
+
+
+
+<script type="text/javascript" language="javascript">
+        function roles(vid){
+            // alert(vid);
+            var state = vid;
+            var url = "/staff/staff/selectrole/";
+            var i = 0;
+            var data='userid='+state;
+            $.ajax({
+                type:"POST",
+                url:url,
+                data:data,
+                success:function(html) {
+                    $("#psychomotor").html(html);
+                    getdialogpsyco();
+                }
+            });
+            return false;
+        }
+
+    </script>
+
+    <script type="text/javascript" language="javascript">
+        function getdialogpsyco(){
+            var dialogOpts = {
+                autoOpen:true,
+                height:'auto',
+                width:'auto',
+                title:'Role set Dialog box' ,
+                closeOnEscape:true,
+                show: true,
+                hide: true,
+                bgiframe: true
+            };
+            $("#psychomotor").dialog(dialogOpts);
+        }
+
+    </script>
+
+{% endblock %}
+

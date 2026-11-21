@@ -1,0 +1,31 @@
+
+
+
+{% extends 'IIIb/myloans_base_a.html' %}
+
+{% block content %}
+
+{% load humanize %}
+<div style="text-align:center;font-weight:bold">Loan Request Form</div>
+   <table style="margin-top:0%;margin-bottom:0%;font-size:0.8em" width="100%" class="table  table-bordered" id="dataTables-example">
+
+    <tr style="text-align:center;">
+      <td  style="background:blue">
+          <a href="/IIIb/threeb/staff/request_loan/" style="color:white">Apply</a>
+      </td>
+        <td>
+          <a href="/IIIb/threeb/staff/request_loan/performance/" style="color:red">Performance</a>
+      </td>
+
+      <td >
+          <a href="/IIIb/threeb/staff/request_loan/history/" style="color:red">Log</a>
+      </td>
+    </tr>
+</table>
+
+<div style="text-align:center;">{{msg}}</div>
+
+{% endblock %}
+
+
+

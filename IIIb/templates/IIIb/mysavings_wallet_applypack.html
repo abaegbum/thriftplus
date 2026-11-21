@@ -1,0 +1,51 @@
+
+
+{% load humanize %}
+
+
+
+   <table style="margin-top:0%;margin-bottom:0.1%;font-size:1em" width="100%" class="table  table-bordered" id="dataTables-example">
+
+    <div style="text-align:center;color:red ">{{msg}}</div>
+
+           <tr >
+              <td for="amount">Amount</td>
+                    <td>
+                    <input type="number" name="amount" id="id_amount" class="form-control"  placeholder="Amount" required>
+                  </td>
+             </tr>   
+       </table>
+     
+
+   <table style="margin-top:0%;margin-bottom:0%;font-size:0.8em" width="100%" class="table  table-bordered" id="dataTables-example">
+          <tr>
+           		<td >
+                <input class="btn btn-lg btn-success btn-block" name="submit" type= "submit" value="Preview Authorization">
+           	  </td >
+          </tr>
+
+
+
+   </table>
+
+
+
+
+   <script type="text/javascript" >
+        $(document).ready(function() {
+
+            $("#id_amount").focus();
+  
+        });
+    </script>
+
+
+
+<script>
+function disable(f) {
+    var button = f.elements['submit'];
+    button.value = 'Processing...';
+    button.disabled = true;
+    return true; // allow form submission
+}
+</script>

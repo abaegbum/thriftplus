@@ -1,0 +1,40 @@
+
+
+{% extends 'staff/staffbase.html' %}
+{% block content %}
+
+
+<div style="text-align:center">Manage Staff Menu</div>
+
+
+         <table style="margin-top:0%;margin-bottom:0%" width="100%" class="table  table-bordered" id="dataTables-example">
+          <tr style="text-align:center;font-size:0.7em">
+                     <td >
+                  <a href="/staff/staff/activate/" style="color:red">Activate</a>
+              </td>
+              <td >
+                  <a href="/staff/staff/deactivate/" style="color:red">Deactivate</a>
+              </td>
+
+             <td  style="background:blue">
+              <a href="/staff/staff/delete/" style="color:white">Delete </a></td>
+              <td>
+                  <a href="/staff/staff/reset/" style="color:red">Reset password</a>
+              </td>
+
+
+          </tr>
+      </table>
+
+<table style="margin-top:0%;margin-bottom:0%" width="100%" class="table  table-bordered" id="dataTables-example">
+<div style= 'text-align:center'> {{msg}}</div>
+
+</table>
+
+
+
+
+{% endblock %}
+
+
+

@@ -1,0 +1,206 @@
+
+
+
+{% load humanize %}
+
+  <form action="/sms/customer/savesms/saveactive/" method="POST" onsubmit="disable(this)">
+    {% csrf_token %}
+<div style="text-align:center">Activate Alert</div>
+
+<table style="margin-top:01%;margin-bottom:0.2%;font-size:0.7em" width="100%" class="table  table-bordered" id="dataTables-example">
+
+            <tr >
+             <td style='font-weight:bold'>Business Year</td>
+                <td> 
+                          <select name="myyear" id="id_myyear" required >
+
+                              {% for pincode in year %}
+                                  <option value="{{pincode.year}}">{{pincode.year}}</option>
+                              {% endfor %}
+                         </select>
+                </td>
+            </tr>
+
+
+            <tr >
+              <td style='font-weight:bold'>Name </td>
+                <td> {{ customer.surname }} {{ customer.firstname }} {{ customer.othername }}</td>
+
+            </tr>
+
+
+            <tr >
+              <td style='font-weight:bold'>Wallet</td>
+                <td> {{ customer.wallet }}</td>
+
+            </tr>
+
+            <tr >
+              <td style='font-weight:bold'>Phone</td>
+                <td> {{ customer.phone }}</td>
+
+            </tr>
+
+</table>
+
+
+     <table style="margin-top:0%;margin-bottom:04%;font-size:0.7em;text-align:center" width="100%" class="table  table-bordered" id="dataTables-example">
+      <tr>
+        <td>SMS Balance</td>
+        <td>{{company.currency_code}}   {{balance}}</td>
+      </tr>
+     </table>
+
+
+<div> Select one</div>
+<table style="margin-top:01%;margin-bottom:0.2%;font-size:0.7em" width="100%" class="table  table-bordered" id="dataTables-example">
+
+
+
+{% if sub.esusu1a %}
+
+  <tr>
+    <td>1.</td>
+    <td>
+      <input type="checkbox" name="esusu1a" {% if client.esusu1a %}checked{% endif %}>
+      Esusu 1a
+    </td>
+  </tr>
+  {% endif %}
+
+
+{% if sub.esusu1aloan %}
+  <tr>
+    <td>2.</td>
+    <td>
+      <input type="checkbox" name="esusu1aloan" {% if client.esusu1aloan %}checked{% endif %}>
+      Esusu 1a Loan
+    </td>
+  </tr>
+  {% endif %}
+
+
+  {% if sub.savings1a %}
+
+  <tr>
+    <td>3.</td>
+    <td>
+      <input type="checkbox" name="savings1a" {% if client.savings1a %}checked{% endif %}>
+      Savings 1a
+    </td>
+  </tr>
+{% endif %}
+
+
+{% if sub.loans1acash %}
+  <tr>
+    <td>4.</td>
+    <td>
+      <input type="checkbox" name="loans1acash" {% if client.loans1acash %}checked{% endif %}>
+      Loans 1a Cash
+    </td>
+  </tr>
+  {% endif %}
+
+
+
+{% if sub.loans1aitems %}
+  <tr>
+    <td>5.</td>
+    <td>
+      <input type="checkbox" name="loans1aitems" {% if client.loans1aitems %}checked{% endif %}>
+      Loans 1a Items
+    </td>
+  </tr>
+  {% endif %}
+
+
+
+
+{% if sub.fixeddepo1a %}
+  <tr>
+    <td>6.</td>
+    <td>
+      <input type="checkbox" name="fixeddepo1a" {% if client.fixeddepo1a %}checked{% endif %}>
+      Fixed Deposit 1a
+    </td>
+  </tr>
+  {% endif %}
+
+
+{% if sub.targetsave1a %}
+  <tr>
+    <td>7.</td>
+    <td>
+      <input type="checkbox" name="targetsave1a" {% if client.targetsave1a %}checked{% endif %}>
+      Target Save 1a
+    </td>
+  </tr>
+{% endif  %}
+
+
+
+{% if sub.ecomerce %}
+  <tr>
+    <td>8.</td>
+    <td>
+      <input type="checkbox" name="ecomerce" {% if client.ecomerce %}checked{% endif %}>
+      E-commerce
+    </td>
+  </tr>
+  {% endif  %}
+
+
+  {% if sub.thrift3b %}
+
+  <tr>
+    <td>9.</td>
+    <td>
+      <input type="checkbox" name="thrift3b" {% if client.thrift3b %}checked{% endif %}>
+      Thrift 3b
+    </td>
+  </tr>
+  {% endif  %}
+</table>
+
+
+
+
+        <input type="hidden" name="branch" readonly="readonly" value="{{ customer.branch.id }}">
+
+  <input type="hidden" name="email" value="{{user.email}}" readonly="readonly">
+
+  <input type="hidden" name="wallet"  readonly="readonly" value="{{ customer.wallet }}" class ="loginTxtbox">
+
+
+        <table style="margin-top:0%;margin-bottom:04%" width="100%" class="table  table-bordered table-hover" id="dataTables-example">
+          <td >
+            <input class="btn btn-lg btn-success btn-block" name="submit" type= "submit" value="Continue"></td>
+          
+        </table>
+
+    </table>
+
+
+    </form>
+
+
+
+    <script>
+        $(document).ready(function() {
+            $("#id_amount").focus();
+        });
+    </script>
+
+
+<script language="javascript" type="text/javascript">
+        function disable(f)
+        {
+            var button = f.elements['submit'];
+            button.value = 'Processing';
+            button.disabled = 'true';
+            return true;
+        }
+    </script>
+
+

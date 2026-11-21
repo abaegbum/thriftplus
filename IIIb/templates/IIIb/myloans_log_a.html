@@ -1,0 +1,98 @@
+
+
+
+
+{% extends 'IIIb/myloans_base_a.html' %}
+
+{% block content %}
+{% load humanize %}
+
+<div style="text-align:center;font-weight:bold">Staff Loan History</div>
+   <table style="margin-top:0%;margin-bottom:0%;font-size:0.8em" width="100%" class="table  table-bordered" id="dataTables-example">
+<div>{{msg}}</div>
+
+
+
+    <tr style="text-align:center;">
+
+      <td  >
+          <a href="/IIIb/threeb/staff/request_loan/" style="color:red">Apply</a>
+      </td>
+        <td>
+          <a href="/IIIb/threeb/staff/request_loan/performance/" style="color:red">Performance</a>
+      </td>
+
+      <td style="background:blue">
+          <a href="/IIIb/threeb/staff/request_loan/history/" style="color:white">Loan Log</a>
+      </td>
+    </tr>
+</table>
+
+   <table style="margin-top:0.2%;margin-bottom:0.2%;font-size:0.8em" width="100%" class="table  table-bordered" id="dataTables-example">
+          
+            <tr >
+             <td style="font-weight:bold">Year</td>
+                <td> 
+                          <select name="businessyear" id="id_businessyear" required >
+                              {% for pincode in year %}
+                                  <option value="{{pincode.year}}">{{pincode.year}}</option>
+                              {% endfor %}
+                         </select>
+                </td>
+            </tr>
+            
+
+           <tr >
+               <td style='font-weight:bold'>E-Mail</td>
+               <td>{{user}}</td>
+             </tr>
+
+          <tr>
+            <td style='font-weight:bold'>Name</td>
+            <td> {{name.staff.surname|title}} {{name.staff.firstname|title}} {{name.staff.othername|title}}</td>
+          </tr>
+           
+       </table>
+
+
+{% if list %}
+          
+   <table style="margin-top:0%;margin-bottom:02%;font-size:0.81em" width="100%" class="table  table-bordered" id="dataTables-example">    
+          
+           <tr style='text-align:center;font-weight:bold'>
+               <td>S/N</td>               
+                    <td>Application</td>
+
+                    <td> Amount</td>
+                    
+                    <td>Application Date</td>
+<!--                     <td>Monthly Deduction</td>
+                    <td>Tenure</td>
+                    <td>Total Repayment</td> -->
+                    <td>Status</td>
+             </tr>
+             {% for k in list %}
+          <tr style='text-align:center'>
+            <td>{{forloop.counter}} .</td>
+            <td> {{k.description}} </td>
+             <td>{{company.currency_code}} {{k.principal|intcomma}}</td>
+       
+              <td> {{k.application_date}} </td>
+<!--               <td> {{company.currency_code}} {{k.thrift|intcomma}} </td>
+              <td> {{k.package.tenure}}  Months</td>
+              <td> {{company.currency_code}} {{k.total_repayment|intcomma}} </td> -->
+            <td> {{k.status}}</td>
+
+          </tr>
+          {% endfor %}
+      
+
+{% else %}
+<div style='text-align:center'>no details found </div>
+{% endif %}
+ </table>
+
+{% endblock %}
+
+
+

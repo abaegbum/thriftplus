@@ -1,0 +1,68 @@
+
+
+
+<table style="margin-top:1%;margin-bottom:0%;font-size:0.7em" width="100%" class="table  table-bordered" id="dataTables-example">
+
+      <tr >
+       <td>Package</td>
+          <td> 
+                    <select name="loanpack" id="id_loanpack">
+                        {% for pincode in data %}
+                            <option value="{{pincode.description}}">{{pincode.description}}</option>
+                        {% endfor %}
+                   </select>
+          </td>
+      </tr>
+
+
+    <tr>
+      <td> Amount</td>
+      <td>
+         <input type="number" name="amount"  id="id_amount" placeholder=" Loan Amount" required>
+      </td>
+    </tr>
+
+    <tr >
+     <td>Repayment Plan</td>
+        <td> 
+                  <select name="repay" id="id_repay" required >
+                     <option value="">-----</option>
+                     <option value="daily">Daily</option>
+                     <option value="weekly">Weekly</option>
+                     <option value="monthly">Monthly</option>                            
+                 </select>
+        </td>
+    </tr>
+
+</table>
+
+
+<table style="margin-top:0%;margin-bottom:0.1%" width="100%" class="table  table-bordered" id="dataTables-example">
+
+           <tr >
+                <div class="boxert"></div>
+           </tr>
+</table>
+
+
+  <script type="text/javascript" >
+        $(document).ready(function() {
+            $("#id_loanpack").change(function () {
+                loanbreak();
+            });
+
+            $("#id_repay").change(function () {
+                loanbreak();
+            });
+
+            $("#id_amount").blur(function () {
+                loanbreak();
+            });
+
+            $( "#id_loanpack" ).focus();
+
+
+            loanbreak()
+     
+        });
+    </script>

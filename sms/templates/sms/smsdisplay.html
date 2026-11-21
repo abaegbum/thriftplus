@@ -1,0 +1,98 @@
+
+
+{% extends 'Ia/customerdashboard.html' %}
+{% block content %}
+
+
+
+
+{% load humanize %}
+
+
+<div style="margin-top:1%;margin-bottom:0.93%;text-align:center;color:red">Confirm SMS Order </div>
+
+
+
+<form action="/sms/customer/savesms/save/" method="POST"  onsubmit="disable(this)"> 
+  {% csrf_token %}
+
+
+
+<table style="margin-top:01%;margin-bottom:0%;font-size:0.7em" width="100%" class="table  table-bordered" id="dataTables-example">
+
+            <tr >
+              <td style='font-weight:bold'>Name </td>
+                <td> {{ customer.customer.surname }} {{ customer.customer.firstname }} {{ customer.customer.othername }}</td>
+            </tr>
+
+            <tr >
+              <td style='font-weight:bold'>Wallet Address</td>
+                <td> {{ customer.customer.wallet }}</td>
+
+            </tr>
+
+            <tr >
+              <td style='font-weight:bold'>Phone</td>
+                <td> {{ customer.customer.phone }}</td>
+
+            </tr>
+
+            <tr >
+
+</table>
+
+        <tr style="text-align:center;font-weight:bold"> 
+           <div >You are about to Purchase SMS worth of <span style="color:blue">{{words}} Naira </span> <span style="color:purple">({{company.currency_code}} {{ amount|intcomma}})</span> </div>
+        </tr>
+
+
+
+   <table style="margin-top:0%;margin-bottom:1%" width="100%" class="table  table-bordered" id="dataTables-example">
+    <tr>
+            <td>
+              <input style="font-size:0.8em"  class="btn btn-lg btn-success btn-block" name="submit" type= "submit" value="Purchase SMS ">
+            </td>
+
+              <td >
+                <a class="btn btn-lg btn-success btn-block"  style="font-size:0.8em" href="/fts/mycustomers/dashboard/{{wallet}}/">Decline</a>
+              </td>
+   </tr>
+
+ </table>
+
+
+
+<input type="hidden" name="wallet" readonly="readonly" value="{{ wallet }}">
+
+<input type="hidden" name="code"  readonly="readonly" value="{{code}}" >
+
+<input type="hidden" name="amount"  readonly="readonly" value="{{amount}}" >
+
+</form>
+
+
+<script language="javascript" type="text/javascript">
+        function disable(f)
+        {
+            var button = f.elements['submit'];
+            button.value = 'Processing';
+            button.disabled = 'true';
+            return true;
+        }
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
+
+
+

@@ -1,0 +1,35 @@
+
+
+
+
+
+
+{% load humanize %}
+ <table style="margin-top:0.1%;margin-bottom:0%;font-size:0.8em;text-align:center" width="100%" class="table  table-bordered" id="dataTables-example">
+
+<tr style="font-weight:bold">
+<td>S/N</td>
+<td>DESC</td>
+<TD>AMOUNT ({{company.currency_code}})</TD>
+<td>Action</td>
+</tr>
+
+
+{% for k in msg %}
+<tr>
+<td>{{forloop.counter}}</td>
+<td>  {{k.description| intcomma}}</td>
+<td>  {{k.amount| intcomma}}</td>
+<td><a href="#" style="color:blue" onClick= "repays({{k.loan.code}})" title="Click here to repay {{k.loan.thrift}}">Delete</a></td>
+</tr>
+
+{% endfor %}
+</table>
+
+
+<table style="margin-top:0.5%;margin-bottom:01%;text-align:center;font-size:0.8em" width="100%" class="table  table-bordered" id="dataTables-example">
+<tr >
+<td ><a href="/fts/customeria/list/{{location_code}}/">My Customers</a></td>
+<td ><a href="/fts/mycustomers/dashboard/{{customer.customer.wallet}}/">My Dashboard</a></td>
+</tr>
+</table>

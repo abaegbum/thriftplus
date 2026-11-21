@@ -1,0 +1,26 @@
+
+{% load humanize %}
+
+
+      <div style='font-size:0.7em'>You can't delete {{msg.name}}'s wallet</div>
+    
+         
+     <table style="margin-top:0%;margin-bottom:0%" width="100%" class="table  table-bordered" id="dataTables-example">
+
+   <tr>
+    <td >
+        <a class="btn btn-lg btn-success btn-block"  style="font-size:0.8em;color:white" href=" /fts/mycustomers/dashboard/{{msg.wallet}}/">Continue</a>
+    </td>
+  </tr>   
+</table>
+
+
+    <script language="javascript" type="text/javascript">
+        function disable(f)
+        {
+            var button = f.elements['submit'];
+            button.value = 'Processing';
+            button.disabled = 'true';
+            return true;
+        }
+    </script>

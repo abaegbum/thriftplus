@@ -1,0 +1,33 @@
+
+
+
+{% load humanize %}
+
+
+    
+<table style="margin-top:0%;margin-bottom:0.2%;font-size:0.8em" width="100%" class="table  table-bordered" id="dataTables-example">
+
+            <tr>
+               <td style="font-weight:bold">Month</td>
+               <td style='color:grey;'>{{ month }},   {{year}}</td>
+               <td style="font-weight:bold">Thrift</td>
+               <td style='color:grey;'><del style='text-decoration-style:double'>N</del>  {{ thrift|intcomma }} </td>
+            </tr> 
+</table>
+
+
+            
+<table style="margin-top:0%;margin-bottom:02%;font-size:0.8em" width="100%" class="table  table-bordered" id="dataTables-example">
+
+            <tr>
+                <td style="font-weight:bold">Total Contribution</td>
+               <td style='color:grey;'>{{ add}}</td>
+
+            </tr> 
+
+</table>
+
+<div style='text-align:center;color:red'>{{msg}}</div>
+ 
+
+

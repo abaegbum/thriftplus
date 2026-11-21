@@ -1,0 +1,106 @@
+
+
+
+{% load humanize %}
+
+
+<div style="text-align:center">List of {{status}} loans </div>
+
+
+
+{% if myloans %}
+<table style="margin-top:0%;margin-bottom:0%;font-size:0.7em;text-align:center" width="100%" class="table  table-bordered" id="dataTables-example">
+  
+            <tr style="font-weight:bold">
+              <td>S/N</td>
+              <td>Loan</td>
+              <td>Tenure</td>
+              <td>Repayment</td>
+              <td>Bal.</td>
+              <!-- <td>Repay</td> -->
+            </tr>
+
+
+          {% for k in myloans %}
+            <tr>
+                <td>{{forloop.counter}}.</td>
+                <td>{{branch.currency_code}} {{k.loan.volume|intcomma}}</td>
+                <td>{{k.loan.start_date}} - {{k.loan.end_date}}</td>
+                <td>{{branch.currency_code}} {{k.loan.thrift|intcomma}}   {{k.loan.frequency}}</td>
+                <td><a href="#" style="color:blue" onClick= "repays({{k.loan.code}})" title="Click here to repay {{k.loan.thrift}}">{{branch.currency_code}} {{k.bal|intcomma}}</a></td>
+   
+               
+            </tr>
+      {% endfor %}
+            <tr>Hit on each balance to repay loan</tr>
+</table>
+{% else %}
+<div style="color:red">No records found </div>
+{% endif %}
+
+
+
+<table style="margin-top:0.9%;margin-bottom:0.1%" width="100%" class="table  table-bordered" id="dataTables-example">
+
+   <table style="margin-top:0%;margin-bottom:0.2%" width="100%" class="table  table-bordered" id="dataTables-example">
+    <tr>
+
+              <td >
+                <a class="btn btn-lg btn-success btn-block"  style="font-size:0.8em" href="/fts/mycustomers/dashboard/{{wallet}}/">Continue</a>
+              </td>
+   </tr>
+</table>
+
+
+
+
+
+<script type="text/javascript" >
+            $(document).ready(function() {
+                $("#depo").hide();
+            });
+</script>
+
+<script type="text/javascript" language="javascript">
+    function repays(vid){
+
+        var state = vid + ":" +"{{user}}";
+        // alert(state);
+        var url = "/fts/customer/pop/loanrepay/";
+        var i = 0;
+        var data='userid='+state;
+        $.ajax({
+            type:"POST",
+            url:url,
+            data:data,
+            success:function(html) {
+                $("#depo").html(html);
+                getchan();
+            }
+        });
+        return false;
+    }
+
+</script>
+
+
+
+<script type="text/javascript" language="javascript">
+    function getchan(){
+        var diachange = {
+            autoOpen:true,
+            // appendTo:"body1",
+            // modal:true,
+            // position: ["center", "middle"],
+            height:'auto',
+            width:'auto',
+            title:'Touch this box to close' ,
+            closeOnEscape:true,
+            show: true,
+            // hide: true,
+            bgiframe: true
+        };
+        $("#depo").dialog(diachange);
+    }
+
+</script>

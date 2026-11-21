@@ -1,0 +1,316 @@
+<html>
+<head>
+
+{% extends 'staff/credit_officerIa_base.html' %}
+{% block content %}
+
+
+<div style="text-align:center">Credit Officers' Menu</div>
+
+   <table style="margin-top:0%;margin-bottom:01% ;font-size:0.9em;text-align:center" width="100%" class="table  table-bordered" id="dataTables-example">
+
+    <tr >
+        <td style="background:blue">
+          <a href="/staff/staff/merchant/" style="color:white">Activate C/Os</a>
+        </td>
+        <td>
+          <a href="/staff/staff/merchant/manage/" style="color:red">Manage C/Os</a>
+        </td>
+        <td>
+          <a href="/staff/staff/merchant/mycos/" style="color:red">My C/Os</a>
+        </td>
+    </tr>
+</table>
+
+</head>
+
+<body>       
+  
+
+<form action= "/staff/staff/merchant/mypost/" method="POST">
+  {% csrf_token %}
+
+
+<table style="margin-top:0%;margin-bottom:04%;font-size:1em;text-align:center" width="100%" class="table  table-bordered" id="dataTables-example">
+  <tr>
+    <td >Name</td>
+    <td>{{msg.surname}}  {{msg.firstname}}  {{msg.othename}}</td>
+  </tr>
+
+  <tr>
+    <td >E-mail</td>
+    <td> {{msg.email}}</td>
+  </tr>
+</table>
+
+
+{% if co.status %}
+
+    {% if products %}
+
+          {% for k in list %}
+
+          <table style="margin-top:0%;margin-bottom:04%;font-size:1em;text-align:center" width="100%" class="table  table-bordered" id="dataTables-example">
+            <tr>
+              <td> S/N</td>
+              <td>Products</td>
+              <td>Status</td>
+            </tr>
+
+            {% if products.esusu1a %}
+            <tr>
+              <td >1.</td>
+              <td> Esusu</td>
+              <td>          
+                 <input type="checkbox" name="esu" {{k.esu}} data-bootstrap-switch data-off-color="danger" data-on-color="success">                           
+              </td>
+            </tr>
+            {% endif %}
+
+
+            {% if products.esusu1aloan %}
+            <tr>
+              <td >2.</td>
+              <td> Ajo Loan</td>
+              <td>          
+                 <input type="checkbox" name="esuloan" {{k.esuloan}} data-bootstrap-switch data-off-color="danger" data-on-color="success">                           
+              </td>
+            </tr>
+            {% endif %}
+
+
+          
+            {% if products.savings1a %}
+            <tr>
+              <td >3.</td>
+              <td> Savings</td>
+              <td>          
+                 <input type="checkbox" name="sav" {{k.sav}} data-bootstrap-switch data-off-color="danger" data-on-color="success">                           
+              </td>
+            </tr>
+
+                {% endif %}
+
+                {% if products.loans1acash %}
+         
+            <tr>
+              <td >4.</td>
+               <td> Cash Loans </td>
+               <td>          
+                   <input type="checkbox" name="lc" {{k.loancash}} data-bootstrap-switch data-off-color="danger" data-on-color="success">                           
+               </td>
+            </tr>
+
+                  {% endif %}
+
+
+
+                  {% if products.loans1aitems %}
+        <tr>
+
+          <td >5.</td>
+            <td> Asset Loans</td>
+                 <td>          
+                        <input type="checkbox" name="li" {{k.loanitem}} data-bootstrap-switch data-off-color="danger" data-on-color="success">                           
+                  </td>
+        </tr>
+        {% endif %}
+
+          {% if products.fixeddepo1a %}
+         <tr>
+          <td >6.</td>
+            <td> Fixed Deposit</td>
+                 <td>          
+                        <input type="checkbox" name="fxd" {{k.fxd}} data-bootstrap-switch data-off-color="danger" data-on-color="success">                           
+                  </td>
+        </tr>
+
+        {% endif %}
+
+
+          {% if products.targetsave1a %}
+         <tr>
+          <td >7.</td>
+            <td> Target Savings</td>
+                 <td>          
+                        <input type="checkbox" name="target" {{k.tag}} data-bootstrap-switch data-off-color="danger" data-on-color="success">                           
+                  </td>
+        </tr>
+
+        {% endif %}
+
+            <input type="hidden" name="branch" readonly="readonly" value="{{ id }}">
+      <input type="hidden" name="email" readonly="readonly" value="{{msg.email}}">
+            <table style="margin-top:0%;margin-bottom:04%" width="100%" class="table  table-bordered table-hover" id="dataTables-example">
+              <td >
+                <input class="btn btn-lg btn-success btn-block" name="submit" type= "submit" value="Update Services"></td>
+              
+            </table>
+
+        </table>
+        {% endfor %}
+
+
+
+    {% else %}
+    <div style="font-size:1em;text-align:center">No products activated for your back office</div>
+    {% endif %}
+
+{% else %}
+  kjjkhk
+{% endif %}
+
+
+</form>
+
+
+</body>
+
+{% endblock %}
+
+
+
+
+    <script language="javascript" type="text/javascript">
+        function disable(f)
+        {
+            var button = f.elements['submit'];
+            button.value = 'Processing';
+            button.disabled = 'true';
+            return true;
+        }
+    </script>
+
+
+
+<script>
+  $(function () {
+    //Initialize Select2 Elements
+    $('.select2').select2()
+
+    //Initialize Select2 Elements
+    $('.select2bs4').select2({
+      theme: 'bootstrap4'
+    })
+
+    //Datemask dd/mm/yyyy
+    $('#datemask').inputmask('dd/mm/yyyy', { 'placeholder': 'dd/mm/yyyy' })
+    //Datemask2 mm/dd/yyyy
+    $('#datemask2').inputmask('mm/dd/yyyy', { 'placeholder': 'mm/dd/yyyy' })
+    //Money Euro
+    $('[data-mask]').inputmask()
+
+    //Date range picker
+    $('#reservationdate').datetimepicker({
+        format: 'L'
+    });
+    //Date range picker
+    $('#reservation').daterangepicker()
+    //Date range picker with time picker
+    $('#reservationtime').daterangepicker({
+      timePicker: true,
+      timePickerIncrement: 30,
+      locale: {
+        format: 'MM/DD/YYYY hh:mm A'
+      }
+    })
+    //Date range as a button
+    $('#daterange-btn').daterangepicker(
+      {
+        ranges   : {
+          'Today'       : [moment(), moment()],
+          'Yesterday'   : [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+          'Last 7 Days' : [moment().subtract(6, 'days'), moment()],
+          'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+          'This Month'  : [moment().startOf('month'), moment().endOf('month')],
+          'Last Month'  : [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+        },
+        startDate: moment().subtract(29, 'days'),
+        endDate  : moment()
+      },
+      function (start, end) {
+        $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'))
+      }
+    )
+
+    //Timepicker
+    $('#timepicker').datetimepicker({
+      format: 'LT'
+    })
+
+    //Bootstrap Duallistbox
+    $('.duallistbox').bootstrapDualListbox()
+
+    //Colorpicker
+    $('.my-colorpicker1').colorpicker()
+    //color picker with addon
+    $('.my-colorpicker2').colorpicker()
+
+    $('.my-colorpicker2').on('colorpickerChange', function(event) {
+      $('.my-colorpicker2 .fa-square').css('color', event.color.toString());
+    });
+
+    $("input[data-bootstrap-switch]").each(function(){
+      $(this).bootstrapSwitch('state', $(this).prop('checked'));
+    });
+
+  })
+  // BS-Stepper Init
+  document.addEventListener('DOMContentLoaded', function () {
+    window.stepper = new Stepper(document.querySelector('.bs-stepper'))
+  });
+
+  // DropzoneJS Demo Code Start
+  Dropzone.autoDiscover = false;
+
+  // Get the template HTML and remove it from the doumenthe template HTML and remove it from the doument
+  var previewNode = document.querySelector("#template");
+  previewNode.id = "";
+  var previewTemplate = previewNode.parentNode.innerHTML;
+  previewNode.parentNode.removeChild(previewNode);
+
+  var myDropzone = new Dropzone(document.body, { // Make the whole body a dropzone
+    url: "/target-url", // Set the url
+    thumbnailWidth: 80,
+    thumbnailHeight: 80,
+    parallelUploads: 20,
+    previewTemplate: previewTemplate,
+    autoQueue: false, // Make sure the files aren't queued until manually added
+    previewsContainer: "#previews", // Define the container to display the previews
+    clickable: ".fileinput-button" // Define the element that should be used as click trigger to select files.
+  });
+
+  myDropzone.on("addedfile", function(file) {
+    // Hookup the start button
+    file.previewElement.querySelector(".start").onclick = function() { myDropzone.enqueueFile(file); };
+  });
+
+  // Update the total progress bar
+  myDropzone.on("totaluploadprogress", function(progress) {
+    document.querySelector("#total-progress .progress-bar").style.width = progress + "%";
+  });
+
+  myDropzone.on("sending", function(file) {
+    // Show the total progress bar when upload starts
+    document.querySelector("#total-progress").style.opacity = "1";
+    // And disable the start button
+    file.previewElement.querySelector(".start").setAttribute("disabled", "disabled");
+  });
+
+  // Hide the total progress bar when nothing's uploading anymore
+  myDropzone.on("queuecomplete", function(progress) {
+    document.querySelector("#total-progress").style.opacity = "0";
+  });
+
+  // Setup the buttons for all transfers
+  // The "add files" button doesn't need to be setup because the config
+  // `clickable` has already been specified.
+  document.querySelector("#actions .start").onclick = function() {
+    myDropzone.enqueueFiles(myDropzone.getFilesWithStatus(Dropzone.ADDED));
+  };
+  document.querySelector("#actions .cancel").onclick = function() {
+    myDropzone.removeAllFiles(true);
+  };
+  // DropzoneJS Demo Code End
+</script>
+</html>

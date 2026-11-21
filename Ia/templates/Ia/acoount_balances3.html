@@ -1,0 +1,53 @@
+
+
+
+
+{% load humanize %}
+
+
+
+              <div style="margin-top:-1%;margin-bottom:0.3%;text-align:center;font-size:0.6em;color:red">{{ year }}  {{ monthname }}  {{ cycle }}</div>
+
+
+<table style="margin-top:0%;margin-bottom:0.5%;font-size:0.8em" width="100%" class="table  table-bordered" id="dataTables-example">
+
+
+<tr>
+  <td>{{cycle}} Balance</td>
+  <td> {{currency}}  {{bal|intcomma}} </td>
+  </tr>
+
+</table>  
+
+
+
+<table style="margin-top:0.2%;margin-bottom:0.6%;text-align:center;font-size:0.8em" width="100%" class="table  table-bordered" id="dataTables-example">
+
+<tr >
+
+  <td >
+<a href="/fts/mycustomers/dashboard/{{wallet}}/">Continue</a>
+</td>
+</tr>
+</table>
+
+
+
+
+    
+
+  
+
+<input type="hidden" name="wallet" readonly="readonly" value="{{ wallet }}">
+<input type="hidden" name="card"  readonly="readonly" value="{{card}}" >
+<input type="hidden" name="code"  readonly="readonly" value="{{code}}" >
+<input type="hidden" name="year"  readonly="readonly" value="{{year}}" >
+
+
+
+
+
+
+
+
+

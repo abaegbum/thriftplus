@@ -1,0 +1,49 @@
+
+
+
+
+
+
+
+<form 
+action="/IIIb/threeb/maxloans/change/"
+method="POST">
+{% csrf_token %}
+
+<input type='hidden' name="maxloanindex"   value ={{maxloan.id}}>
+
+         
+     <table style="margin-top:0%;margin-bottom:0% ;font-size: 0.8em" width="100%" class="table  table-bordered" id="dataTables-example">
+<tr>
+    
+
+    <td>Max Loan</td>
+    <td>{{maxloan.value}} %</td>
+</tr>
+        <tr>
+            <td>New Max loan</td>
+          <td >
+            <input type="text" name="maxloan" id ="id_maxloan" placeholder="enter max loan per cent" required >          
+        </td>
+      </tr>
+</table>
+     <table style="margin-top:0%;margin-bottom:0% ;font-size: 0.8em" width="100%" class="table  table-bordered" id="dataTables-example">
+        <tr>
+          <td >
+          <input class="btn btn-lg btn-success btn-block" name="submit" type= "submit"value="Save">
+        </td>
+
+          <td >
+            <input  type='button' class="btn btn-lg btn-success btn-block" value="Cancel"
+         onclick="closedel();">
+        </td>
+    </table>
+</form>
+
+
+
+<script>
+    function closedel() { 
+        $("#repay").dialog("close");
+    }
+</script>

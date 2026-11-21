@@ -1,0 +1,190 @@
+
+
+
+{% extends 'IIIb/myloans_base_a.html' %}
+
+{% block content %}
+
+{% load humanize %}
+<div style="text-align:center;font-weight:bold">Commodities Menu </div>
+   <table style="margin-top:0%;margin-bottom:0%;font-size:0.8em" width="100%" class="table  table-bordered" id="dataTables-example">
+
+
+
+
+    <tr style="text-align:center;">
+      <td  style="background:blue">
+          <a href="/IIIb/threeb/staff/request_commodities/" style="color:white">Commodities</a>
+      </td>
+        <td>
+          <a href="/IIIb/threeb/staff/request_loan/performance/" style="color:red">History</a>
+      </td>
+
+      <td >
+          <a href="/IIIb/threeb/staff/request_loan/history/" style="color:red">Commodities Log</a>
+      </td>
+    </tr>
+</table>
+
+
+
+   <table style="margin-top:0%;margin-bottom:02%;font-size:1em" width="100%" class="table  table-bordered" id="dataTables-example">
+            <tr >
+             <td style="font-weight:bold">Year</td>
+                <td> 
+                          <select name="businessyear" id="id_businessyear" required >
+                              {% for pincode in year %}
+                                  <option value="{{pincode.year}}">{{pincode.year}}</option>
+                              {% endfor %}
+                         </select>
+                </td>
+            </tr>
+     
+          
+           <tr >
+               <td style='font-weight:bold'>E-Mail</td>
+               <td>{{user}}</td>
+             </tr>
+
+          <tr>
+            <td style='font-weight:bold'>Name</td>
+            <td> {{name.surname|title}} {{name.firstname|title}}  {{name.othername|title}}</td>
+          </tr>
+
+          <tr >
+              <td style='font-weight:bold'>Eligibility</td>
+              <td> Sorry, but you are not eligibible for a fresh loan at this time </td>
+          </tr>
+
+          <tr >
+              <td style='font-weight:bold'> Reason</td>
+              <td>  {{  msg }} </td>
+          </tr>
+
+
+       </table>
+
+
+
+
+
+
+<div id="edit"></div>
+
+{% if myloan %}
+ <table style="margin-top:0%;margin-bottom:02%;font-size:0.8em;text-align: center;" width="100%" class="table  table-bordered" id="dataTables-example">
+
+           <tr style='font-weight:bold'>
+               <td >S/N</td>
+               <td>Request </td>
+               <td>Amount </td>
+               <td>Status</td>
+          </tr>             
+
+
+{% for k in myloan %}
+          <tr>
+            <td>{{forloop.counter}} .</td>
+            <td> <a href="#" onclick="details({{k.application_code}})">{{k.description}}</a>  </td>
+            <td> {{company.currency_code}}  {{k.principal|intcomma}} </td>
+
+            {% if k.status == 'Awaiting Approval' or k.status == 'Awaiting Disbursal' %}
+            <td> <a href="#" onclick="edit({{k.application_code}})">{{k.status}}</a> </td>
+
+            {% else %}
+            <td>{{k.status}}</td>
+            
+            {% endif %}
+
+
+          </tr>
+  {% endfor %}
+       </table>
+ {% endif %}
+
+
+
+  <script type="text/javascript" language="javascript">
+        function details(vid){
+            var state = vid;
+            // alert(state)
+            var url = "/IIIb/threeb/staff/loan/edit/pop/";
+            var i = 0;
+            var data='userid='+state;
+            $.ajax({
+                type:"POST",
+                url:url,
+                data:data,
+                success:function(html) {
+                    $("#edit").html(html);
+                    getcancel();
+                }
+            });
+            return false;
+        }
+
+    </script>
+
+
+
+
+  <script type="text/javascript" language="javascript">
+        function edit(vid){
+            var state =  vid; 
+            // alert(state)
+            var url = "/IIIb/threeb/staff/loan/edit/pop/";
+            var i = 0;
+            var data='userid='+state;
+            $.ajax({
+                type:"POST",
+                url:url,
+                data:data,
+                success:function(html) {
+                    $("#edit").html(html);
+                    getcancel();
+                }
+            });
+            return false;
+        }
+
+    </script>
+
+
+
+<script type="text/javascript" language="javascript">
+    function getcancel(){
+        var diaOpts = {
+            autoOpen:true,
+            height:'auto',
+            width:'auto',
+            title:' Touch this box to close' ,
+            closeOnEscape:true,
+            show: true,
+            hide: true,
+            bgiframe: true
+        };
+        $("#edit").dialog(diaOpts);
+    }
+
+</script>
+
+
+
+
+
+
+
+
+
+   <script type="text/javascript" >
+        $(document).ready(function() {
+
+            $("#id_amount").focus();
+  
+        });
+    </script>
+
+{% endblock %}
+
+
+

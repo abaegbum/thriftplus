@@ -1,0 +1,92 @@
+
+
+{% extends 'partner/basepartner.html' %}
+{% block content %}
+
+
+<div style="text-align:center">Back Office Registration</div>
+
+
+
+<table style="margin-top:2%;margin-bottom:2%;font-size:0.9em" width="100%" class="table  table-bordered" id="dataTables-example">
+
+             <tr >
+              <td><label for="id_status">Subscription Status</label></td>
+                 <td> 
+                           <select name="status" id="id_status" required>
+                            <option value = '-----'>-----</option>                          
+                                   <option value="Running">Running</option>
+                                   <option value="Expired">Expired</option>
+                               
+                          </select>
+                 </td>
+             </tr>
+
+
+</table>
+
+
+
+        <tr>
+
+            <td >
+                <div class="boxstatus"></div>
+            </td>
+
+        </tr>
+
+
+
+    <script>
+        $(document).ready(function() {
+            var pickerOpts = {
+                //appendText: "mm/dd/yy",
+                //defaultDate: "+5",
+                showOtherMonths: true,
+                changeMonth: true,
+                changeYear: true,
+                dateFormat:"yy-mm-dd"
+            };
+
+            autopost();
+        });
+    </script>
+
+
+  <script type="text/javascript" >
+        $(document).ready(function() {            
+
+            $("#id_status").change(function () {
+                autopost();
+            });   
+        });
+    </script>
+
+
+
+    <script type="text/javascript" language="javascript">
+        function autopost(){
+            var state = $("#id_status").val();
+            // alert(state);
+
+            var url = "/partner/partner/business/manage/status/";
+            var i = 0;
+            var data='userid='+state;
+            $.ajax({
+                type:"POST",
+                url:url,
+                data:data,
+                success:function(html) {
+                    $(".boxstatus").show();
+                    $(".boxstatus").html(html);
+
+                }
+            });
+            return false;
+        }
+    </script>
+
+{% endblock %}
+
+
+

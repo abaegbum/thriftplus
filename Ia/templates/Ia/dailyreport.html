@@ -1,0 +1,109 @@
+{% extends 'Ia/reportsbase.html' %}
+{% block content %}
+
+{% load humanize %}
+
+
+
+<div style="text-align:center">Sales Report</div>
+
+   <table style="margin-top:0%;margin-bottom:0%" width="100%" class="table  table-bordered" id="dataTables-example">
+
+    <tr style="text-align:center;">
+
+       <td   >
+        <a href="/fts/thrift/reports/sales/cashier/" style="color:red">End Of Day</a></td>
+        <td style="background:blue;font-size:0.9em">
+            <a href="/fts/thrift/reports/sales/merchant/" style="color:white">Vault</a>
+        </td>
+
+    <td >
+        <a href="/fts/thrift/reports/sales/admn/" style="color:red">Profit</a></td>
+
+    </tr>
+</table>
+
+
+ <table style="font-size:0.9em;margin-top:02%;margin-bottom:0.2%" width="100%" class="table  table-bordered" id="dataTables-example">
+
+   <tr>    
+    <td style='font-weight:bold'>Product</td>
+    <td>{{product}}</td>
+  </tr>
+</table>
+
+ <table style="font-size:0.9em;margin-top:0%;margin-bottom:02%" width="100%" class="table  table-bordered" id="dataTables-example">
+
+   <tr>    
+    <td style='font-weight:bold'>{{msg}} {{year}}</td>
+    <td>{{branch.currency_code}} {{total|intcomma}}</td>
+  </tr>
+    
+    <tr>    
+    <td style='font-weight:bold'>Total Unremitted Funds for {{monthname}}, {{y2}}</td>
+    {% if pending > 0 %}
+    <td><a href="#" onClick= "unrem({{k.customer.wallet}})">{{branch.currency_code}} {{pending|intcomma}}</a></td>
+    {% else %}
+    <td>{{branch.currency_code}} {{pending|intcomma}}</td>
+    {% endif %}
+
+  </tr>
+</table>
+
+  
+<script type="text/javascript" language="javascript">
+window.history.pushState(null, "", window.location.href);
+window.onpopstate = function () {
+    window.history.pushState(null, "", window.location.href);
+};
+
+</script>
+
+
+
+<script type="text/javascript" language="javascript">
+    function unrem(vid){
+        
+        var state = "{{monthname}}" + ":" +"{{y2}}" + ":" +"{{user}}";
+        // alert(state);
+        var url = "/fts/thrift/reports/getunremcash/";
+        var i = 0;
+        var data='userid='+state;
+        $.ajax({
+            type:"POST",
+            url:url,
+            data:data,
+            success:function(html) {
+                $("#depo").html(html);
+                getchan();
+            }
+        });
+        return false;
+    }
+
+</script>
+
+
+
+<script type="text/javascript" language="javascript">
+    function getchan(){
+        var diachange = {
+            autoOpen:true,
+            // appendTo:"body1",
+            // modal:true,
+            // position: ["center", "middle"],
+            height:'auto',
+            width:'auto',
+            title:'Touch this box to close' ,
+            closeOnEscape:true,
+            show: true,
+            // hide: true,
+            bgiframe: true
+        };
+        $("#depo").dialog(diachange);
+    }
+
+</script>
+
+
+{% endblock %}

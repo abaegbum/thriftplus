@@ -1,0 +1,40 @@
+
+{% load humanize %}
+
+
+
+
+<div style="font-size: 0.8em"> If you click YES, only selected <br>  Aplications  will be disbursed </div>
+
+
+
+<form  action="" method="POST">
+{% csrf_token %}
+
+<input type='hidden' name="year"   value ={{year}}>
+<input type='hidden' name="status"   value ="{{status}}">
+<input type='hidden' name="source"   value ="{{source}}">
+<input type="hidden" name="selected_items" value="{{ selected_items|join:',' }}">
+         
+     <table style="margin-top:0%;margin-bottom:0%;font-size: 0.8em;" width="100%" class="table  table-bordered" id="dataTables-example">
+
+        <tr>
+          <td >
+          <input class="btn btn-lg btn-success btn-block" name="submit" type= "submit"value="yes">
+        </td>
+        <td >
+            <input  type='button' class="btn btn-lg btn-success btn-block" value="No"
+         onclick="closedel();">
+        </td>
+
+      </tr>
+    </table>
+</form>
+
+
+
+<script>
+    function closedel() { 
+        $("#cancel").dialog("close");
+    }
+</script>

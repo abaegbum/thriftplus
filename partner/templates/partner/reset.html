@@ -1,0 +1,51 @@
+
+
+{% extends 'partner/basepartner.html' %}
+{% block content %}
+
+
+
+<div style="text-align:center">Back Office Registration</div>
+
+
+
+
+  <form action="" method="POST"  enctype="multipart/form-data" >   
+    {% csrf_token %}
+    <section class="content">
+      <div class="container-fluid">          
+            <div class="card card-primary">
+                <div class="card-body">
+                    {{d}}
+          <table style="margin-top:0%;margin-bottom:04%" width="100%" class="table  table-bordered table-hover" id="dataTables-example">
+           <tr >
+               <td >E-mail</td><td> <input type="email" name="email"> </td>
+             </tr>   
+       </table>
+          <div class="card-footer">
+            <td >
+              <input class="btn btn-lg btn-success btn-block" name="submit" type= "submit" value="View Details">
+            </td>
+          </div>
+                </div>
+              </div>
+            </div>
+      </section>
+    
+  </form>
+
+
+
+
+   <script type="text/javascript" >
+        $(document).ready(function() {
+
+            $("#id_company").focus();
+
+        });
+    </script>
+
+{% endblock %}
+
+
+

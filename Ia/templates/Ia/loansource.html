@@ -1,0 +1,102 @@
+
+
+
+{% load humanize %}
+
+
+    
+<table style="margin-top:0%;margin-bottom:0.2%;font-size:0.8em" width="100%" class="table  table-bordered" id="dataTables-example">
+
+            <tr>
+               <td style="font-weight:bold">Thrift</td>
+               <td style='color:grey;'> {{currency}} {{ thrift.thrift|intcomma }} </td>
+               <td style="font-weight:bold">Service Charge</td>
+               <td style='color:grey;'> {{currency}} {{ thrift.service_charge|intcomma }} </td>
+
+</tr><tr>
+                <td style="font-weight:bold">Loan</td>
+               <td style='color:grey;'>{{currency}}  {{ total|intcomma}}</td>
+               <td style="font-weight:bold">Loan Fee</td>
+               <td style='color:grey;'> {{currency}} {{ thrift.interest_on_loan|intcomma }} </td>             
+            </tr> 
+</table>
+
+
+            
+<table style="margin-top:0%;margin-bottom:02%;font-size:0.8em" width="100%" class="table  table-bordered" id="dataTables-example">
+            <tr>
+                <td style="font-weight:bold">Total Loan Repaid</td>
+               <td style='color:grey;'>{{currency}}  {{ paid|intcomma}}</td>
+           </tr>
+           <tr>
+                <td style="font-weight:bold">Loan Balance</td>
+               <td style='color:grey;'>{{currency}}  {{ bal|intcomma}}</td>
+
+            </tr> 
+  <tr>
+    <td style='font-weight:bold'>Funding</td>
+    <td>
+       <select name="funding" id="id_funding">
+       <option value="-----">-----</option>
+        <option value="Cash">Cash</option>
+        <option value="Transfer">Transfer</option>
+      </select>
+    </td>
+  </tr>
+</table>
+
+
+ 
+
+
+    <script>
+        $(document).ready(function() {
+            var pickerOpts = {
+                //appendText: "mm/dd/yy",
+                //defaultDate: "+5",
+                showOtherMonths: true,
+                changeMonth: true,
+                changeYear: true,
+                dateFormat:"yy-mm-dd"
+                //showButtonPanel: true
+                // showOn: "button"
+            };
+            // $( "#id_funding" ).focus();
+             autopostfund();
+
+        });
+    </script>
+
+   <script type="text/javascript" >
+        $(document).ready(function() {            
+            $("#id_funding").change(function () {
+                autopostfund();
+            });
+            
+            $("#id_amount").keypressee(function() {
+                $("#id_amount").val("");
+            });
+           
+        });
+    </script>
+
+    <script type="text/javascript" language="javascript">
+        function autopostfund(){
+            var state = $("#id_funding").val() +":" + {{ wallet }}+":" + $("#id_card").val() + ":" + "{{user}}"+":" + {{ thrift.code }};
+            // alert(state)
+            var url = "/fts/customer/repayloan/find_source/";
+            var i = 0;
+            var data='userid='+state;
+            $.ajax({
+                type:"POST",
+                url:url,
+                data:data,
+                success:function(html) {
+                    $(".boxfund").show();
+                    $(".boxfund").html(html);
+
+                }
+            });
+            return false;
+        }
+    </script> 

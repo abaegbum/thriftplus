@@ -1,0 +1,156 @@
+
+
+
+{% extends 'Ia/transactionIabase.html' %}
+{% block content %}
+
+{% load humanize %}
+
+
+<div style="text-align:center">Transactions Menu</div>
+   <table style="margin-top:0%;margin-bottom:0%;font-size:0.8em" width="100%" class="table  table-bordered">
+
+    <tr style="text-align:center;">
+        <td style="background:blue;font-size:0.9em">
+            <a href="/fts/thrift/unremmitted/fa/" style="color:white">Transactions</a>
+        </td>
+
+    </tr>
+</table>
+
+
+
+
+{% if ttt %}
+  <table style="margin-top:0%;margin-bottom:0.2%;font-size:0.7em;text-align:center" width="100%" class="table  table-bordered">
+
+
+      <div style="text-align:center;margin-top:02%"> Summary of my <span style='color:blue'>{{status}}</span>  Transactions  for {{date}},  {{date2}}</div>
+
+        <tr style="text-align:center;font-weight:bold">
+           <td >S/N</td>
+           <td > Customer</td>
+           <td > Wallet</td>
+             <td >Amount ({{currency}})</td>
+             <td >Approval</td>
+             <td >Status</td>
+        </tr>
+
+
+    {% for student in ttt %}
+        <tr style="ftext-align:center">
+          <td >{{ forloop.counter }}.</td>
+          <td >{{ student.customer.customer.surname }} {{ student.customer.customer.firstname }}   {{ student.customer.customer.othername }} </td>
+          <td > {{ student.customer.customer.wallet }}</td>
+          <td >{{ student.Amount|intcomma }}</td>
+
+        {% if student.Approval == 'Declined' %}
+          <td style='color:grey;'>Declined</td>
+          <td style='color:gray'>{{student.Status}}</td>
+        {% elif student.Approval == 'Unapproved' %}
+          <td style='color:blue'>Not Yet Approved</td>
+          <td style='color:blue'>{{student.Status}}</td>
+
+        {% else %}
+          <td style='color:green'>{{student.Approval}}</td>
+          {% if student.Status == 'Failed to Deposit' %}
+          <td ><a style='color:red' href="#" onClick= "product({{vid}})" title="Click here to repost">  {{student.Status}}   ({{student.Failed|intcomma}})</a></td>
+          {% else %}
+          <td style='color:green'>{{student.Status}}</td>
+          {% endif %}
+
+        {% endif %}
+    </tr>
+{% endfor %}
+
+    </table>
+
+<div style="text-align:center;margin-top:02%"> Transactions Summary </div>
+  <table style="margin-top:0%;margin-bottom:0.72%;font-size:0.7em;text-align:center" width="100%" class="table  table-bordered">
+
+    <tr style="font-weight:bold"> <td>S/N</td><td>Summary</td> <td>Amount</td>  </tr>
+
+
+<tr style='color:blue'><td>2.</td>
+            <td > Total Unapproved Transactions</td>
+           <td > {{currency}} {{unapproved|intcomma}}</td>
+
+</tr>
+        <tr style='color:green'>
+            <td>1.</td>
+            <td >Total Approved Transactions</td>
+           <td > {{currency}} {{approved|intcomma}}</td>
+</tr>
+
+<tr style='color:gray'><td>3.</td>
+            <td> Total Declined Transactions</td>
+           <td > {{currency}} {{declined|intcomma}}</td>
+        </tr>
+
+<tr style='color:red'><td>4.</td>
+            <td> Total Failed Transactions</td>
+           <td > {{currency}} {{Failed|intcomma}}</td>
+        </tr>
+  </table>
+  {% else %}
+
+
+  <div style='color:blue;text-align:center'>No transction record found </div>
+
+{% endif %}
+
+   <script type="text/javascript" >
+        $(document).ready(function() {
+
+            $("#id_amount").focus();
+              getclass();
+
+        });
+    </script>
+
+
+    <script type="text/javascript" language="javascript">
+        function getclass(){
+            var state = {{wallet}} ;
+            // alert(state);
+            var url = "/fts/thrift/getmonth/";
+            var i = 0;
+            var data='userid='+state;
+            $("#id_klass").val('');
+            $("#id_klass").html('');
+            if (state != undefined){
+                $.ajax({
+                    type: "POST",
+                    url: url,
+                    data:data,
+                    success: function(data){
+                        var options = '';
+                        for (i=0; i<data.length; i++){
+                            options += '<option value="' + data[i] +'">' + data[i] + '</option>'
+                        }
+                        $("#id_klass").append(options);
+                    }
+                })
+            }
+        }
+
+    </script>
+
+
+
+    <script language="javascript" type="text/javascript">
+        function disable(f)
+        {
+            var button = f.elements['submit'];
+            button.value = 'Processing';
+            button.disabled = 'true';
+            return true;
+        }
+    </script>
+
+
+
+{% endblock %}
+
+
+

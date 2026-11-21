@@ -1,0 +1,43 @@
+
+
+{% load humanize %}
+
+<table style="margin-top:0%;margin-bottom:0.2%;font-size:0.5em" width="100%" class="table  table-bordered" id="dataTables-example">
+
+
+            <tr>
+               <td style="font-weight:bold">Thrift</td>
+               <td style='color:blue;'>   {{ currency }} {{ thriftrec.thrift|intcomma }} </td>
+               </tr>
+
+               <tr>
+               <td style="font-weight:bold">   Service Charge</td>
+               <td style='color:blue;'>   {{ currency }} {{ thriftrec.service_charge|intcomma }} </td>
+            </tr>
+               <tr>
+               <td style="font-weight:bold">   Status</td>
+
+                  {% if thriftrec.complete_status == True %}
+
+               <td style='color:red;'>  THIS CYCLE IS CLOSED  </td>
+               {% else %}
+               <td style='color:blue;'>  THIS CYCLE IS ACTIVE </td>
+               {% endif %}
+
+            </tr>
+
+
+        </table>
+
+
+
+ <table style="margin-top:0%;margin-bottom:0.2%;font-size:0.8em" width="100%" class="table  table-bordered" id="dataTables-example">
+
+<div style="margin-top:0.9%;margin-bottom:0.2%" class="btn btn-lg btn-success btn-block" >
+   <a href="/fts/mycustomers/dashboard/{{wallet}}/" style="color:white">Continue</a>
+</div>
+</table>
+
+
+
+

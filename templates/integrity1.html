@@ -1,0 +1,56 @@
+
+
+
+<form action ="/integrity/ajo/" method='post' onsubmit="disable(this)">
+    {% csrf_token %}
+
+
+<table style="margin-top:0.5%;margin-bottom:0%;font-size:0.7em" width="100%" class="table  table-bordered" id="dataTables-example">
+
+
+<tr>
+  <td style= 'font-weight: bold '> Date </td>
+<td ><input  id="ddd" name="ddd" type= "date"  required></td>
+
+</tr>
+
+
+
+</table>
+
+
+
+<table style="margin-top:0.2%;margin-bottom:0% ;font-size:0.7em" width="100%" class="table  table-bordered" id="dataTables-example">
+                
+            <tr >
+                <td>
+              <input class="btn btn-lg btn-success btn-block" name="submit" type= "submit" value="View Details">
+            </td>
+        </tr>
+</table>
+
+<input type="hidden" name="rep" readonly="readonly" value="{{ rep }}">
+<input type="hidden" name="user" readonly="readonly" value="{{ user }}">
+<input type="hidden" name="year" readonly="readonly" value="{{ year }}">
+   
+
+</form>
+
+
+    <script language="javascript" type="text/javascript">
+        function disablkjle(f)
+        {
+            var button = f.elements['submit'];
+            button.value = 'Processing';
+            button.disabled = 'true';
+            return true;
+        }
+    </script>
+
+
+    <script>
+        $(document).ready(function() {
+            $("#ddd").focus();
+        });
+    </script>
+

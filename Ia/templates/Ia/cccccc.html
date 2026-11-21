@@ -1,0 +1,853 @@
+
+
+
+
+
+
+{% extends 'Ia/customerdashboard.html' %}
+
+{% block content %}
+
+
+<div style ='font-weight:bold; text-align:center'>{{getdetails.customer.surname}} {{getdetails.customer.firstname}}   {{getdetails.customer.othername}} 's Dashboard </div>
+
+
+    <section class="content">
+      <div class="container-fluid">
+
+        <div class="row">
+
+                      <div class="col-12 col-sm-6 col-md-3">
+                        <div class="info-box mb-3">
+                      <span class="info-box-icon bg-green elevation-3">
+
+                        <i class="fas fa-edit"></i>
+                      </span>
+                         <a href="#" style="color:blue" onClick= "product({{vid}})" title="Click here to activate services">
+                            <div class="info-box-content">
+                          <span style="color:white" class="info-box-text">10</span>
+                          <span class="info-box-number">Activate Product</span>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+
+
+
+
+
+                      <div class="col-12 col-sm-6 col-md-3">
+                        <div class="info-box mb-3">
+                      <span class="info-box-icon bg-green elevation-3">
+
+                        <i class="fas fa-edit"></i>
+                      </span>
+                         <a href="#" style="color:blue" onClick= "cards({{vid}})" title="Click here to enter card">
+                            <div class="info-box-content">
+                          <span style="color:white" class="info-box-text">10</span>
+                          <span class="info-box-number">Cards</span>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+
+
+
+
+
+<!-- {% if staff.ceo  %}
+
+{% if getdetails.esusu1a or  getdetails.savings1a %}
+                      <div class="col-12 col-sm-6 col-md-3">
+                        <div class="info-box mb-3">
+                          <span class="info-box-icon bg-yellow elevation-3">
+                            <i class="fas fa-edit"></i></span>
+                            <a href="#" style="color:blue" onClick= "reissue({{vid}})" title="Click here to replace card">
+                            <div class="info-box-content">
+                              <span style="color:white" class="info-box-text">10</span>
+                              <span class="info-box-number">Replace Card</span>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+
+{% endif %}
+
+{% endif %} -->
+
+
+
+{% if staff.esusu1a %}
+{% if getdetails.esusu1a %}
+                      <div class="col-12 col-sm-6 col-md-3">
+                        <div class="info-box mb-3">
+                      <span class="info-box-icon bg-pink elevation-3">
+
+                        <i class="fas fa-dollar-sign"></i>
+                      </span>
+                         <a href="#" style="color:blue" onClick= "thrift7({{vid}})" title="Click here to enter thrift">
+                            <div class="info-box-content">
+                          <span style="color:white" class="info-box-text">10</span>
+                          <span class="info-box-number">Thrifts</span>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+{% endif %}
+ {% endif %}
+
+
+{% if staff.esusu1a or staff.savings1a %}
+         {% if getdetails.esusu1a  or  getdetails.savings1a %}
+                      <div class="col-12 col-sm-6 col-md-3">
+                        <div class="info-box mb-3">
+                          <span class="info-box-icon bg-cyan elevation-3">
+                            <i class="fas fa-save"></i></span>
+                            <a href="#" style="color:blue" onClick= "deposit7({{vid}})" title="Click here to make deposit">
+                            <div class="info-box-content">
+                              <span style="color:white" class="info-box-text">10</span>
+                              <span class="info-box-number">Deposit</span>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+  {% endif %}
+{% endif %}
+
+{% if staff.ceo  %}
+{% if getdetails.esusu1a or  getdetails.savings1a %}
+                      <div class="col-12 col-sm-6 col-md-3">
+                        <div class="info-box mb-3">
+                          <span class="info-box-icon bg-navy elevation-3">
+                            <i class="fas fa-save"></i></span>
+                            <a href="#" style="color:blue" onClick= "withdraw({{vid}})" title="Click here to make withdrawals">
+                            <div class="info-box-content">
+                              <span style="color:white" class="info-box-text">10</span>
+                              <span class="info-box-number">Withdraw</span>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+{% endif %}
+{% endif %}
+
+
+
+
+
+
+{% if staff.esusu1a or staff.savings1a %}
+{% if getdetails.esusu1a  or  getdetails.savings1a %}
+                      <div class="col-12 col-sm-6 col-md-3">
+                        <div class="info-box mb-3">
+                          <span class="info-box-icon bg-teal elevation-3">
+                            <i class="fas fa-balance-scale"></i></span>
+                            <a href="#" style="color:blue" onClick= "balance({{vid}})" title="Click here to check acccount balance">
+                            <div class="info-box-content">
+                              <span style="color:white" class="info-box-text">10</span>
+                              <span class="info-box-number">A/C Balance</span>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+{% endif %}
+{% endif %}
+
+
+
+{% if staff.esusu1a or staff.savings1a %}
+         {% if getdetails.esusu1a  or  getdetails.savings1a %}
+                      <div class="col-12 col-sm-6 col-md-3">
+                        <div class="info-box mb-3">
+                          <span class="info-box-icon bg-secondary elevation-3">
+                            <i class="fas fa-edit"></i></span>
+
+                            <a href="#" style="color:blue" onClick= "ecard({{vid}})" title="Click here to view account statement">
+                            <div class="info-box-content">
+                            <span style="color:white" class="info-box-text">E-Card</span>
+                            <span class="info-box-number">Statement</span>
+                          </div>
+                        </a></div>
+                      </div>
+        {% endif %}
+      {% endif %}
+
+
+
+<!-- {% if staff.ceo  %}
+{% if getdetails.esusu1a %}
+                      <div class="col-12 col-sm-6 col-md-3">
+                        <div class="info-box mb-3">
+                      <span class="info-box-icon bg-white elevation-3">
+
+                        <i class="fas fa-recycle"></i>
+                      </span>
+                         <a href="#" style="color:blue" onClick= "recycle({{vid}})" title="Click here to delete postings">
+
+                            <div class="info-box-content">
+                          <span style="color:white" class="info-box-text">10</span>
+                          <span class="info-box-number">Recycle</span>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+
+{% endif %}
+{% endif %} -->
+
+
+<!-- {% if staff.ceo  %}
+
+{% if getdetails.esusu1a %}
+                      <div class="col-12 col-sm-6 col-md-3">
+                        <div class="info-box mb-3">
+                      <span class="info-box-icon bg-gray elevation-3">
+                        <i class="fas fa-window-close"></i>
+                      </span>
+                         <a href="#" style="color:blue" onClick= "cloose({{vid}})" title="Click here to close account">
+                            <div class="info-box-content">
+                          <span style="color:white" class="info-box-text">10</span>
+                          <span class="info-box-number">Close Account</span>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+
+{% endif %}
+{% endif %} -->
+
+
+
+
+{% if staff.ceo  %}
+
+{% if staff.esusu1aloan or staff.loans1acash or staff.loans1aitems %}
+{% if getdetails.esusu1aloan or getdetails.loans1acash or getdetails.loans1aitems %}
+                      <div class="col-12 col-sm-6 col-md-3">
+                        <div class="info-box mb-3">
+                      <span class="info-box-icon bg-blue elevation-3">
+
+                        <i class="fas fa-pen"></i>
+                      </span>
+                         <a href="#" style="color:blue" onClick= "overd({{vid}})" title="Click here to give overdrafts">
+                            <div class="info-box-content">
+                          <span style="color:white" class="info-box-text">10</span>
+                          <span class="info-box-number">Take a Loan</span>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+
+
+{% endif %}
+{% endif %}
+{% endif %}
+
+
+
+{% if staff.esusu1aloan or staff.loans1acash or staff.loans1aitems %}
+{% if getdetails.esusu1aloan or getdetails.loans1acash or getdetails.loans1aitems %}
+
+                      <div class="col-12 col-sm-6 col-md-3">
+                        <div class="info-box mb-3">
+                          <span class="info-box-icon bg-cyan elevation-3">
+                            <i class="fas fa-balancee"></i></span>
+
+                              <a href="/fts/customer/repayloan/{{vid}}/">
+
+                            <div class="info-box-content">
+                              <span style="color:white" class="info-box-text">10</span>
+                              <span class="info-box-number">Repay Loan</span>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+
+
+
+{% endif %}
+{% endif %}
+
+
+{% if staff.esusu1aloan or staff.loans1acash or staff.loans1aitems %}
+{% if getdetails.esusu1aloan or getdetails.loans1acash or getdetails.loans1aitems %}
+
+                      <div class="col-12 col-sm-6 col-md-3">
+                        <div class="info-box mb-3">
+                          <span class="info-box-icon bg-cyan elevation-3">
+                            <i class="fas fa-balancee"></i></span>
+
+                              <a href="/fts/customer/myloans/poploan/{{vid}}/">
+
+                            <div class="info-box-content">
+                              <span style="color:white" class="info-box-text">10</span>
+                              <span class="info-box-number">My Loan</span>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+{% endif %}
+{% endif %}
+
+
+
+
+
+{% if staff.targetsave1a %}
+{% if getdetails.targetsave1a %}
+
+
+                      <div class="col-12 col-sm-6 col-md-3">
+                        <div class="info-box mb-3">
+                          <span class="info-box-icon bg-cyan elevation-3">
+                            <i class="fas fa-pen"></i></span>
+                            <a href="#" style="color:blue" onClick= "myinv({{vid}})" title="Click here to make deposit">
+                            <div class="info-box-content">
+                              <span style="color:white" class="info-box-text">10</span>
+                              <span class="info-box-number">Get a Savings Plan</span>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+{% endif %}
+{% endif %}
+
+
+{% if staff.targetsave1a %}
+{% if getdetails.targetsave1a %}
+
+
+                      <div class="col-12 col-sm-6 col-md-3">
+                        <div class="info-box mb-3">
+                          <span class="info-box-icon bg-cyan elevation-3">
+                            <i class="fas fa-pen"></i></span>
+                            <a href="#" style="color:blue" onClick= "myinv({{vid}})" title="Click here to make deposit">
+                            <div class="info-box-content">
+                              <span style="color:white" class="info-box-text">10</span>
+                              <span class="info-box-number">Target Save </span>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+{% endif %}
+{% endif %}
+
+
+
+
+{% if staff.targetsave1a %}
+{% if getdetails.targetsave1a %}
+
+
+                      <div class="col-12 col-sm-6 col-md-3">
+                        <div class="info-box mb-3">
+                          <span class="info-box-icon bg-cyan elevation-3">
+                            <i class="fas fa-pen"></i></span>
+                            <a href="#" style="color:blue" onClick= "myinv({{vid}})" title="Click here to make deposit">
+                            <div class="info-box-content">
+                              <span style="color:white" class="info-box-text">10</span>
+                              <span class="info-box-number">Target Save history </span>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+{% endif %}
+{% endif %}
+
+
+
+
+{% if staff.fixeddepo1a %}
+{% if getdetails.fixeddepo1a %}
+
+
+                      <div class="col-12 col-sm-6 col-md-3">
+                        <div class="info-box mb-3">
+                          <span class="info-box-icon bg-cyan elevation-3">
+                            <i class="fas fa-pen"></i></span>
+                            <a href="#" style="color:blue" onClick= "myinv({{vid}})" title="Click here to make deposit">
+                            <div class="info-box-content">
+                              <span style="color:white" class="info-box-text">10</span>
+                              <span class="info-box-number">Get FXD Plan</span>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+{% endif %}
+{% endif %}
+
+
+{% if staff.fixeddepo1a %}
+{% if getdetails.fixeddepo1a %}
+
+
+                      <div class="col-12 col-sm-6 col-md-3">
+                        <div class="info-box mb-3">
+                          <span class="info-box-icon bg-cyan elevation-3">
+                            <i class="fas fa-pen"></i></span>
+                            <a href="#" style="color:blue" onClick= "myinv({{vid}})" title="Click here to make deposit">
+                            <div class="info-box-content">
+                              <span style="color:white" class="info-box-text">10</span>
+                              <span class="info-box-number">Fixed Deposit </span>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+{% endif %}
+{% endif %}
+
+
+
+
+{% if staff.fixeddepo1a %}
+{% if getdetails.fixeddepo1a %}
+
+
+                      <div class="col-12 col-sm-6 col-md-3">
+                        <div class="info-box mb-3">
+                          <span class="info-box-icon bg-cyan elevation-3">
+                            <i class="fas fa-pen"></i></span>
+                            <a href="#" style="color:blue" onClick= "myinv({{vid}})" title="Click here to make deposit">
+                            <div class="info-box-content">
+                              <span style="color:white" class="info-box-text">10</span>
+                              <span class="info-box-number">Fixed Deposit history </span>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+{% endif %}
+{% endif %}
+
+
+
+
+
+   {% if getdetails.esusu1as or  getdetails.savingss1a %}
+          <div class="col-12 col-sm-6 col-md-3">
+                <div class="info-box mb-3">
+                  <span class="info-box-icon bg-green elevation-3">
+                    <i class="fas fa-list"></i>
+                  </span>
+
+                  <a href="/fts/customer/viewreceipts/{{vid}}/">
+
+                  <div class="info-box-content">
+                    <span style="color:white" class="info-box-text">10</span>
+                    <span style="color:blue" class="info-box-number">Receipts</span>
+                  </div>
+                </a>
+              </div>
+          </div>
+   {% endif %}
+
+
+
+
+
+<!-- {% if staff.ceo  %}
+{% if getdetails.esusu1a or  getdetails.savings1a %}
+                      <div class="col-12 col-sm-6 col-md-3">
+                        <div class="info-box mb-3">
+                          <span class="info-box-icon bg-pink elevation-3">
+                           <i class="fas fa-book"></i>
+                          </span>
+                          <a style = 'color:blue' href="/fts/customer/manage/allpost/{{vid}}/">
+
+                            <div class="info-box-content">
+                          <span style="color:white" class="info-box-text">10</span>
+                          <span class="info-box-number">Posting</span>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+
+{% endif %}
+{% endif %} -->
+
+
+
+
+
+
+      <div class="col-12 col-sm-6 col-md-3">
+        <div class="info-box mb-3">
+      <span class="info-box-icon bg-white elevation-3">
+
+        <i class="fas fa-window-close"></i>
+      </span>
+         <a href="#" style="color:blue" onClick= "dewall7({{vid}})" title="Click here to delete wallet">
+
+            <div class="info-box-content">
+          <span style="color:white" class="info-box-text">10</span>
+          <span class="info-box-number">Delete Wallet</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+
+
+
+
+                <div class="col-12 col-sm-6 col-md-3">
+                      <div class="info-box mb-3">
+                        <span class="info-box-icon bg-red elevation-3">
+                          <i class="fas fa-cog"></i>
+                        </span>
+
+                        <a href="/fts/customer/viewwallet/{{vid}}/">
+
+                        <div class="info-box-content">
+                          <span style="color:white" class="info-box-text">10</span>
+                          <span style="color:blue" class="info-box-number"> {{getdetails.customer.surname}} {{getdetails.customer.firstname}}'s Profile</span>
+                        </div>
+                      </a>
+                    </div>
+                </div>
+
+
+
+
+
+</div>
+
+<div class="row">
+   <!-- Left col -->
+     <section class="col-lg-7 connectedSortable"></section>
+          <section class="col-lg-5 connectedSortable">   </section>
+</div>
+
+
+      </div>
+    </section>
+
+
+  </div>
+
+
+
+<div id="depo"></div>
+
+
+
+<script type="text/javascript" language="javascript">
+    function product(vid){
+
+        var state = "{{vid}}";
+        // alert(state);
+
+        var url = "/fts/customer/products/";
+        var i = 0;
+        var data='userid='+state;
+        $.ajax({
+            type:"POST",
+            url:url,
+            data:data,
+            success:function(html) {
+                $("#depo").html(html);
+                getchan();
+            }
+        });
+        return false;
+    }
+
+</script>
+
+<script type="text/javascript" language="javascript">
+    function cards(vid){
+
+        var state = "{{vid}}";
+        // alert(state);
+        var url = "/fts/customer/savecard/";
+        var i = 0;
+        var data='userid='+state;
+        $.ajax({
+            type:"POST",
+            url:url,
+            data:data,
+            success:function(html) {
+                $("#depo").html(html);
+                getchan();
+            }
+        });
+        return false;
+    }
+
+</script>
+
+
+
+<script type="text/javascript" language="javascript">
+    function thrift7(vid){
+
+        var state = "{{vid}}";
+        // alert(state);
+        var url = "/fts/customer/dialthrift/";
+        var i = 0;
+        var data='userid='+state;
+        $.ajax({
+            type:"POST",
+            url:url,
+            data:data,
+            success:function(html) {
+                $("#depo").html(html);
+                getchan();
+            }
+        });
+        return false;
+    }
+
+</script>
+
+<script type="text/javascript" language="javascript">
+    function deposit7(vid){
+
+        var state = "{{vid}}";
+        // alert(state);
+        var url = "/fts/customer/deposit/";
+        var i = 0;
+        var data='userid='+state;
+        $.ajax({
+            type:"POST",
+            url:url,
+            data:data,
+            success:function(html) {
+                $("#depo").html(html);
+                getchan();
+            }
+        });
+        return false;
+    }
+
+</script>
+
+<script type="text/javascript" language="javascript">
+    function repay5(vid){
+
+        var state = "{{vid}}" + ":" +"{{user}}";
+        // alert(state);
+        var url = "/fts/customer/repayloan/";
+        var i = 0;
+        var data='userid='+state;
+        $.ajax({
+            type:"POST",
+            url:url,
+            data:data,
+            success:function(html) {
+                $("#depo").html(html);
+                getchan();
+            }
+        });
+        return false;
+    }
+
+</script>
+
+
+<script type="text/javascript" language="javascript">
+    function myloans(vid){
+
+        var state = "{{vid}}" + ":" +"{{user}}";
+        // alert(state);
+        var url = "/fts/customer/myloans/";
+        var i = 0;
+        var data='userid='+state;
+        $.ajax({
+            type:"POST",
+            url:url,
+            data:data,
+            success:function(html) {
+                $("#depo").html(html);
+                getchan();
+            }
+        });
+        return false;
+    }
+
+</script>
+
+<script type="text/javascript" language="javascript">
+    function withdraw(vid){
+
+        var state = "{{vid}}" + ":" +"{{user}}";
+        // alert(state);
+        var url = "/fts/customer/popwithdraw/";
+        var i = 0;
+        var data='userid='+state;
+        $.ajax({
+            type:"POST",
+            url:url,
+            data:data,
+            success:function(html) {
+                $("#depo").html(html);
+                getchan();
+            }
+        });
+        return false;
+    }
+
+</script>
+
+
+<script type="text/javascript" language="javascript">
+    function overd(vid){
+
+        var state = "{{vid}}" + ":" +"{{user}}";
+        // alert(state);
+        var url = "/fts/customer/overdrafts/";
+        var i = 0;
+        var data='userid='+state;
+        $.ajax({
+            type:"POST",
+            url:url,
+            data:data,
+            success:function(html) {
+                $("#depo").html(html);
+                getchan();
+            }
+        });
+        return false;
+    }
+
+</script>
+
+<script type="text/javascript" language="javascript">
+    function recycle(vid){
+
+        var state = "{{vid}}" + ":" +"{{user}}";
+        // alert(state);
+        var url = "/fts/customer/recycle/";
+        var i = 0;
+        var data='userid='+state;
+        $.ajax({
+            type:"POST",
+            url:url,
+            data:data,
+            success:function(html) {
+                $("#depo").html(html);
+                getchan();
+            }
+        });
+        return false;
+    }
+
+</script>
+
+
+<script type="text/javascript" language="javascript">
+    function cloose(vid){
+
+        var state = "{{vid}}";
+        // alert(state);
+        var url = "/fts/customer/closeacc/";
+        var i = 0;
+        var data='userid='+state;
+        $.ajax({
+            type:"POST",
+            url:url,
+            data:data,
+            success:function(html) {
+                $("#depo").html(html);
+                getchan();
+            }
+        });
+        return false;
+    }
+
+</script>
+
+
+
+
+
+<script type="text/javascript" language="javascript">
+    function balance(vid){
+
+        var state = "{{vid}}" + ":" +"{{user}}";
+        // alert(state);
+        var url = "/fts/thrift/historypop/";
+        var i = 0;
+        var data='userid='+state;
+        $.ajax({
+            type:"POST",
+            url:url,
+            data:data,
+            success:function(html) {
+                $("#depo").html(html);
+                getchan();
+            }
+        });
+        return false;
+    }
+
+</script>
+
+
+<script type="text/javascript" language="javascript">
+    function ecard(vid){
+
+        var state = "{{vid}}";
+        // alert(state);
+        var url = "/fts/thrift/ecardpop/";
+        var i = 0;
+        var data='userid='+state;
+        $.ajax({
+            type:"POST",
+            url:url,
+            data:data,
+            success:function(html) {
+                $("#depo").html(html);
+                getchan();
+            }
+        });
+        return false;
+    }
+
+</script>
+
+
+<script type="text/javascript" language="javascript">
+    function dewall7(vid){
+
+        var state = "{{vid}}" + ":" +"{{user}}";
+        // alert(state);
+        var url = "/fts/customer/delete/wallet/";
+        var i = 0;
+        var data='userid='+state;
+        $.ajax({
+            type:"POST",
+            url:url,
+            data:data,
+            success:function(html) {
+                $("#depo").html(html);
+                getchan();
+            }
+        });
+        return false;
+    }
+
+</script>
+
+
+
+<script type="text/javascript" language="javascript">
+    function getchan(){
+        var diachange = {
+            autoOpen:true,
+            // appendTo:"body1",
+            // modal:true,
+            // position: ["center", "middle"],
+            height:'auto',
+            width:'auto',
+            title:'Touch this box to close' ,
+            closeOnEscape:true,
+            show: true,
+            // hide: true,
+            bgiframe: true
+        };
+        $("#depo").dialog(diachange);
+    }
+
+</script>
+
+  {% endblock %}

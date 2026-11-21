@@ -1,0 +1,77 @@
+
+
+{% load humanize %}
+
+ <!-- <form action="/fts/customer/overfdraf/approveloan/" method="POST"> -->
+
+  <table style="margin-top:1%;margin-bottom:02%;font-size:0.6em" width="100%" class="table  table-bordered" id="dataTables-example">
+    <tr>
+      <td>Duration</td>
+      <td>{{duration}} Weeks   (  {{rate}}%  Interest rate)</td>
+    </tr>
+
+    <tr>
+      <td>Repayment</td>
+      <td>{{ currency}}  {{repayment|intcomma}}  {{repay}}</td>
+    </tr>
+
+    <tr>
+      <td>Amount due</td>
+      <td> {{ currency}} {{msg|intcomma}}     </td>
+    </tr>
+</table>
+
+  <table style="margin-top:0%;margin-bottom:02%;font-size:0.6em" width="100%" class="table  table-bordered" id="dataTables-example">
+    <tr>
+      <td >
+        <input formaction = '/fts/customer/overdrafts/continuous/display/' class="btn btn-lg btn-success btn-block" name="submit" type= "submit" value="View Details">
+      </td>
+
+      <td >
+        <input formaction = '/fts/mycustomers/dashboard/{{wallet}}/' class="btn btn-lg btn-success btn-block" name="submit" type= "submit" value="Decline">
+      </td>
+
+  </tr>
+  </table>
+
+  <input type="hidden" name="duration" readonly="readonly" value="{{ duration }}" class ="loginTxtbox">
+
+    <input type="hidden" name="repayment" readonly="readonly" value="{{ repayment }}" class ="loginTxtbox">
+
+
+    <input type="hidden" name="due" readonly="readonly" value="{{ msg }}" class ="loginTxtbox">
+
+    <input type="hidden" name="repay" readonly="readonly" value="{{ repay }}" class ="loginTxtbox">
+
+<!-- </form> -->
+
+
+
+ <script>
+        $(document).ready(function() {
+            var pickerOpts = {
+                //appendText: "mm/dd/yy",
+                //defaultDate: "+5",
+                showOtherMonths: true,
+                changeMonth: true,
+                changeYear: true,
+                dateFormat:"yy-mm-dd"
+                //showButtonPanel: true
+                // showOn: "button"
+            };
+
+            $( "#amount" ).focus();
+        });
+    </script>
+
+
+
+    <script language="javascript" type="text/javascript">
+        function disable(f)
+        {
+            var button = f.elements['submit'];
+            button.value = 'Processing';
+            button.disabled = 'true';
+            return true;
+        }
+    </script>

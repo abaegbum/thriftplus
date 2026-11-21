@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+
+    <table style="margin-top:0.4em;border:0em solid black" width="100%" class="table  table-bordered table" id="dataTables-example">
+          <tr >
+             <td rowspan="2" style='border:0px solid black'>
+          <img style="width: 8em; height: 8em;" src="{{ company.company.logo.url }}" alt="{{ company.company.logo }}">
+      </td>
+                <td  style="border:0px solid black">
+                    <table >
+                        <tr>
+                        <td style="letter-spacing:0px;;font-weight:bold;text-align:center;font-family:verdana;font-size:1em;">{{ company.company.name  }}</td>
+                        </tr>
+                        <tr>
+                        <td style ="text-align: center"> {{company.Address}}</td>
+                        <td > {{company.company.web}}</td>
+                        </tr>
+
+                    </table>
+               </td>
+
+          </tr>
+
+    </table>
+
+
+
+   <table style="margin-top:0%;margin-bottom:0%" width="100%" class="table  table-bordered" id="dataTables-example">
+
+
+        <br>
+
+        <div>Hello {{ surname }} {{ firstname }},</h1>
+
+        <div>A login for your cooperative at {{company.company.name}} was created successfully, find details below</h3>
+
+
+        <div>E-mail: {{ email }} <br/>
+        Password: {{ password }} <br/>
+        Link: {{ link }} <br/>
+</table>
+  </section>
+
+</div>
+
+
+
+
+
+
+  <footer class="main-footer">
+
+    <strong>Copyright &copy; 2018-2025. Thrift + 3.5.0</strong>
+    All rights reserved.
+    <div class="float-right d-none d-sm-inline-block">
+      <b><a href="#">Powered by Adysys Technologies Ltd</a></b>
+    </div>
+  </footer>
+
+
+</html>
+
+
+
+
+

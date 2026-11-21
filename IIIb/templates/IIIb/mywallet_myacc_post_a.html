@@ -1,0 +1,50 @@
+
+{% extends 'IIIb/mywallet_balance_base_a.html' %}
+{% block content %}
+
+{% load humanize %}
+
+<div style="text-align:center">Wallet Balances Menu</div>
+
+
+   <table style="margin-top:0%;margin-bottom:01%;font-size:0.8em" width="100%" class="table  table-bordered" id="dataTables-example">
+
+    <tr style="text-align:center;">
+      <td  >
+          <a href="/IIIb/threeb/staff/mywallet/"  style="color:red">Balances</a>
+      </td>
+      <td>
+          <a href="/IIIb/threeb/staff/statement/"  style="color:red">Statement</a>
+      </td>
+      <td>
+          <a href="/IIIb/threeb/staff/withdraw/"  style="color:red">Withdraw</a>
+      </td>
+      <td style="background:blue">
+          <a href="/IIIb/threeb/mywallet/accno/"  style="color:white">Account No.</a>
+      </td>
+    </tr>
+</table>
+
+
+<div class="card card-primary card-outline">
+	<div class="card-header">
+		<h5 class="m-0">CONGRATULATIONS!!! DETAILS SAVED SUCCESSFULLY</h5>
+	</div>
+
+</div>
+
+
+  </table>
+</tr>
+
+
+
+<script type="text/javascript" language="javascript">
+window.history.pushState(null, "", window.location.href);
+window.onpopstate = function () {
+    window.history.pushState(null, "", window.location.href);
+};
+
+</script>
+
+{% endblock %}

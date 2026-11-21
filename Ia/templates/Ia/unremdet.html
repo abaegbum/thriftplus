@@ -1,0 +1,44 @@
+
+
+
+
+{% load humanize %}
+
+
+ {% if tuy %} 
+
+<div style="text-align:center;font-size:0.6em">Details of Unremited Cash</div>
+<table style="margin-top:0.2%;margin-bottom:0%;text-align:center;font-size:0.6em" width="100%" class="table  table-bordered" id="dataTables-example">
+   
+     <thead >
+        <tr style="font-weight:bold">
+           <td >S/N</td>
+           <td >F/O</td>
+           <td >Amount({{branch.currency_code}})</td>
+           <td >Dates</td>
+        </tr>
+    </thead>                   
+            {% for student in tuy %}
+                <tr >
+                  <td >{{ forloop.counter }}.</td>
+                  <td >{{ student.merchant.staff.surname}}  {{ student.merchant.staff.firstname}}  {{ student.merchant.staff.othername}}</td>
+                  <td >{{ student.sum|intcomma }}</td>
+                  <td >{{ student.dates }}</td>
+                </tr>
+            {% endfor %}
+
+</table>
+
+{% endif %}
+
+
+<table style="margin-top:0.2%;margin-bottom:0.6%;text-align:center;font-size:0.6em" width="100%" class="table  table-bordered" id="dataTables-example">
+
+<tr >
+
+  <td >
+<a href="/fts/thrift/reports/sales/admn/">Continue</a>
+</td>
+</tr>
+</table>
+

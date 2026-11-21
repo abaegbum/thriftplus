@@ -1,0 +1,42 @@
+
+
+
+
+{% load humanize %}
+
+
+ {% if tuy %} 
+ <div style="text-align:center;font-size:0.6em">Details of Profit from Loan</div>
+
+<table style="margin-top:0.2%;margin-bottom:0%;text-align:center;font-size:0.6em" width="100%" class="table  table-bordered" id="dataTables-example">
+   
+     <thead >
+        <tr style="font-weight:bold">
+           <td >S/N</td>
+           <td >Customer</td>
+           <td >Amount({{branch.currency_code}})</td>
+        </tr>
+    </thead>                   
+            {% for student in tuy %}
+                <tr >
+                  <td >{{ forloop.counter }}.</td>
+                  <td >{{ student.customer.customer.surname}}  {{ student.customer.customer.firstname}}  {{ student.customer.customer.othername}}</td>
+                  <td >{{ student.amount|intcomma }}</td>
+                </tr>
+            {% endfor %}
+
+</table>
+
+{% endif %}
+
+
+<table style="margin-top:0.2%;margin-bottom:0.6%;text-align:center;font-size:0.6em" width="100%" class="table  table-bordered" id="dataTables-example">
+
+<tr >
+
+  <td >
+<a href="/fts/thrift/reports/sales/admn/">Continue</a>
+</td>
+</tr>
+</table>
+

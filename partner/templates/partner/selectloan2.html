@@ -1,0 +1,27 @@
+
+
+{% extends 'partner/basepartner.html' %}
+{% block content %}
+
+
+
+<table style="margin-top:0%;margin-bottom:01%" width="100%" class="table  table-bordered" id="dataTables-example">
+
+</table>
+
+<div style="text-align:center">Back Office Registration</div>
+   <table style="margin-top:0%;margin-bottom:01%" width="100%" class="table  table-bordered" id="dataTables-example">
+
+    <tr style="text-align:center;">
+        <td  ><a href="/partner/partner/business/reg/" style="color:red">Business </a></td>
+        <td><a href="/partner/partner/business/branch/" style="color:red;font-size:0.9em">Address</a></td>
+        <td style="background:blue;font-size:0.9em"><a href="/partner/partner/business/ceo/" style="color:white;font-size:0.9em">Owner</a></td>
+         <td><a href="/partner/partner/business/app/" style="color:red;font-size:0.9em">Product</a></td>
+    </tr>
+</table>
+
+
+<div style ='color:gray'> {{msg}}</div> 
+
+{% endblock %}
+

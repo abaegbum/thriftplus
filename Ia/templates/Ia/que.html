@@ -1,0 +1,93 @@
+
+
+
+
+{% load humanize %}
+
+
+
+
+<form action=" " method="post" enctype="multipart/form-data" role="form">
+
+
+<table style="margin-top:01%;margin-bottom:2%;text-align:center;font-size:0.8em" width="100%" class="table  table-bordered" id="dataTables-example">
+
+  <div style= 'text-align:center'>One pending extension request found. Click 
+
+
+       <button formaction="/sysadmin/sysadmin/sysadmin/extend/change/" style= 'color:red' >here </button> to delete</div>
+
+
+    <tr style="font-weight:bold">
+      
+        <td> Package</td>
+        <!-- <td> Validity</td> -->
+        <td> Duration</td>
+        <!-- <td> Status</td> -->
+        <td> Amount</td>
+        <td> Pin</td>
+    </tr>
+
+
+    <tr >
+    
+        <td> {{k.package.package}} Pack</td>
+        <!-- <td> {{k.end}}</td> -->
+        <td> {{k.duration}}  Month(s)</td>
+        <!-- <td> {{k.status}}</td> -->
+         <td> {{currency}}  {{k.amount|intcomma}}</td>
+        <td> {{k.receipt}}</td>
+    </tr>
+
+</table>
+
+<input type="hidden" name="receipt"  readonly="readonly" value="{{ receipt }}">
+
+<div style= 'color:blue'> To activate this plan, send pin to your back office agent, or click <a href="" style= "color:red"> here  </a>  for instant activation </div>
+
+
+</form>
+
+<div id="subpack"></div>
+ 
+<script type="text/javascript" language="javascript">
+    function changesub(vid){
+        
+        var state = vid ;
+        // alert(state)
+        var url = "/sysadmin/sysadmin/sysadmin/extend/change/";
+        var i = 0;
+        var data='userid='+state;
+        $.ajax({
+            type:"POST",
+            url:url,
+            data:data,
+            success:function(html) {
+                $("#subpack").html(html);
+                getchan();
+            }
+        });
+        return false;
+    }
+
+</script>
+
+<script type="text/javascript" language="javascript">
+    function getchan(){
+        var diachange = {
+            autoOpen:true,
+            // appendTo:"body1",
+            modal:true,
+            // position: ["center", "middle"],
+            height:'auto',
+            width:'auto',
+            title:'Touch this box to close --->' ,
+            closeOnEscape:true,
+            show: true,
+            // hide: true,
+            bgiframe: true
+        };
+        $("#subpack").dialog(diachange);
+    }
+
+</script>

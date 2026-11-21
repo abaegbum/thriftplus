@@ -1,0 +1,81 @@
+
+{% extends 'Ia/contributionIabase.html' %}
+
+{% block content %}
+
+
+{% load humanize %}
+
+
+
+
+
+ <input name="submitprint" type= "submit" value="Print Receipt" onclick = "openrecprint();">
+    {% for k in receipt %}
+
+   <div class="printable">
+    <div class="card card-primary card-outline">
+                  <div class="printable">
+                    <div class="card-body">           
+                        <p class="card-text"></p>
+                        <p style='text-align:center'>{{company.company.name}} <br> {{company.Address}}</p>
+                        <div style='text-align:center'>{{k.status}} Receipt</div>
+
+                        {% for p in k.mycustomer %}
+
+                        <div>Agent: {{p.merchant.staff.surname}}  {{p.merchant.staff.firstname}}  {{p.merchant.staff.othername}} </div>
+
+                        <div>Customer:  {{p.customer.customer.surname}} {{p.customer.customer.firstname}} {{p.customer.customer.othername}} ({{p.customer.customer.wallet}})</div>
+                        <div>Location: {{p.customer.customer.location}}</div>
+
+                        <div>Card Variant: {{p.purpose}}</div>
+
+                        <div>Thrift:   {{company.currency_code}}  {{k.thrift|intcomma}} [{{p.cycle}} {{month.month}}, {{p.year}}]</div>
+
+
+                        <div>{{k.status}}: {{company.currency_code}}  {{p.amount|intcomma}} ({{p.number}})</div>
+
+                        <div>Card Balance:  {{company.currency_code}} {{k.total_savings|intcomma}}</div>
+
+                        <div>Date : {{p.recdate}}</div><div>Time : {{p.ttime}}</div>
+
+                        {% endfor %}                        
+                  </div>
+              </div>
+    </div>
+</div>
+
+{% endfor %}
+
+<table style="margin-top:0.5%;margin-bottom:0.6%;text-align:center" width="100%" class="table  table-bordered" id="dataTables-example">
+
+<tr >
+<td ><a href="/dashboard/">Dashboard</a></td>
+<td ><a href="/fts/customeria/list/">Customers</a></td>
+<td ><a href="/fts/thrift/approvals/">Reconcile</a></td>
+
+</tr>
+</table>
+
+
+<script type="text/javascript" language="javascript">
+
+window.history.pushState(null, "", window.location.href);
+window.onpopstate = function () {
+    window.history.pushState(null, "", window.location.href);
+};
+
+</script>
+
+
+
+    <script language="javascript" type="text/javascript">
+        function openrecprint()
+        {
+            //alert("welcome");
+            $( ".printable" ).print();
+        }
+    </script>
+
+    
+{% endblock %}

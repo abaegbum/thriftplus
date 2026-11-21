@@ -1,0 +1,90 @@
+
+
+{% extends 'Ia/reportsbase.html' %}
+{% block content %}
+
+{% load humanize %}
+
+<div style="text-align:center">Sales Report</div>
+
+   <table style="margin-top:0%;margin-bottom:0%" width="100%" class="table  table-bordered" id="dataTables-example">
+
+    <tr style="text-align:center;">
+
+       <td   >
+        <a href="/fts/thrift/reports/sales/cashier/" style="color:red">End Of Day</a></td>
+        <td style="background:blue;font-size:0.9em">
+            <a href="/fts/thrift/reports/sales/merchant/" style="color:white">Vault</a>
+        </td>
+
+    <td >
+        <a href="/fts/thrift/reports/sales/admn/" style="color:red">Profit</a></td>
+
+    </tr>
+</table>
+
+
+
+<form action ="" method='post' >
+    {% csrf_token %}
+
+<table style="font-size:0.7em;margin-top:0%;margin-bottom:0%" width="100%" class="table  table-bordered" id="dataTables-example">
+
+
+            <tr >
+             <td>
+                <label>Business Year</label>
+             </td>
+                <td> 
+                          <select name="myyear" id="id_myyear" required >
+
+                              {% for pincode in year %}
+                                  <option value="{{pincode.year}}">{{pincode.year}}</option>
+                              {% endfor %}
+                         </select>
+                </td>
+            </tr>
+
+            <tr >
+                <td><label for="id_myproducts">Product</label></td>
+                <td> 
+                          <select name="myproducts" id="id_myproducts" required >
+                            <option value="">-----</option>                          
+                              {% for pincode in prod %}
+                                  <option value="{{pincode}}">{{pincode}}</option>
+                              {% endfor %}
+                         </select>
+                </td>
+            </tr>
+
+            <tr >
+                <td><label for="id_types">Report Type</label></td>
+                <td> 
+                          <select name="repottype" id="id_types" required >
+                            <option value="">-----</option>
+                              {% for rep in rep %}
+                                  <option value="{{rep}}">{{rep}}</option>
+                              {% endfor %}
+                         </select>
+                </td>
+            </tr>
+
+
+  <tr>
+
+</table>
+
+
+<table width="100%" class="table  table-bordered" id="dataTables-example">
+
+            <td >
+              <input class="btn btn-lg btn-success btn-block" name="submit" type= "submit" value="View Details">
+            </td>
+</table>
+
+</form>
+
+{% endblock %}
+
+
+

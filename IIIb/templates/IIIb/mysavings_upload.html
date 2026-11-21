@@ -1,0 +1,93 @@
+
+
+{% extends 'staff/membership_base.html' %}
+{% block content %}
+
+
+
+
+<div style="text-align:center">Wallet Deposit Form</div>
+   <table style="margin-top:0%;margin-bottom:0%;font-size:0.8em" width="100%" class="table  table-bordered" id="dataTables-example">
+
+
+    <tr style="text-align:center">
+      <td>
+          <a href="/IIIb/threeb/savings/wallet_packages/" style="color:red">Wallet</a>
+      </td>
+      <td >
+          <a href="/IIIb/threeb/savings/save_packages/" style="color:red">Savings Scheme</a>
+      </td>
+      <td ><a href="/IIIb/threeb/savings/deposit/view_transactions/" style="color:red">Savings Log</a></td>
+      <td style="background:blue"><a href="/IIIb/threeb/savings/upload/" style="color:white"> File upload</a></td>
+    </tr>
+</table>
+
+
+{% if messages %}
+  <ul>
+    {% for message in messages %}
+      <li class="{{ message.tags }}">{{ message }}</li>
+    {% endfor %}
+  </ul>
+{% endif %}
+
+
+
+  
+  <form action="" method="POST"  enctype="multipart/form-data" onsubmit="disable(this)" >
+    {%csrf_token %}
+    
+    <section class="content">
+      <div class="container-fluid">
+            
+            <!-- general form elements -->
+            <div class="card card-primary">
+
+                <div class="card-body">
+
+                  <div class="form-group">
+                    <label for="customFile">Select File:</label>
+                    <div class="custom-file">
+                      <input type="file" required name= "excel" class="custom-file-input" id="customFile">
+                      <label class="custom-file-label" for="customFile">Choose file</label>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+            <div> Excel file should carry workers' emails only</div>
+                <!-- /.card-body -->
+           <div class="card-footer">
+            <td >
+              <input class="btn btn-lg btn-success btn-block" name="submit" type= "submit" value="Upload">
+            </td>
+          </div>
+          
+      </section>
+
+      </form>
+
+            </div>
+            <!-- /.card -->
+</div>
+</section>
+
+
+</tr>
+
+
+
+    <script language="javascript" type="text/javascript">
+        function disable(f)
+        {
+            var button = f.elements['submit'];
+            button.value = 'Processing';
+            button.disabled = 'true';
+            return true;
+        }
+    </script>
+{% endblock %}
+
+
+

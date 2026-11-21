@@ -1,0 +1,92 @@
+
+
+
+
+{% load humanize %}
+
+
+
+
+<table style="margin-top:0%;margin-bottom:02%;font-size:0.6em" width="100%" class="table  table-bordered" id="dataTables-example">
+  <tr>
+    <td style='font-weight:bold'>Unremitted Funds</td>
+    <td> {{currency}}  {{unrem|intcomma}}  </td>
+  </tr>
+    <tr>
+    <td style='font-weight:bold'>C/O</td>
+    <td> {{merchants.merchant.staff.surname}}   {{merchants.merchant.staff.firstname}}  </td>
+  </tr>
+    <tr>
+    <td style='font-weight:bold'>Date</td>
+    <td> {{dow}} {{datte}}  </td>
+  </tr>
+
+  </table>
+
+
+ {% if thriftrec %}
+<table style="margin-top:0.2%;margin-bottom:0%;text-align:center;font-size:0.6em" width="100%" class="table  table-bordered" id="dataTables-example">
+
+     <thead >
+        <tr style="font-weight:bold">
+           <td >S/N</td>
+           <td >Date</td>
+           <td >Desc</td>
+           <td >Amt ({{branch.currency_code}})</td>
+           <td >Bal</td>
+        </tr>
+    </thead>
+
+            {% for student in thriftrec %}
+
+               {% if student.trans.status == 'CR' %}
+                <tr style="color:green">
+                  <td >{{ forloop.counter }}.</td>
+                  <td >{{ student.trans.recdate }} </td>
+                  <td style="text-align:center">{{ student.trans.description }}</td>
+                  <td >{{ student.trans.amount|intcomma }}</td>
+                  <td >{{ student.bal|intcomma }}</td>
+
+                  </tr>
+
+                {% else %}
+
+                <tr style="color:red">
+
+                  <td >{{ forloop.counter }}.</td>
+                  <td >{{ student.trans.recdate }} </td>
+                  <td style="text-align:center"> {{ student.trans.description }}</td>
+                  <td > - {{ student.trans.amount|intcomma }}</td>
+
+                  <td >{{ student.bal|intcomma }}</td>
+
+                </tr>
+
+                 {% endif %}
+            {% endfor %}
+
+</table>
+{% endif %}
+
+
+
+
+<table style="margin-top:0.2%;margin-bottom:0.6%;text-align:center;font-size:0.6em" width="100%" class="table  table-bordered" id="dataTables-example">
+
+<tr>
+  <td> {{cycle}} Balance</td>
+  <td style="font-weight:bold"> {{branch.currency_code}} {{bal|intcomma}} </td>
+  </tr>
+</table>
+
+
+<table style="margin-top:0.2%;margin-bottom:0.6%;text-align:center;font-size:0.6em" width="100%" class="table  table-bordered" id="dataTables-example">
+
+<tr >
+
+  <td >
+<a href="/fts/mycustomers/dashboard/{{wallet}}/">Continue</a>
+</td>
+</tr>
+</table>
+

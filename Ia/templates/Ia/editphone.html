@@ -1,0 +1,60 @@
+
+
+
+
+<div style="text-align:center">Edit Customer Email</div>
+
+
+<form action="/fts/customer/viewwallet/editphone/" method="POST" onsubmit="disable(this)">
+{% csrf_token %}
+<table style="margin-top:01%;margin-bottom:0.2%;font-size:0.6em" width="100%" class="table  table-bordered" id="dataTables-example">
+  
+            <tr >
+              <td >Name </td>
+                <td> {{ customer.surname }}  {{ customer.firstname }}   {{ customer.othername }}</td>
+
+            </tr>
+            <tr >
+              <td style='font-weight:bold'>Current Phone </td>
+                <td> {{ customer.phone }}</td>
+
+            </tr>
+
+            <tr >
+              <td style='font-weight:bold'>New Phone </td>
+                <td> <input type='number' name='newphone' ></td>
+
+            </tr>
+
+
+
+</table>
+
+
+ 
+<input type="hidden" name="wallet" id="wallet"  readonly="readonly" value="{{ wallet }}" class ="loginTxtbox">
+
+
+<table style="margin-top:0%;margin-bottom:0%;font-size:0.6em" width="100%" class="table  table-bordered" id="dataTables-example">
+  <tr>
+    <td >
+      <input class="btn btn-lg btn-success btn-block" name="submit" type= "submit" value="Save">
+    </td>
+</tr>
+</table>
+
+</form>
+
+
+
+    <script language="javascript" type="text/javascript">
+        function disable(f)
+        {
+            var button = f.elements['submit'];
+            button.value = 'Processing';
+            button.disabled = 'true';
+            return true;
+        }
+    </script>
+
+

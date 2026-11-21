@@ -1,0 +1,39 @@
+
+
+{% load humanize %}
+
+{% if req %}
+   <table style="margin-top:0%;margin-bottom:0%;font-size:0.8em;text-align:center" width="100%" class="table  table-bordered table-hover" >
+
+           <tr style='font-weight:bold'>
+               <td >S/N</td>
+               <td >Month</td>
+               <td>Amount ({{branch.currency_code}})</td>
+               <td >Account</td>
+               <td>Status</td>
+          </tr>             
+
+{% for k in req %}
+          <tr>
+            <td>{{forloop.counter}} .</td>
+            <td>{{k.month}}</td>
+            <td> {{k.amount|intcomma}} </td>
+            <td> {{k.scheme}} </td>
+            <td> Awaiting Deduction </td>
+          </tr>
+  {% endfor %}
+       </table>
+
+{% else %}
+
+<div style='text-align:center'>No records found</div>
+{% endif %}
+
+
+
+<input type='hidden' name="thrift" value ={{thrift}}>
+<input type='hidden' name="amount"  value ={{amount}}>
+<input type='hidden'  name="package" value ={{loan}}>
+
+
+</form>

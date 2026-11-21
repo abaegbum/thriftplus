@@ -1,0 +1,33 @@
+
+
+
+{% extends 'IIIb/mysavings_base_c.html' %}
+
+{% block content %}
+
+{% load humanize %}
+
+
+
+<div class="card card-primary card-outline">
+  <div class="card-header">
+    <h5 class="m-0" style = 'text-align:center'>APPLICATION SUCCESSFUL!!!</h5>
+    </div>
+      <div class="card-body">
+      <h6 class="card-title" > your application to partake in the {{package}}  scheme is successfull</h6>
+      <p class="card-text"></p>
+  </div>
+</div>
+
+
+
+
+<script type="text/javascript" language="javascript">
+window.history.pushState(null, "", window.location.href);
+window.onpopstate = function () {
+    window.history.pushState(null, "", window.location.href);
+};
+
+</script>
+
+{% endblock %}

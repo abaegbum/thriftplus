@@ -1,0 +1,82 @@
+
+
+{{yu}}
+
+{% if company  %}
+<table style="margin-top:2%;margin-bottom:2%;font-size:0.8em;text-align:center" width="100%" class="table  table-bordered">
+
+<tr style="font-weight:bold">
+
+<td>S/N</td>
+<td>Business</td>
+<td>App</td>
+<td>Validity</td>
+<td>Status</td>
+</tr>
+
+{% for k in company %}
+<tr>
+
+<td>{{forloop.counter}}.</td>
+<td>{{k.branch.company.name}} <br> {{k.branch.Address}} ({{k.branch.id}})</td>
+<td>{{k.app}}</td>
+
+{% if k.status == 'Expired' %}
+<td> {{k.end}}</td>
+{% else %}
+<td><a href="#" onclick = "dialdate({{k.receipt}})">{{k.end}}</a></td>
+{% endif %}
+
+
+
+<td>{{k.status}}</td>
+</tr>
+{% endfor %}
+
+</table>
+
+{% else %}
+<div>non record found  </div>
+{% endif %}
+
+<div id="myDialog" title="Enter Assessment Score"></div>
+
+
+<script >
+    function dialdate(vid){
+        var state = vid;
+         // alert(state)
+        var url = "/partner/partner/business/manage/datepop/";
+        var i = 0;
+        var data='userid='+state;
+        $.ajax({
+            type:"POST",
+            url:url,
+            data:data,
+            success:function(html) {
+                //$("#myDialog").show();
+                $("#myDialog").html(html);
+                get_ca_dialog();
+            }
+        });
+        return false;
+    }
+
+</script>
+
+
+
+        <script type="text/javascript" language="javascript">
+            function get_ca_dialog(){
+                var dialogOpts = {
+                    autoOpen:true,
+                    title:"Touch  the x to close" ,
+                    closeOnEscape:true,
+                    show: true,
+                    hide: true,
+                    bgiframe: true
+                };
+                $("#myDialog").dialog(dialogOpts);
+            }
+
+        </script>

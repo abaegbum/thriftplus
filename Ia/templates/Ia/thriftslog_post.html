@@ -1,0 +1,97 @@
+
+
+
+
+{% extends 'Ia/thriftbaseIa.html' %}
+{% block content %}
+
+
+{% load humanize %}
+
+<div style="text-align:center">Thrift Menu</div>
+
+
+
+<table style="margin-top:0%;margin-bottom:0%;font-size:0.9em;text-align:center" width="100%" class="table  table-bordered" >
+
+    <tr>
+<!--         <td  style="background:blue">
+            <a href="/fts/thrift/addthrift/" style="color:white">Add</a>
+        </td>
+        
+        <td>
+            <a href="/fts/thrift/viewthrift/" style="color:red">View</a>
+        </td>
+       <td  ><a href="/fts/thrift/changethrift/" style="color:red">Change</a></td>
+        <td>
+            <a href="/fts/thrift/rolloverthrift/" style="color:red">Rollover</a>
+        </td> -->
+
+        <td style="background:blue">
+            <a href="/fts/thrift/thriftreport/" style="color:white">Log</a>
+        </td>
+    </tr>
+</table>
+     
+{% if thriftrec %} 
+   <table style="margin-top:0%;margin-bottom:0%"width="100%" class="table  table-bordered " >
+     <thead >
+
+      <div style="margin-top:2%;margin-bottom:0%;text-align:center"> Thrift Report for {{month}} {{year}} </div>
+        <tr style="text-align:center;font-weight:bold">
+           <td >S/N</td>
+           <td >Customer</td>
+           <td > Thrift</td>
+        </tr>
+
+    </thead> 
+
+
+    {% for student in thriftrec %}
+        <tr style="font-weight:bod;text-align:center">
+          <td >{{ forloop.counter }}.</td>
+          <td >{{ student.customer.customer.surname }}  {{ student.customer.customer.firstname }}</td>
+          <td > {{company.currency_code}} {{ student.sales|intcomma }}</td>
+        </tr>
+    {% endfor %}
+    <tr style="font-weight:bold;text-align:center"><td></td><td>TOTAL</td><td>{{company.currency_code}}  {{total|intcomma}}</td></tr>
+</table>
+
+<table style="margin-top:0.5%;margin-bottom:0.6%;text-align:center" width="100%" class="table  table-bordered" id="dataTables-example">
+
+<tr >
+
+
+<td>
+  <a href="/dashboard/">Home</a>
+  
+  </td>
+<td>
+  <a href="/fts/thrift/unremmitted/">Transactions</a>
+  
+  </td>
+<td>
+  <a href="/fts/customeria/list/" >My Customers </a>
+  
+  </td>
+</tr>
+</table>
+
+{% endif %}
+
+    <script language="javascript" type="text/javascript">
+        function disable(f)
+        {
+            var button = f.elements['submit'];
+            button.value = 'Processing';
+            button.disabled = 'true';
+            return true;
+        }
+    </script>
+
+
+
+{% endblock %}
+
+
+

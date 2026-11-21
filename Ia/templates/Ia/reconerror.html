@@ -1,0 +1,30 @@
+
+
+
+{% extends 'Ia/approval_base.html' %}
+{% block content %}
+
+
+
+<div style="text-align:center">Staff Reconcilation Menu</div>
+  
+   <table style="margin-top:0%;margin-bottom:0%;font-size:0.9em" width="100%" class="table  table-bordered" id="dataTables-example">
+
+    <tr style="text-align:center;">
+        <td  style="background:blue">
+            <a href="/fts/thrift/approvals/" style="color:white">Reconciliation</a>
+        </td>
+        <td>
+            <a href="/fts/thrift/payouts/" style="color:red">Payouts</a>
+        </td>  
+       <td  >
+        <a href="/fts/thrift/approvals/approvereport/" style="color:red">Log</a></td>
+    </tr>
+</table>
+
+{{msg}}
+
+{% endblock %}
+
+
+

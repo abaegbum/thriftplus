@@ -1,0 +1,166 @@
+
+
+
+{% extends 'IIIb/cashdepo_base_a.html' %}
+
+{% block content %}
+
+
+
+
+<div style="text-align:center">Cash Deposit Menu</div>
+   <table style="margin-top:0%;margin-bottom:0%;font-size:0.8em" width="100%" class="table  table-bordered" id="dataTables-example">
+
+
+    <tr style="text-align:center;">
+      <td  style="background:blue">
+          <a href="/IIIb/threeb/savings/deposit/" style="color:white">Cash Deposit</a>
+      </td>
+
+      <td ><a href="#" style="color:red">Cash     Log</a></td>
+    </tr>
+</table>
+
+
+   <table style="margin-top:0%;margin-bottom:0%;font-size:0.8em" width="100%" class="table  table-bordered" id="dataTables-example">
+            <tr >
+             <td style="font-weight:bold">Year</td>
+                <td> 
+                          <select name="businessyear" id="id_businessyear" required >
+                              {% for pincode in year %}
+                                  <option value="{{pincode.year}}">{{pincode.year}}</option>
+                              {% endfor %}
+                         </select>
+                </td>
+            </tr>
+
+
+    <tr> 
+      <td style="font-weight:bold">E-mail</td>
+      <td>{{msg.staff.email}}</td>
+    </tr>
+    <tr> 
+      <td style="font-weight:bold">Name</td>
+    <td>{{msg.staff.surname|title}} {{msg.staff.firstname|title}}   {{msg.staff.othername|title}} </td>
+  </tr>
+
+   </table>
+
+
+
+<form action="" method="POST">
+{% csrf_token %}
+   <table style="margin-top:0.2%;margin-bottom:0%;font-size:0.8em" width="100%" class="table  table-bordered" id="dataTables-example">        
+
+            <tr >
+             <td style="font-weight:bold">Destination Account</td>
+                <td> 
+                          <select name="Destination" id="id_destination" required >
+                              {% for pincode in year %}
+                                  <option value="{{pincode.year}}">{{pincode.year}}</option>
+                              {% endfor %}
+                         </select>
+                </td>
+            </tr>
+
+
+</table>
+
+<table width="100%" class="table  table-bordered" id="dataTables-example">
+
+           <tr>
+                <div class="boxscenaros"></div>
+           </tr>
+</table>
+
+       </form>
+
+
+   <script type="text/javascript" >
+        $(document).ready(function() {
+            $("#id_month").change(function () {
+                autopost20p1();
+            });
+
+            $("#id_month").focus();
+            // autopost20p1();            
+        });
+
+    </script>
+
+    <script>
+        $(document).ready(function() {
+            var pickerOpts = {
+                //appendText: "mm/dd/yy",
+                //defaultDate: "+5",
+                showOtherMonths: true,
+                changeMonth: true,
+                changeYear: true,
+                dateFormat:"yy-mm-dd"
+            };
+
+            getdestination();
+        });
+    </script>
+
+
+
+
+
+<script type="text/javascript" language="javascript">
+function getdestination() {
+    var state = $("#id_businessyear").val(); // check spelling carefully
+    // alert(state);
+    var url = "/IIIb/threeb/savings/deposit/monthajax/";
+
+    $("#id_destination").empty();
+
+    if (state) {
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: { userid: state },
+            success: function(data) {
+                var options = '';
+                for (var i = 0; i < data.length; i++) {
+                    options += '<option value="' + data[i] + '">' + data[i] + '</option>';
+                }
+                $("#id_destination").append(options);
+                autopost20p1();
+            },
+            error: function(xhr, status, error) {
+                console.error("AJAX failed:", status, error);
+            }
+        });
+    }
+}
+
+</script>
+
+
+  <script type="text/javascript" language="javascript">
+        function autopost20p1(){
+            var state = '{{user}}' + ":" + $("#id_month").val();
+            // alert(state)
+            var url = "/IIIb/threeb/savings/depoajax/";
+            var i = 0;
+            var data='userid='+state;
+            $.ajax({
+                type:"POST",
+                url:url,
+                data:data,
+                success:function(html) {
+                    $(".boxscenaros").show();
+                    $(".boxscenaros").html(html);
+                }
+            });
+            return false;
+        }
+    </script>
+
+
+
+{% endblock %}
+
+
+

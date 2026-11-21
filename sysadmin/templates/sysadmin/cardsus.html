@@ -1,0 +1,54 @@
+
+
+
+
+
+
+
+
+
+
+
+{% extends 'sysadmin/setup_base.html' %}
+{% block content %}
+
+
+<div style="text-align:center">Back Office Set up</div>
+
+   <table style="margin-top:0%;margin-bottom:01%" width="100%" class="table  table-bordered" id="dataTables-example">
+
+    <tr style="text-align:center;">
+         <td ><a href="/sysadmin/sysadmin/setup/password/" style="color:red">Password</a></td>
+
+         <td ><a href="/sysadmin/sysadmin/setup/locations/" style="color:red">Locations</a></td>
+         <td ><a href="/sysadmin/sysadmin/setup/products/" style="color:red">Products</a></td>
+         <td style="background:blue"><a href="/sysadmin/sysadmin/setup/carding/" style="color:white">Carding</a></td>
+
+
+    </tr>
+</table>
+
+
+
+
+<div class="card card-primary card-outline">
+	<div class="card-header">
+		<h5 class="m-0" style = 'text-align:center'>Enteries Saved Sucesssfully!!</h5>
+	</div>
+
+</div>
+
+
+
+
+
+
+<script type="text/javascript" language="javascript">
+window.history.pushState(null, "", window.location.href);
+window.onpopstate = function () {
+    window.history.pushState(null, "", window.location.href);
+};
+
+</script>
+
+{% endblock %}

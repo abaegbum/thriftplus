@@ -1,0 +1,108 @@
+
+
+
+
+{% load humanize %}
+
+
+
+<form  action=" /IIIb/threeb/savescheme/edited/" method="POST" onsubmit="disable(this)">
+{% csrf_token %}
+
+<input type="hidden" name="package" value='{{package}}'>
+
+
+
+     <table style="margin-top:0%;margin-bottom:0%;font-size: 0.8em" width="100%" class="table  table-bordered" id="dataTables-example">
+
+        <tr>
+          <td style="font-weight: bold;"> Name</td>
+
+         <td >{{sd.staff.staff.surname|title}}  {{sd.staff.staff.firstname|title}} </td>
+
+      </tr>
+
+        <tr>
+          <td style="font-weight: bold;"> Email</td>
+
+         <td >{{email}} </td>
+
+      </tr>
+
+        <tr>
+          <td style="font-weight: bold;"> Current Amount</td>
+
+         <td >{{sd.staff.staff.branch.currency_code}} {{sd.amount|intcomma}} </td>
+
+      </tr>
+
+        <tr>
+          <td style="font-weight: bold;"> New Amount</td>
+
+         <td ><input type='number' name="new"  required> </td>
+
+      </tr>
+
+    </table>
+
+
+
+
+
+
+
+
+
+
+
+
+     <table style="margin-top:0%;margin-bottom:0%;font-size: 0.8em" width="100%" class="table  table-bordered" id="dataTables-example">
+
+        <tr>
+          <td >
+          <input class="btn btn-lg btn-success btn-block" name="submit" type= "submit"value="Update">
+        </td>
+
+         <td >
+          
+         <input  type='button' class="btn btn-lg btn-success btn-block" value="Cancel"
+         onclick="closedit();">
+
+
+        </td>
+
+      </tr>
+    </table>
+</form>
+
+
+<script>
+    function closedit() { 
+        $("#edit").dialog("close");
+    }
+</script>
+
+
+
+
+
+
+   <script language="javascript" type="text/javascript">
+        function disable(f)
+        {
+            var button = f.elements['submit'];
+            button.value = 'Processing';
+            button.disabled = 'true';
+            return true;
+        }
+    </script>
+
+
+
+
+
+
+
+
+
+

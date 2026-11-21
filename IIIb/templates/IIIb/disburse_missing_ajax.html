@@ -1,0 +1,48 @@
+
+
+{% load humanize %}
+
+{% if msg %}
+
+
+
+
+
+<div style="text-align:center;font-weight:bold;margin-top:0%;margin-bottom:0%;font-size:0.8em">Missing Bank Details</div>
+
+
+   <table style="margin-top:0%;margin-bottom:0%;font-size:0.8em;text-align:center" width="100%" class="table  table-bordered" id="dataTables-example">      
+          
+           <tr style='text-align:center;font-weight:bold'>
+               <td >S/N</td>               
+               <td >Cooperators</td>
+            </tr>
+
+             {% for k in msg %}
+          
+          <tr >
+            <td >{{forloop.counter}} .</td>
+            <td style='text-align:left'> {{k.staff.staff.surname|title}}   {{k.staff.staff.firstname|title}}   {{k.staff.staff.othername|title}}</td>
+          </tr>
+
+          {% endfor %}
+
+         <tr style='text-align:center;font-weight:bold'>
+            <td style="border:0px solid black"></td>
+           <td>Ask the cooperators whose names appear above to fill in their account details </td>
+         </tr>
+
+</table>
+
+
+     
+
+{% else %}
+
+<div style="color:blue;text-align:center">You have no unpaid {{savings}} for the year</div>
+
+
+
+
+
+{% endif %}

@@ -1,0 +1,63 @@
+
+
+
+
+{% load humanize %}
+
+
+
+
+<div style="font-size:0.6em;text-align:right">Current Balance: <span style="color:green">{{company.currency_code}} {{bal|intcomma}}</span></div>
+ 
+
+ <form action="/fts/customer/cashout/display/" method="POST">
+    {% csrf_token %}
+         <table style="margin-top:0%;margin-bottom:0%;font-size:0.6em" width="100%" class="table  table-bordered" id="dataTables-example">
+    <tr>
+      <td>Amount</td>
+      <td>
+         <input type="number" name="amount"  id="amount" placeholder="Amount" required>
+       </td>
+  </tr>
+
+      <tr>
+        <td>
+          Service Charge</td>
+          <td>
+        <input type="number" name="charge"  placeholder="Service Charge" required>
+      </td>
+  </tr>
+
+</table>
+         <table style="margin-top:0%;margin-bottom:0%;font-size:0.6em" width="100%" class="table  table-bordered" id="dataTables-example">
+          <tr>
+       <td ><input class="btn btn-lg btn-success btn-block" name="submit" type= "submit" value="Process Withdawal"></td>
+     </tr>
+   </table>
+
+
+   <input type="hidden" name="wallet" readonly="readonly" value="{{ wallet }}" class ="loginTxtbox">
+       </form>
+
+
+
+   <script type="text/javascript" >
+        $(document).ready(function() {
+
+            $("#amount").focus();
+  
+        });
+    </script>
+
+
+
+
+    <script language="javascript" type="text/javascript">
+        function disable(f)
+        {
+            var button = f.elements['submit'];
+            button.value = 'Processing';
+            button.disabled = 'true';
+            return true;
+        }
+    </script>

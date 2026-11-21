@@ -1,0 +1,80 @@
+<script type="text/javascript" src='/static/mato/JS/jquery-1.5.js'></script>
+
+
+
+{% extends 'IIIb/mywallet_balance_base_o.html' %}
+{% block content %}
+
+{% load humanize %}
+
+<div style="text-align:center">Wallet Balances Menu</div>
+
+
+   <table style="margin-top:0%;margin-bottom:01%;font-size:0.8em" width="100%" class="table  table-bordered" id="dataTables-example">
+
+    <tr style="text-align:center;">
+      <td  >
+          <a href="/IIIb/threeb/staff/mywallet/"  style="color:red">Balances</a>
+      </td>
+      <td>
+          <a href="/IIIb/threeb/staff/statement/"  style="color:red">Statement</a>
+      </td>
+      <td>
+          <a href="/IIIb/threeb/staff/withdraw/"  style="color:red">Withdraw</a>
+      </td>
+      <td style="background:blue">
+          <a href="/IIIb/threeb/mywallet/accno/"  style="color:white">Account No.</a>
+      </td>
+    </tr>
+</table>
+
+
+<form action = '' method ='post' onsubmit="disable(this)">
+  {% csrf_token %}
+
+ <table style="margin-top:0%;margin-bottom:02%;font-size:0.8em" width="100%" class="table  table-bordered" id="dataTables-example">
+
+  <tr> 
+    <td style="font-weight:bold">E-mail</td>
+    <td>{{msg.staff.email}}</td>
+  </tr>
+
+  <tr> 
+    <td style="font-weight:bold">Name</td>
+  <td>{{msg.staff.surname|title}}  {{msg.staff.firstname|title}}   {{msg.staff.othername|title}} </td>
+  </tr>
+
+  <tr> 
+    <td style="font-weight:bold">Bank</td>
+  <td> <input type="text" autofocus name="bank" class="form-control" id="bank" placeholder="Bank" required> </td>
+  </tr>
+
+  <tr> 
+    <td style="font-weight:bold">Account No</td>
+  <td> <input type="number" name="accct" class="form-control" id="accct" placeholder="Account No" required> </td>
+  </tr>
+
+</table>
+ <table style="margin-top:0%;margin-bottom:02%;font-size:0.8em" width="100%" class="table  table-bordered" id="dataTables-example">
+<tr> 
+  <td >
+        <input class="btn btn-lg btn-success btn-block" name="submit" type= "submit" value="Save">
+            </td>
+          </tr>
+ </table>
+ </form>
+
+
+    <script language="javascript" type="text/javascript">
+        function disable(f)
+        {
+            var button = f.elements['submit'];
+            button.value = 'Processing';
+            button.disabled = 'true';
+            return true;
+        }
+    </script>
+{% endblock %}
+
+
+

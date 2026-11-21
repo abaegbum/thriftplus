@@ -1,0 +1,60 @@
+
+
+{% load humanize %}
+
+
+
+
+{% if msg %}
+
+
+
+
+<div style="text-align:center;font-weight:bold;margin-top:0%;margin-bottom:0%;">List of  Loan deductions for {{ month}} {{year}}</div>
+   <table style="margin-top:0%;margin-bottom:0%;font-size:0.8em" width="100%" class="table  table-bordered" id="dataTables-example">   	
+          
+           <tr style='text-align:center;font-weight:bold'>
+               <td >S/N</td>               
+               <td >Cooperator</td>
+               <td>Loan Deduction</td>
+               
+             </tr>
+             {% for k in msg %}
+          <tr style='text-align:center'>
+            <td >{{forloop.counter}} .</td>
+            <td> {{k.staff.staff.surname}}   {{k.staff.staff.firstname}}   {{k.staff.staff.othername}}</td>
+            <td >{{k.amount|intcomma}}</td>
+          
+
+          </tr>
+          {% endfor %}
+         <tr style='text-align:center;font-weight:bold'>
+            <td style="border:0px solid black"></td>
+           <td>Total Loan Deduction</td> 
+           <td>{{total|intcomma}}</td> 
+           <!-- <td></td> -->
+         </tr>
+
+       </table>
+     
+ <table style="margin-top:0.5%;margin-bottom:0%;font-size:1em" width="100%" class="table  table-bordered"> 
+      <tr>
+
+        <td style="color:blue;text-align:center">
+            <a href="#" style="color:blue;text-align:center" onClick= "proopt()" title="Execute N {{ total|intcomma}} mandates">Execute deduction</a>
+        </td>
+</tr>
+
+       </table>
+
+
+
+{% else %}
+
+<div>no Pending loan transactions found </div>
+
+
+
+
+
+{% endif %}

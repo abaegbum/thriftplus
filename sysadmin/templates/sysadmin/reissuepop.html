@@ -1,0 +1,45 @@
+
+{% load humanize %}
+
+
+
+<form action ='/sysadmin/sysadmin/setup/carding/pop/savere/' method = 'POST'  onsubmit="disable(this)">
+{% csrf_token %}
+
+<table style="margin-top:0.5%;margin-bottom:0.6%;text-align:center;font-size:0.6em" width="100%" class="table  table-bordered" id="dataTables-example">
+      
+    <tr style='font-size:0.9em'>
+        <td tyle='font-weight:bold;'>Current Value</td>
+        <td > {{ income.branch.currency_code }}  {{ income.reissue }}</td>
+    </tr>
+    <tr>
+      <td tyle='font-weight:bold;font-size:0.5em'>New Value</td>
+      <td ><input type ='number' name='fresh1' required > </td>
+    </tr>
+
+    </table>
+
+
+      <input type="hidden" name="branch"  readonly="readonly" value="{{ income.branch.id }}" class ="loginTxtbox">
+
+         
+     <table style="margin-top:0%;margin-bottom:0%" width="100%" class="table  table-bordered" id="dataTables-example">
+
+   <tr>
+      <td >
+      <input style="font-size:0.7em" class="btn btn-lg btn-success btn-block" name="submit" type= "submit"value="Save">
+    </td>
+  </tr>   
+</table>
+
+</form>
+
+    <script language="javascript" type="text/javascript">
+        function disable(f)
+        {
+            var button = f.elements['submit'];
+            button.value = 'Processing';
+            button.disabled = 'true';
+            return true;
+        }
+    </script>

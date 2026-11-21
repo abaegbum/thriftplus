@@ -1,0 +1,224 @@
+
+
+
+
+{% load humanize %}
+
+
+<div style='text-align:center'>Close Account Menu</div>
+
+
+<form action="/fts/thrift/cashout/admin/" method="POST"  onsubmit="disable(this)">
+
+<table style="margin-top:01%;margin-bottom:02%;font-size:0.7em" width="100%" class="table  table-bordered" id="dataTables-example">
+
+            <tr >
+              <td >Wallet Address</td>
+                <td> {{ customer.wallet }}</td>
+
+            </tr>
+            <tr >
+              <td style='font-weight:bold'>Name </td>
+                <td> {{ customer.surname }} {{ customer.firstname }} {{ customer.thername }}</td>
+
+
+
+            <tr >
+              <td >Business Year</td>
+                <td> {{year}}</td>
+            </tr> 
+
+
+            </tr>
+            <tr >
+             <td><label for="id_card">Card</label></td>
+                <td> 
+                          <select name="card" id="id_card" required >
+                                 {% for pincode in card %}
+                                  <option value="{{pincode.purpose}}">{{pincode.purpose}}</option>
+                              {% endfor %}
+
+                         </select>
+                </td>
+            </tr>
+
+            <tr >
+             <td><label for="id_month">Month</label></td>
+                <td> 
+                          <select name="month" id="id_month" required >
+                            <option value="">-----</option>
+
+                         </select>
+                </td>
+            </tr>
+
+            <tr >
+             <td><label for="id_cycle">Cycle</label></td>
+                <td> 
+                          <select name="cycle" id="id_cycle" required >
+                             <option value="">-----</option>                              
+                         </select>
+                </td>
+            </tr>
+
+
+
+
+
+</table>
+
+<table style="margin-top:0%;margin-bottom:0.1%" width="100%" class="table  table-bordered" id="dataTables-example">
+
+           <tr >
+                <div class="boxcashabc"></div>
+           </tr>
+</table>
+
+
+
+<table style="margin-top:01%;margin-bottom:0.2%" width="100%" class="table  table-bordered" id="dataTables-example">
+           <tr >
+                <div class="boxfund"></div>
+           </tr>
+</table>
+
+
+ 
+<input type="hidden" name="wallet" id="wallet"  readonly="readonly" value="{{ wallet }}" class ="loginTxtbox">
+
+</form>
+
+
+  <script type="text/javascript" >
+        $(document).ready(function() {            
+            $("#id_business_year").change(function () {
+                fillcard();
+            });
+
+            $("#id_month").change(function () {
+                fillcycle();
+            });
+
+            $("#id_card").change(function () {
+                fillmonth();
+            });
+
+            $("#id_cycle").change(function () {
+                autopostacc123e();
+            });
+
+            fillmonth()
+    
+        });
+    </script>
+
+    <script type="text/javascript" language="javascript">
+        function fillmonth(){
+
+            var state = "{{year}}"  + ":" + $("#id_card").val() + ":" +"{{wallet}}" + ":" + "{{user}}";
+
+            // alert(state)
+
+            var url = "/fts/customer/closeacc/cmonth/";
+            var i = 0;
+            var data='userid='+state;
+            $("#id_month").val('');
+            $("#id_month").html('');
+            if (state != undefined){
+                $.ajax({
+                    type: "POST",
+                    url: url,
+                    data:data,
+                    success: function(data){
+                        var options = '';
+                        for (i=0; i<data.length; i++){
+                            options += '<option value="' + data[i] +'">' + data[i] + '</option>'
+                        }
+                        $("#id_month").append(options);
+                        fillcycle();
+                    }
+                })
+            }
+        }
+
+    </script>
+
+
+
+
+    <script type="text/javascript" language="javascript">
+        function fillcycle(){
+
+            var state = "{{year}}"   + ":" + $("#id_card").val() + ":" +"{{wallet}}" + ":" + "{{user}}" + ":" + $("#id_month").val();
+
+            // alert(state)
+
+            var url = "/fts/customer/closeacc/cycle/";
+            var i = 0;
+            var data='userid='+state;
+            $("#id_cycle").val('');
+            $("#id_cycle").html('');
+            if (state != undefined){
+                $.ajax({
+                    type: "POST",
+                    url: url,
+                    data:data,
+                    success: function(data){
+                        var options = '';
+                        for (i=0; i<data.length; i++){
+                            options += '<option value="' + data[i] +'">' + data[i] + '</option>'
+                        }
+                        $("#id_cycle").append(options);
+                        autopostacc123e();
+                    }
+                })
+            }
+        }
+
+    </script>
+
+
+    <script type="text/javascript" language="javascript">
+        function autopostacc123e(){
+
+            var state = "{{year}}"  + ":" + "{{wallet}}" + ":" + $("#id_month").val()+ ":" + "{{user}}" + ":" + $("#id_card").val()+ ":" + $("#id_cycle").val();
+
+            // alert(state)
+
+            var url = "/fts/thrift/closeaccount/details/";
+            var i = 0;
+            var data='userid='+state;
+            $.ajax({
+                type:"POST",
+                url:url,
+                data:data,
+                success:function(html) {
+                    $(".boxfund").hide();
+                    $(".boxcashabc").show();
+                    $(".boxcashabc").html(html);
+
+                }
+            });
+            return false;
+        }
+    </script>
+
+
+
+
+
+    <script language="javascript" type="text/javascript">
+        function disable(f)
+        {
+            var button = f.elements['submit'];
+            button.value = 'Processing';
+            button.disabled = 'true';
+            return true;
+        }
+    </script>
+
+
+
+
+
+

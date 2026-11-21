@@ -1,0 +1,82 @@
+
+
+
+
+<script language="javascript" type="text/javascript">
+        function disable(f)
+        {
+            var button = f.elements['submit'];
+            button.value = 'Processing';
+            button.disabled = 'true';
+            return true;
+        }
+    </script>
+
+
+
+
+    
+Accounts
+
+every cooperator holds Six (6) seperate savings accounts
+
+1. Wallet savings account      wallet_thrift_account, wallet_authorization_breakdown, wallet_savings_account
+2. Scheme savings account      scheme_authorization_breakdown, scheme_savings_account
+
+3. Loans savings account
+4. Loans buffer savings account
+
+5. Commodities savings account
+6. Commodities buffer savings account
+
+
+the buffer accounts are important because cooperators can sometimes pay cash for any of their obligations
+
+
+
+your wallet account balance at any given time should be the sum 
+of the balances from all six accounts
+
+
+
+My savings Module
+This module is summerised thus.
+A cooperator instructs the accountant to
+deduct a fixed amount of money from their salary and 
+hand same to the manager of the cooperative, who then deposits it into their ( the cooperator's) WALLET or SCHEME SAVINGS ACCOUNT with the cooperative
+
+
+Proration Table
+there should be one table which holds all pending and executed deductions. On proration, the differnt accounts
+are filled with appropriate entries
+
+
+
+
+VALUE ADDED SERVICES
+This amount should be editable at any given time
+
+
+MODELS
+The wallet savings account should have the following flags
+1. can get loan
+2. can buy commodities
+
+
+BY DEFAULTS
+when a new cooperator is onboarded, these flags are both turned off by default, 
+the manager would have to turn them on for you (the cooperator)
+
+
+
+
+CYCLE OF EVENTS
+1. A written authorization / mandate
+2. Proration
+
+
+
+old....................tblIIIbloandapplications
+new ...................
+
+
